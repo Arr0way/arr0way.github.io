@@ -1,14 +1,13 @@
 markdown: kramdown
 highlighter: pygments
 relative_permalinks: false
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
 
 gauges_id: 
 google_analytics_id: 
 
-repository: https://github.com/jekyll/jekyll
-help_url: https://github.com/jekyll/jekyll-help
+repository: https://github.com/Arr0way/arr0way.github.io.git
 
 collections:
   docs:
