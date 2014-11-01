@@ -1,0 +1,33 @@
+<div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <ul>
+      <li class="{% if page.title == 'Blog' %}current{% endif %}">
+        <a href="/blog/">All Blog</a>
+      </li>
+      <li class="{% if page.title == 'WalkThroughs' %}current{% endif %}">
+        <a href="/blog/walkthroughs/">WalkThroughs</a>
+      </li>
+    </ul>
+    <h4>Recent WalkThroughs</h4>
+    <ul>
+      {% for post in site.categories.walkthroughs limit:5 %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="/blog/walkthroughs/">More »</a>
+      </li>
+    </ul>
+    <h4>Other Blog</h4>
+    <ul>
+        {% for post in site.posts %}
+        {% unless post.categories contains 'walkthroughs' %}
+        <li class="{% if page.title == post.title %}current{% endif %}">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endunless %}
+        {% endfor %}
+    </ul>
+  </aside>
+</div>
