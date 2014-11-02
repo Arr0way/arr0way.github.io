@@ -28,7 +28,7 @@ information. Here’s what to look out for.
   <p>Be aware of these messages if you wish to avoid certain death.</p>
 </div>
 
-![Picard Dance](http://127.0.0.1:4000/img/picard-engage.jpg)
+![Picard Dance](/img/picard-engage.jpg)
 
 <div class="note warning">
   <h5>Warning: Random Star Trek memes and gifs will be used throughout the site!</h5>
