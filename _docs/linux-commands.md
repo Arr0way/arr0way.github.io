@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: Linux Commands
+title: Linux Commands for Penetration Testers: Cheatsheet
 next_section: 
 permalink: /docs/linux-commands/
 ---
 
-A collection of hopefully useful Linux Commands, this is not a complete list but a collection of commonly used commands + syntax as a sort of "cheatsheet", this content will be constantly updated as I discover new awesomeness. 
+A collection of hopefully useful Linux Commands for pen testers, this is not a complete list but a collection of commonly used commands + syntax as a sort of "cheatsheet", this content will be constantly updated as I discover new awesomeness. 
 
 ## Linux Penetration Testing Commands
 
