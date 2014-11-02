@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Linux Commands for Penetration Testers: Cheatsheet
+title: Linux Commands for Penetration Testers - Cheatsheet
 next_section: 
 permalink: /docs/linux-commands/
 ---
