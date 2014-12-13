@@ -5,25 +5,13 @@ next_section:
 permalink: /docs/linux-commands/
 ---
 
+* list element with functor item
+{:toc}
+
 A collection of hopefully useful Linux Commands for pen testers, this is not a complete list but a collection of commonly used commands + syntax as a sort of "cheatsheet", this content will be constantly updated as I discover new awesomeness. 
 
 ## Linux Penetration Testing Commands
 
-* [Linux Network Commands](#linux-network-commands)
-* [System Information Commands](#system-information-commands)
-  * [Redhat / CentOS / RPM Based Distros](#redhat--centos--rpm-based-distros)
-  * [YUM Commands](#yum-commands)
-  * [Debian / Ubuntu / .deb Based Distros](#debian--ubuntu--deb-based-distros)
-* [Linux User Management](#linux-user-management)
-* [Linux Decompression Commands](#linux-decompression-commands)
-* [Linux Compression Commands](#linux-compression-commands)
-* [Linux File Commands](#linux-file-commands)
-* [Samba Commands](#samba-commands)
-* [Breaking Out of Limited Shells](#breaking-out-of-limited-shells)
-* [Misc Commands](#misc-commands)
-* [Linux File System Permissons](#linux-file-system-permissions)
-* [Linux File System](#linux-file-system)
-* [Linux Interesting Files / Dir’s](#linux-interesting-files--dirs)
 
 ### Linux Network Commands
 
