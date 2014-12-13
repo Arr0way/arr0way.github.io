@@ -4,5 +4,8 @@
   - linux-commands
 
 - title: TOOLS
+  docs:
+  - nmap
+  - nikto
 
  
