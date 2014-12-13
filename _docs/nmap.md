@@ -3,6 +3,8 @@ layout: docs
 title: Nmap
 next_section: 
 permalink: /docs/nmap/
+description: 'Nmap description, examples, cheatsheet and practical examples'
+date: December 13, 2014
 ---
 
 * list element with functor item
@@ -108,7 +110,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 </div>
 
 <div class="note info">
-  <h5>Agressive scan timings are faster (Duh!) but could yeild inaccurate results!</h5>
+  <h5>Agressive scan timings are faster, but could yeild inaccurate results!</h5>
   <p>T5 uses very aggressive scan timings and could lead to missed ports, T4 is a better option if you're in a hurry...</p>
 </div>
 
