@@ -857,7 +857,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 
     <tr>
       <td>
-        <p><code>-g/ --source-port PORTNUM</code></p>
+        <p><code>-g PORTNUM<br>--source-port PORTNUM</code></p>
       </td>
       <td>
             <p>Use given port number</p>
@@ -1111,7 +1111,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 
     <tr>
       <td>
-        <p><code>--send-eth/--send-ip</code></p>
+        <p><code>--send-eth<br>--send-ip</code></p>
       </td>
       <td>
             <p>Send using raw ethernet frames or IP packets</p>
