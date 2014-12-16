@@ -415,10 +415,10 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 
     <tr>
       <td>
-        <p><code>-sN/sF/sX</code></p>
+        <p><code>-sN<br>-sF<br>-sX</code></p>
       </td>
       <td>
-            <p>TCP Null, FIN, and Xmas scans</p>
+            <p>TCP Null scan<br>FIN scan<br>Xmas scan</p>
       </td>
     </tr>
 
@@ -442,10 +442,10 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 
     <tr>
       <td>
-        <p><code>-sY/sZ</code></p>
+        <p><code>-sY<br>-sZ</code></p>
       </td>
       <td>
-            <p>SCTP INIT/COOKIE-ECHO scans</p>
+            <p>SCTP INIT scan<br>COOKIE-ECHO scan</p>
       </td>
     </tr>
 
