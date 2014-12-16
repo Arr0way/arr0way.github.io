@@ -111,7 +111,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 
 <div class="note info">
   <h5>Agressive scan timings are faster, but could yeild inaccurate results!</h5>
-  <p>T5 uses very aggressive scan timings and could lead to missed ports, T4 is a better option if you're in a hurry...</p>
+  <p>T5 uses very aggressive scan timings and could lead to missed ports, T4 is a better compromise if you need fast results.</p>
 </div>
 
 #### Nmap scan from file
@@ -205,12 +205,17 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap --script-args=unsafe=1 --script <br> smb-check-vulns.nse -p 445 target</code></p>
       </td>
       <td>
-            <p>Nmap display Netbios name</p>
+            <p>Nmap check if Netbios servers are vulnerable to MS08-067</p>
       </td>
     </tr>
 
       </tbody>
 </table>
+</div>
+
+<div class="note warning">
+  <h5>--script-args=unsafe=1 has the potential to crash servers / services</h5>
+  <p>Becareful when running this command.</p>
 </div>
 
 #### Nmap Nikto Scan
@@ -392,10 +397,10 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
       <tbody>
       <tr>
       <td>
-        <p><code>-sS/sT/sA/sW/sM</code></p>
+        <p><code>-sS<br>-sT<br>-sA<br>-sW<br>-sM</code></p>
       </td>
       <td>
-            <p>TCP SYN/Connect()/ACK/Window/Maimon scans</p> 
+            <p>TCP SYN scan<br>Connect scan<br>ACK scan<br>Window scan<br>Maimon scan</p> 
       </td>
     </tr>
 
@@ -713,6 +718,9 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 
 #### Timing and Performance 
 
+<p>Options which take TIME are in seconds, or append 'ms' (milliseconds),
+  's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).</p>
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -724,28 +732,76 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
       <tbody>
       <tr>
       <td>
-        <p><code>-O</code></p>
+        <p><code>-T 0-5</code></p>
       </td>
       <td>
-            <p>Enable OS Detection</p> 
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <p><code>--osscan-limit</code></p>
-      </td>
-      <td>
-            <p>Limit OS detection to promising targets</p>
+            <p>Set timing template - higher is faster (less accurate)</p> 
       </td>
     </tr>
 
     <tr>
       <td>
-        <p><code>--osscan-guess</code></p>
+        <p><code>--min-hostgroup SIZE <br>--max-hostgroup SIZE</code></p>
       </td>
       <td>
-            <p>Guess OS more aggressively</p>
+            <p>Parallel host scan group sizes</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>--min-parallelism NUMPROBES <br>--max-parallelism NUMPROBES</code></p>
+      </td>
+      <td>
+            <p>Probe parallelization</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>--min-rtt-timeout TIME<br>--max-rtt-timeout TIME<br>--initial-rtt-timeout TIME</code></p>
+      </td>
+      <td>
+            <p>Specifies probe round trip time</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>--max-retries TRIES</code></p>
+      </td>
+      <td>
+            <p>Caps number of port scan probe retransmissions</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>--host-timeout TIME</code></p>
+      </td>
+      <td>
+            <p>Give up on target after this long</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>--scan-delay TIME <br>--max-scan-delay TIME</code></p>
+      </td>
+      <td>
+            <p>Adjust delay between probes</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>--min-rate NUMBER</code></p>
+      </td>
+      <td>
+            <p>Send packets no slower than NUMBER per second</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>--max-rate NUMBER</code></p>
+      </td>
+      <td>
+            <p>Send packets no faster than NUMBER per second</p>
       </td>
     </tr>
       </tbody>
