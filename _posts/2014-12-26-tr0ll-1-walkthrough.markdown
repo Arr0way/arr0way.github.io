@@ -285,7 +285,7 @@ Not sure what to do next, I tried the file name as the password against the prev
 
 ### Remote Exploit
 
-Success, I managed to authenticate as:
+Success, I managed to authenticate using:
 
 <div class="mobile-side-scroller" style="width:50%;">
 <table>
