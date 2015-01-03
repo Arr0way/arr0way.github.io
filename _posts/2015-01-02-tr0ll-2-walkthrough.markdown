@@ -130,11 +130,11 @@ Enumeration process started.
 </table>
 </div> 
 
-####SSH Enumeration
+###SSH Enumeration
 
 Zoning out watching my Nmap scan complete I noticed, the hostname was Tr0ll. I attempted to login via ssh with <code>Tr0ll</code> password: <code>Tr0ll</code>, it worked ! But I instantly got booted off, tried a few things nothing worked... So I tried FTP.  
 
-####FTP Enumeration
+###FTP Enumeration
 
 I tired the same credentials against ftp and discovered a file called "noob" in the ftp root. 
 
@@ -172,7 +172,7 @@ Attempting to extract lmao.zip failed, prompting for a <code>noob</code> passwor
 
 Onto the next service then... 
 
-####HTTP Enumeration 
+###HTTP Enumeration 
 
 ![Star Trek HTTP Enumeration](/img/star-trek-enumeration.gif)
 
