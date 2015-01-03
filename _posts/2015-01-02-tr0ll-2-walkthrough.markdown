@@ -471,7 +471,7 @@ Padded with some NOPs - for a reliable landing.
 
 ![Worf jump](\img\warf-jump.gif)
 
-Overwrote EIP with the location of ESP tagged some shellcode on the end to exectute a shell. 
+Overwrote EIP with the location of ESP and tagged some shellcode on the end to exectute a shell. 
 
 ###Final Exploit
 
