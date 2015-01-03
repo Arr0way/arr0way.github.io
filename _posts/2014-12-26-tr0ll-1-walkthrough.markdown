@@ -26,7 +26,7 @@ description: "Tr0ll: 1 walkthrough - step by step write up for Tr0ll: 1 a VulnHu
 {:toc}
 
 
-I thought I'd have a go at a Boot2Root over Christmas, looking through the VM's I came accross [Tr0ll: 1](https://www.vulnhub.com/entry/tr0ll-1,100/) the discription caught my attention: 
+I thought I'd have a go at a Boot2Root over Christmas, looking through the VM's I came accross [Tr0ll: 1](https://www.vulnhub.com/entry/tr0ll-1,100/) the description caught my attention: 
 
 
 <p>
