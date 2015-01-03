@@ -180,7 +180,7 @@ Onto the next service then...
 
 Web browser showed: 
 
-![tr0ll me again](/img/blog/tr0ll-me-again.png) 
+![tr0ll me again](/img/blog/tr0ll-me-again.PNG) 
 
 <section class="shellbox">
     <div class="unit golden-large code">
