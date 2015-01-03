@@ -15,7 +15,7 @@ description: "Tr0ll: 1 walkthrough - step by step write up for Tr0ll: 1 a VulnHu
                <p><code>Coffee Difficulty Rating:</code></p>
            </td>
            <td>
-               <p><i class="fa fa-coffee"></i><i class="fa fa-coffee"></i><i class="fa fa-coffee"></i></p>
+               <p><i class="fa fa-coffee"></i><i class="fa fa-coffee"></i></p>
            </td>
         </tr>
       </tbody>
