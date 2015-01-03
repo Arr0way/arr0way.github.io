@@ -263,7 +263,7 @@ DOWNLOADED: 21 - FOUND: 4
 
 They all rendered the same image (301'd).  
 
-![tr0ll cats](/img/blog/tr0ll-cats.png)
+![tr0ll cats](/img/blog/tr0ll-cats.PNG)
 
 Nothing exciting was in the page source: 
 
