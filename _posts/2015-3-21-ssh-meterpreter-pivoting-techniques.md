@@ -279,7 +279,7 @@ You could then connect to Target 2's RDP server using:
 
 This example uses SSH pivoting and Meterpreter port forwarding to access machines on subnet 2. 
 
-![Pivot Example 3: Using SSH and Meterpreter Pivoting to access another subnet](http://i.imgur.com/zRIqADW.png)
+![Pivot Example 3: Using SSH and Meterpreter Pivoting to access another subnet](http://i.imgur.com/gyylQup.png)
 
 ####Example commands
 
