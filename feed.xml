@@ -28,6 +28,7 @@ permalink: /feed.xml
       <height>73</height>
     </image>
     {% for post in site.posts site.categories.walkthroughs %}
+      {% unless post.draft %}
         <item>
           <title>{{ post.title | xml_escape}}</title>
           <link>http://highon.coffee{{ post.url }}</link>
@@ -42,6 +43,7 @@ permalink: /feed.xml
           <guid isPermaLink="true">http://highon.coffee{{ post.url }}</guid>
           <description>{{ post.content | xml_escape }}</description>
         </item>
+      {% endunless %}
     {% endfor %}
   </channel>
 </rss>
