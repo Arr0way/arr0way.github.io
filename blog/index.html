@@ -6,5 +6,7 @@ author: all
 ---
 
 {% for post in site.posts %}
-  {% include blog_item.html %}
+    {% unless post.draft %}
+        {% include blog_item.html %}
+    {% endunless %}
 {% endfor %}
