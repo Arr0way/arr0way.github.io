@@ -11,7 +11,7 @@ categories: [Penetration Testing]
 
 I've made my **Linux Local Enumeration Script** available below, it's far from perfect and I could spend forever improving it. 
 
-It has saved me a bunch of time and it works great for a first pass, after the post shell excitment :)
+But, it has saved me a bunch of time and it works great for a first pass, after that post shell excitment :)
 
 You might also be interested in this list of [Linux commands](https://highon.coffee/docs/linux-commands) for post exploit / local privilege enumeration. 
 
