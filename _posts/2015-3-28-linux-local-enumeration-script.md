@@ -6,7 +6,12 @@ author: Arr0way
 categories: [Penetration Testing]
 ---
 
-I thought I'd make my **Linux Local Enumeration Script** available, it's far from perfect and I could spend forever improving it. But, it has saved me a bunch of time and it works great for a first pass, after the post shell excitment :)
+* list element with functor item
+{:toc}
+
+I thought I'd make my **Linux Local Enumeration Script** available, it's far from perfect and I could spend forever improving it. 
+
+It has saved me a bunch of time and it works great for a first pass, after the post shell excitment :)
 
 You might also be interested in this list of [Linux commands](https://highon.coffee/docs/linux-commands) for post exploit / local privilege enumeration. 
 
