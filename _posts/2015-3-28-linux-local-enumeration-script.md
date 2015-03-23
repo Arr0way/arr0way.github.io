@@ -17,7 +17,7 @@ You might also be interested in this list of [Linux commands](https://highon.cof
 
 ## Linux Local Enumeration Script Demo
 
-Here it is in action: 
+Here it is in action, I think it gives a nice clean output: 
 
 ![Linux Local Enumeration Script Demo](/img/blog/linux-local-enumeration-script/linux-local-enumeration-script.gif)
 
