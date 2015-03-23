@@ -9,7 +9,7 @@ categories: [Penetration Testing]
 * list element with functor item
 {:toc}
 
-I thought I'd make my **Linux Local Enumeration Script** available, it's far from perfect and I could spend forever improving it. 
+I've made my **Linux Local Enumeration Script** available below, it's far from perfect and I could spend forever improving it. 
 
 It has saved me a bunch of time and it works great for a first pass, after the post shell excitment :)
 
