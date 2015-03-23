@@ -1,22 +1,53 @@
 ---
 layout: blog_item
 title:  "Security Harden CentOS 7"
-date:   2015-03-20 00:52:10
+date:   2015-03-25 00:52:10
 author: Arr0way
-draft: true
-categories: [blue team] 
+categories: [Security Hardening] 
 ---
+
+![OpenSCAP Guide - Securing CentOS 7](http://i.imgur.com/z6hxOZG.png)
 
 * list element with functor item
 {:toc}
 
+
 ## Security Harden CentOS 7
 
-This HowTo walks you through the steps required to harden CentOS 7, it's based on the [OpenSCAP](http://www.open-scap.org/page/Main_Page) benchmark, unfortunately OpenSCAP does not offically support CentOS as a target. There is a work around that allows it to run, you'll need to comment all mentions of RHEL so it doesn't check the OS version and then use SCAP Workbench to deselect any Redhat specific tests. 
+This HowTo walks you through the steps required to **security harden CentOS 7**, it's based on the [OpenSCAP](http://www.open-scap.org/page/Main_Page) benchmark, unfortunately the current version of OpenSCAP that ships with CentOS does not offically support CentOS CPE's. But there is a "workaround" that will allow OpenSCAP + OpenSCAP workbench to run on CentOS, I'll document this in a separate post.  
+
+## Based on a Minimal Install 
+
+To follow this guide you will need a minimal CentOS 7 install, ideally using the Kickstart file below or copying it's partition layout. Installing CentOS 7 using a minimal installation reduces the attack surface and ensures you *only install software that you require*. 
+
+This guide only covers the base system + SSH hardening, I will document specific service hardening separately such as HTTPD, SFTP, LDAP, BIND etc... 
+
+In the section related to removing unrequired services, if you installed a minimal centos 7 install, you'll likely have nothing to remove or disable - I've included this section for completeness. 
+
+
+## Issues with Security Hardening 
+
+After hardening a system you may run into issues, hardening a system will make it more restrictive, especially SELinux or filesystem related permission hardening. When hardening a system for a specific task I recommend creating a duplicate virtual machine you can use for troubleshooting should you run into a issue that you *think* is related to security hardening, you'll be able to confirm by running it on the Vanilla system. 
+
+Obviously **don't expose the Vanilla (un-hardened) system to the network!** 
+
+## Why use OpenSCAP ? 
+
+After a lot of research I decided to use OpenSCAP over other security hardening benchmarks / guides, here is my reasoning for doing so:
+
+- It's open, free and actively worked on
+- It has an audit tool, essential to verify each system 
+- OpenSCAP has a GUI called, workbench
+- OpenSCAP Workbench supports remote audits via SSH
+- OpenSCAP Workbench allows you to customize your scan, should you not agree with all hardening checks 
+
+If you don't get on with workbench or auditing from the command line, Nessus has functionality for authenticated SCAP scans. 
+
 
 ## Kickstart 
 
 I've provided the following RHEL kickstart file below, it's a minimal install with a heavy partition scheme, allowing for stricter mount options.  
+
 
 {% highlight bash %}
 
@@ -363,6 +394,7 @@ Users can now run <code>screen</code> and lock the console with <code>ctrl+a x</
 Zeroconf network typically occours when you fail to get an address via DHCP, the interface will be assigned a 169.254.0.0 address.
 
 To prevernt this:
+
 {% highlight bash %}
 echo "NOZEROCONF=yes" >> /etc/sysconfig/network
 {% endhighlight %}
@@ -547,14 +579,18 @@ systemctl enable rsyslog.service
 systemctl start rsyslog.service
 {% endhighlight %}
 
-## Enable auditd Service
+## Auditd - Audit Daemon
+
+### Enable auditd Service
 
 {% highlight bash %}
 systemctl enable auditd.service
 systemctl start auditd.service
 {% endhighlight %}
 
-## Enable Auditing for Processes Which Start Prior to the Audit Daemon
+### Audit Processes Which Start Prior to auditd
+
+Audit process which start before the Audit Daemon. 
 
 Add the following line to <code>/etc/grub.conf</code>: 
 
@@ -562,7 +598,7 @@ Add the following line to <code>/etc/grub.conf</code>:
 kernel /vmlinuz-version ro vga=ext root=/dev/VolGroup00/LogVol00 rhgb quiet audit=1
 {% endhighlight %}
 
-## Configure auditd Number of Logs Retained
+### Auditd Number of Logs Retained
 
 Open <code>/etc/audit/auditd.conf</code> and add or modify:
 
@@ -570,13 +606,13 @@ Open <code>/etc/audit/auditd.conf</code> and add or modify:
 num_logs = 5
 {% endhighlight %}
 
-## Configure auditd Max Log File Size 
+### Auditd Max Log File Size 
 
 {% highlight bash %}
 max_log_file = 30MB
 {% endhighlight %}
 
-## Configure auditd max_log_file_action Upon Reaching Maximum Log Size
+### Auditd max_log_file_action
 
 Open <code>/etc/audit/auditd.conf</code> and set this to rotate. 
 
@@ -585,7 +621,7 @@ max_log_file_action = rotate
 {% endhighlight %}
 
 
-## Configure auditd space_left Action on Low Disk Space
+### Auditd space_left
 
 Configure auditd to email you when space gets low, open <code>/etc/audit/auditd.conf</code> and modify the following:
 
@@ -593,7 +629,7 @@ Configure auditd to email you when space gets low, open <code>/etc/audit/auditd.
 space_left_action = email 
 {% endhighlight %}
 
-## Configure auditd admin_space_left Action on Low Disk Space
+### Auditd admin_space_left
 
 Configure auditd to halt when auditd log space is used up, forcing the system admin to rectify the space issue. 
 
@@ -603,9 +639,420 @@ On some systems where monitoring is less important another action could be lever
 admin_space_left_action = halt
 {% endhighlight %}
 
-## Configure auditd mail_acct Action on Low Disk Space
+### Auditd mail_acct
 
-## Disable autofs 
+When space gets low auditd can send a email notification via email, to configure this and the following line to <code>/etc/audit/auditd.conf</code>: 
+
+{% highlight bash %}
+action_mail_acct = root
+{% endhighlight %} 
+
+### Configure auditd to use audispd plugin
+
+Auditd does not have the functionality to send logs directly to an external log server, however the audispd plugin pass audit records to the local syslog server, to enable this open <code>/etc/audisp/plugins.d/syslog.conf</code> and set the active line to yes, then restart audispd daemon: 
+
+{% highlight bash %}
+sudo service auditd restart
+{% endhighlight %}
+
+### Auditd Rules: /etc/audit/audit.rules
+
+Open <code>/etc/audit/audit.rules</code> and add the following lines to monitor various system files and activities: 
+
+{% highlight bash %}
+# audit_time_rules - Record attempts to alter time through adjtime
+-a always,exit -F arch=b64 -S adjtimex -k audit_time_rules
+
+# audit_time_rules - Record attempts to alter time through settimeofday
+-a always,exit -F arch=b64 -S settimeofday -k audit_time_rules
+
+# audit_time_rules - Record Attempts to Alter Time Through stime
+-a always,exit -F arch=b64 -S adjtimex -S settimeofday -S clock_settime 
+-k audit_time_rules
+
+# audit_time_rules - Record Attempts to Alter Time Through clock_settime
+-a always,exit -F arch=b64 -S clock_settime -k audit_time_rules
+
+# Record Attempts to Alter the localtime File
+-w /etc/localtime -p wa -k audit_time_rules
+
+# Record Events that Modify User/Group Information
+# audit_account_changes
+-w /etc/group -p wa -k audit_account_changes
+-w /etc/passwd -p wa -k audit_account_changes
+-w /etc/gshadow -p wa -k audit_account_changes
+-w /etc/shadow -p wa -k audit_account_changes
+-w /etc/security/opasswd -p wa -k audit_account_changes
+
+# Record Events that Modify the System's Network Environment
+# audit_network_modifications
+-a always,exit -F arch=ARCH -S sethostname -S setdomainname -k audit_network_modifications
+-w /etc/issue -p wa -k audit_network_modifications
+-w /etc/issue.net -p wa -k audit_network_modifications
+-w /etc/hosts -p wa -k audit_network_modifications
+-w /etc/sysconfig/network -p wa -k audit_network_modifications
+
+#Record Events that Modify the System's Mandatory Access Controls
+-w /etc/selinux/ -p wa -k MAC-policy
+
+#Record Events that Modify the System's Discretionary Access Controls - chmod
+-a always,exit -F arch=b32 -S chmod -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S chmod  -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - chown
+-a always,exit -F arch=b32 -S chown -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S chown -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fchmod
+-a always,exit -F arch=b32 -S fchmod -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fchmod -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fchmodat
+-a always,exit -F arch=b32 -S fchmodat -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fchmodat -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fchown
+-a always,exit -F arch=b32 -S fchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fchownat
+-a always,exit -F arch=b32 -S fchownat -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fchownat -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fremovexattr
+-a always,exit -F arch=b32 -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fsetxattr
+-a always,exit -F arch=b32 -S fsetxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fsetxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - lchown
+-a always,exit -F arch=b32 -S lchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S lchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - lremovexattr
+-a always,exit -F arch=b32 -S lremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S lremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - lsetxattr
+-a always,exit -F arch=b32 -S lsetxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S lsetxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - removexattr
+-a always,exit -F arch=b32 -S removexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S removexattr -F auid>=500 -F auid!=4294967295 -k perm_mod-a always,exit -F arch=b32 -S fchmodat -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fchmodat -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fchown
+-a always,exit -F arch=b32 -S fchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fchownat
+-a always,exit -F arch=b32 -S fchownat -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fchownat -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fremovexattr
+-a always,exit -F arch=b32 -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - fsetxattr
+-a always,exit -F arch=b32 -S lsetxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S lsetxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - removexattr
+-a always,exit -F arch=b32 -S removexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S removexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Events that Modify the System's Discretionary Access Controls - setxattr
+-a always,exit -F arch=b32 -S setxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+-a always,exit -F arch=b64 -S setxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+#Record Attempts to Alter Logon and Logout Events
+-w /var/log/faillog -p wa -k logins 
+-w /var/log/lastlog -p wa -k logins
+
+#Record Attempts to Alter Process and Session Initiation Information
+-w /var/run/utmp -p wa -k session
+-w /var/log/btmp -p wa -k session
+-w /var/log/wtmp -p wa -k session
+
+#Ensure auditd Collects Unauthorized Access Attempts to Files (unsuccessful)
+-a always,exit -F arch=b32 -S creat -S open -S openat -S open_by_handle_at -S truncate -S ftruncate -F exit=-EACCES -F auid>=500 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S creat -S open -S openat -S open_by_handle_at -S truncate -S ftruncate -F exit=-EPERM -F auid>=500 -F auid!=4294967295 -k access
+-a always,exit -F arch=b64 -S creat -S open -S openat -S open_by_handle_at -S truncate -S ftruncate -F exit=-EACCES -F auid>=500 -F auid!=4294967295 -k access
+-a always,exit -F arch=b64 -S creat -S open -S openat -S open_by_handle_at -S truncate -S ftruncate -F exit=-EPERM -F auid>=500 -F auid!=4294967295 -k access
+
+#Ensure auditd Collects Information on the Use of Privileged Commands
+#
+#  Find setuid / setgid programs then modify and uncomment the line below. 
+#
+##  sudo find / -xdev -type f -perm -4000 -o -perm -2000 2>/dev/null
+#
+# -a always,exit -F path=SETUID_PROG_PATH -F perm=x -F auid>=500 -F auid!=4294967295 -k privileged
+
+#Ensure auditd Collects Information on Exporting to Media (successful)
+-a always,exit -F arch=ARCH -S mount -F auid>=500 -F auid!=4294967295 -k export
+
+#Ensure auditd Collects File Deletion Events by User
+-a always,exit -F arch=ARCH -S rmdir -S unlink -S unlinkat -S rename -S renameat -F auid>=500 -F auid!=4294967295 -k delete
+
+#Ensure auditd Collects System Administrator Actions 
+-w /etc/sudoers -p wa -k actions
+
+#Ensure auditd Collects Information on Kernel Module Loading and Unloading 
+-w /sbin/insmod -p x -k modules
+-w /sbin/rmmod -p x -k modules
+-w /sbin/modprobe -p x -k modules
+-a always,exit -F arch=b64 -S init_module -S delete_module -k modules
+
+#Make the auditd Configuration Immutable 
+-e 2
+{% endhighlight %}
+
+
+##Removal of Unrequired Services 
+
+The section outlines software that should be removed, instruction for disabling the service is also documented.  
+
+### Bulk Remove of Services
+
+{% highlight bash %}
+# Remove
+yum remove xinetd
+yum remove telnet-server
+yum remove rsh-server
+yum remove telnet
+yum remove rsh-server
+yum remove rsh
+yum remove ypbind
+yum remove ypserv
+yum remove tftp-server
+yum remove cronie-anacron
+yum remove bind
+yum remove vsftpd
+yum remove httpd
+yum remove dovecot
+yum remove squid
+yum remove net-snmpd
+{% endhighlight %}
+
+
+### Bulk Enable / Disable Services
+
+{% highlight bash %}
+#Disable / Enable
+systemctl disable xinetd
+systemctl disable rexec
+systemctl disable rsh
+systemctl disable rlogin
+systemctl disable ypbind
+systemctl disable tftp
+systemctl disable certmonger
+systemctl disable cgconfig
+systemctl disable cgred
+systemctl disable cpuspeed
+systemctl enable irqbalance
+systemctl disable kdump
+systemctl disable mdmonitor
+systemctl disable messagebus
+systemctl disable netconsole
+systemctl disable ntpdate
+systemctl disable oddjobd
+systemctl disable portreserve
+systemctl enable psacct
+systemctl disable qpidd
+systemctl disable quota_nld
+systemctl disable rdisc
+systemctl disable rhnsd
+systemctl disable rhsmcertd
+systemctl disable saslauthd
+systemctl disable smartd
+systemctl disable sysstat
+systemctl enable crond
+systemctl disable atd
+systemctl disable nfslock
+systemctl disable named
+systemctl disable httpd
+systemctl disable dovecot
+systemctl disable squid
+systemctl disable snmpd
+{% endhighlight %}
+
+
+### Disable Secure RPC Client Service
+
+Disable rpcgssd:
+
+The rpcgssd service manages RPCSEC GSS contexts required to secure protocols that use RPC (most often Kerberos and NFS). The rpcgssd service is the client-side of RPCSEC GSS. If the system does not require secure RPC then this service should be disabled. The rpcgssd service can be disabled with the following command: 
+
+{% highlight bash %}
+systemctl disable rpcgssd
+{% endhighlight %}
+
+### Disable Secure RPC Server Service
+
+Disable rpcsvcgssd:
+
+{% highlight bash %}
+systemctl disable rpcsvcgssd
+{% endhighlight %}
+
+### Disable RPC ID Mapping Service
+
+Disable rpcidmapd.
+
+The rpcidmapd service is used to map user names and groups to UID and GID numbers on NFSv4 mounts. If NFS is not in use on the local system then this service should be disabled. The rpcidmapd service can be disabled with the following command:
+
+{% highlight bash %}
+systemctl disable rpcidmapd
+{% endhighlight %}
+
+### Disable Network File Systems (netfs)
+
+The netfs script manages the boot-time mounting of several types of networked filesystems, of which NFS and Samba are the most common. If these filesystem types are not in use, the script can be disabled, protecting the system somewhat against accidental or malicious changes to /etc/fstab and against flaws in the netfs script itself. The netfs service can be disabled with the following command: 
+
+{% highlight bash %}
+sudo systemctl disable netfs
+{% endhighlight %}
+
+
+### Disable Network File System (nfs)
+
+{% highlight bash %}
+systemctl disable nfs
+{% endhighlight %}
+
+### If you don't need SSH disable it 
+
+{% highlight bash %}
+systemctl disable sshd
+{% endhighlight %}
+
+
+### Disable SSH iptables Firewall rule
+ 
+Only do this if you don't need SSH. 
+
+{% highlight bash %}
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+{% endhighlight %}
+
+<div class="note">
+  <h5>Tips™ - You probable need to leave SSH alone</h5>
+  <p>Unless you know you don't need SSH, leave SSH and it's iptables rule enabled.</p>
+</div>
+
+
+###Remove Rsh Trust Files
+
+{% highlight bash %}
+rm /etc/hosts.equiv
+rm ~/.rhosts
+{% endhighlight %}
+
+### Disable Avahi Server Software
+
+The avahi-daemon service can be disabled with the following command: 
+
+{% highlight bash %}
+systemctl disable avahi-daemon
+{% endhighlight %}
+
+### Disable the CUPS Service 
+
+If you don't need CUPS, disable it to further reduce your attack surface: 
+
+{% highlight bash %}
+systemctl disable cups
+{% endhighlight %}
+
+### Disable DHCP Service
+
+The dhcpd service should be disabled on any system that does not need to act as a DHCP server.
+
+{% highlight bash %}
+systemctl disable dhcpd
+{% endhighlight %}
+
+### Uninstall DHCP Server Package
+
+If you don't need a DHCP client, remove it: 
+
+{% highlight bash %}
+yum erase dhcp
+{% endhighlight %}
+
+### Disable DHCP Client
+
+Open <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> (if you have more interfaces, do this for each one) and make sure the address is statically assigned with the BOOTPROTO=none 
+
+Example: 
+
+{% highlight bash %}
+BOOTPROTO=none
+
+NETMASK=255.255.255.0
+IPADDR=192.168.1.2
+GATEWAY=192.168.1.1
+{% endhighlight %} 
+
+### Specify Additional Remote NTP Servers
+
+Open <code>/etc/ntp.conf</code> and add the following line: 
+
+{% highlight bash %}
+server ntpserver
+{% endhighlight %}
+
+Use an internal NTP server if possible. 
+
+### Enable Postfix 
+
+{% highlight bash %}
+systemctl enable postfix
+{% endhighlight %}
+
+### Remove Sendmail 
+
+{% highlight bash %}
+yum remove sendmail 
+{% endhighlight %}
+
+### Postfix Disable Network Listening 
+
+Open, <code>/etc/postfix/main.cf</code> and ensure the following inet_interfaces line appears: 
+
+{% highlight bash %}
+inet_interfaces = localhost
+{% endhighlight %}
+
+### Configure SMTP Greeting Banner 
+
+Change the greeting banner, the default banner discloses the SMTP server is Postfix. 
+
+
+### Disable xinetd Service
+
+{% highlight bash %}
+sudo systemctl disable xinetd
+{% endhighlight %}
+
+### System Audit Logs Permissions 
+
+System audit logs must have 0640 or less permissions set. 
+
+{% highlight bash %}
+sudo chmod 0640 audit_file
+{% endhighlight %}
+
+### System Audit Logs Must Be Owned By Root
+
+{% highlight bash %}
+sudo chown root/var/log
+{% endhighlight %}
+
+### Disable autofs 
 
 {% highlight bash %}
 chkconfig --level 0123456 autofs off
@@ -669,30 +1116,32 @@ Add to /etc/sysctl.conf:
 kernel.exec-shield = 1
 {% endhighlight %}
 
-## Check / Enable ASLR
+### Check / Enable ASLR
 
 Set runtime for kernel.randomize_va_space <code>sysctl -q -n -w kernel.randomize_va_space=2</code> 
 
 Add <code>kernel.randomize_va_space = 2</code> to /etc/sysctl.conf if it does not already exist.
 
-## Enable XD or NX Support on x86 Systems 
+### Enable XD or NX Support on x86 Systems 
 
 Recent processors in the x86 family support the ability to prevent code execution on a per memory page basis. Generically and on AMD processors, this ability is called **No Execute (NX)**, while on Intel processors it is called **Execute Disable (XD)**. This ability can help prevent exploitation of buffer overflow vulnerabilities and should be activated whenever possible. Extra steps must be taken to ensure that this protection is enabled, particularly on 32-bit x86 systems. Other processors, such as Itanium and POWER, have included such support since inception and the standard kernel for those platforms supports the feature. 
 
 Check bios and ensure XD/NX is enabled, not relevant for VM’s. 
 
-## Confirm SELinux is not disabled
+## SELinux
+
+### Confirm SELinux is not disabled
 
 {% highlight bash %}
 sed -i "s/selinux=0//gI" /etc/grub.conf
 sed -i "s/enforcing=0//gI" /etc/grub.conf
 {% endhighlight %}
 
-## SELinux Targeted / Enforcing 
+### SELinux Targeted / Enforcing 
 
 Open /etc/selinux/config and check for <code>SELINUXTYPE=targeted</code> or <code>SELINUXTYPE=enforcing</code>, depending on your requirements. 
 
-## Enable the SELinux restorecond Service
+### Enable the SELinux restorecond Service
 
 The restorecond service utilizes inotify to look for the creation of new files listed in the /etc/selinux/restorecond.conf configuration file. When a file is created, restorecond ensures the file receives the proper SELinux security context. The restorecond service can be enabled with the following command:
 
@@ -705,7 +1154,7 @@ Start restorecond if not currently running:
 
 <code>service restorecond start</code>
 
-##Check no daemons are unconfined by SELinux
+### Check no daemons are unconfined by SELinux
 Run: 
 
 {% highlight bash %}
@@ -719,8 +1168,107 @@ This should return no output.
 {% highlight bash %}
 sed -i 's/\<nullok\>//g' /etc/pam.d/system-auth
 {% endhighlight %}
-`
 
+
+## Secure SSH 
+
+### Allow Only SSH Protocol 2
+
+Open <code>/etc/ssh/sshd_config</code> and ensure the following line exists:
+
+{% highlight bash %}
+Protocol 2
+{% endhighlight %}
+### Limit Users' SSH Access
+
+Open <code>/etc/ssh/sshd_config</code> and add:
+
+{% highlight bash %}
+DenyUsers USER1 USER2
+{% endhighlight %}
+### Set SSH Idle Timeout Interval
+
+To set an idle timeout interval, edit the following line in <code>/etc/ssh/sshd_config</code> as follows:
+
+{% highlight bash %}
+ClientAliveInterval interval
+{% endhighlight %}
+### Set SSH Client Alive Count
+
+To ensure the SSH idle timeout occurs precisely when the ClientAliveCountMax is set, edit <code>/etc/ssh/sshd_config</code> as follows:
+
+{% highlight bash %}
+ClientAliveCountMax 0
+{% endhighlight %}
+
+### Disable SSH Support for .rhosts Files
+
+SSH can emulate the behavior of the obsolete rsh command in allowing users to enable insecure access to their accounts via .rhosts files.
+
+To ensure this behavior is disabled, add or correct the following line in <code>/etc/ssh/sshd_config</code>:
+{% highlight bash %}
+IgnoreRhosts yes
+{% endhighlight %}
+
+### Disable Host-Based Authentication
+
+SSH's cryptographic host-based authentication is more secure than .rhosts authentication. However, it is not recommended that hosts unilaterally trust one another, even within an organization.
+
+To disable host-based authentication, add or correct the following line in <code>/etc/ssh/sshd_config</code>:
+
+{% highlight bash %}
+HostbasedAuthentication no
+{% endhighlight %}
+### Disable SSH Root Login
+
+Disable root logins via SSH, open <code>/etc/ssh/sshd_config</code> and ensure the following line exists:
+
+{% highlight bash %}
+PermitRootLogin no
+{% endhighlight %}
+
+### Disable SSH Access via Empty Passwords
+
+Open <code>/etc/ssh/sshd_config</code>:
+
+{% highlight bash %}
+PermitEmptyPasswords no
+{% endhighlight %}
+### Enable SSH Warning Banner
+
+Enable a warning banner (Renforce policy awareness).
+
+Banner <code>/etc/issue</code>
+
+### Do Not Allow SSH Environment Options
+
+To ensure users are not able to present environment options to the SSH daemon, add or correct the following line in <code>/etc/ssh/sshd_config</code>:
+
+{% highlight bash %}
+PermitUserEnvironment no
+{% endhighlight %}
+### Use Only Approved Ciphers
+
+Limit the ciphers to those algorithms which are FIPS-approved. Counter (CTR) mode is also preferred over cipher-block chaining (CBC) mode. The following line in <code>/etc/ssh/sshd_config</code> demonstrates use of FIPS-approved ciphers:
+
+{% highlight bash %}
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc
+{% endhighlight %}
+## Secure X Windows 
+### Disable X Windows Startup By Setting Runlevel
+
+Disable X windows system, further reducing your attack surface.
+
+{% highlight bash %}
+Add id:3:initdefault: to /etc/inittab.
+{% endhighlight %}
+### Remove the X Windows Package Group
+
+{% highlight bash %}
+yum groupremove "X Window System"
+{% endhighlight %}
+`
+## A process for prompt installation of OS updates must exist
 
 
 If this was helpfull, click tweet below. 
