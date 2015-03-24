@@ -8,7 +8,20 @@
         <a href="/blog/walkthroughs/">WalkThroughs</a>
       </li>
     </ul>
-    <h4>Recent WalkThroughs</h4>
+        <h4>Cheat Sheets</h4>
+    <ul>
+      {% for post in site.categories.cheat-sheet %}
+        {% unless post.draft %}
+           <li class="{% if page.title == post.title %}current{% endif %}">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+           </li>
+        {% endunless %}
+      {% endfor %}
+      <li>
+        <a href="/blog/cheat-sheet/">More »</a>
+      </li>
+    </ul>
+    <h4>WalkThroughs</h4>
     <ul>
       {% for post in site.categories.walkthroughs limit:5 %}
         {% unless post.draft %}
@@ -25,10 +38,12 @@
     <ul>
         {% for post in site.posts %}
           {% unless post.categories contains 'walkthroughs' %}
-            {% unless post.draft %}
+            {% unless post.categories contains 'cheat-sheet' %}  
+              {% unless post.draft %}
         <li class="{% if page.title == post.title %}current{% endif %}">
           <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
+              {% endunless %}
             {% endunless %}
           {% endunless %}
         {% endfor %}

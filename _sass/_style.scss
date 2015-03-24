@@ -460,6 +460,129 @@ footer a:hover img {
   color: #C2C2C2;
 }
 
+
+/* Enum Boxes */
+
+.enum-box .pane {
+  background-color: #222222;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-shadow: none;
+  position: relative;
+  padding: 0 20px 30px;
+  margin-bottom: 30px;
+}
+
+.enum-box img {
+  margin: -30px 0 0;
+  width: 180px;
+  height: 150px;
+}
+
+.enum-box h2 {
+  font-size: 28px;
+}
+
+.enum-box p,
+.enum-box a {
+  font-size: 16px;
+}
+
+.enum-box p {
+  margin: .75em 0;
+}
+
+@media (min-width: 768px) {
+  .enum-box img {
+    float: left;
+    margin: -20px -30px -30px -50px;
+    width: 300px;
+    height: 251px;
+  }
+  .enum-box .pane-content {
+    margin-top: 35px;
+    padding-right: 30px;
+  }
+  .enum-box p,
+  .enum-box a {
+    font-size: 18px;
+  }
+  .enum-box .pane:after {
+    content: " ";
+    float: right;
+    background: url(../img/footer-arrow.png) top left no-repeat;
+    width: 73px;
+    height: 186px;
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+  }
+
+}
+
+/* Enum Box Left */
+
+.enum-box-b .pane {
+  background-color: #222222;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-shadow: none;
+  position: relative;
+  padding: 0 20px 30px;
+  margin-bottom: 30px;
+}
+
+.enum-box-b img {
+  margin: -30px 0 0;
+  width: 180px;
+  height: 150px;
+}
+
+.enum-box-b h2 {
+  font-size: 28px;
+}
+
+.enum-box-b p,
+.enum-box-b a {
+  font-size: 16px;
+}
+
+.enum-box-b p {
+  margin: .75em 0;
+}
+
+@media (min-width: 768px) {
+  .enum-box-b img {
+    float: left;
+    margin: -20px -30px -30px -50px;
+    width: 300px;
+    height: 251px;
+  }
+  .enum-box-b .pane-content {
+    margin-left: 60px;
+    margin-top: 35px;
+    padding-right: 30px;
+  }
+  .enum-box-b p,
+  .enum-box-b a {
+    font-size: 18px;
+  }
+  .enum-box-b .pane:after {
+    content: " ";
+    float: left;
+    background: url(../img/footer-arrow2.png) top left no-repeat;
+    width: 73px;
+    height: 186px;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+  }
+
+}
+
+
 /* Free Hosting */
 
 .free-hosting .pane {
@@ -506,14 +629,15 @@ footer a:hover img {
   .free-hosting a {
     font-size: 18px;
   }
+
   .free-hosting .pane:after {
     content: " ";
     float: right;
     background: url(../img/footer-arrow.png) top left no-repeat;
     width: 73px;
     height: 186px;
-    position: absolute;
     right: 0;
+    position: absolute;
     bottom: -30px;
   }
 }
