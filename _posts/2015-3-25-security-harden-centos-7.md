@@ -1254,7 +1254,9 @@ Limit the ciphers to those algorithms which are FIPS-approved. Counter (CTR) mod
 {% highlight bash %}
 Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc
 {% endhighlight %}
+
 ## Secure X Windows 
+
 ### Disable X Windows Startup By Setting Runlevel
 
 Disable X windows system, further reducing your attack surface.
@@ -1262,14 +1264,23 @@ Disable X windows system, further reducing your attack surface.
 {% highlight bash %}
 Add id:3:initdefault: to /etc/inittab.
 {% endhighlight %}
+
 ### Remove the X Windows Package Group
 
 {% highlight bash %}
 yum groupremove "X Window System"
 {% endhighlight %}
-`
-## A process for prompt installation of OS updates must exist
 
+## Prompt OS update installation
+
+A process for prompt installation of OS updates must exist
+
+{% highlight bash %}
+yum -y install yum-cron
+chkconfig yum-cron on
+{% endhighlight %}
+
+Make sure yum-cron is set to "check only", I don't recommend installing updates automatically. 
 
 If this was helpfull, click tweet below. 
 

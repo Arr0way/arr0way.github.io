@@ -5,6 +5,10 @@ date:   2015-03-29 00:58:10
 author: Arr0way
 description: 'enum4linux description, examples, cheatsheet and practical examples'
 categories: [Cheat-Sheet]
+tags:
+- Windows
+- SMB
+- Tools
 ---
 
 **[enum4linux](https://labs.portcullis.co.uk/tools/enum4linux/)** is an alternative to enum.exe on Windows, enum4linux is used to enumerate Windows and Samba hosts. 
