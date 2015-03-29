@@ -15,7 +15,7 @@ tags:
 
 If you're lucky enough to find a remote command execution vulnerability, you'll more often than not want to connect back to your attacking machine to leverage an interactive shell. 
 
-Below are a collection of **reverse shells** using commonly installed programming languages, or leveraging commonly installed binaries (nc, telnet, bash, etc). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux. 
+Below are a collection of **reverse shells** that use commonly installed programming languages, or commonly installed binaries (nc, telnet, bash, etc). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux. 
 
 ## Setup Listening Netcat 
 
