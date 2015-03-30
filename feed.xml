@@ -13,7 +13,7 @@ permalink: /feed.xml
   >
   <channel>
     <title xml:lang="en">HighOn.Coffee</title>
-    <atom:link type="application/atom+xml" href="http://jekyllrb.com/feed.xml" rel="self"/>
+    <atom:link type="application/atom+xml" href="https://highon.coffee/feed.xml" rel="self"/>
     <link>http://highon.coffee/</link>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
