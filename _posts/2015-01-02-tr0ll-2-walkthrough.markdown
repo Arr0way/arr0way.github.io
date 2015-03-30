@@ -276,7 +276,7 @@ What did you really think to find here? Try Harder
 ls -la showed a slightly different file size for one of the images, I began by running each of the files through cat (cating the cat? - sorry). 
 
 {% highlight bash %}
-8?z2??p?T?lj\p????<?S?۪?6?#???7U y????*/ p?E$???%=???.?B???o?ES_??Look Deep within y0ur_self for the answer
+Look Deep within y0ur_self for the answer
 {% endhighlight %}
 
 I tired this against the previously downloaded <code>lmao.zip</code> file, no luck. I tried <code>y0ur_self</code> as web path like on tr0ll:1 
