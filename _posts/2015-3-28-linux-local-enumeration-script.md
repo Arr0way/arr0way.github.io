@@ -3,7 +3,7 @@ layout: blog_item
 title:  "Linux Local Enumeration Script"
 date:   2015-03-28 12:32:10
 author: Arr0way
-categories: [Penetration Testing]
+categories: [Tools]
 ---
 
 * list element with functor item

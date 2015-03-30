@@ -3,7 +3,7 @@ layout: blog_item
 title:  "Security Harden CentOS 7"
 date:   2015-03-25 00:52:10
 author: Arr0way
-categories: [Security Hardening] 
+categories: [Security-Hardening] 
 ---
 
 ![OpenSCAP Guide - Securing CentOS 7](http://i.imgur.com/z6hxOZG.png)

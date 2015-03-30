@@ -3,7 +3,7 @@ layout: blog_item
 title:  "SSH & Meterpreter Pivoting Techniques"
 date:   2015-03-20 00:52:10
 author: Arr0way
-categories: [penetration testing] 
+categories: [Techniques] 
 ---
 
 * list element with functor item
