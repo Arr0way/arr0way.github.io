@@ -2,7 +2,7 @@
 title: 'MacBook - Post Install Config + Apps'
 layout: blog_item
 date: 2015-04-06 01:04:18
-author: HighOn_Coffee
+author: Arr0way
 description: 'List of initial OSX config changes and app installs, everything I do after installing OSSX.'
 categories: [urandom]
 tags:
