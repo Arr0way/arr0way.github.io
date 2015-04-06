@@ -12,7 +12,7 @@ layout: blog
       {{ page.categories | array_to_sentence_string }}
     </span>
   </span>
-  <div class="post-meta">
+  <div class="post-meta">  
     <span class="post-date">
       {{ page.date | date_to_string }}
     </span>
@@ -25,8 +25,10 @@ layout: blog
     {{ content }}
     <hr>
   <p>Follow <a href="https://twitter.com/{{ page.author }}">@{{ page.author }}</a>  - resistence is futile...</p>    
+  <div>
   <a href="https://twitter.com/share" class="twitter-share-button" data-via="highon_coffee" data-size="large" data-hashtags="HighOnCoffee" data-dnt="true">Tweet</a>
   <script data-cfasync="false">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>                          
 
   </div>
 </article>

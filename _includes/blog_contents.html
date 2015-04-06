@@ -85,6 +85,19 @@
         <a href="/blog/security-hardening/">More »</a>
       </li>
     </ul>
+    <h4>/dev/urandom</h4>
+    <ul>
+      {% for post in site.categories.urandom %}
+        {% unless post.draft %}
+           <li class="{% if page.title == post.title %}current{% endif %}">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+           </li>
+        {% endunless %}
+      {% endfor %}
+      <li>
+        <a href="/blog/urandom/">More »</a>
+      </li>
+    </ul>
     <h4>Other Blog</h4>
     <ul>
         {% for post in site.posts %}
@@ -93,10 +106,12 @@
               {% unless post.categories contains 'security-hardening' %}
                 {% unless post.categories contains 'tools' %}
                   {% unless post.categories contains 'techniques' %}
-                {% unless post.draft %}
+                    {% unless post.categories contains 'one-liner' %}
+                      {% unless post.draft %}
                   <li class="{% if page.title == post.title %}current{% endif %}">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </li>
+                     {% endunless %}
                    {% endunless %}
                   {% endunless %}
                 {% endunless %}  

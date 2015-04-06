@@ -6,7 +6,9 @@ author: all
 ---
 
 {% for post in site.posts %}
+  {% unless post.categories contains 'one-liner' %}
     {% unless post.draft %}
         {% include blog_item.html %}
     {% endunless %}
+  {% endunless %}
 {% endfor %}

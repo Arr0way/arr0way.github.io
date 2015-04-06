@@ -29,6 +29,7 @@ permalink: /feed.xml
     </image>
     {% for post in site.posts %}
       {% unless post.draft %}
+        {% unless post.categories contains 'one-liner' %}
         <item>
           <title>{{ post.title | xml_escape}}</title>
           <link>https://highon.coffee{{ post.url }}</link>
@@ -43,6 +44,7 @@ permalink: /feed.xml
           <guid isPermaLink="true">https://highon.coffee{{ post.url }}</guid>
           <description>{{ post.content | xml_escape }}</description>
         </item>
+        {% endunless %}
       {% endunless %}
     {% endfor %}
   </channel>

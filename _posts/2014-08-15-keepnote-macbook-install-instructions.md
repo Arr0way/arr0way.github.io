@@ -12,7 +12,7 @@ categories: [OSX]
 
 [Homebrew](http://brew.sh) is a package manager for OSX, it allows you to install applications in a similar way to BSD ports. 
 
-{% highlight bash Install Homebrew %}
+{% highlight bash %}
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 {% endhighlight %}
 
