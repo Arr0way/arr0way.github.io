@@ -34,7 +34,7 @@ usage: ./nbtscan [options] target [targets...]
    or with a range in the last octet ("192.168.12.64-97")
 {% endhighlight %}
 
-### enum4linux Cheat Sheet
+### nbtscan Cheat Sheet
 
 <div class="mobile-side-scroller">
 <table>
