@@ -1,9 +1,13 @@
 ---
 layout: blog_item
 title:  "SSH & Meterpreter Pivoting Techniques"
-date:   2015-03-20 00:52:10
+date:   2015-3-20 00:52:10
 author: Arr0way
+description: "SSH / Meterpreter Pivoting techniques for use during penetration testing, allowing an attacker to route traffic through a compromised host in order to gain access to another subnet." 
 categories: [Techniques] 
+tags:
+- Metasploit
+- Meterpreter
 ---
 
 * list element with functor item
@@ -133,7 +137,14 @@ Setup the port forward (instructions above), then configure msfconsole as follow
 
 ### Don't use 127.0.0.1 with Metasploit 
 
-The example above uses 0.0.0.0 **Not 127.0.0.1**, never use 127.0.0.1 with Metasploit or you'll get the following error after you attempt to do anything post exploit: 
+<div class="note tip">
+  <h5>Update: You can now use 127.0.0.2</h5>
+  <p>Other 127.0.0.0 addresses can also be used (<code>127.0.0.3</code>,<code>127.0.0.4</code> etc), but not <code>127.0.0.1</code></p>
+</div>
+
+
+The example above uses 0.0.0.0 **Not 127.0.0.1**, never use 127.0.0.1 with Metasploit or you'll get the following error after you attempt to do anything post exploit:
+
 
 
 {% highlight bash %}
@@ -201,17 +212,17 @@ In order to connect to the compromised machine you would run:
 
 Pivoting can be a bit hard to understand on paper, so here are some diagrams for clarification with the associated commands.
 
-![Brace for Wonky Visio Arrows](http://i.imgur.com/UVoxUFl.png)
+![Brace for Wonky Visio Arrows](https://i.imgur.com/UVoxUFl.png)
 
 ### Starting Point 
 
 You'll need to have access to a compromised machine on the target network, depending on the compromised machines configuration you may or may not need root. 
 
-![SSH Pivot Example 1: Starting Point](http://i.imgur.com/zRIqADW.png) 
+![SSH Pivot Example 1: Starting Point](https://i.imgur.com/zRIqADW.png) 
 
 ### Routing Traffic to the Same Subnet
 
-![Pivot Example 2: Routing traffic to the same subnet](http://i.imgur.com/TXV6ehn.png)
+![Pivot Example 2: Routing traffic to the same subnet](https://i.imgur.com/TXV6ehn.png)
 
 ####Example commands 
 
@@ -279,7 +290,7 @@ You could then connect to Target 2's RDP server using:
 
 This example uses SSH pivoting and Meterpreter port forwarding to access machines on subnet 2. 
 
-![Pivot Example 3: Using SSH and Meterpreter Pivoting to access another subnet](http://i.imgur.com/gyylQup.png)
+![Pivot Example 3: Using SSH and Meterpreter Pivoting to access another subnet](https://i.imgur.com/gyylQup.png)
 
 ####Example commands
 
