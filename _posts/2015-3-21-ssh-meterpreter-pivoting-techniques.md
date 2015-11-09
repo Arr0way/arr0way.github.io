@@ -183,6 +183,91 @@ Assuming you've compromised the target machine and have a meterpreter shell, you
             <p>Forwards 3389 (RDP) to 3389 on the compromised machine running the Meterpreter shell</p>
       </td>
     </tr>
+
+    <tr>
+      <td>
+        <p><code>portfwd delete  –l 3389 –p 3389 –r target-host</code></p>
+      </td>
+      <td>
+            <p>Forwards 3389 (RDP) to 3389 on the compromised machine running the Meterpreter shell</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>portfwd flush</code></p>
+      </td>
+      <td>
+            <p>Meterpreter delete all port forwards</p>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <p><code>portfwd list</code></p>
+      </td>
+      <td>
+            <p>Meterpreter list active port forwards</p>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <p><code>run autoroute -s 192.168.15.0/24</code></p>
+      </td>
+      <td>
+            <p>Use Meterpreters autoroute script to add the route for specified subnet <code>192.168.15.0</code></p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>run autoroute -p</code></p>
+      </td>
+      <td>
+            <p>Meterpreter list all active routes</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>route</code></p>
+      </td>
+      <td>
+            <p>Meterpreter view available networks the compromised host can access</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>route add 192.168.14.0 255.255.255.0 3</code></p>
+      </td>
+      <td>
+            <p>Meterpreter add route for 192.168.14.0/24 via Session 3.</p>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <p><code>route delete 192.168.14.0 255.255.255.0 3</code></p>
+      </td>
+      <td>
+            <p>Meterpreter delete route for 192.168.14.0/24 via Session 3.</p>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <p><code>route flush</code></p>
+      </td>
+      <td>
+            <p>Meterpreter delete all routes</p>
+      </td>
+    </tr>
+
       </tbody>
 </table>
 </div>
