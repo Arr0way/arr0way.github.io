@@ -73,7 +73,7 @@ Setup burp the same as Command Injection
 
 1. Open burp > decoder  
 2. test 
-3. Login succeeded for username: <code>admin<script>alert("your session has been stolen: " + document.cookie);</script></code> 
+3. Login succeeded for username: <code> admin<script>alert("your session has been stolen: " + document.cookie);</script> </code> 
 4. Select Encode as URL
 5. Paste output into form on webpage 
 
