@@ -137,6 +137,31 @@ Enumerate Windows shares / Samba shares.
 </table>
 </div>
 
+### Misc Stuffs 
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+   <tbody>
+
+    <tr>
+      <td>
+        <p><code>python -m SimpleHTTPServer 80</code></p>
+      </td>
+      <td>
+            <p>Run a basic http server, great for serving up shells etc</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 ### Mounting File Shares
 
 How to mount NFS / CIFS, Windows and Linux file shares.

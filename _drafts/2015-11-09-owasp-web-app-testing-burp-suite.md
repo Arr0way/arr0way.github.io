@@ -1,6 +1,6 @@
 ---
 layout: blog_item
-title:  "OWASP Web Application Testing with Burp Suite"
+title:  "Web Application Testing OWASP - Burp Suite Injection Flaws"
 date:   2015-03-29 14:37:10
 author: Arr0way
 description: 'OWASP Web Application Testing with Burp Suite, working through OWASPS WebGoat - part of the BWAP series.'
@@ -8,13 +8,18 @@ categories: [Web Application Testing]
 tags:
 - "Burp Suite"
 - "Web App"
+- "Web Goat" 
 ---
 
 ## Introduction 
 
 This blog post documents working through OWSAPs WebGoat part of the [Broken Web Application Project](https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project) application with Burp Suite, no other tools will be used for this post, it's essentially an OWASP Burp Suite tutorial. 
 
+![OWASP WebGoat](/img/blog/owasp-web-app-testing/webgoat.jpg)
+
+
 If you want to follow along you can do so with [Kali Linux](https://www.kali.org/) and the free version of Burp Suite, the [OWASP Broken Web Applications Project v.1.2](https://www.vulnhub.com/entry/owasp-broken-web-applications-project-12,46/) is available via [@vulnhub](https://twitter.com/vulnhub)   
+
 
 ## Info
 
@@ -48,12 +53,42 @@ If you want to follow along you can do so with [Kali Linux](https://www.kali.org
 </table>
 </div>
 
+## OWASP WebGoat - General 
+
+### HTTP Splitting (AKA CRLF Attack)
+
+Enter the following html into Burp repeater: 
+
+{% highlight html %}
+en
+Content-Length: 0
+
+HTTP/1.1 200 OK
+Content-Type: text/html 
+Content-Length: 31
+<html>Hacked by HighOn.Coffee</html>  
+{% endhighlight %}
+
+
+## Basic Burp Suite Setup 
+
+### Setup FoxyProxy for Burp Suite 
+
+![Setup FoxyProxy Burp
+Suite](/img/blog/owasp-web-app-testing/setup-burp-foxyproxy.gif) 
+
 ## OWASP WebGoat Injection Flaws 
 
 ### Command Injection 
 
-1. Enable Intercept 
-2. Setup FoxyProxy to use Burp Suite 
+1. Enable Intercept
+
+![Burp intercept on](/img/blog/owasp-web-app-testing/intercept-on-burp.gif)
+
+2. Set FoxyProxy to use Burp Suite
+
+![Burp FoxyProxy](/img/blog/owasp-web-app-testing/burp-foxyproxy.gif)
+
 3. Select the drop down form and select the manual e.g. AccessControlMatrix.help click View 
 4. Go to burp proxy > intercept
 5. click the Params tab 
@@ -73,7 +108,11 @@ Setup burp the same as Command Injection
 
 1. Open burp > decoder  
 2. test 
-3. Login succeeded for username: <code> admin<script>alert("your session has been stolen: " + document.cookie);</script> </code> 
+
+3. 
+{% highlight html %}
+Login succeeded for username: <code> admin<script>alert("your session has been stolen: " + document.cookie);</script> </code> 
+{% endhighlight %}
 4. Select Encode as URL
 5. Paste output into form on webpage 
 
