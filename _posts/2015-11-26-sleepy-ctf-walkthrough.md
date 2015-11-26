@@ -301,7 +301,7 @@ Tomcat should now be exposed with visiting <code>http://127.0.0.1</code> in **Fi
 <div class="note info">
   <h5>FingerprintCheck</h5>
   <p>The option: <code>set FingerprintCheck false</code> needs to be configured or meterpreter will throw the following error:</p>
-  <p><code>[-] [2015.11.26-13:17:44] Exploit aborted due to failure: not-found: The target <br> server fingerprint "Apache/2.4.10 (Debian)" does not match "(?-mix:Apache.*(Coyote|<br>Tomcat))", use 'set FingerprintCheck false' to disable this check.</code></p>
+  <p><code>[-] [2015.11.26-13:17:44] Exploit aborted due to failure: not-found: The target <br> server fingerprint "Apache/2.4.10 (Debian)" does not match "(?-mix:Apache.*(Coy<br>ote|Tomcat))", use 'set FingerprintCheck false' to disable this check.</code></p>
 </div>
 
 {% highlight bash %}
