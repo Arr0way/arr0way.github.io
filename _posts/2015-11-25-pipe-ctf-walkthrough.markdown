@@ -30,7 +30,7 @@ tags:
 
 ## Author Description
 
-**Author:** [s4gi_](https://twitter.com/s4gi_)
+**Author:** [@s4gi_](https://twitter.com/s4gi_)
 
 **Download:** [/dev/random: Pipe](http://www.vulnhub.com/entry/devrandom-pipe,124/) via [@VulnHub](https://twitter.com/VulnHub)
 
