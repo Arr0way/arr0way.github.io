@@ -418,7 +418,7 @@ Here's your flag: 3eb030c6ab099b0a355712fe38d59ffb
 
 ### Root Flag
 
-![nightmare binary strings](/img/blog/sleepy/strings.png)
+![nightmare binary strings](/img/blog/sleepy/root-flag.png)
 
 
 Thanks for the VM :)
