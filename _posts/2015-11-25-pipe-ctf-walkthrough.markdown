@@ -28,7 +28,9 @@ tags:
 * list element with functor item
 {:toc}
 
-## Author Description
+## Description
+
+Another short, but fun VM. 
 
 **Author:** [@s4gi_](https://twitter.com/s4gi_)
 
