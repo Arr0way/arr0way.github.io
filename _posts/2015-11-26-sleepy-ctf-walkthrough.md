@@ -136,8 +136,8 @@ Unauthenticated JDWP is exposed:
 Research indicated it was possible to interrupt threads, with the command: <code>interupt</code> allowing for arbitrary code execution.  
 
 <div class="note tip">
-  <h5>Help</h5>
-  <p>Type <code>help</code> for a list of **JDWP** commands.</p>
+  <h5>JDWP Commands</h5>
+  <p>Type <code>help</code> for a list of <b>JDWP</b> commands.</p>
 </div>
 
 {% highlight bash %}
