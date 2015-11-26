@@ -135,12 +135,12 @@ Unauthenticated JDWP is exposed:
 
 Research indicated it was possible to interrupt threads, with the command: <code>interupt</code> allowing for arbitrary code execution.  
 
-{% highlight bash %}
-
 <div class="note tip">
   <h5>Help</h5>
   <p>Type <code>help</code> for a list of **JDWP** commands.</p>
 </div>
+
+{% highlight bash %}
 
 [root]# jdb -attach 192.168.30.146:9001                                                                                                                                                 
 Set uncaught java.lang.Throwable
