@@ -137,6 +137,11 @@ Research indicated it was possible to interrupt threads, with the command: <code
 
 {% highlight bash %}
 
+<div class="note tip">
+  <h5>Help</h5>
+  <p>Type <code>help</code> for a list of **JDWP** commands.</p>
+</div>
+
 [root]# jdb -attach 192.168.30.146:9001                                                                                                                                                 
 Set uncaught java.lang.Throwable
 Set deferred uncaught java.lang.Throwable
