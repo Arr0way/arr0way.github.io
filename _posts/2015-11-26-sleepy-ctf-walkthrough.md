@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title: "/dev/random: Sleepy Walkthrough CTF"
-date: "2015-11-26 02:12:52 +0200"
+date: "2015-11-26 23:12:52 +0200"
 author: Arr0way
 categories: [walkthroughs]
 description: "/dev/random: Sleepy walkthrough - step by step walkthrough for Sleepy a VulnHub Boot2Root CTF challenge."
