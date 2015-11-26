@@ -269,17 +269,19 @@ Full tomcat-users.xml file for completeness:
 
 During enumeration JServ protocol was discovered exposed on the default port <code>TCP: 8009</code>. A local Apache proxy was setup on the attacking machine proxying requests back to the target JServ application server.
 
-Script for automation for JServ Proxy on Attacking machine:
+### Apache Tomcat Proxy Setup Script
+
+Script for automation of JServ Proxy on Attacking machine:
 
 {% highlight bash %}
 #!/bin/bash
-apt-get install libapache2-mod-jk -y
-sed -i 's#JkWorkersFile /etc/libapache2-mod-jk/workers.properties#JkWorkersFile /etc/apache2/workers.properties#g' /etc/apache2/mods-enabled/jk.conf
-cp /etc/libapache2-mod-jk/workers.properties /etc/apache2/
-sed -i 's#worker.ajp13_worker.host=localhost#worker.ajp13_worker.host=192.168.30.146#g' /etc/apache2/workers.properties
-sed  '/\Host\>/i JKMount /* ajp13_worker' /etc/apache2/sites-enabled/000-default.conf
-a2enmod proxy_http proxy_ajp
-service apache2 restart
+    apt-get install libapache2-mod-jk -y
+    sed -i 's#JkWorkersFile /etc/libapache2-mod-jk/workers.properties#JkWorkersFile /etc/apache2/workers.properties#g' /etc/apache2/mods-enabled/jk.conf
+    cp /etc/libapache2-mod-jk/workers.properties /etc/apache2/
+    sed -i 's#worker.ajp13_worker.host=localhost#worker.ajp13_worker.host=192.168.30.146#g' /etc/apache2/workers.properties
+    sed  '/\Host\>/i JKMount /* ajp13_worker' /etc/apache2/sites-enabled/000-default.conf
+    a2enmod proxy_http proxy_ajp
+    service apache2 restart
 {% endhighlight %}
 
 Tomcat should now be exposed with visiting <code>http://127.0.0.1</code> in **Firefox**.
