@@ -28,7 +28,7 @@ description: "/dev/random: Sleepy walkthrough - step by step walkthrough for Sle
 
 ##  Description
 
-**Sleepy** is part of the /dev/random: series created by Sagi-, it's a little more difficult than [Pipe](/blog/pipe-ctf-walkthrough/) depending on what you're skill set.
+**Sleepy** is part of the /dev/random: series created by Sagi-, it's a little more difficult than [Pipe](/blog/pipe-ctf-walkthrough/) depending on your skill set.
 
 **Author:** [@s4gi_ ](https://twitter.com/s4gi_ )
 
