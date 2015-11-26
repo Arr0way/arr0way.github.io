@@ -6,7 +6,7 @@ author: Arr0way
 description: 'Linux Command Cheat Sheet and examples for penetration testing.'
 categories: [Cheat-Sheet]
 tags:
-- 'Penetration Testing' 
+- 'Penetration Testing'
 - 'Enumeration'
 - 'Linux'
 ---
@@ -14,7 +14,7 @@ tags:
 * list element with functor item
 {:toc}
 
-A collection of hopefully useful Linux Commands for pen testers, this is not a complete list but a collection of commonly used commands + syntax as a sort of "cheatsheet", this content will be constantly updated as I discover new awesomeness. 
+A collection of hopefully useful Linux Commands for pen testers, this is not a complete list but a collection of commonly used commands + syntax as a sort of "cheatsheet", this content will be constantly updated as I discover new awesomeness.
 
 ## Linux Penetration Testing Commands
 
@@ -49,7 +49,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Watch TCP, UDP open ports in real time with socket summary. 
+          Watch TCP, UDP open ports in real time with socket summary.
 
         </p>
       </td>
@@ -84,7 +84,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Set IP address in Linux. 
+          Set IP address in Linux.
         </p>
       </td>
     </tr>
@@ -95,7 +95,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Add IP address to existing network interface in Linux. 
+          Add IP address to existing network interface in Linux.
 
         </p>
       </td>
@@ -131,7 +131,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Dig reverse lookup on an IP address. 
+          Dig reverse lookup on an IP address.
 
         </p>
       </td>
@@ -157,7 +157,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Perform a DNS zone transfer using dig. 
+          Perform a DNS zone transfer using dig.
 
         </p>
       </td>
@@ -170,7 +170,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Perform a DNS zone transfer using host. 
+          Perform a DNS zone transfer using host.
 
         </p>
       </td>
@@ -196,7 +196,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Adds a hidden IP address to Linux, does not show up when performing an ifconfig. 
+          Adds a hidden IP address to Linux, does not show up when performing an ifconfig.
 
         </p>
       </td>
@@ -209,7 +209,7 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Blocks access to google.com from the host machine. 
+          Blocks access to google.com from the host machine.
 
         </p>
       </td>
@@ -222,12 +222,12 @@ A collection of hopefully useful Linux Commands for pen testers, this is not a c
       <td>
         <p>
 
-          Enables IP forwarding, turns Linux box into a router - handy for routing traffic through a box. 
+          Enables IP forwarding, turns Linux box into a router - handy for routing traffic through a box.
 
         </p>
       </td>
     </tr>
- 
+
     <tr>
       <td>
         <p><code>echo "8.8.8.8" > /etc/resolv.conf</code></p>
@@ -267,7 +267,7 @@ Useful for local enumeration.
       <td>
         <p>
 
-          Shows currently logged in user on Linux. 
+          Shows currently logged in user on Linux.
 
         </p>
       </td>
@@ -280,7 +280,7 @@ Useful for local enumeration.
       <td>
         <p>
 
-          Shows currently logged in user and groups for the user. 
+          Shows currently logged in user and groups for the user.
 
         </p>
       </td>
@@ -293,7 +293,7 @@ Useful for local enumeration.
       <td>
         <p>
 
-          Shows last logged in users. 
+          Shows last logged in users.
 
         </p>
       </td>
@@ -319,7 +319,7 @@ Useful for local enumeration.
       <td>
         <p>
 
-          Shows disk usage in human readable output. 
+          Shows disk usage in human readable output.
 
         </p>
       </td>
@@ -345,7 +345,7 @@ Useful for local enumeration.
       <td>
         <p>
 
-          List users on Linux. 
+          List users on Linux.
 
         </p>
       </td>
@@ -426,7 +426,7 @@ Useful for local enumeration.
       <td>
         <p>
 
-          Shows Redhat / CentOS version number. 
+          Shows Redhat / CentOS version number.
 
         </p>
       </td>
@@ -461,7 +461,7 @@ Useful for local enumeration.
 
 #### YUM Commands
 
-Package manager used by RPM based systems, you can pull some usefull information about installed packages and or install additional tools. 
+Package manager used by RPM based systems, you can pull some usefull information about installed packages and or install additional tools.
 
 <div class="mobile-side-scroller">
 <table>
@@ -479,7 +479,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Update all RPM packages with YUM, also shows whats out of date. 
+          Update all RPM packages with YUM, also shows whats out of date.
 
         </p>
       </td>
@@ -516,7 +516,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Exclude a package from being updates with YUM. 
+          Exclude a package from being updates with YUM.
 
         </p>
       </td>
@@ -529,7 +529,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Remove package with YUM. 
+          Remove package with YUM.
 
         </p>
       </td>
@@ -555,7 +555,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Lists info about yum package. 
+          Lists info about yum package.
 
         </p>
       </td>
@@ -581,7 +581,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Shows package info, architecture, version etc. 
+          Shows package info, architecture, version etc.
 
         </p>
       </td>
@@ -594,7 +594,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Use YUM to install local RPM, settles deps from repo. 
+          Use YUM to install local RPM, settles deps from repo.
 
         </p>
       </td>
@@ -607,7 +607,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Shows deps for a package. 
+          Shows deps for a package.
 
         </p>
       </td>
@@ -658,7 +658,7 @@ Package manager used by RPM based systems, you can pull some usefull information
 
 
 
-#### Debian / Ubuntu / .deb Based Distros 
+#### Debian / Ubuntu / .deb Based Distros
 
 <div class="mobile-side-scroller">
 <table>
@@ -676,7 +676,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Shows Debian version number. 
+          Shows Debian version number.
 
         </p>
       </td>
@@ -688,7 +688,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Shows Ubuntu version number. 
+          Shows Ubuntu version number.
 
         </p>
       </td>
@@ -739,7 +739,7 @@ Package manager used by RPM based systems, you can pull some usefull information
       <td>
         <p>
 
-          Reset Linux user password, enter just <code>passwd</code> if you are root. 
+          Reset Linux user password, enter just <code>passwd</code> if you are root.
 
         </p>
       </td>
@@ -807,7 +807,7 @@ How to extract various archives (tar, zip, gzip, bzip2 etc) on Linux and some ot
       <td>
         <p>
 
-          Extract tar file Linux. 
+          Extract tar file Linux.
 
         </p>
       </td>
@@ -923,7 +923,7 @@ How to extract various archives (tar, zip, gzip, bzip2 etc) on Linux and some ot
       <td>
         <p>
 
-          UPX compress .exe file Linux. 
+          UPX compress .exe file Linux.
 
         </p>
       </td>
@@ -1042,7 +1042,7 @@ How to extract various archives (tar, zip, gzip, bzip2 etc) on Linux and some ot
       <td>
         <p>
 
-          Compare / Show differences between two files on Linux. 
+          Compare / Show differences between two files on Linux.
 
         </p>
       </td>
@@ -1054,7 +1054,7 @@ How to extract various archives (tar, zip, gzip, bzip2 etc) on Linux and some ot
       <td>
         <p>
 
-          Generate MD5SUM Linux. 
+          Generate MD5SUM Linux.
 
         </p>
       </td>
@@ -1067,7 +1067,7 @@ How to extract various archives (tar, zip, gzip, bzip2 etc) on Linux and some ot
       <td>
         <p>
 
-          Check file against MD5SUM on Linux, assuming both file and .md5 are in the same dir. 
+          Check file against MD5SUM on Linux, assuming both file and .md5 are in the same dir.
 
         </p>
       </td>
@@ -1079,7 +1079,7 @@ How to extract various archives (tar, zip, gzip, bzip2 etc) on Linux and some ot
       <td>
         <p>
 
-          Find out the type of file on Linux, also displaus if file is 32 or 64 bit. 
+          Find out the type of file on Linux, also displays if file is 32 or 64 bit.
 
         </p>
       </td>
@@ -1092,7 +1092,33 @@ How to extract various archives (tar, zip, gzip, bzip2 etc) on Linux and some ot
       <td>
         <p>
 
-          Convert Windows line endings to Unix / Linux. 
+          Convert Windows line endings to Unix / Linux.
+
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>base64 < input-file > output-file</code></p>
+      </td>
+      <td>
+        <p>
+
+          Base64 encodes input file and outputs a Base64 encoded file called output-file.
+
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>base64 -d < input-file > output-file</code></p>
+      </td>
+      <td>
+        <p>
+
+          Base64 decodes input file and outputs a Base64 decoded file called output-file.
 
         </p>
       </td>
@@ -1138,9 +1164,9 @@ $ mount -t cifs -o username=user,password=password //x.x.x.x/share /mnt/share
 
 ### Breaking Out of Limited Shells
 
-Credit to G0tmi1k for these (or wherever he stole them from!). 
+Credit to G0tmi1k for these (or wherever he stole them from!).
 
-The Python trick: 
+The Python trick:
 {% highlight python %}
 python -c 'import pty;pty.spawn("/bin/bash")'
 {% endhighlight %}
@@ -1183,7 +1209,7 @@ echo os.system('/bin/bash')
       <td>
         <p>
 
-          Compile C code. 
+          Compile C code.
 
         </p>
       </td>
@@ -1208,7 +1234,7 @@ echo os.system('/bin/bash')
       <td>
         <p>
 
-          Disable bash history logging. 
+          Disable bash history logging.
 
         </p>
       </td>
@@ -1247,7 +1273,7 @@ echo os.system('/bin/bash')
       <td>
         <p>
 
-          Change owner of file or dir. 
+          Change owner of file or dir.
 
         </p>
       </td>
@@ -1260,7 +1286,7 @@ echo os.system('/bin/bash')
       <td>
         <p>
 
-          Change owner of file or dir and all underlying files / dirs - recersive chown. 
+          Change owner of file or dir and all underlying files / dirs - recersive chown.
 
         </p>
       </td>
@@ -1282,6 +1308,7 @@ echo os.system('/bin/bash')
     </tbody>
 </table>
 </div>
+
 
 Clear bash history:
 
@@ -1345,7 +1372,7 @@ Clear bash history:
       <td>
         <p>
 
-          <code>rw-rw-rw-</code> All users can read and write but not execute. 
+          <code>rw-rw-rw-</code> All users can read and write but not execute.
 
         </p>
       </td>
@@ -1358,7 +1385,7 @@ Clear bash history:
       <td>
         <p>
 
-          <code>rw-r--r--</code> Owner can read and write, everyone else can read. 
+          <code>rw-r--r--</code> Owner can read and write, everyone else can read.
 
         </p>
       </td>
@@ -1371,7 +1398,7 @@ Clear bash history:
       <td>
         <p>
 
-          <code>rw-------</code> Owner can read and write, everyone else has no access. 
+          <code>rw-------</code> Owner can read and write, everyone else has no access.
 
         </p>
       </td>
@@ -1382,7 +1409,7 @@ Clear bash history:
 </table>
 </div>
 
-### Linux File System 
+### Linux File System
 
 <div class="mobile-side-scroller">
 <table>
@@ -1828,6 +1855,3 @@ Places that are worth a look if you are attempting to privilege escalate / perfo
   </tbody>
 </table>
 </div>
-
-
- 
