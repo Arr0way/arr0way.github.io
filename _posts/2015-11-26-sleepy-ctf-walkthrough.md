@@ -289,7 +289,7 @@ Script for automation of JServ Proxy on Attacking machine:
     service apache2 restart
 {% endhighlight %}
 
-Tomcat should now be exposed with visiting <code>http://127.0.0.1</code> in **Firefox**.
+Tomcat should be exposed when visiting <code>http://127.0.0.1</code> in **Firefox**.
 
 ![Tomcat JServ Apache Proxy](/img/blog/sleepy/tomcat-jserv-apache-proxy.png)
 
