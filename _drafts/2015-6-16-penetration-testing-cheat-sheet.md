@@ -4,7 +4,7 @@ title:  "Penetration Testing Cheat Sheet"
 date:   2015-06-16 23:22:10
 author: Arr0way
 description: 'Penetration testing cheat sheet, a quick reference sheet for penetration testing or pen testing exams.'
-categories: [Cheat-Sheet]
+categories: [cheat-sheet]
 tags:
 - Windows
 - SMB
@@ -137,7 +137,7 @@ Enumerate Windows shares / Samba shares.
 </table>
 </div>
 
-### Misc Stuffs 
+### Misc Stuffs
 
 <div class="mobile-side-scroller">
 <table>

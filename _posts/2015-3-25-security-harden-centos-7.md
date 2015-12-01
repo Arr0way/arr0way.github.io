@@ -3,7 +3,7 @@ layout: blog_item
 title:  "Security Harden CentOS 7"
 date:   2015-03-25 00:52:10
 author: Arr0way
-categories: [Security-Hardening] 
+categories: [security-hardening] 
 ---
 
 ![OpenSCAP Guide - Securing CentOS 7](http://i.imgur.com/z6hxOZG.png)
@@ -16,35 +16,35 @@ categories: [Security-Hardening]
 
 This HowTo walks you through the steps required to **security harden CentOS 7**, it's based on the [OpenSCAP](http://www.open-scap.org/page/Main_Page) benchmark, unfortunately the current version of OpenSCAP that ships with CentOS does not offically support CentOS CPE's. But there is a "workaround" that will allow OpenSCAP + OpenSCAP workbench to run on CentOS, I'll document this in a separate post.  
 
-## Based on a Minimal Install 
+## Based on a Minimal Install
 
-To follow this guide you will need a minimal CentOS 7 install, ideally using the Kickstart file below or copying it's partition layout. Installing CentOS 7 using a minimal installation reduces the attack surface and ensures you *only install software that you require*. 
+To follow this guide you will need a minimal CentOS 7 install, ideally using the Kickstart file below or copying it's partition layout. Installing CentOS 7 using a minimal installation reduces the attack surface and ensures you *only install software that you require*.
 
-This guide only covers the base system + SSH hardening, I will document specific service hardening separately such as HTTPD, SFTP, LDAP, BIND etc... 
+This guide only covers the base system + SSH hardening, I will document specific service hardening separately such as HTTPD, SFTP, LDAP, BIND etc...
 
-In the section related to removing unrequired services, if you installed a minimal centos 7 install, you'll likely have nothing to remove or disable - I've included this section for completeness. 
+In the section related to removing unrequired services, if you installed a minimal centos 7 install, you'll likely have nothing to remove or disable - I've included this section for completeness.
 
 
-## Issues with Security Hardening 
+## Issues with Security Hardening
 
-After hardening a system you may run into issues, hardening a system will make it more restrictive, especially SELinux or filesystem related permission hardening. When hardening a system for a specific task I recommend creating a duplicate virtual machine you can use for troubleshooting should you run into a issue that you *think* is related to security hardening, you'll be able to confirm by running it on the Vanilla system. 
+After hardening a system you may run into issues, hardening a system will make it more restrictive, especially SELinux or filesystem related permission hardening. When hardening a system for a specific task I recommend creating a duplicate virtual machine you can use for troubleshooting should you run into a issue that you *think* is related to security hardening, you'll be able to confirm by running it on the Vanilla system.
 
-Obviously **don't expose the Vanilla (un-hardened) system to the network!** 
+Obviously **don't expose the Vanilla (un-hardened) system to the network!**
 
-## Why use OpenSCAP ? 
+## Why use OpenSCAP ?
 
 After a lot of research I decided to use OpenSCAP over other security hardening benchmarks / guides, here is my reasoning for doing so:
 
 - It's open, free and actively worked on
-- It has an audit tool, essential to verify each system 
+- It has an audit tool, essential to verify each system
 - OpenSCAP has a GUI called, workbench
 - OpenSCAP Workbench supports remote audits via SSH
-- OpenSCAP Workbench allows you to customize your scan, should you not agree with all hardening checks 
+- OpenSCAP Workbench allows you to customize your scan, should you not agree with all hardening checks
 
-If you don't get on with workbench or auditing from the command line, Nessus has functionality for authenticated SCAP scans. 
+If you don't get on with workbench or auditing from the command line, Nessus has functionality for authenticated SCAP scans.
 
 
-## Kickstart 
+## Kickstart
 
 I've provided the following RHEL kickstart file below, it's a minimal install with a heavy partition scheme, allowing for stricter mount options.  
 
@@ -103,7 +103,7 @@ logvol /var/www  --fstype="xfs" --size=5000 --name=lv_var_www --vgname=lg_data
 logvol /var  --fstype="xfs" --size=1000 --name=lv_var --vgname=lg_os
 logvol /var/log  --fstype="xfs" --size=1500 --name=lv_var_log --vgname=lg_os
 logvol /var/log/audit  --fstype="xfs" --size=500 --name=lv_var_log_audit --vgname=lg_os
-logvol /var/tmp  --fstype="ext4" --size=500 --name=lv_var_tmp --vgname=lg_os 
+logvol /var/tmp  --fstype="ext4" --size=500 --name=lv_var_tmp --vgname=lg_os
 logvol swap  --fstype="swap" --size=1000 --name=lv_swap --vgname=lg_data
 
 %packages
@@ -115,13 +115,13 @@ logvol swap  --fstype="swap" --size=1000 --name=lv_swap --vgname=lg_data
 
 {% endhighlight %}
 
-## Secure Partition Mount Options 
+## Secure Partition Mount Options
 
-Your millage will vary here, for example if you have a website that uses cgi-bin executables you won't be able to use the **noexec** mount options, but you can and should use it on /tmp and /var/tmp as this is typically the first place an attacker will attempt to write and execute from when performing privilege escalation. 
+Your millage will vary here, for example if you have a website that uses cgi-bin executables you won't be able to use the **noexec** mount options, but you can and should use it on /tmp and /var/tmp as this is typically the first place an attacker will attempt to write and execute from when performing privilege escalation.
 
-Your /etc/fstab file should look something like: 
+Your /etc/fstab file should look something like:
 
-{% highlight bash %} 
+{% highlight bash %}
 
 #
 # /etc/fstab
@@ -141,7 +141,7 @@ UUID=d73c5d22-75ed-416e-aad2-8c1bb1dfc713 /boot                   ext4    defaul
 /dev/mapper/lg_data-lv_var_www /var/www                xfs     defaults,nosuid,noexec,nodev        1 2
 /dev/mapper/lg_data-lv_swap swap                    swap    defaults        0 0
 
-{% endhighlight %} 
+{% endhighlight %}
 
 
 ## Install NTP
@@ -153,13 +153,13 @@ yum install ntp ntpdate
 chkconfig ntpd on
 ntpdate pool.ntp.org
 /etc/init.d/ntpd start
-{% endhighlight %} 
+{% endhighlight %}
 
 ## Configure System for AIDE
 
 Pre-linking binaries (arguably) improved execution time, however this cause issues with AIDE, so it must be disabled.
 
-Open /etc/sysconfig/prelink and make sure the line <code>Set PRELINKING=no</code> is present, if you're writing a script: 
+Open /etc/sysconfig/prelink and make sure the line <code>Set PRELINKING=no</code> is present, if you're writing a script:
 
 {% highlight bash %}
 # Disable prelinking altogether
@@ -173,7 +173,7 @@ else
 fi
 {% endhighlight %}
 
-Disable previous prelink changes to binaries: 
+Disable previous prelink changes to binaries:
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -194,7 +194,7 @@ Install AIDE - Advanced Intrusion Detection Environment
 
 {% highlight bash %}
 
-yum install aide -y && /usr/sbin/aide --init && cp /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz && /usr/sbin/aide --check 
+yum install aide -y && /usr/sbin/aide --init && cp /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz && /usr/sbin/aide --check
 
 {% endhighlight %}
 
@@ -210,15 +210,15 @@ echo "05 4 * * * root /usr/sbin/aide --check" >> /etc/crontab
 echo "install usb-storage /bin/false" > /etc/modprobe.d/usb-storage.conf
 {% endhighlight %}
 
-## Enable Secure (high quality) Password Policy 
+## Enable Secure (high quality) Password Policy
 
 The following command will Enable **SHA512** instead of using *MD5*:
 
 {% highlight bash %}
 authconfig --passalgo=sha512 —update
 {% endhighlight %}
- 
-<code>vi /etc/security/psquality.conf</code> 
+
+<code>vi /etc/security/psquality.conf</code>
 
 {% highlight bash %}
 
@@ -277,9 +277,9 @@ gecoscheck = 1
 
 ## Secure /etc/login.defs Pasword Policy
 
-Add the following to <code>/etc/login.defs</code> 
+Add the following to <code>/etc/login.defs</code>
 
-{% highlight bash %} 
+{% highlight bash %}
 PASS_MIN_LEN 14
 PASS_MIN_DAYS 1
 PASS_MAX_DAYS 60
@@ -287,19 +287,19 @@ PASS_MAX_DAYS 60
 
 ## Set Last Logon/Access Notification
 
-Open <code>/etc/pam.d/system-auth</code> and add the following line immediately after session required pam_limits.so: 
+Open <code>/etc/pam.d/system-auth</code> and add the following line immediately after session required pam_limits.so:
 
-<code>session       required     pam_lastlog.so showfailed</code> 
+<code>session       required     pam_lastlog.so showfailed</code>
 
-## Max Password Login Attempts per Session 
+## Max Password Login Attempts per Session
 
-Set the amount of password reprompts per session, by editing the <code>pam_pwquality.so</code> statement in <code>/etc/pam.d/system-auth</code> to <code>retry=3</code> or lower. 
+Set the amount of password reprompts per session, by editing the <code>pam_pwquality.so</code> statement in <code>/etc/pam.d/system-auth</code> to <code>retry=3</code> or lower.
 
 ## Set Deny For Failed Password Attempts
 
-Blocks logins for failed authentication on accounts. 
+Blocks logins for failed authentication on accounts.
 
-Add the following lines immediately below the <code>pam_unix.so</code> statement in AUTH section of both <code>/etc/pam.d/system-auth</code> and <code>/etc/pam.d/password-auth</code>: 
+Add the following lines immediately below the <code>pam_unix.so</code> statement in AUTH section of both <code>/etc/pam.d/system-auth</code> and <code>/etc/pam.d/password-auth</code>:
 
 {% highlight bash%}
 auth [default=die] pam_faillock.so authfail deny=3 unlock_time=604800 fail_interval=900
@@ -309,7 +309,7 @@ auth required pam_faillock.so authsucc deny=3 unlock_time=604800 fail_interval=9
 
 ## Limit Password Reuse
 
-Open /etc/pam.d/system-auth, append remember=24 to the pam_unix.so line - preventing users from reusing passwords, remembering 24 times is the DoD standard. 
+Open /etc/pam.d/system-auth, append remember=24 to the pam_unix.so line - preventing users from reusing passwords, remembering 24 times is the DoD standard.
 
 The line should look like:
 
@@ -325,11 +325,11 @@ Set grub.conf to chmod 600:
 sudo chmod 600/boot/grub2/grub.cfg
 {% endhighlight %}
 
-## Set Boot Loader Password 
+## Set Boot Loader Password
 
 The grub2 boot loader should have a superuser account and password protection enabled to protect boot-time settings.
 
-To do so, select a superuser account and password and add them into the appropriate grub2 configuration file(s) under /etc/grub.d. Since plaintext passwords are a security risk, generate a hash for the pasword by running the following command: 
+To do so, select a superuser account and password and add them into the appropriate grub2 configuration file(s) under /etc/grub.d. Since plaintext passwords are a security risk, generate a hash for the pasword by running the following command:
 
 {% highlight bash %}
 grub2-mkpasswd-pbkdf2
@@ -338,7 +338,7 @@ grub2-mkpasswd-pbkdf2
 When prompted, enter the password that was selected and insert the returned password hash into the appropriate grub2 configuration file(s) under /etc/grub.d immediately after the superuser account. (Use the output from grub2-mkpasswd-pbkdf2 as the value of password-hash):
 
 {% highlight bash %}
-password_pbkdf2 superusers-accountpassword-hash 
+password_pbkdf2 superusers-accountpassword-hash
 {% endhighlight %}
 
 <div class="note tip">
@@ -357,15 +357,15 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 ## Require Authentication for Single User Mode
 
-Require root password when entering single user mode, open <code>/etc/sysconfig/init</code> and add the line: 
+Require root password when entering single user mode, open <code>/etc/sysconfig/init</code> and add the line:
 
 {% highlight bash %}
 SINGLE=/sbin/sulogin
 {% endhighlight %}
 
-## Disable Ctrl-Alt-Del Reboot Activation 
+## Disable Ctrl-Alt-Del Reboot Activation
 
-Prevernt ALT+CTRL+DEL from rebooting. 
+Prevernt ALT+CTRL+DEL from rebooting.
 
 Open <code>/etc/init/control-alt-delete.conf</code> and modify the existing line:
 
@@ -379,9 +379,9 @@ To:
 exec /usr/bin/logger -p security.info "Control-Alt-Delete pressed"
 {% endhighlight %}
 
-## Enable Console Screen Locking 
+## Enable Console Screen Locking
 
-Install the screen Package to allow console screen locking. 
+Install the screen Package to allow console screen locking.
 
 {% highlight bash %}
 sudo yum install screen
@@ -401,7 +401,7 @@ echo "NOZEROCONF=yes" >> /etc/sysconfig/network
 
 ## Disable IPv6 Support Automatically Loading
 
-Open <code>/etc/modprobe.d/disabled.conf</code> and add the line: 
+Open <code>/etc/modprobe.d/disabled.conf</code> and add the line:
 
 {% highlight bash %}
 options ipv6 disable=1
@@ -409,7 +409,7 @@ options ipv6 disable=1
 
 ## Disable Interface Usage of IPv6
 
-Add the following to <code>/etc/sysconfig/network</code> 
+Add the following to <code>/etc/sysconfig/network</code>
 
 {% highlight bash %}
 NETWORKING_IPV6=no
@@ -418,7 +418,7 @@ IPV6INIT=no
 
 ## Disable Support for RPC IPv6
 
-RPC services like NFSv4 attempt to start using IPv6 even if it's disabled in <code>/etc/modprobe.d</code>. To prevent this behaviour open <code>/etc/netconfig</code> and comment the following lines: 
+RPC services like NFSv4 attempt to start using IPv6 even if it's disabled in <code>/etc/modprobe.d</code>. To prevent this behaviour open <code>/etc/netconfig</code> and comment the following lines:
 
 {% highlight bash %}
 udp6       tpi_clts      v     inet6    udp     -       -
@@ -428,9 +428,9 @@ tcp6       tpi_cots_ord  v     inet6    tcp     -       -
 
 ## Securing root Logins
 
-Only allow root logins via local terminal: 
+Only allow root logins via local terminal:
 
-{% highlight bash %} 
+{% highlight bash %}
 echo "tty1" > /etc/securetty
 chmod 700 /root
 {% endhighlight %}
@@ -444,7 +444,7 @@ perl -npe 's/umask\s+0\d2/umask 077/g' -i /etc/bashrc
 perl -npe 's/umask\s+0\d2/umask 077/g' -i /etc/csh.cshrc
 {% endhighlight %}
 
-## Prune Idle Users 
+## Prune Idle Users
 
 {% highlight bash %}
 echo "Idle users will be removed after 15 minutes"
@@ -453,7 +453,7 @@ echo "readonly HISTFILE" >> /etc/profile.d/os-security.sh
 chmod +x /etc/profile.d/os-security.sh
 {% endhighlight %}
 
-## Securing Cron 
+## Securing Cron
 
 {% highlight bash %}
 echo "Locking down Cron"
@@ -466,9 +466,9 @@ chmod 600 /etc/at.allow
 awk -F: '{print $1}' /etc/passwd | grep -v root > /etc/at.deny
 {% endhighlight %}
 
-## Sysctl Security 
+## Sysctl Security
 
-<code>/etc/sysctl.conf</code> 
+<code>/etc/sysctl.conf</code>
 
 {% highlight bash %}
 net.ipv4.ip_forward = 0
@@ -491,11 +491,11 @@ net.ipv4.conf.default.rp_filter = 1
 net.ipv4.tcp_timestamps = 0
 {% endhighlight %}
 
-## Deny All TCP Wrappers 
+## Deny All TCP Wrappers
 
-TCP wrappers can provide a quick and easy method for controlling access to applications linked to them. Examples of TCP Wrapper aware applications are sshd, and portmap. 
+TCP wrappers can provide a quick and easy method for controlling access to applications linked to them. Examples of TCP Wrapper aware applications are sshd, and portmap.
 
-Below commands block all but SSH: 
+Below commands block all but SSH:
 
 {% highlight bash %}
 echo "ALL:ALL" >> /etc/hosts.deny
@@ -504,7 +504,7 @@ echo "sshd:ALL" >> /etc/hosts.allow
 
 ## Basic iptables Firewall Rules
 
-Basic iptables Firewall rules, set to denyall as the default. 
+Basic iptables Firewall rules, set to denyall as the default.
 
 {% highlight bash %}
 #Drop anything we aren't explicitly allowing. All outbound traffic is okay
@@ -548,15 +548,15 @@ systemctl start iptables.service
 {% endhighlight %}
 
 
-## Disable Uncommon Protocols 
+## Disable Uncommon Protocols
 
 
-The following Protocols will be disabled: 
+The following Protocols will be disabled:
 
-- Datagram Congestion Control Protocol (DCCP) 
+- Datagram Congestion Control Protocol (DCCP)
 - Stream Control Transmission Protocol (SCTP)
 - Reliable Datagram Sockets (RDS)
-- Transparent Inter-Process Communication (TIPC) 
+- Transparent Inter-Process Communication (TIPC)
 
 {% highlight bash %}
 echo "install dccp /bin/false" > /etc/modprobe.d/dccp.conf
@@ -565,7 +565,7 @@ echo "install rds /bin/false" > /etc/modprobe.d/rds.conf
 echo "install tipc /bin/false" > /etc/modprobe.d/tipc.conf
 {% endhighlight %}
 
-## Ensure Rsyslog is installed 
+## Ensure Rsyslog is installed
 
 {% highlight bash %}
 yum -y install rsyslog
@@ -590,9 +590,9 @@ systemctl start auditd.service
 
 ### Audit Processes Which Start Prior to auditd
 
-Audit process which start before the Audit Daemon. 
+Audit process which start before the Audit Daemon.
 
-Add the following line to <code>/etc/grub.conf</code>: 
+Add the following line to <code>/etc/grub.conf</code>:
 
 {% highlight bash %}
 kernel /vmlinuz-version ro vga=ext root=/dev/VolGroup00/LogVol00 rhgb quiet audit=1
@@ -606,7 +606,7 @@ Open <code>/etc/audit/auditd.conf</code> and add or modify:
 num_logs = 5
 {% endhighlight %}
 
-### Auditd Max Log File Size 
+### Auditd Max Log File Size
 
 {% highlight bash %}
 max_log_file = 30MB
@@ -614,7 +614,7 @@ max_log_file = 30MB
 
 ### Auditd max_log_file_action
 
-Open <code>/etc/audit/auditd.conf</code> and set this to rotate. 
+Open <code>/etc/audit/auditd.conf</code> and set this to rotate.
 
 {% highlight bash %}
 max_log_file_action = rotate
@@ -626,14 +626,14 @@ max_log_file_action = rotate
 Configure auditd to email you when space gets low, open <code>/etc/audit/auditd.conf</code> and modify the following:
 
 {% highlight bash %}
-space_left_action = email 
+space_left_action = email
 {% endhighlight %}
 
 ### Auditd admin_space_left
 
-Configure auditd to halt when auditd log space is used up, forcing the system admin to rectify the space issue. 
+Configure auditd to halt when auditd log space is used up, forcing the system admin to rectify the space issue.
 
-On some systems where monitoring is less important another action could be leveraged. 
+On some systems where monitoring is less important another action could be leveraged.
 
 {% highlight bash %}
 admin_space_left_action = halt
@@ -641,15 +641,15 @@ admin_space_left_action = halt
 
 ### Auditd mail_acct
 
-When space gets low auditd can send a email notification via email, to configure this and the following line to <code>/etc/audit/auditd.conf</code>: 
+When space gets low auditd can send a email notification via email, to configure this and the following line to <code>/etc/audit/auditd.conf</code>:
 
 {% highlight bash %}
 action_mail_acct = root
-{% endhighlight %} 
+{% endhighlight %}
 
 ### Configure auditd to use audispd plugin
 
-Auditd does not have the functionality to send logs directly to an external log server, however the audispd plugin pass audit records to the local syslog server, to enable this open <code>/etc/audisp/plugins.d/syslog.conf</code> and set the active line to yes, then restart audispd daemon: 
+Auditd does not have the functionality to send logs directly to an external log server, however the audispd plugin pass audit records to the local syslog server, to enable this open <code>/etc/audisp/plugins.d/syslog.conf</code> and set the active line to yes, then restart audispd daemon:
 
 {% highlight bash %}
 sudo service auditd restart
@@ -657,7 +657,7 @@ sudo service auditd restart
 
 ### Auditd Rules: /etc/audit/audit.rules
 
-Open <code>/etc/audit/audit.rules</code> and add the following lines to monitor various system files and activities: 
+Open <code>/etc/audit/audit.rules</code> and add the following lines to monitor various system files and activities:
 
 {% highlight bash %}
 # audit_time_rules - Record attempts to alter time through adjtime
@@ -667,7 +667,7 @@ Open <code>/etc/audit/audit.rules</code> and add the following lines to monitor 
 -a always,exit -F arch=b64 -S settimeofday -k audit_time_rules
 
 # audit_time_rules - Record Attempts to Alter Time Through stime
--a always,exit -F arch=b64 -S adjtimex -S settimeofday -S clock_settime 
+-a always,exit -F arch=b64 -S adjtimex -S settimeofday -S clock_settime
 -k audit_time_rules
 
 # audit_time_rules - Record Attempts to Alter Time Through clock_settime
@@ -769,7 +769,7 @@ Open <code>/etc/audit/audit.rules</code> and add the following lines to monitor 
 -a always,exit -F arch=b64 -S setxattr -F auid>=500 -F auid!=4294967295 -k perm_mod
 
 #Record Attempts to Alter Logon and Logout Events
--w /var/log/faillog -p wa -k logins 
+-w /var/log/faillog -p wa -k logins
 -w /var/log/lastlog -p wa -k logins
 
 #Record Attempts to Alter Process and Session Initiation Information
@@ -785,7 +785,7 @@ Open <code>/etc/audit/audit.rules</code> and add the following lines to monitor 
 
 #Ensure auditd Collects Information on the Use of Privileged Commands
 #
-#  Find setuid / setgid programs then modify and uncomment the line below. 
+#  Find setuid / setgid programs then modify and uncomment the line below.
 #
 ##  sudo find / -xdev -type f -perm -4000 -o -perm -2000 2>/dev/null
 #
@@ -797,21 +797,21 @@ Open <code>/etc/audit/audit.rules</code> and add the following lines to monitor 
 #Ensure auditd Collects File Deletion Events by User
 -a always,exit -F arch=ARCH -S rmdir -S unlink -S unlinkat -S rename -S renameat -F auid>=500 -F auid!=4294967295 -k delete
 
-#Ensure auditd Collects System Administrator Actions 
+#Ensure auditd Collects System Administrator Actions
 -w /etc/sudoers -p wa -k actions
 
-#Ensure auditd Collects Information on Kernel Module Loading and Unloading 
+#Ensure auditd Collects Information on Kernel Module Loading and Unloading
 -w /sbin/insmod -p x -k modules
 -w /sbin/rmmod -p x -k modules
 -w /sbin/modprobe -p x -k modules
 -a always,exit -F arch=b64 -S init_module -S delete_module -k modules
 
-#Make the auditd Configuration Immutable 
+#Make the auditd Configuration Immutable
 -e 2
 {% endhighlight %}
 
 
-##Removal of Unrequired Services 
+##Removal of Unrequired Services
 
 The section outlines software that should be removed, instruction for disabling the service is also documented.  
 
@@ -884,7 +884,7 @@ systemctl disable snmpd
 
 Disable rpcgssd:
 
-The rpcgssd service manages RPCSEC GSS contexts required to secure protocols that use RPC (most often Kerberos and NFS). The rpcgssd service is the client-side of RPCSEC GSS. If the system does not require secure RPC then this service should be disabled. The rpcgssd service can be disabled with the following command: 
+The rpcgssd service manages RPCSEC GSS contexts required to secure protocols that use RPC (most often Kerberos and NFS). The rpcgssd service is the client-side of RPCSEC GSS. If the system does not require secure RPC then this service should be disabled. The rpcgssd service can be disabled with the following command:
 
 {% highlight bash %}
 systemctl disable rpcgssd
@@ -910,7 +910,7 @@ systemctl disable rpcidmapd
 
 ### Disable Network File Systems (netfs)
 
-The netfs script manages the boot-time mounting of several types of networked filesystems, of which NFS and Samba are the most common. If these filesystem types are not in use, the script can be disabled, protecting the system somewhat against accidental or malicious changes to /etc/fstab and against flaws in the netfs script itself. The netfs service can be disabled with the following command: 
+The netfs script manages the boot-time mounting of several types of networked filesystems, of which NFS and Samba are the most common. If these filesystem types are not in use, the script can be disabled, protecting the system somewhat against accidental or malicious changes to /etc/fstab and against flaws in the netfs script itself. The netfs service can be disabled with the following command:
 
 {% highlight bash %}
 sudo systemctl disable netfs
@@ -923,7 +923,7 @@ sudo systemctl disable netfs
 systemctl disable nfs
 {% endhighlight %}
 
-### If you don't need SSH disable it 
+### If you don't need SSH disable it
 
 {% highlight bash %}
 systemctl disable sshd
@@ -931,8 +931,8 @@ systemctl disable sshd
 
 
 ### Disable SSH iptables Firewall rule
- 
-Only do this if you don't need SSH. 
+
+Only do this if you don't need SSH.
 
 {% highlight bash %}
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
@@ -953,15 +953,15 @@ rm ~/.rhosts
 
 ### Disable Avahi Server Software
 
-The avahi-daemon service can be disabled with the following command: 
+The avahi-daemon service can be disabled with the following command:
 
 {% highlight bash %}
 systemctl disable avahi-daemon
 {% endhighlight %}
 
-### Disable the CUPS Service 
+### Disable the CUPS Service
 
-If you don't need CUPS, disable it to further reduce your attack surface: 
+If you don't need CUPS, disable it to further reduce your attack surface:
 
 {% highlight bash %}
 systemctl disable cups
@@ -977,7 +977,7 @@ systemctl disable dhcpd
 
 ### Uninstall DHCP Server Package
 
-If you don't need a DHCP client, remove it: 
+If you don't need a DHCP client, remove it:
 
 {% highlight bash %}
 yum erase dhcp
@@ -985,9 +985,9 @@ yum erase dhcp
 
 ### Disable DHCP Client
 
-Open <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> (if you have more interfaces, do this for each one) and make sure the address is statically assigned with the BOOTPROTO=none 
+Open <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> (if you have more interfaces, do this for each one) and make sure the address is statically assigned with the BOOTPROTO=none
 
-Example: 
+Example:
 
 {% highlight bash %}
 BOOTPROTO=none
@@ -995,41 +995,41 @@ BOOTPROTO=none
 NETMASK=255.255.255.0
 IPADDR=192.168.1.2
 GATEWAY=192.168.1.1
-{% endhighlight %} 
+{% endhighlight %}
 
 ### Specify Additional Remote NTP Servers
 
-Open <code>/etc/ntp.conf</code> and add the following line: 
+Open <code>/etc/ntp.conf</code> and add the following line:
 
 {% highlight bash %}
 server ntpserver
 {% endhighlight %}
 
-Use an internal NTP server if possible. 
+Use an internal NTP server if possible.
 
-### Enable Postfix 
+### Enable Postfix
 
 {% highlight bash %}
 systemctl enable postfix
 {% endhighlight %}
 
-### Remove Sendmail 
+### Remove Sendmail
 
 {% highlight bash %}
-yum remove sendmail 
+yum remove sendmail
 {% endhighlight %}
 
-### Postfix Disable Network Listening 
+### Postfix Disable Network Listening
 
-Open, <code>/etc/postfix/main.cf</code> and ensure the following inet_interfaces line appears: 
+Open, <code>/etc/postfix/main.cf</code> and ensure the following inet_interfaces line appears:
 
 {% highlight bash %}
 inet_interfaces = localhost
 {% endhighlight %}
 
-### Configure SMTP Greeting Banner 
+### Configure SMTP Greeting Banner
 
-Change the greeting banner, the default banner discloses the SMTP server is Postfix. 
+Change the greeting banner, the default banner discloses the SMTP server is Postfix.
 
 
 ### Disable xinetd Service
@@ -1038,9 +1038,9 @@ Change the greeting banner, the default banner discloses the SMTP server is Post
 sudo systemctl disable xinetd
 {% endhighlight %}
 
-### System Audit Logs Permissions 
+### System Audit Logs Permissions
 
-System audit logs must have 0640 or less permissions set. 
+System audit logs must have 0640 or less permissions set.
 
 {% highlight bash %}
 sudo chmod 0640 audit_file
@@ -1052,14 +1052,14 @@ sudo chmod 0640 audit_file
 sudo chown root/var/log
 {% endhighlight %}
 
-### Disable autofs 
+### Disable autofs
 
 {% highlight bash %}
 chkconfig --level 0123456 autofs off
-service autofs stop 
+service autofs stop
 {% endhighlight %}
 
-## Disable uncommon filesystems 
+## Disable uncommon filesystems
 
 {% highlight bash %}
 echo "install cramfs /bin/false" > /etc/modprobe.d/cramfs.conf
@@ -1073,14 +1073,14 @@ echo "install udf /bin/false" > /etc/modprobe.d/udf.conf
 
 ## Disable core dumps for all users
 
-<code>vi /etc/security/limits.conf</code> 
+<code>vi /etc/security/limits.conf</code>
 {% highlight bash %}
 * hard core 0
-{% endhighlight %} 
+{% endhighlight %}
 
 ## Disable core dumps for SUID programs
 
-Run <code>sysctl -w fs.suid_dumpable=0</code> and <code>fs.suid_dumpable = 0</code>. 
+Run <code>sysctl -w fs.suid_dumpable=0</code> and <code>fs.suid_dumpable = 0</code>.
 
 {% highlight bash %}
 # Set runtime for fs.suid_dumpable
@@ -1098,17 +1098,17 @@ else
      echo "# Set fs.suid_dumpable to 0 per security requirements" >> /etc/sysctl.conf
      echo "fs.suid_dumpable = 0" >> /etc/sysctl.conf
 fi
-{% endhighlight %} 
+{% endhighlight %}
 
-## Buffer Overflow Protection 
+## Buffer Overflow Protection
 
-This section helps mitigate against Buffer Overflow attacks (BOF). 
+This section helps mitigate against Buffer Overflow attacks (BOF).
 
-### Enable ExecShield 
+### Enable ExecShield
 
-Helps prevent stack smashing / BOF. 
+Helps prevent stack smashing / BOF.
 
-Enable on current kernel: <code>sysctl -w kernel.exec-shield=1</code> 
+Enable on current kernel: <code>sysctl -w kernel.exec-shield=1</code>
 
 Add to /etc/sysctl.conf:  
 
@@ -1118,15 +1118,15 @@ kernel.exec-shield = 1
 
 ### Check / Enable ASLR
 
-Set runtime for kernel.randomize_va_space <code>sysctl -q -n -w kernel.randomize_va_space=2</code> 
+Set runtime for kernel.randomize_va_space <code>sysctl -q -n -w kernel.randomize_va_space=2</code>
 
 Add <code>kernel.randomize_va_space = 2</code> to /etc/sysctl.conf if it does not already exist.
 
-### Enable XD or NX Support on x86 Systems 
+### Enable XD or NX Support on x86 Systems
 
-Recent processors in the x86 family support the ability to prevent code execution on a per memory page basis. Generically and on AMD processors, this ability is called **No Execute (NX)**, while on Intel processors it is called **Execute Disable (XD)**. This ability can help prevent exploitation of buffer overflow vulnerabilities and should be activated whenever possible. Extra steps must be taken to ensure that this protection is enabled, particularly on 32-bit x86 systems. Other processors, such as Itanium and POWER, have included such support since inception and the standard kernel for those platforms supports the feature. 
+Recent processors in the x86 family support the ability to prevent code execution on a per memory page basis. Generically and on AMD processors, this ability is called **No Execute (NX)**, while on Intel processors it is called **Execute Disable (XD)**. This ability can help prevent exploitation of buffer overflow vulnerabilities and should be activated whenever possible. Extra steps must be taken to ensure that this protection is enabled, particularly on 32-bit x86 systems. Other processors, such as Itanium and POWER, have included such support since inception and the standard kernel for those platforms supports the feature.
 
-Check bios and ensure XD/NX is enabled, not relevant for VM’s. 
+Check bios and ensure XD/NX is enabled, not relevant for VM’s.
 
 ## SELinux
 
@@ -1137,9 +1137,9 @@ sed -i "s/selinux=0//gI" /etc/grub.conf
 sed -i "s/enforcing=0//gI" /etc/grub.conf
 {% endhighlight %}
 
-### SELinux Targeted / Enforcing 
+### SELinux Targeted / Enforcing
 
-Open /etc/selinux/config and check for <code>SELINUXTYPE=targeted</code> or <code>SELINUXTYPE=enforcing</code>, depending on your requirements. 
+Open /etc/selinux/config and check for <code>SELINUXTYPE=targeted</code> or <code>SELINUXTYPE=enforcing</code>, depending on your requirements.
 
 ### Enable the SELinux restorecond Service
 
@@ -1155,13 +1155,13 @@ Start restorecond if not currently running:
 <code>service restorecond start</code>
 
 ### Check no daemons are unconfined by SELinux
-Run: 
+Run:
 
 {% highlight bash %}
 sudo ps -eZ | egrep "initrc" | egrep -vw "tr|ps|egrep|bash|awk" | tr ':' ' ' | awk '{ print $NF }’
 {% endhighlight %}
 
-This should return no output. 
+This should return no output.
 
 ## Prevent Log In to Accounts With Empty Password
 
@@ -1170,7 +1170,7 @@ sed -i 's/\<nullok\>//g' /etc/pam.d/system-auth
 {% endhighlight %}
 
 
-## Secure SSH 
+## Secure SSH
 
 ### Allow Only SSH Protocol 2
 
@@ -1255,7 +1255,7 @@ Limit the ciphers to those algorithms which are FIPS-approved. Counter (CTR) mod
 Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc
 {% endhighlight %}
 
-## Secure X Windows 
+## Secure X Windows
 
 ### Disable X Windows Startup By Setting Runlevel
 
@@ -1280,8 +1280,8 @@ yum -y install yum-cron
 chkconfig yum-cron on
 {% endhighlight %}
 
-Make sure yum-cron is set to "check only", I don't recommend installing updates automatically. 
+Make sure yum-cron is set to "check only", I don't recommend installing updates automatically.
 
-If this was helpfull, click tweet below. 
+If this was helpfull, click tweet below.
 
 Enjoy.

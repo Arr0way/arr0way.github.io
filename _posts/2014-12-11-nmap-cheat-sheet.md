@@ -4,9 +4,9 @@ title:  "Nmap Cheat Sheet"
 date:   2014-12-13 10:37:10
 author: Arr0way
 description: 'Nmap Cheat Sheet, examples and practical examples'
-categories: [Cheat-Sheet]
+categories: [cheat-sheet]
 tags:
-- 'Penetration Testing' 
+- 'Penetration Testing'
 - 'Enumeration'
 ---
 
@@ -14,7 +14,7 @@ tags:
 * list element with functor item
 {:toc}
 
-**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of [penetration testing](https://bluewire-security.com/penetration-testing). The tool was written and maintained by [Fyodor](http://insecure.org/fyodor/) AKA Gordon Lyon. 
+**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of [penetration testing](https://bluewire-security.com/penetration-testing). The tool was written and maintained by [Fyodor](http://insecure.org/fyodor/) AKA Gordon Lyon.
 
 [Nmap](http://nmap.org) displays exposed services on a target machine along with other useful information such as the verion and OS detection.
 
@@ -22,22 +22,22 @@ Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 
 
 
 ![Nmap Trinity](/img/nmap-trinity.png)
- 
+
 
 **Nmap in a nutshell**
 
-* Host discovery 
-* Port discovery / enumeration 
-* Service discovery 
+* Host discovery
+* Port discovery / enumeration
+* Service discovery
 * Operating system version detection
 * Hardware (MAC) address detection
-* Service version detection 
-* Vulnerability / exploit detection, using Nmap scripts (NSE) 
+* Service version detection
+* Vulnerability / exploit detection, using Nmap scripts (NSE)
 
 
 ### Nmap Examples
 
-Basic Nmap scanning examples, often used at the first stage of enumeration. 
+Basic Nmap scanning examples, often used at the first stage of enumeration.
 
 <div class="mobile-side-scroller">
 <table>
@@ -88,7 +88,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -v -sV -O -sS -T5 target</code></p>
       </td>
       <td>
-            <p>Prints verbose output, runs stealth syn scan, T5 timing, OS and version detection.</p> 
+            <p>Prints verbose output, runs stealth syn scan, T5 timing, OS and version detection.</p>
       </td>
     </tr>
 
@@ -97,7 +97,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -v -p 1-65535 -sV -O -sS -T4 target</code></p>
       </td>
       <td>
-           <p>Prints verbose output, runs stealth syn scan, T4 timing, OS and version detection + full port range scan.</p> 
+           <p>Prints verbose output, runs stealth syn scan, T4 timing, OS and version detection + full port range scan.</p>
       </td>
     </tr>
 
@@ -106,7 +106,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -v -p 1-65535 -sV -O -sS -T5 target</code></p>
       </td>
       <td>
-           <p>Prints verbose output, runs stealth syn scan, T5 timing, OS and version detection + full port range scan.</p> 
+           <p>Prints verbose output, runs stealth syn scan, T5 timing, OS and version detection + full port range scan.</p>
       </td>
     </tr>
       </tbody>
@@ -141,7 +141,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 </table>
 </div>
 
-#### Nmap output formats 
+#### Nmap output formats
 
 
 <div class="mobile-side-scroller">
@@ -158,7 +158,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -sV -p 139,445 -oG grep-output.txt 10.0.1.0/24</code></p>
       </td>
       <td>
-            <p>Outputs "grepable" output to a file, in this example Netbios servers.</p> 
+            <p>Outputs "grepable" output to a file, in this example Netbios servers.</p>
             <p>E.g, The output file could be grepped for "Open".</p>
       </td>
     </tr>
@@ -168,14 +168,14 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -sS -sV -T5 10.0.1.99 --webxml -oX -<br> | xsltproc --output file.html -</code></p>
       </td>
       <td>
-            <p>Export nmap output to HTML report. </p> 
+            <p>Export nmap output to HTML report. </p>
       </td>
     </tr>
       </tbody>
 </table>
 </div>
 
-#### Nmap Netbios Examples 
+#### Nmap Netbios Examples
 
 <div class="mobile-side-scroller">
 <table>
@@ -238,7 +238,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -p80 10.0.1.0/24 -oG - | nikto.pl -h -</code></p>
       </td>
       <td>
-            <p>Scans for http servers on port 80 and pipes into Nikto for scanning.</p> 
+            <p>Scans for http servers on port 80 and pipes into Nikto for scanning.</p>
       </td>
     </tr>
 
@@ -247,7 +247,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -p80,443 10.0.1.0/24 -oG - | nikto.pl -h -</code></p>
       </td>
       <td>
-            <p>Scans for http/https servers on port 80, 443 and pipes into Nikto for scanning.</p> 
+            <p>Scans for http/https servers on port 80, 443 and pipes into Nikto for scanning.</p>
       </td>
     </tr>
       </tbody>
@@ -258,7 +258,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 
 #### Target Specification
 
-Nmap allows hostnames, IP addresses, subnets. 
+Nmap allows hostnames, IP addresses, subnets.
 
 Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 
@@ -277,7 +277,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-iL</code></p>
       </td>
       <td>
-            <p>inputfilename: Input from list of hosts/networks</p> 
+            <p>inputfilename: Input from list of hosts/networks</p>
       </td>
     </tr>
 
@@ -327,7 +327,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-sL</code></p>
       </td>
       <td>
-            <p>List Scan - simply list targets to scan</p> 
+            <p>List Scan - simply list targets to scan</p>
       </td>
     </tr>
 
@@ -404,7 +404,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-sS<br>-sT<br>-sA<br>-sW<br>-sM</code></p>
       </td>
       <td>
-            <p>TCP SYN scan<br>Connect scan<br>ACK scan<br>Window scan<br>Maimon scan</p> 
+            <p>TCP SYN scan<br>Connect scan<br>ACK scan<br>Window scan<br>Maimon scan</p>
       </td>
     </tr>
 
@@ -490,7 +490,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-p</code></p>
       </td>
       <td>
-            <p>Specify ports, e.g. -p80,443 or -p1-65535</p> 
+            <p>Specify ports, e.g. -p80,443 or -p1-65535</p>
       </td>
     </tr>
 
@@ -558,7 +558,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-sV</code></p>
       </td>
       <td>
-            <p>Probe open ports to determine service/version info</p> 
+            <p>Probe open ports to determine service/version info</p>
       </td>
     </tr>
 
@@ -617,7 +617,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-sC</code></p>
       </td>
       <td>
-            <p>equivalent to --script=default</p> 
+            <p>equivalent to --script=default</p>
       </td>
     </tr>
 
@@ -626,7 +626,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>--script="Lua scripts"</code></p>
       </td>
       <td>
-            <p>"Lua scripts" is a comma separated list of 
+            <p>"Lua scripts" is a comma separated list of
            directories, script-files or script-categories</p>
       </td>
     </tr>
@@ -679,7 +679,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### OS Detection 
+#### OS Detection
 
 <div class="mobile-side-scroller">
 <table>
@@ -695,7 +695,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-O</code></p>
       </td>
       <td>
-            <p>Enable OS Detection</p> 
+            <p>Enable OS Detection</p>
       </td>
     </tr>
 
@@ -720,7 +720,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Timing and Performance 
+#### Timing and Performance
 
 <p>Options which take TIME are in seconds, or append 'ms' (milliseconds),
   's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).</p>
@@ -739,7 +739,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-T 0-5</code></p>
       </td>
       <td>
-            <p>Set timing template - higher is faster (less accurate)</p> 
+            <p>Set timing template - higher is faster (less accurate)</p>
       </td>
     </tr>
 
@@ -828,7 +828,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-f; --mtu VALUE</code></p>
       </td>
       <td>
-            <p>Fragment packets (optionally w/given MTU)</p> 
+            <p>Fragment packets (optionally w/given MTU)</p>
       </td>
     </tr>
 
@@ -936,7 +936,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-oN</code></p>
       </td>
       <td>
-            <p>Output Normal</p> 
+            <p>Output Normal</p>
       </td>
     </tr>
 
@@ -1091,7 +1091,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-6</code></p>
       </td>
       <td>
-            <p>Enable IPv6 scanning</p> 
+            <p>Enable IPv6 scanning</p>
       </td>
     </tr>
 
@@ -1160,15 +1160,15 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-## Nmap Enumeration Examples 
+## Nmap Enumeration Examples
 
-The following are real world examples of Nmap enumeration. 
+The following are real world examples of Nmap enumeration.
 
 ###Enumerating Netbios
 
 The following example enumerates Netbios on the target networks, the same process can be applied to other services by modifying ports / NSE scripts.
 
-Detect all exposed Netbios servers on the subnet. 
+Detect all exposed Netbios servers on the subnet.
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -1252,4 +1252,4 @@ Check if Netbios servers are vulnerable to MS08-067
     </div>
 </section>
 
-The information gathered during the enumeration indicates the target is vulnerable to MS08-067, exploitation will confirm if it's vulnerable to MS08-067. 
+The information gathered during the enumeration indicates the target is vulnerable to MS08-067, exploitation will confirm if it's vulnerable to MS08-067.

@@ -4,7 +4,7 @@ title:  "Vi Cheat Sheet"
 date:   2015-11-1 09:39:10
 author: Arr0way
 description: 'Vim cheat sheet, a collection of Vi / Vim commands and tips in a nicely presented cheat sheet.'
-categories: [Cheat-Sheet]
+categories: [cheat-sheet]
 tags:
 - 'Vim'
 - 'vi'

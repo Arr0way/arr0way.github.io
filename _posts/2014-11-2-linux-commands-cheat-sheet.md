@@ -4,7 +4,7 @@ title:  "Linux Commands Cheat Sheet"
 date:   2014-11-2 08:20:10
 author: Arr0way
 description: 'Linux Command Cheat Sheet and examples for penetration testing.'
-categories: [Cheat-Sheet]
+categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
 - 'Enumeration'
