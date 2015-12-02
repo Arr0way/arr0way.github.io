@@ -738,6 +738,8 @@ uid=1003(RichardWright) euid=1004(DavidGilmour) gid=1003(RichardWright)
 groups=1003(RichardWright)
 {% endhighlight %}
 
+### Account: DavidGilmour
+
 With euid set, enumeration of DavidGimours home dir was possible. 
 
 Running strings on <code>david_gilmour_profile.jpg</code> revealed the users
@@ -757,7 +759,7 @@ who_are_you_and_who_am_i
 
 <div class="note tip">
   <h5>URL also disclosed via Apache config</h5>
-  <p>This web app URL was also disclosed at <code>/etc/httpd.conf.orig</code></p>
+  <p>The web app URL was also disclosed at <code>/etc/httpd.conf.orig</code></p>
 </div>
 
 Viewing  <code>anotherbrick.txt</code> revealed the following: 
@@ -775,7 +777,7 @@ backs on you, you'll get the chance to put the knife in. - Pink Floyd, Dogs
 #
 {% endhighlight %}
 
-### Web Application Enumeration 
+## Web Application Enumeration 
 
 Enumeration of the above web application exposed a code comment riddle: 
 
@@ -792,6 +794,11 @@ The area of the image near the dog revealed some text strings. Using
 <code>50696e6b466c6f796435305965617273</code> 
 
 ![Image Magik Brightness Increase](/img/blog/thewall/brighter.jpg)
+
+## Root Shell 
+
+Searching for the string <code>welcomethemachine</code> discovered the
+following binary <code>/var/www/htdocs/welcometothemachine/PinkFloyd</code>. 
 
 {% highlight bash %}
 $ ./PinkFloyd
@@ -827,6 +834,8 @@ uid=0(root) gid=0(wheel) groups=0(wheel), 2(kmem), 3(sys),
 4(tty), 5(operator), 20(staff), 31(guest)
 # id
 {% endhighlight %}
+
+## Root Flag
 
 ![VulnHub TheWall Root Flag](/img/blog/thewall/thewall-root-flag.png)
 
