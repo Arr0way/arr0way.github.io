@@ -710,7 +710,7 @@ mail
 The following file was created: 
 
 {% highlight bash %}
-/bin/echo "/bin/sh" > /tmp/shell
+/bin/echo "/bin/sh" > /tmp/mail
 {% endhighlight %}
 
 Changed directory to <code>/tmp</code> and PATH set to . 
