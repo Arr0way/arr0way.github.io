@@ -4,7 +4,7 @@ title:  "/dev/random Pipe walkthrough"
 date:   2015-11-26 01:05:10
 author: Arr0way
 description: 'Walkthrough for /dev/random: Pipe a VulnHub CTF boot2root.'
-categories: [walkthrough]
+categories: [walkthroughs]
 tags:
 - CTF
 ---

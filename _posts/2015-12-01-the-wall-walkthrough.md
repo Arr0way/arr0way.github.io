@@ -4,7 +4,7 @@ title:  "The Wall Boot2Root Walkthrough"
 date:   2015-12-02 00:00:10
 author: Arr0way
 description: 'The Wall Boot2Root - Walkthrough Guide'
-categories: [walkthrough]
+categories: [walkthroughs]
 tags:
 - CTF
 ---
