@@ -6,13 +6,23 @@ author: all
 ---
 
 <article>
-   <h1>
-     {{ page.title }}
-        <a href="{{ page.url }}" class="permalink" title="Permalink">∞</a>
-   </h1>
 
-   <p> A collection of boot2root / CTF challenges I've completed.</p>    
-
+<section class="enum-box">
+  <div class="grid">
+    <div class="unit whole">
+      <div class="grid pane">
+        <div class="unit whole center-on-mobiles">
+         <img src="/img/vulnhub-tagline.png" alt="VulnHub Logo">
+          <div class="pane-content">
+            <h1>{{ page.title }}<a href="{{ page.url }}" class="permalink" title="Permalink">∞</a></h1>
+            <p>A collection of <b>boot2root challenges</b> I've completed, all the boot2root virtual machines can be found on <a href="https://vulnhub.com">VulnHub</a>, enjoy.</p>
+          </div>
+         </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="mobile-side-scroller">
 <table>
