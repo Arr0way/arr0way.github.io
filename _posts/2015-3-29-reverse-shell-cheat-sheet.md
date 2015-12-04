@@ -8,6 +8,7 @@ categories: [Cheat-Sheet]
 tags:
 - 'Penetration Testing' 
 - 'Reverse Shell'
+- shells
 ---
 
 * list element with functor item

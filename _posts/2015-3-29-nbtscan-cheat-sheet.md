@@ -8,6 +8,7 @@ categories: [Cheat-Sheet]
 tags:
 - Windows
 - SMB
+- smb-enum
 - Tools
 ---
 

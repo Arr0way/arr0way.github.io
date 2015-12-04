@@ -7,8 +7,9 @@ description: 'Linux Command Cheat Sheet and examples for penetration testing.'
 categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
+- 'linux-enum'
 - 'Enumeration'
-- 'Linux'
+- 'linux-commands'
 ---
 
 * list element with functor item

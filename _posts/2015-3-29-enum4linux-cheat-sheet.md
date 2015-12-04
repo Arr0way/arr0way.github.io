@@ -7,6 +7,7 @@ description: 'enum4linux description, examples, cheatsheet and practical example
 categories: [Cheat-Sheet]
 tags:
 - Windows
+- smb-enum
 - SMB
 - Tools
 ---

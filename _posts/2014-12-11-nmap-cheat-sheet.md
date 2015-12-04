@@ -8,13 +8,14 @@ categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
 - 'Enumeration'
+- host-enum
 ---
 
 
 * list element with functor item
 {:toc}
 
-**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of [penetration testing](https://bluewire-security.com/penetration-testing). The tool was written and maintained by [Fyodor](http://insecure.org/fyodor/) AKA Gordon Lyon.
+**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of [penetration testing](/penetration-testing/). The tool was written and maintained by [Fyodor](http://insecure.org/fyodor/) AKA Gordon Lyon.
 
 [Nmap](http://nmap.org) displays exposed services on a target machine along with other useful information such as the verion and OS detection.
 

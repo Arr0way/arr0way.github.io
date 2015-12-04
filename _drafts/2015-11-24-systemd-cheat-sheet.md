@@ -6,7 +6,7 @@ author: Arr0way
 description: 'systemd, examples and systemd commands cheat sheet'
 categories: [Cheat-Sheet]
 tags:
-- Linux
+- linux-enum
 - RHEL
 - CentOS
 ---

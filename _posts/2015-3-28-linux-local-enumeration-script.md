@@ -4,6 +4,8 @@ title:  "Linux Local Enumeration Script"
 date:   2015-03-28 12:32:10
 author: Arr0way
 categories: [Tools]
+tags: 
+- linux-enum
 ---
 
 * list element with functor item
