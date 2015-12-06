@@ -34,7 +34,7 @@ The LAMPSecurity project is an effort to produce training and benchmarking tools
 
 **Author:** madirish2600
 
-**Download:** [VulnHub](https://www.vulnhub.com
+**Download:** [VulnHub](https://www.vulnhub.com)
 
 
 ## Enumeration
