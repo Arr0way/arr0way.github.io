@@ -40,7 +40,7 @@ products.
 
 <div class="note info">
   <h5>Dislcaimer: Multiple Entry Points</h5>
-  <p>The LAMPSecurity series is not particularly challenging, for each VM in the series I've targeted the web application as the entry point.</p>
+  <p>The LAMPSecurity series is not particularly challenging, for each VM in the series I've targeted the <b>web application</b> as the entry point.</p>
 </div>
 
 ## Enumeration
