@@ -133,7 +133,7 @@ Full SQLMap Command Output:
 {% highlight bash %}
 
 _
-___ ___| |_____ ___ ___  {1.0-dev-nongit-20150826}
+___ ___| |_____ ___ ___  {1.0-dev-nongit-0826}
 |_ -| . | |     | .'| . |
 |___|_  |_|_|_|_|__,|  _|
 |_|           |_|   http://sqlmap.org
@@ -288,7 +288,7 @@ sqlmap -u "http://192.168.30.147/index.html?page=blog&title=Blog&id=2" -p id -D 
 {% highlight bash %}
 
 _
-___ ___| |_____ ___ ___  {1.0-dev-nongit-20150826}
+___ ___| |_____ ___ ___  {1.0-dev-nongit-0826}
 |_ -| . | |     | .'| . |
 |___|_  |_|_|_|_|__,|  _|
 |_|           |_|   http://sqlmap.org
