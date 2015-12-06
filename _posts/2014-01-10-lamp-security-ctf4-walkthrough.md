@@ -1,10 +1,10 @@
 ---
 layout: blog_item
 title:  "LAMP Security CTF4 - Walkthrough"
-date:   2015-11-27 18:00:10
+date:   2014-01-10 18:00:10
 author: Arr0way
 description: 'LAMP Security CTF 4 - Walkthrough Guide'
-categories: [walkthrough]
+categories: [walkthroughs]
 tags:
 - CTF
 ---
@@ -30,15 +30,11 @@ tags:
 
 ## Author Description
 
-Updated to set default runlevel to 3 (no X windows) and fixed DHCP.
-
-This is the fourth capture the flag exercise. It includes the target virtual virutal machine image as well as a PDF of instructions. The username and password for the targer are deliberately not provided! The idea of the exercise is to compromise the target WITHOUT knowing the username and password. Note that there are other capture the flag exercises. If you like this one, download and try out the others. If you have any questions e-mail me at justin AT madirish DOT net.
-
 The LAMPSecurity project is an effort to produce training and benchmarking tools that can be used to educate information security professionals and test products. Please note there are other capture the flag exercises (not just the latest one). Check the SourceForge site to find other exercises available (http://sourceforge.net/projects/lampsecurity/files/CaptureTheFlag/).
 
 **Author:** madirish2600
 
-**Download:** [LAMP Security CTF 4](https://www.vulnhub.com/entry/lampsecurity-ctf4,83/) via [@VulnHub](https://twitter.com/VulnHub)
+**Download:** [VulnHub](https://www.vulnhub.com
 
 
 ## Enumeration
@@ -48,31 +44,13 @@ The LAMPSecurity project is an effort to produce training and benchmarking tools
 {% highlight bash %}
 
 nmap -v -p 1-65535 -sV -O -sT 192.168.30.147
-Host is up, received arp-response (0.031s latency).
-Not shown: 65531 filtered ports, 1 closed port
-Reason: 64505 no-responses, 1026 host-unreaches and 1 conn-refused
-PORT   STATE SERVICE REASON  VERSION
-22/tcp open  ssh     syn-ack OpenSSH 4.3 (protocol 2.0)
-25/tcp open  smtp    syn-ack Sendmail 8.13.5/8.13.5
-80/tcp open  http    syn-ack Apache httpd 2.2.0 ((Fedora))
-MAC Address: 00:0C:29:75:C3:0C (VMware)
-Device type: general purpose|remote management|terminal server|proxy server|switch|WAP|specialized
-Running (JUST GUESSING): Linux 2.6.X|3.X (98%), Control4 embedded (96%), Lantronix embedded (96%), SonicWALL embedded (95%), SNR embedded (95%), Dell iDRAC 6 (94%), Crestron 2-Series (93%)
-OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/h:lantronix:slc_8 cpe:/o:sonicwall:aventail_ex-6000 cpe:/h:snr:snr-s2960 cpe:/o:dell:idrac6_firmware cpe:/o:linux:linux_kernel:3.10 cpe:/o:crestron:2_series
-Aggressive OS guesses: Linux 2.6.16 - 2.6.21 (98%), Linux 2.6.13 - 2.6.32 (96%), Control4 HC-300 home controller (96%), Lantronix SLC 8 terminal server (Linux 2.6) (96%), SonicWALL Aventail EX-6000 VPN appliance (95%), SNR SNR-S2960 switch (95%), Linux 2.6.8 - 2.6.30 (94%), Linux 2.6.9 - 2.6.18 (94%), Dell iDRAC 6 remote access controller (Linux 2.6) (94%), Linux 2.6.22 - 2.6.23 (94%)
-No exact OS matches for host (test conditions non-ideal).
-Uptime guess: 0.072 days (since Fri Nov 27 10:18:28 2015)
-Network Distance: 1 hop
-TCP Sequence Prediction: Difficulty=199 (Good luck!)
-IP ID Sequence Generation: All zeros
-Service Info: Host: ctf4.sas.upenn.edu; OS: Unix
-
-Read data files from: /usr/bin/../share/nmap
-OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 1027.89 seconds
-           Raw packets sent: 51 (5.552KB) | Rcvd: 41 (4.656KB)
 
 {% endhighlight %}
+
+<div class="note info">
+  <h5>Dislcaimer: Multiple Entry Points</h5>
+  <p>The LAMPSecurity series is not particularly challenging, for each VM in the series I've targeted the **web application** as the entry point.</p>
+</div>
 
 ### Service Enumeration
 
