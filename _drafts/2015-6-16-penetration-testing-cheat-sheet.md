@@ -666,6 +666,30 @@ Compile exploit gcc.
 </table>
 </div>
 
+#### GCC Compile 32Bit Exploit on 64Bit Kali
+
+div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+    <tr>
+      <td>
+        <p><code>gcc -m32 exploit.c -o exploit</code></p>
+      </td>
+      <td>
+            <p>Compile windows .exe on Linux</p>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
 #### Compile Windows .exe on Linux
 
 Build / compile windows exploits on Linux, resulting in a .exe file.
