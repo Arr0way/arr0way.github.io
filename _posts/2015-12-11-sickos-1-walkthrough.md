@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title:  "SickOS 1.1 - Walkthrough"
-date:   2015-01-10 11:00:10
+date:   2015-12-11 11:00:10
 author: Arr0way
 description: 'SickOS 1.1 - Walkthrough / Writeup'
 categories: [walkthroughs]
