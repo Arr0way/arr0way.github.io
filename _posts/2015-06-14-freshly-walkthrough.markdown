@@ -96,6 +96,7 @@ nmap -v -p 1-65535 -sV -O -sT 10.0.1.109
 
 Enumeration of port 80, discovered <code>login.php</code>:
 
+![dirbuster](/img/blog/freshly/dirbuster.png)
 
 ![login form sqli](/img/blog/freshly/login.png)
 
