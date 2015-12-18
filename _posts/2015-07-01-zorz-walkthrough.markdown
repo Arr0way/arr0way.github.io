@@ -156,7 +156,7 @@ Level 2 complete.
 
 ## Level 3
 
-Level 4 was beaten simply by renaming the php reverse shell to <code>php-reverse-shell.php.png</code>, this was enough to bypass the filtering.
+Level 3 was beaten simply by renaming the php reverse shell to <code>php-reverse-shell.php.png</code>, this was enough to bypass the filtering.
 
 ![Level 3](/img/blog/zorz/level3.png)
 
