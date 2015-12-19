@@ -146,7 +146,7 @@ User bynarr may run the following commands on this host:
 
 {% endhighlight %}
 
-## Local Privilege Escalation
+## Shellshock Local Privilege Escalation
 
 The following shellshock payload was crafted to successfully escalate permissions to root:
 
