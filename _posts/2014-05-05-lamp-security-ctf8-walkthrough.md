@@ -1,9 +1,9 @@
 ---
 layout: blog_item
 title:  "LAMP Security CTF8 - Walkthrough"
-date:   2014-05-05 12:00:60
+date:   2014-05-05 11:00:60
 author: Arr0way
-description: 'LAMP Security CTF 8- Walkthrough Guide'
+description: 'VulnHub CTF8 - Walkthrough Guide'
 categories: [walkthroughs]
 tags:
 - CTF

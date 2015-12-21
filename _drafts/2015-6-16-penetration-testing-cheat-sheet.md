@@ -15,14 +15,11 @@ tags:
 * list element with functor item
 {:toc}
 
-**Penetration testing cheat sheet**, a quick reference for typical penetration testing or pen testing exams.
-
+**Penetration testing cheat sheet**, a quick reference for typical penetration testing or pen testing exams, this is not designed to be an in depth list of commands more like a quick reference cheat sheet giving a high level overview of the **typical** commands you would run against a target. For more in depth information I'd recommend the man file for the specific tool.
 
 ## Recon and Enumeration
 
-### Nmap Enumeration
-
-It all starts with nmap...
+### NMAP Commands
 
 <div class="mobile-side-scroller">
 <table>
@@ -73,10 +70,38 @@ It all starts with nmap...
       </td>
     </tr>
   </tbody>
+  </table>
+  </div>
 
+## SMB enumeration
 
-</table>
-</div>
+  <div class="mobile-side-scroller">
+  <table>
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+        <tbody>
+        <tr>
+        <td>/
+          <p><code>nbtscan 192.168.1.0/24</code></p>
+        </td>
+        <td><p>Discover Windows / Samba servers on subnet, finds Windows MAC addresses, netbios name and discover client workgroup / domain</p></td>
+      </tr>
+
+       <tr>
+        <td>
+          <p><code>enum4linux -a target-ip</code></p>
+        </td>
+        <td>
+              <p>Do Everything, runs all options (find windows client domain / workgroup) apart from dictionary based share name guessing</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
 ### Other Host Discovery
 
@@ -668,7 +693,7 @@ Compile exploit gcc.
 
 #### GCC Compile 32Bit Exploit on 64Bit Kali
 
-div class="mobile-side-scroller">
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
