@@ -461,7 +461,136 @@ footer a:hover img {
 }
 
 
-/* Collapsible Sections / Nested content */
+/* Metasploit Framework */
+
+
+.metasploit .content {
+  padding: 0;
+}
+
+.metasploit h4 {
+  font-size: 24px;
+  line-height: 24px;
+  margin-top: 20px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.8);
+}
+
+.metasploit .code {
+  font-size: 14px;
+  display: block;
+  margin: 0 0 0px;
+}
+
+
+@media (min-width: 768px) {
+  .metasploit .code {
+    width: 662px;
+    font-size: 16px;
+    margin: 0px 0;
+    float: left;
+  }
+  .metasploit h4 {
+    margin: 50px 0 0;
+    text-align: center;
+  }
+}
+
+/* Code */
+
+.metasploit .code {
+  margin: 0px;
+  float: left;
+  display: block;
+  padding: 0;
+  font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+  line-height: 1.3em;
+}
+
+.metasploit .code .title {
+  display: block;
+  text-align: center;
+  margin: 0 0px;
+  padding: 5px 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 3px 10px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 3px 10px rgba(0,0,0,.5);
+  box-shadow: 0 3px 10px rgba(0,0,0,.5);
+  font: 400 16px/24px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background-color: #f7f7f7;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjY2ZjZmNmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), color-stop(7%, #cfcfcf), to(#aaaaaa));
+  background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaaaaa 100%);
+  background-image: -moz-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaaaaa 100%);
+  background-image: -o-linear-gradient(top, #f7f7f7 0%, #cfcfcf 7%, #aaaaaa 100%);
+  background-image: linear-gradient(top, #f7f7f7 0%,#cfcfcf 7%,#aaaaaa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#aaaaaa',GradientType=0 );
+  border-bottom: 1px solid #111;
+}
+
+.metasploit .code .shell {
+  padding: 20px;
+  text-shadow: none;
+  margin: 0 0px;
+  margin-bottom:30px;
+  background-color: #3d3d3d;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 5px 30px rgba(0,0,0,.3);
+  -moz-box-shadow: 0 5px 30px rgba(0,0,0,.3);
+  box-shadow: 0 5px 30px rgba(0,0,0,.3);
+}
+
+.metasploit .code .line {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.metasploit .code .line span {
+  display: inline-block;
+}
+
+.metasploit .code .setting {
+  display: block;
+  text-indent: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.metasploit .code .setting span {
+  display: inline-block;
+}
+
+.metasploit .code .path {
+  color: #87ceeb;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;
+}
+
+.metasploit .code .prompt {
+  color: #cd5c5c;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;
+}
+
+.metasploit .code .command {
+  color: #FFFFFF;
+}
+
+.metasploit .code .output {
+  color: #C2C2C2;
+}
 
 
 

