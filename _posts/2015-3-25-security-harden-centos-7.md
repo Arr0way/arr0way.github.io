@@ -100,10 +100,8 @@ logvol /tmp  --fstype="xfs" --size=1000 --name=lv_tmp --vgname=lg_os
 logvol /var  --fstype="xfs" --size=2000 --name=lv_var --vgname=lg_os
 logvol /var/tmp  --fstype="xfs" --size=1000 --name=lv_var_tmp --vgname=lg_os
 logvol /var/www  --fstype="xfs" --size=5000 --name=lv_var_www --vgname=lg_data
-logvol /var  --fstype="xfs" --size=1000 --name=lv_var --vgname=lg_os
 logvol /var/log  --fstype="xfs" --size=1500 --name=lv_var_log --vgname=lg_os
 logvol /var/log/audit  --fstype="xfs" --size=500 --name=lv_var_log_audit --vgname=lg_os
-logvol /var/tmp  --fstype="ext4" --size=500 --name=lv_var_tmp --vgname=lg_os
 logvol swap  --fstype="swap" --size=1000 --name=lv_swap --vgname=lg_data
 
 %packages
@@ -218,7 +216,7 @@ The following command will Enable **SHA512** instead of using *MD5*:
 authconfig --passalgo=sha512 —update
 {% endhighlight %}
 
-<code>vi /etc/security/psquality.conf</code>
+<code>vi /etc/security/pwquality.conf</code>
 
 {% highlight bash %}
 
