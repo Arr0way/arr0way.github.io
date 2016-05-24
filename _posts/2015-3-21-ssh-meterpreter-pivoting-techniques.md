@@ -4,7 +4,7 @@ title:  "SSH & Meterpreter Pivoting Techniques"
 date:   2015-3-20 00:52:10
 author: Arr0way
 description: "SSH / Meterpreter Pivoting techniques for use during penetration testing, allowing an attacker to route traffic through a compromised host in order to gain access to another subnet."
-categories: [techniques] 
+categories: [techniques]
 tags:
 - Metasploit
 - Meterpreter
@@ -13,7 +13,7 @@ tags:
 * list element with functor item
 {:toc}
 
-## WTF is Pivoting?
+## What is Pivoting ?
 
 **Pivoting** is a technique used to route traffic through a compromised host on a penetration test.
 
