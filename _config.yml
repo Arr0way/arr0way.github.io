@@ -4,11 +4,13 @@ relative_permalinks: false
 permalink: /blog/:title/
 excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
 twitter: Arr0way
-gauges_id: 
-google_analytics_id: 
+gauges_id:
+google_analytics_id:
 
 repository: https://github.com/Arr0way/arr0way.github.io.git
 
 collections:
   docs:
     output: true
+imagemagick_convert: /usr/local/bin/convert
+imagemagick_identify: /usr/local/bin/identify

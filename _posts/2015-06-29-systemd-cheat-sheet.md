@@ -4,7 +4,7 @@ title:  "Systemd Cheat Sheet"
 date:   2015-06-29 11:35:10
 author: Arr0way
 description: 'systemd, examples and systemd commands cheat sheet'
-categories: [Cheat-Sheet]
+categories: [cheat-sheet]
 tags:
 - linux-enum
 - RHEL
@@ -12,17 +12,17 @@ tags:
 ---
 
 Systemd is now the default in RHEL / CentOS 7, the following post is a cheat
-sheet for systemd commands, useful for local system enumeration. 
+sheet for systemd commands, useful for local system enumeration.
 
 
 <div class="note tip">
   <h5>Systemd is becoming the default on most distros</h5>
-  <p>Systemd is becoming the default in many distros, <b>RHEL, CentOS, Ubuntu 15</b> 
+  <p>Systemd is becoming the default in many distros, <b>RHEL, CentOS, Ubuntu 15</b>
   and it offers a single command to manage your system, instead of switching
   between <code>chkconfig</code> or running init scripts.</p>
 </div>
 
-## Systemd Service Commands 
+## Systemd Service Commands
 
 <div class="mobile-side-scroller">
 <table>
@@ -73,7 +73,7 @@ sheet for systemd commands, useful for local system enumeration.
         <p><code>systemctl status service-name</code></p>
       </td>
       <td>
-            <p>systemctl show if service is running</p> 
+            <p>systemctl show if service is running</p>
       </td>
     </tr>
 
@@ -82,7 +82,7 @@ sheet for systemd commands, useful for local system enumeration.
         <p><code>systemctl enable service-name</code></p>
       </td>
       <td>
-           <p>systemctl start service at boot</p> 
+           <p>systemctl start service at boot</p>
       </td>
     </tr>
 
@@ -91,7 +91,7 @@ sheet for systemd commands, useful for local system enumeration.
         <p><code>systemctrl disable service-name</code></p>
       </td>
       <td>
-           <p>systemctl - disable service at boot</p> 
+           <p>systemctl - disable service at boot</p>
       </td>
     </tr>
     <tr>
@@ -99,7 +99,7 @@ sheet for systemd commands, useful for local system enumeration.
         <p><code>systemctl show service-name</code></p>
       </td>
       <td>
-           <p>show systemctl service info</p> 
+           <p>show systemctl service info</p>
       </td>
     </tr>
     <tr>
@@ -114,9 +114,9 @@ sheet for systemd commands, useful for local system enumeration.
 </table>
 </div>
 
-## Systemd Information Commands 
+## Systemd Information Commands
 
-Systemd commands that show useful system information. 
+Systemd commands that show useful system information.
 
 <div class="mobile-side-scroller">
 <table>
@@ -167,7 +167,7 @@ Systemd commands that show useful system information.
         <p><code>systemctl list-units</code></p>
       </td>
       <td>
-            <p>systemctl list default target (like run level)</p> 
+            <p>systemctl list default target (like run level)</p>
       </td>
     </tr>
 
@@ -175,9 +175,9 @@ Systemd commands that show useful system information.
 </table>
 </div>
 
-## Changing System State 
+## Changing System State
 
-systemd reboot, shutdown, default target etc 
+systemd reboot, shutdown, default target etc
 
 <div class="mobile-side-scroller">
 <table>
@@ -227,7 +227,7 @@ systemd reboot, shutdown, default target etc
 </table>
 </div>
 
-##Systemctl Viewing Log Messages 
+##Systemctl Viewing Log Messages
 
 <div class="mobile-side-scroller">
 <table>

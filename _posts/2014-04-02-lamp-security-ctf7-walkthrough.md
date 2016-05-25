@@ -171,7 +171,7 @@ Execution of the php shell was not possible via the web application directly.
 Dirbuster disclosed the location of the file uploads directory
 <code>/assets/</code>.
 
-![OWASP Dirbuster](/img/blog/ctf7/digbuster.png)
+![OWASP Dirbuster](/img/blog/ctf7/dirbuster.png)
 
 ### Reverse Shell
 

@@ -14,7 +14,6 @@ tags:
 * list element with functor item
 {:toc}
 
-
 ## Why use Chromium for Web Application Testing ?
 
 The primary reason I use Chromium is for DOM based XSS testing which as far as I know cannot be disabled in Firefox. If you have never heard of Chromium it's the opensource version of Google Chrome and doesn't have flash player built in and various other codecs such as: AAC, H.264, and MP3 Support.

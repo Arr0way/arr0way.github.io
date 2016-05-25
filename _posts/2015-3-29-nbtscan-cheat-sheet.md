@@ -4,7 +4,7 @@ title:  "nbtscan Cheat Sheet"
 date:   2015-03-29 14:37:10
 author: Arr0way
 description: 'nbtscan install, examples and nbtscan commands cheatsheet'
-categories: [Cheat-Sheet]
+categories: [cheat-sheet]
 tags:
 - Windows
 - SMB
@@ -25,7 +25,7 @@ tags:
 root@kali:~/nbtscan# wget http://www.unixwiz.net/tools/nbtscan-source-1.0.35.tgz
 root@kali:~/nbtscan# tar -xvzf nbtscan-source-1.0.35.tgz
 root@kali:~/nbtscan# make
-root@kali:~/nbtscan# ./nbtscan 
+root@kali:~/nbtscan# ./nbtscan
 nbtscan 1.0.35 - 2008-04-08 - http://www.unixwiz.net/tools/
 
 usage: ./nbtscan [options] target [targets...]
@@ -86,7 +86,7 @@ usage: ./nbtscan [options] target [targets...]
         <p><code>nbtscan -P</code></p>
       </td>
       <td>
-            <p>Generate Perl hashref output, which can be loaded into an existing program for easier processing, much easier than parsing text output</p> 
+            <p>Generate Perl hashref output, which can be loaded into an existing program for easier processing, much easier than parsing text output</p>
       </td>
     </tr>
 
@@ -95,7 +95,7 @@ usage: ./nbtscan [options] target [targets...]
         <p><code>nbtscan -V</code></p>
       </td>
       <td>
-           <p>Enable verbose mode</p> 
+           <p>Enable verbose mode</p>
       </td>
     </tr>
 
@@ -104,7 +104,7 @@ usage: ./nbtscan [options] target [targets...]
         <p><code>nbtscan -n</code></p>
       </td>
       <td>
-           <p>Turns off this inverse name lookup, for hanging resolution</p> 
+           <p>Turns off this inverse name lookup, for hanging resolution</p>
       </td>
     </tr>
     <tr>
@@ -112,7 +112,7 @@ usage: ./nbtscan [options] target [targets...]
         <p><code>nbtscan -p PORT target(s)</code></p>
       </td>
       <td>
-           <p>This allows specification of a UDP port number to be used as the source in sending a query</p> 
+           <p>This allows specification of a UDP port number to be used as the source in sending a query</p>
       </td>
     </tr>
     <tr>

