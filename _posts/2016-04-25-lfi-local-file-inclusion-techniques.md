@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title: "LFI Local File Inclusion Techniques to Get Shells"
+title: "LFI Cheat Sheet"
 date:   2016-04-24 11:29:10
 author: Arr0way
-description: 'LFI Explained and some techniques to leverage a shell from an LFI vulnerability. LFI to Shell'
+description: 'LFI Explained and the techniques to leverage a shell from a local file inclusion vulnerability. How to get a shell from LFI'
 categories: [Web App Penetration Testing]
 tags:
 - LFI
@@ -15,13 +15,13 @@ tags:
 
 ## What is an LFI Vulnerability?
 
-LFI stands for Local File Includes - it's a file local inclusion vulnerability that allows an attacker to include files that exist on the target web server. Typically this is exploited by abusing dynamic file inclusion mechanisms that don't sanitize user input.
+LFI stands for **Local File Includes** - it's a file local inclusion vulnerability that allows an attacker to include files that exist on the target web server. Typically this is exploited by abusing dynamic file inclusion mechanisms that don't sanitize user input.
 
 Scripts that take filenames as parameters without sanitizing the user input are good candidates for LFI vulnerabilities, a good example would be the following PHP script <code>foo.php?file=image.jpg</code> which takes <code>image.jpg</code> as a parameter.  An attacker would simply replace <code>image.jpg</code> and insert a payload. Normally a directory traversal payload is used that escapes the script directory and traverses the filesystem directory structure, exposing sensitive files such as <code>foo.php?file=../../../../../../../etc/passwd</code> or sensitive files within the web application itself. Exposing sensitive information or configuration files containing SQL usernames and passwords.
 
 Note: In some cases, depending on the nature of the LFI vulnerability it's possible to run system executables.
 
-## LFI to Shell Techniques
+## How to get a Shell from LFI
 
 Below are some techniques I've used in the past to gain a shell on systems with vulnerable LFI scripts exposed.
 
