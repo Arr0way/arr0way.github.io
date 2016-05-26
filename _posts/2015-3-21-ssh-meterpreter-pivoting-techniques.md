@@ -377,7 +377,7 @@ This example uses SSH pivoting and Meterpreter port forwarding to access machine
 
 ![Pivot Example 3: Using SSH and Meterpreter Pivoting to access another subnet](https://i.imgur.com/gyylQup.png)
 
-####Example commands
+#### Example commands
 
 The above commands would be leveraged to reach **Target 2**, from **Target 2** to **Target 3**, meterpreter would be used. Follow the [meterpreter portwarding example](https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/#meterpreter-pivoting-cheatsheet) above for a MS08-067 example.
 
