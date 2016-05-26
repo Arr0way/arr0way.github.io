@@ -1,12 +1,12 @@
 markdown: kramdown
-highlighter: rouge 
+highlighter: rouge
 relative_permalinks: false
 permalink: /blog/:title/
 excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
 twitter: Arr0way
 gauges_id:
 google_analytics_id:
-
+production_url: https://highon.coffee
 repository: https://github.com/Arr0way/arr0way.github.io.git
 
 collections:
