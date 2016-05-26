@@ -4,7 +4,7 @@ title:  "HowTo: Kali Linux Chromium Install for Web App Pen Testing"
 date:   2016-03-24 11:29:10
 author: Arr0way
 description: 'HowTo Install Chromium on Kali Linux and setup for Web Application Testing'
-categories: [Kali Linux]
+categories: [kali linux]
 tags:
 - Kali
 - 'Web Application Penetration Testing'
