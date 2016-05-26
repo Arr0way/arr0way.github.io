@@ -1,6 +1,6 @@
 ---
 layout: blog_item
-title: "LFI - Local File Inclusion Techniques to Get Shells"
+title: "LFI Local File Inclusion Techniques to Get Shells"
 date:   2016-03-24 11:29:10
 author: Arr0way
 description: 'LFI Explained and some techniques to leverage a shell from an LFI vulnerability. LFI to Shell'
