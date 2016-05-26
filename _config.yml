@@ -1,5 +1,5 @@
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge 
 relative_permalinks: false
 permalink: /blog/:title/
 excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
