@@ -113,4 +113,4 @@ Fimap exploits PHP's temporary file creation via Local File Inclusion by abusing
 If a phpinfo() file is present, it's usually possible to get a shell, if you don't know the location of the phpinfo file fimap can probe for it, or you could use a tool like OWASP DirBuster.
 
 
-Enjoy + Share.
+Enjoy.
