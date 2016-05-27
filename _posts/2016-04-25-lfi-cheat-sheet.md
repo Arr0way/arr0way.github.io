@@ -17,6 +17,7 @@ tags:
 
 LFI stands for **Local File Includes** - it's a file local inclusion vulnerability that allows an attacker to include files that exist on the target web server. Typically this is exploited by abusing dynamic file inclusion mechanisms that don't sanitize user input.
 
+<!--more-->
 Scripts that take filenames as parameters without sanitizing the user input are good candidates for LFI vulnerabilities, a good example would be the following PHP script <code>foo.php?file=image.jpg</code> which takes <code>image.jpg</code> as a parameter.  An attacker would simply replace <code>image.jpg</code> and insert a payload. Normally a directory traversal payload is used that escapes the script directory and traverses the filesystem directory structure, exposing sensitive files such as <code>foo.php?file=../../../../../../../etc/passwd</code> or sensitive files within the web application itself. Exposing sensitive information or configuration files containing SQL usernames and passwords.
 
 Note: In some cases, depending on the nature of the LFI vulnerability it's possible to run system executables.

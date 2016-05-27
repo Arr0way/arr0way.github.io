@@ -2,7 +2,7 @@ markdown: kramdown
 highlighter: rouge
 relative_permalinks: false
 permalink: /blog/:title/
-excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
+excerpt_separator: <!--more-->
 twitter: Arr0way
 gauges_id:
 google_analytics_id:

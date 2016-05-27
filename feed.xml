@@ -18,7 +18,7 @@ permalink: /feed.xml
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <language>en-US</language>
-    <description>A site about Security, pen testing, boot2root, etc </description>
+    <description>Security Research and Penetration Testing Blog</description>
     <image>
       <description>HighOn.Coffee</description>
       <url>https://highon.coffee</url>
