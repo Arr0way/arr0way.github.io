@@ -682,10 +682,12 @@ footer a:hover img {
 .enum-box-b p,
 .enum-box-b a {
   font-size: 16px;
+  text-align: center;
 }
 
 .enum-box-b p {
   margin: .75em 0;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -712,6 +714,72 @@ footer a:hover img {
     height: 186px;
     position: absolute;
     left: 0;
+    bottom: -30px;
+  }
+
+}
+
+
+/* share-box */
+
+.share-box .pane {
+  background-color: #222222;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-shadow: none;
+  position: relative;
+  padding: 0 20px 30px;
+  margin-bottom: 5px;
+}
+
+.share-box img {
+  margin: -30px 0 0;
+  width: 180px;
+  height: 150px;
+}
+
+.share-box h2 {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+
+.share-box p,
+.share-box a {
+  font-size: 20px;
+  text-align: center;
+}
+
+.share-box p {
+  margin: .75em 0;
+}
+
+@media (min-width: 768px) {
+  .share-box img {
+    float: left;
+    margin: -20px -30px -30px -50px;
+    width: 300px;
+    height: 251px;
+  }
+  .share-box .pane-content {
+    margin-left: 30px;
+    margin-top: 15px;
+    padding-right: 30px;
+  }
+  .share-box p,
+  .share-box a {
+    font-size: 26px;
+  }
+  .share-box .pane:after {
+    content: " ";
+    float: left;
+    background: url(../img/footer-arrow.png) bottom right  no-repeat;
+    width: 73px;
+    height: 186px;
+    position: absolute;
+    right: 0;
     bottom: -30px;
   }
 

@@ -23,25 +23,28 @@ layout: blog
   </div>
   <div class="post-content">
     {{ content }}
-    <hr>
-  <p>Follow <a href="https://twitter.com/{{ page.author }}">@{{ page.author }}</a>  - resistence is futile...</p>
-  <div>
-  <a href="https://twitter.com/share" class="twitter-share-button" data-via="highon_coffee" data-size="large" data-hashtags="HighOnCoffee" data-dnt="true">Tweet</a>
-  <script data-cfasync="false">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  </div>
   </div>
 
-  <section class="enum-box">
+  <section class="share-box">
     <div class="grid">
       <div class="unit whole">
         <div class="grid pane">
           <div class="unit whole center-on-mobiles">
             <div class="pane-content">
-              <h1>You might want to check out</h1>
+              <h2>Share this on...</h2>
+              <p><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via=Arr0way&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a>
+              <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square" aria-hidden="true"></i> Google+</a>
+              <a href="https://www.reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit-square" aria-hidden="true"></i> Reddit</a></p>
+
+
+              <h2>Follow Arr0way</h2>
+              <p><a href="https://twitter.com/Arr0way" rel="nofollow" target="_blank" title="Follow on Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+              <a href="https://github.com/Arr0way" rel="nofollow" target="_blank" title="Follow on GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> GitHub</a></p>
+              <p>resistence is futile...</p>
             </div>
            </div>
-          <div class="clear"></div>
-        </div>
+           <h2><br>Also... <br> <br>You might want to read these</h2>
       </div>
     </div>
   </section>

@@ -4,10 +4,12 @@ relative_permalinks: false
 permalink: /blog/:title/
 excerpt_separator: <!--more-->
 twitter: Arr0way
+twitter_username: Arr0way
 gauges_id:
 google_analytics_id:
 production_url: https://highon.coffee
 repository: https://github.com/Arr0way/arr0way.github.io.git
+url: https://highon.coffee
 
 collections:
   docs:
