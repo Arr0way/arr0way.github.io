@@ -12,7 +12,7 @@ layout: blog
       {{ page.categories | array_to_sentence_string }}
     </span>
   </span>
-  <div class="post-meta">  
+  <div class="post-meta">
     <span class="post-date">
       {{ page.date | date_to_string }}
     </span>
@@ -24,10 +24,50 @@ layout: blog
   <div class="post-content">
     {{ content }}
     <hr>
-  <p>Follow <a href="https://twitter.com/{{ page.author }}">@{{ page.author }}</a>  - resistence is futile...</p>    
+  <p>Follow <a href="https://twitter.com/{{ page.author }}">@{{ page.author }}</a>  - resistence is futile...</p>
   <div>
   <a href="https://twitter.com/share" class="twitter-share-button" data-via="highon_coffee" data-size="large" data-hashtags="HighOnCoffee" data-dnt="true">Tweet</a>
   <script data-cfasync="false">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  </div>                          
   </div>
+  </div>
+
+  <section class="enum-box">
+    <div class="grid">
+      <div class="unit whole">
+        <div class="grid pane">
+          <div class="unit whole center-on-mobiles">
+            <div class="pane-content">
+              <h1>You might want to check out</h1>
+            </div>
+           </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mobile-side-scroller">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Post Name</th>
+      </tr>
+    </thead>
+        <tbody>
+          {% for post in site.related_posts %}
+          <tr>
+             <td>
+               <pc><p><code>{{ post.categories }}</code></p></pc>
+             </td>
+             <td>
+               <pc><p><b><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></b></p></pc>
+             </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+
+  </table>
+  </div>
+
 </article>

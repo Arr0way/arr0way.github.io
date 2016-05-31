@@ -8,7 +8,7 @@ overview: true
 
 <p>I randomly named this blog highon.coffee, as I like drinking coffee.</p>
 
-A collection of penetration testing documentation, as I discover new tools and techniques they will be documented here. 
+A collection of penetration testing documentation, as I discover new tools and techniques they will be documented here.
 
 
 ## Helpful Hints
