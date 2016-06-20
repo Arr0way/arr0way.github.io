@@ -15,7 +15,7 @@ tags:
 * list element with functor item
 {:toc}
 
-**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of [penetration testing](/penetration-testing/). The tool was written and maintained by [Fyodor](http://insecure.org/fyodor/) AKA Gordon Lyon.
+**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of penetration testing. The tool was written and maintained by [Fyodor](http://insecure.org/fyodor/) AKA Gordon Lyon.
 
 [Nmap](http://nmap.org) displays exposed services on a target machine along with other useful information such as the verion and OS detection.
 
@@ -1165,7 +1165,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 
 The following are real world examples of Nmap enumeration.
 
-###Enumerating Netbios
+### Enumerating Netbios
 
 The following example enumerates Netbios on the target networks, the same process can be applied to other services by modifying ports / NSE scripts.
 

