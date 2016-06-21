@@ -44,7 +44,7 @@ For more commands, see [nmap cheat sheet](/blog/nmap-cheat-sheet/).
 
         <tr>
       <td>
-        <p><code>nmap -v -sS -p 1-65535 -A -T4 target</code></p>
+        <p><code>nmap -v -sS -p--A -T4 target</code></p>
       </td>
       <td>
             <p>As above but scans all TCP ports (takes a lot longer)</p>
@@ -52,7 +52,7 @@ For more commands, see [nmap cheat sheet](/blog/nmap-cheat-sheet/).
     </tr>
     <tr>
       <td>
-        <p><code>nmap -v -sU -sS -p 1-65535 -A -T4 target</code></p>
+        <p><code>nmap -v -sU -sS -p- -A -T4 target</code></p>
       </td>
       <td>
             <p>As above but scans all TCP ports and UDP scan (takes even longer)</p>
@@ -62,7 +62,7 @@ For more commands, see [nmap cheat sheet](/blog/nmap-cheat-sheet/).
         <p><code>nmap -v -p 445 --script=smb-check-vulns <br>--script-args=unsafe=1 192.168.1.X</code></p>
       </td>
       <td>
-            <p>Nmap script to scan for vulnerable SMB servers</p>
+            <p>Nmap script to scan for vulnerable SMB servers - WARNING: unsafe=1 may cause knockover</p>
       </td>
     </tr>
       <td>
@@ -110,7 +110,7 @@ Also see, [nbtscan cheat sheet](/blog/nbtscan-cheat-sheet/).
 
 ### Other Host Discovery
 
-Other methods of host discovery, that don't use nmap...
+Other methods of host discovery, that don't use nmap... 
 
 <div class="mobile-side-scroller">
 <table>
@@ -127,7 +127,7 @@ Other methods of host discovery, that don't use nmap...
         <p><code>netdiscover -r 192.168.1.0/24</code></p>
       </td>
       <td>
-            <p>Discovers IP, MAC Address and MAC vendor on the subnet from ARP</p>
+            <p>Discovers IP, MAC Address and MAC vendor on the subnet from ARP, helpful for confirming you're on the right VLAN at $client site</p>
       </td>
 
     </tr>
@@ -246,7 +246,9 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </div>
 
 
-## Basic Finger Printing Versioning
+## Basic Finger Printing 
+
+Manual finger printing / banner grabbing. 
 
 
 <div class="mobile-side-scroller">
@@ -341,7 +343,6 @@ How to mount NFS / CIFS, Windows and Linux file shares.
           <span class="prompt">root</span><span>:</span><span class="path">~</span><span>#</span>
           <span class="command">dnsrecon -d TARGET -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml</span>
         </p>
-        </p>
       </div>
     </div>
 </section>
@@ -426,6 +427,15 @@ Some techniques used to remotely enumerate users on a target system.
            <p>Enumerate users from SMB</p>
       </td>
     </tr>
+    <tr>
+      <td>
+        <p><code>ridenum.py 192.168.XXX.XXX 500 50000 dict.txt</code></p>
+      </td>
+      <td>
+           <p>RID cycle SMB / enumerate users from SMB</p>
+      </td>
+    </tr>
+
 </table>
 </div>
 
@@ -835,10 +845,6 @@ See [Reverse Shell Cheat Sheet](/blog/reverse-shell-cheat-sheet/) for a list of 
 Tips / Tricks to spawn a TTY shell from a limited shell in Linux, useful for running commands like <code>su</code> from reverse shells.
 
 ### Python TTY Shell Trick  
-
-{% highlight python %}
-python -c 'import pty;pty.spawn("/bin/bash")'
-{% endhighlight %}
 
 {% highlight python %}
 python -c 'import pty;pty.spawn("/bin/bash")'
@@ -3082,7 +3088,7 @@ Likely just use **hash-identifier** for this but here are some example hashes:
 
     <tr>
       <td>
-        <p><code>sqlmap -u <target> -p PARAM --data=POSTDATA --cookie=COOKIE <br> --level=3 --current-user --current-db --passwords <br> --file-read="/var/www/blah.php"</code></p>
+        <p><code> sqlmap -u TARGET -p PARAM --data=POSTDATA --cookie=COOKIE <br> --level=3 --current-user --current-db --passwords <br> --file-read="/var/www/blah.php" </code></p>
       </td>
       <td>
             <p>Targeted sqlmap scan</p>
@@ -3115,3 +3121,9 @@ Likely just use **hash-identifier** for this but here are some example hashes:
       <td>
             <p>sqlmap dump and crack hashes for table users on database-name.</p>
       </td>
+     </tr> 
+  </tbody>
+</table>
+</div>
+
+
