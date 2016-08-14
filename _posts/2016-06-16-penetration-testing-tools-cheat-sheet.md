@@ -16,7 +16,7 @@ tags:
 * list element with functor item
 {:toc}
 
-**Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific [pen testing cheat sheet](/blog/cheat-sheet/).
+**Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://www.aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific [pen testing cheat sheet](/blog/cheat-sheet/).
 
 ## Recon and Enumeration
 
