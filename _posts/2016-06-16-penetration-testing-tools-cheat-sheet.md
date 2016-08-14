@@ -16,7 +16,7 @@ tags:
 * list element with functor item
 {:toc}
 
-**Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://bluewire-security.com/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific [pen testing cheat sheet](/blog/cheat-sheet/).
+**Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific [pen testing cheat sheet](/blog/cheat-sheet/).
 
 ## Recon and Enumeration
 
@@ -110,7 +110,7 @@ Also see, [nbtscan cheat sheet](/blog/nbtscan-cheat-sheet/).
 
 ### Other Host Discovery
 
-Other methods of host discovery, that don't use nmap... 
+Other methods of host discovery, that don't use nmap...
 
 <div class="mobile-side-scroller">
 <table>
@@ -246,9 +246,9 @@ How to mount NFS / CIFS, Windows and Linux file shares.
 </div>
 
 
-## Basic Finger Printing 
+## Basic Finger Printing
 
-Manual finger printing / banner grabbing. 
+Manual finger printing / banner grabbing.
 
 
 <div class="mobile-side-scroller">
@@ -3121,9 +3121,7 @@ Likely just use **hash-identifier** for this but here are some example hashes:
       <td>
             <p>sqlmap dump and crack hashes for table users on database-name.</p>
       </td>
-     </tr> 
+     </tr>
   </tbody>
 </table>
 </div>
-
-
