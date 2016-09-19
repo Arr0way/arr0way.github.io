@@ -16,13 +16,13 @@ tags:
 * list element with functor item
 {:toc}
 
-**Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://www.aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific [pen testing cheat sheet](/blog/cheat-sheet/).
+**Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://www.aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific pen testing cheat sheet from the menu on the right.
 
 ## Recon and Enumeration
 
 ### NMAP Commands
 
-For more commands, see [nmap cheat sheet](/blog/nmap-cheat-sheet/).
+For more commands, see the nmap cheat sheet (link in the menu on the right).
 
 <div class="mobile-side-scroller">
 <table>
@@ -78,7 +78,7 @@ For more commands, see [nmap cheat sheet](/blog/nmap-cheat-sheet/).
 
 ## SMB enumeration
 
-Also see, [nbtscan cheat sheet](/blog/nbtscan-cheat-sheet/).
+Also see, nbtscan cheat sheet (right hand menu).
 
   <div class="mobile-side-scroller">
   <table>
@@ -679,7 +679,7 @@ See **Windows Penetration Testing Commands**.
 
 ## Linux Penetration Testing Commands
 
-See [Linux Penetration Testing Commands Cheat Sheet](/blog/linux-commands-cheat-sheet/) for a list of Linux Penetration testing commands, useful for local system enumeration.
+See Linux Commands Cheat Sheet (right hand menu) for a list of Linux Penetration testing commands, useful for local system enumeration.
 
 ## Compiling Exploits
 
