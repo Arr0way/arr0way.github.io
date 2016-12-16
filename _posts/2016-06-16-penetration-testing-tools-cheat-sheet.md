@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title:  "Penetration Testing Tools Cheat Sheet"
-date:   2016-06-16 22:22:10
+date:   2016-12-16 14:22:10
 author: Arr0way
 description: 'Penetration testing tools cheat sheet, a high level overview / quick reference cheat sheet for penetration testing.'
 categories: [cheat-sheet]
@@ -17,6 +17,13 @@ tags:
 {:toc}
 
 **Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://www.aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific pen testing cheat sheet from the menu on the right.
+
+## OSINT
+Open-source intelligence (OSINT), collecting as much information about a target as possible using public information such as WHOIS, GitHub, Email addresses etc. 
+
+### GitRob 
+
+
 
 ## Recon and Enumeration
 
