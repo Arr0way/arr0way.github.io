@@ -1,10 +1,51 @@
 ---
 layout: blog
-title: Penetration Testing Techniques
+title: Techniques
 permalink: /blog/techniques/
 author: all
 ---
 
-{% for post in site.categories.techniques %}
-  {% include blog_item.html %}
-{% endfor %}
+<article>
+
+<section class="enum-box">
+  <div class="grid">
+    <div class="unit whole">
+      <div class="grid pane">
+        <div class="unit whole center-on-mobiles">
+	 <img src="/img/highon.coffee-small-cup.png" alt="HighOnCoffee Logo">	
+          <div class="pane-content">
+            <h1>Pen Testing {{ page.title }}<a href="{{ page.url }}" class="permalink" title="Permalink">∞</a></h1>
+	    <p>Penetration Testing <b>techniques</b> documentation</p>
+          </div>
+         </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Article Name</th>
+    </tr>
+  </thead>
+      <tbody>
+        {% for post in site.categories.techniques %}
+        <tr>
+           <td>
+             <pc><p><code>{{ post.date | date_to_string }}</code></p></pc>
+           </td>
+           <td>
+             <pc><p><b><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></b></p></pc>
+           </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+</table>
+</div>
+
+</article>
