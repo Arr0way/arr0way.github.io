@@ -13,8 +13,6 @@ tags:
 - 'Penetration Testing'
 ---
 
-**Last Updated:** 2016-12-31 - Added a lot more content :)
-
 * list element with functor item
 {:toc}
 
@@ -22,9 +20,7 @@ tags:
 
 ## Recon and Enumeration
 
-### Port Scanning 
-
-#### Nmap Commands
+### Nmap Commands
 
 For more commands, see the Nmap cheat sheet (link in the menu on the right).
 
@@ -79,38 +75,6 @@ Basic Nmap Commands:
       </td>
     </tr>
   </tbody>
-  </table>
-  </div>
-
-### Nmap Tools
-
-
-
-  <div class="mobile-side-scroller">
-  <table>
-    <thead>
-      <tr>
-        <th>Command</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-        <tbody>
-        <tr>
-        <td>
-          <p><code>nbtscan 192.168.1.0/24</code></p>
-        </td>
-        <td><p>Discover Windows / Samba servers on subnet, finds Windows MAC addresses, netbios name and discover client workgroup / domain</p></td>
-      </tr>
-
-       <tr>
-        <td>
-          <p><code>enum4linux -a target-ip</code></p>
-        </td>
-        <td>
-              <p>Do Everything, runs all options (find windows client domain / workgroup) apart from dictionary based share name guessing</p>
-        </td>
-      </tr>
-    </tbody>
   </table>
   </div>
 
