@@ -454,7 +454,7 @@ wget https://raw.githubusercontent.com/raesene/TestingScripts/master/snmpv3enum.
 
 <div class="note tip">
   <h5>Use Metasploits Wordlist</h5>
-  <p>You can use metasploits wordlist for common credentials on v1 & 2 of SNMP</p>
+  <p>Metasploit's wordlist (KALI path below) has common credentials for v1 & 2 of SNMP, for newer credentials check out Daniel Miessler's SecLists project on GitHub (not the mailing list!).</p>
 </div>
 
 ```
