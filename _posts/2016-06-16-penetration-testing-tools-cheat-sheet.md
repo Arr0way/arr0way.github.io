@@ -498,7 +498,7 @@ finger @TARGET-IP
 finger batman@TARGET-IP 
 ```
 
-#### Really old Solaris bug that shows all logged in users:
+#### Solaris bug that shows all logged in users:
 
 ``` 
 finger 0@host  
