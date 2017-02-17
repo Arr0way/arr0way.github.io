@@ -461,11 +461,9 @@ wget https://raw.githubusercontent.com/raesene/TestingScripts/master/snmpv3enum.
 /usr/share/metasploit-framework/data/wordlists/snmp_default_pass.txt
 ```
 
-For newer SNMPv3 use seclist
-
 ### R Services Enumeration
 
-This is Legacy, included for completeness. 
+This is legacy, included for completeness. 
 
 nmap -A will perform all the rservices enumeration listed below, this section has been added for completeness or manual confirmation: 
 
