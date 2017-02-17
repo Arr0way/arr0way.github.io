@@ -727,7 +727,6 @@ ssh -D 127.0.0.1:1010 -p 22 user@pivot-target-ip
 
 Add socks4 127.0.0.1 1010 in /etc/proxychains.conf
 
-proxychains commands target
 
 SSH pivoting from one network to another: 
 
