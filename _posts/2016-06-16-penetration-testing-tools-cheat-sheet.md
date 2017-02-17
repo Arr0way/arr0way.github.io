@@ -1271,7 +1271,7 @@ Scan a range for VPN servers:
 
 #### IKEForce 
 
-Or crack using IKEForce: 
+Use IKEForce to enumerate or dictionary attack VPN servers.
 
 Install:
 ```
