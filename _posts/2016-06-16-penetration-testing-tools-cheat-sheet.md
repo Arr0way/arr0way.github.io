@@ -28,7 +28,6 @@ The focus of this cheat sheet is infrastructure / network penetration testing, w
 {:toc}
 
 
-
 ## Pre-engagement
 
 ### Network Configuration 
