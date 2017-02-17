@@ -429,7 +429,7 @@ python Responder.py -i local-ip -I eth0
 
 
 <div class="note tip">
-  <h5>Run Responde.py for the whole engagement</h5>
+  <h5>Run Responder.py for the whole engagement</h5>
   <p>Run Responder.py for the length of the engagement while you're working on other attack vectors.</p>
 </div>
 
