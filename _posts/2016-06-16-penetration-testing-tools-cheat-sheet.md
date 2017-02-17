@@ -17,7 +17,7 @@ tags:
 
 **Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://www.aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific pen testing cheat sheet from the menu on the right.
 
-The focus of this cheat sheet is infrastructure / network penetration testing, web application penetration testing is not covered here apart from a few sqlmap commands at the and some web server enumeration. 
+The focus of this cheat sheet is infrastructure / network penetration testing, web application penetration testing is not covered here apart from a few sqlmap commands at the end and some web server enumeration. 
 
 ### Changelog
 
@@ -442,7 +442,7 @@ Idenitfy SNMPv3 servers with nmap:
 nmap -sV -p 161 --script=snmp-info TARGET-SUBNET
 ```
 
-Rory McCune's snmpwalk wrapper script that helps automate the username enumeration process for SNMPv3:
+Rory McCune's snmpwalk wrapper script helps automate the username enumeration process for SNMPv3:
 
 ```
 apt-get install snmp snmp-mibs-downloader
@@ -459,7 +459,9 @@ For newer SNMPv3 use seclist
 
 ### R Services Enumeration
 
-Legacy, included for completeness and you never know what you might find on an internally. Also, I'm fairly certain that nmap -A will perform all the rservices enumeration listed below, but here it is for completeness: 
+This is Legacy, included for completeness. 
+
+nmap -A will perform all the rservices enumeration listed below, but I've added this section for completeness: 
 
 #### RSH Enumeration
 ##### RSH Run Commands
@@ -590,7 +592,10 @@ nmap -p 1521 -A TARGET
 
 #### Oracle Privilege Escalation 
 
-Oracle privelege escalation technique if Oracle is exposed on the network and you can grab a default account like scott. 
+Requirements: 
+
+- Oracle needs to be exposed on the network 
+- A default account is in use like scott 
 
 Quick overview of how this works: 
 
