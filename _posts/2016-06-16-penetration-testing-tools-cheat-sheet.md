@@ -461,7 +461,7 @@ For newer SNMPv3 use seclist
 
 This is Legacy, included for completeness. 
 
-nmap -A will perform all the rservices enumeration listed below, but I've added this section for completeness: 
+nmap -A will perform all the rservices enumeration listed below, this section has been added for completeness or manual confirmation: 
 
 #### RSH Enumeration
 ##### RSH Run Commands
@@ -599,7 +599,7 @@ Requirements:
 
 Quick overview of how this works: 
 
-1. Create a function containing 
+1. Create a function  
 1. Create an index on table SYS.DUAL
 2. The index we just created executes our function SCOTT.DBA_X 
 3. The function will be executed by SYS user (as that's the user that owns the table).
