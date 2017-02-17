@@ -338,7 +338,7 @@ Also see, nbtscan cheat sheet (right hand menu).
   </table>
   </div>
 
-##### Fingerprnt SMB Version
+##### Fingerprint SMB Version
 
 ``` 
 smbclient -L //192.168.1.100 
@@ -418,7 +418,7 @@ auxiliary/server/capture/http_ntlm
 
 You'll end up with NTLMv2 hash, use john or hashcat to crack it. 
 
-#### Responder.py 
+#### Responder.py
 
 Alternatively you can use responder. 
 

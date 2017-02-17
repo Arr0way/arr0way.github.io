@@ -1,14 +1,21 @@
 ---
 layout: docs
-title: About highon.coffee
+title: About HighOn.Coffee
 overview: true
 ---
 
-<p>A site about security.</p>
+
+
+<p>A site about Penetration Testing & Security.</p>
 
 <p>I randomly named this blog highon.coffee, as I like drinking coffee.</p>
 
 A collection of penetration testing documentation, as I discover new tools and techniques they will be documented here.
+
+
+
+You can follow me on twitter <a href="https://twitter.com/Arr0way" rel="nofollow" target="_blank" title="Follow on Twitter"> @Arr0way</a> <= if you click it you'll follow me, I made it easy for you :) 
+
 
 
 ## Helpful Hints
