@@ -400,8 +400,10 @@ python Responder.py -i local-ip -I eth0
 ```
 
 
-
-TIP: Run responder for the length of the engagement 
+<div class="note tip">
+  <h5>Run Responde.py for the whole engagement</h5>
+  <p>Run Responder.py for the length of the engagement while you're working on other attack vectors.</p>
+</div>
 
 ### SNMP Enumeration 
 
@@ -449,7 +451,11 @@ apt-get install snmp snmp-mibs-downloader
 wget https://raw.githubusercontent.com/raesene/TestingScripts/master/snmpv3enum.rb
 ```
 
-TIP: You can use metasploits wordlist for common crednetials on v1 & 2 of SNMP, on kali you can find this at:
+
+<div class="note tip">
+  <h5>Use Metasploits Wordlist</h5>
+  <p>You can use metasploits wordlist for common credentials on v1 & 2 of SNMP</p>
+</div>
 
 ```
 /usr/share/metasploit-framework/data/wordlists/snmp_default_pass.txt
@@ -689,7 +695,10 @@ Metasploit:
 msf > use auxiliary/scanner/mssql/mssql_ping
 ```
 
-Tip: Try "Browse for More" via MS SQL Server Management Studio
+<div class="note tip">
+  <h5>Use MS SQL Servers Browse For More</h5>
+  <p>Try using "Browse for More" via MS SQL Server Management Studio</p>
+</div>
 
 #### Bruteforce MSSQL Login
 
