@@ -449,7 +449,7 @@ apt-get install snmp snmp-mibs-downloader
 wget https://raw.githubusercontent.com/raesene/TestingScripts/master/snmpv3enum.rb
 ```
 
-TIP: You can use metasploits wordlist for common older v1 & 2 SNMP credentials, on kali you can find this at:
+TIP: You can use metasploits wordlist for common crednetials on v1 & 2 of SNMP, on kali you can find this at:
 
 ```
 /usr/share/metasploit-framework/data/wordlists/snmp_default_pass.txt
