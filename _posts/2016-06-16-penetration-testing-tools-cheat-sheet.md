@@ -34,7 +34,10 @@ The focus of this cheat sheet is infrastructure / network penetration testing, w
 
 #### Set IP Address 
 
+
+```
 ifconfig eth0 xxx.xxx.xxx.xxx/24 
+```
 
 #### Subnetting 
 
