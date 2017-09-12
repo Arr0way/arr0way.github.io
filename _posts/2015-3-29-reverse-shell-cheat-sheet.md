@@ -18,6 +18,8 @@ During penetration testing if you're lucky enough to find a remote command execu
 
 Below are a collection of **reverse shells** that use commonly installed programming languages, or commonly installed binaries (nc, telnet, bash, etc). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux.
 
+If you found this resource usefull you should also check out our [pen testing tools](/blog/reverse-shell-cheat-sheet/) cheat sheet which has some additional reverse shells and other commands useful when performing penetration testing. 
+
 ## Setup Listening Netcat
 
 Your remote shell will need a listening netcat instance in order to connect back.  
