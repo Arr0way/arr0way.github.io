@@ -19,7 +19,7 @@ tags:
 
 When conducting an external penetration test you may need to route traffic through a compromised machine in order to compromise internal targets.
 
-**Pivoting**, allows you to leverage tools on your attacking machine while routing traffic through other hosts on the subnet, and potentially allowing access to other subnets.
+**Pivoting**, allows you to leverage [pen test tools](/blog/penetration-testing-tools-cheat-sheet/) on your attacking machine while routing traffic through other hosts on the subnet, and potentially allowing access to other subnets.
 
 ## SSH Pivoting Cheatsheet
 
