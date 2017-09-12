@@ -101,9 +101,9 @@ This method is a little tricky as the proc file that contains the Apache error l
 
 <hr>
 
-## fimap LFI Tool
+## fimap LFI Pen Testing Tool
 
-fimap automates the above processes of discovering and exploiting LFI scripts. Upon discovering a vulnerable LFI script fimap will enumerate the local filesystem and search for writable log files or locations such as <code>/proc/self/environ</code>.  
+fimap is a [tool used on pen tests](/blog/penetration-testing-tools-cheat-sheet/) that automates the above processes of discovering and exploiting LFI scripts. Upon discovering a vulnerable LFI script fimap will enumerate the local filesystem and search for writable log files or locations such as <code>/proc/self/environ</code>. Another tool commonly used by pen testes to automate LFI discovery is Kali's dotdotpwn, which works in a similar way.  
 
 <hr>
 
