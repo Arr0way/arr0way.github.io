@@ -11,7 +11,7 @@ overview: true
 
 You can follow me on twitter <a href="https://twitter.com/Arr0way" rel="nofollow" target="_blank" title="Follow on Twitter"> @Arr0way</a> <= I made it easy for you :) 
 
-This site is a collection of penetration testing documentation, as I discover new tools and techniques they will be documented here.
+This site is a collection of penetration testing documentation, if you're interested in penetration testing you should take a look at our [pentesting tools](/blog/penetration-testing-tools-cheat-sheet/) cheat sheet which contains a number of useful commands for pen testers, mainly infra testing tools. 
 
 ## Helpful Hints
 
