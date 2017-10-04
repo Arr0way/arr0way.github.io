@@ -299,7 +299,7 @@ Other methods of host discovery, that don't use nmap...
 
 ## Enumeration & Attacking Network Services 
 
-Tools that will spefically identify and / or enumerate network services: 
+Penetration testing tools that spefically identify and / or enumerate network services: 
 
 
 ### SAMB / SMB / Windows Domain Enumeration 
