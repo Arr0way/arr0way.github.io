@@ -19,6 +19,8 @@ tags:
 
 The focus of this cheat sheet is infrastructure / network penetration testing, web application penetration testing is not covered here apart from a few sqlmap commands at the end and some web server enumeration. 
 
+If I'm missing any pen testing tools here give me a nudge on twitter. 
+
 ### Changelog
 
 17/02/2017 - Article updated, added loads more content, VPN, DNS tunneling, VLAN hopping etc - check out the TOC below. 
@@ -243,6 +245,8 @@ Basic Nmap Commands:
   </div>
 
 
+I've had a few people mention about T4 scans, apply common sense here. Don't use T4 commands on external pen tests (when using an Internet connection), you're probably better off using a T2 with a TCP connect scan. A T4 scan would likely be better suited for an internal pen test, over low latency links with plenty of bandwidth. But it all depends on the target devices, embeded devices are going to struggle if you T4 / T5 them and give inconclusive results. As a general rule of thumb, scan as slowly as you can, or do a fast scan for the top 1000 so you can start pen testing then kick off a slower scan.
+
 ###### Nmap UDP Scanning 
 
 ```
@@ -436,7 +440,9 @@ python Responder.py -i local-ip -I eth0
   <p>Run Responder.py for the length of the engagement while you're working on other attack vectors.</p>
 </div>
 
-### SNMP Enumeration 
+### SNMP Enumeration Tools
+
+A number of SNMP enumeration tools.
 
 Fix SNMP output values so they are human readable: 
 
@@ -467,7 +473,7 @@ echo "" > /etc/snmp/snmp.conf
 </table>
 </div>
 
-#### SNMPv3 Enumeration
+#### SNMPv3 Enumeration Tools
 
 Idenitfy SNMPv3 servers with nmap: 
 
@@ -942,6 +948,8 @@ E.g Class A,B,C (depreciated)
 
 #### IPv4 Subnet Cheat Sheet  
 
+Subnet cheat sheet, not really realted to pen testing but a useful reference. 
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -1257,7 +1265,7 @@ chmod 700 frogger.sh
 ./frogger.sh 
 ```
 
-### VPN Hacking 
+### VPN Pentesting Tools 
 
 Identify VPN servers: 
 
@@ -1852,6 +1860,8 @@ Use <code>-t</code> to limit concurrent connections, example: <code>-t 15</code>
 
 ## Password Cracking
 
+Password cracking penetration testing tools.
+
 ### John The Ripper - JTR
 
 <div class="mobile-side-scroller">
@@ -2114,9 +2124,9 @@ Run shell commands from vi:
 {% endhighlight %}
 
 
-## Metasploit
+## Metasploit Cheat Sheet
 
-Some basic Metasploit stuff, that I have found handy for reference.
+A basic metasploit cheat sheet that I have found handy for reference.
 
 Basic Metasploit commands, useful for reference, for pivoting see - [Meterpreter Pivoting](/blog/ssh-meterpreter-pivoting-techniques/) techniques.
 
@@ -3832,6 +3842,8 @@ Likely just use **hash-identifier** for this but here are some example hashes:
 </div>
 
 ## SQLMap Examples
+
+A mini SQLMap cheat sheet: 
 
 <div class="mobile-side-scroller">
 <table>
