@@ -17,7 +17,7 @@ tags:
 
 **Penetration testing tools cheat sheet**, a quick reference high level overview for typical [penetration testing](https://www.aptive.co.uk/penetration-testing/) engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands you would run when performing a penetration test. For more in depth information I'd recommend the man file for the tool or a more specific pen testing cheat sheet from the menu on the right.
 
-The focus of this cheat sheet is infrastructure / network penetration testing, web application penetration testing is not covered here apart from a few sqlmap commands at the end and some web server enumeration. For Web Application Penetration Testing, <a href="https://www.amazon.com/gp/product/1118026470//ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=hoc05-20&linkId=e7964812183d52e055f687724a8af308" rel="nofollow">I highly recommend this book</a>, it is an excellent book for both learning and reference.
+The focus of this cheat sheet is infrastructure / network penetration testing, web application penetration testing is not covered here apart from a few sqlmap commands at the end and some web server enumeration. For Web Application Penetration Testing, <a href="https://www.amazon.com/gp/product/1118026470//ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=hoc05-20&linkId=e7964812183d52e055f687724a8af308" rel="nofollow">I highly recommend this book</a>, it is excellent for both learning and reference.
 
 If I'm missing any pen testing tools here give me a nudge on twitter. 
 
