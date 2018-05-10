@@ -15,7 +15,7 @@ tags:
 * list element with functor item
 {:toc}
 
-**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of [penetration testing](https://www.aptive.co.uk/penetration-testing/). The tool was written and maintained by Fyodor AKA Gordon Lyon.
+**Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of a [penetration test](/blog/penetration-testing-tools-cheat-sheet/). The tool was written and maintained by Fyodor AKA Gordon Lyon.
 
 [Nmap](http://nmap.org) displays exposed services on a target machine along with other useful information such as the verion and OS detection.
 
