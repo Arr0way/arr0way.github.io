@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title:  "Reverse Shell Cheat Sheet"
-date:   2015-03-29 14:37:10
+date:   2020-09-16 14:37:10
 author: Arr0way
 description: 'Reverse Shell Cheat Sheet - 2020 update, a list of reverse shells for connecting back.'
 categories: [cheat-sheet]
