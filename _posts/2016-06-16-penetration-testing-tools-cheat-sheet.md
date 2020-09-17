@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title:  "Penetration Testing Tools Cheat Sheet"
-date:   2017-02-17 14:22:10
+date:   2020-03-16 14:22:10
 author: Arr0way
 description: 'Penetration testing tools cheat sheet, a high level overview / quick reference cheat sheet for penetration testing.'
 categories: [cheat-sheet]
@@ -23,6 +23,7 @@ If I'm missing any pen testing tools here give me a nudge on twitter.
 
 ### Changelog
 
+16/09/2020 - fixed some formatting issues (more coming soon I promise).
 17/02/2017 - Article updated, added loads more content, VPN, DNS tunneling, VLAN hopping etc - check out the TOC below. 
 
 
@@ -1883,7 +1884,7 @@ Password cracking penetration testing tools.
     </tr>
     <tr>
       <td>
-          <p><code>john --format=descrypt --wordlist <br> /usr/share/wordlists/rockyou.txt hash.txt</code></p>
+          <p><code>john --format=descrypt --wordlist /usr/share/wordlists/rockyou.txt hash.txt</code></p>
       </td>
       <td>
             <p>JTR forced descrypt cracking with wordlist</p>
