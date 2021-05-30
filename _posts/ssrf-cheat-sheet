@@ -13,13 +13,6 @@ tags:
 * list element with functor item
 {:toc}
 
-## What is an LFI Vulnerability?
-
-LFI stands for **Local File Includes** - it's a file local inclusion vulnerability that allows an attacker to include files that exist on the target web server. Typically this is exploited by abusing dynamic file inclusion mechanisms that don't sanitize user input.
-
-<!--more-->
-
-
 ## What is SSRF? 
 
 Server Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to exploit vulnerable functionality to access server side or local network services / functionality by affectively traversing the external firewall using vulnerable web functionality. 
@@ -30,6 +23,9 @@ An example of this could be a web function that allows the adding of a URL or th
 
 After identifying SSRF on applications running modern frameworks or a WAF, more work will be required in an effort to defeat the protection / filtering that is in place, and allow for successful SSRF exploitation. 
 
+<!--more-->
+
+
 ## Identifying Potential Locations for SSRF
 
 Any functionality that allows external service interaction is a good stating point, any where that accepts a third party URL or service integration.
@@ -38,7 +34,7 @@ Any functionality that allows external service interaction is a good stating poi
 
 In order to identify a SSRF vulnerability the first step is confirming that the functionality is vulnerable, an easy / scalable way to do this is using Burp Collaborator. Burp Collaborator will easily allow you to assess if out-of-band interaction is possible (the target server directly accessing a server you control). 
 
-<div class="note tip">
+<div class="note warning">
   <h5>PRO TIP: Run Your Own Collaborator Server</h5>
   <p>If you are taking part in bug bounty programs run your own Burp Collaborator  server as often the default Burp Collaborator service domain is filtered, giving you an increased chance of detection - <a href="https://www.linode.com/?r=de68d06f20e245c4952795b3a57180b223ff4d42" rel="nofollow">Linode works great for this</a>, it's cheap, fixed price and has a direct public IP address.</p>
 </div>
