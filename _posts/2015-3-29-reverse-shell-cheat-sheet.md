@@ -27,7 +27,7 @@ If you found this resource usefull you should also check out our [penetration te
 
 Your remote shell will need a listening netcat instance in order to connect back.  
 
-<div class="note tip">
+<div class="note warning">
   <h5>Set your Netcat listening shell on an allowed port</h5>
   <p>Use a port that is likely allowed via outbound firewall rules on the target network, e.g. 80 / 443</p>
 </div>
