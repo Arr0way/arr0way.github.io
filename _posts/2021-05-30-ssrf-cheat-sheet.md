@@ -34,9 +34,11 @@ Any functionality that allows external service interaction is a good stating poi
 
 In order to identify a SSRF vulnerability the first step is confirming that the functionality is vulnerable, an easy / scalable way to do this is using Burp Collaborator. Burp Collaborator will easily allow you to assess if out-of-band interaction is possible (the target server directly accessing a server you control). 
 
-<div class="note warning">
+<div class="note info">
   <h5>PRO TIP: Run Your Own Collaborator Server</h5>
-  <p>If you are taking part in bug bounty programs run your own Burp Collaborator  server as often the default Burp Collaborator service domain is filtered, giving you an increased chance of detection - <a href="https://www.linode.com/?r=de68d06f20e245c4952795b3a57180b223ff4d42" rel="nofollow">Linode works great for this</a>, it's cheap, fixed price and has a direct public IP address.</p>
+  <p>If you are taking part in bug bounty programs run your own Burp Collaborator  server as often the default Burp Collaborator service domain is filtered, giving you an increased chance of detection.</p>
+    
+    <p><a href="https://www.linode.com/?r=de68d06f20e245c4952795b3a57180b223ff4d42" rel="nofollow">Linode works great for this</a>, it's cheap, fixed price and has a direct public IP address.</p>
 </div>
 
 It should be noted that a function may still, potentially be vulnerable even if not identifid via Burp Collaborator, this is typically due to the target server not allowing outbound dns or strict egress firewall rules.  
