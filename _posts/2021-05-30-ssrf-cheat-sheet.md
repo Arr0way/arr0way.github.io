@@ -32,7 +32,7 @@ Any functionality that allows external service interaction is a good stating poi
 
 ## How to Find SSRF Vulnerabilities 
 
-In order to identify a SSRF vulnerability the first step is confirming that the functionality is vulnerable, an easy / scalable way to do this is using Burp Collaborator. Burp Collaborator will easily allow you to assess if out-of-band interaction is possible (the target server directly accessing a server you control). 
+In order to identify a SSRF vulnerability the first step is confirming that the functionality is vulnerable, an easy / scalable way to do this <a href="https://www.linode.com/?r=de68d06f20e245c4952795b3a57180b223ff4d42" rel="nofollow">is using your own Burp Collaborator on Linode</a>. Burp Collaborator will easily allow you to assess if out-of-band interaction is possible (the target server directly accessing a server you control). 
 
 <div class="note tip">
   <h5>PRO TIP: Run Your Own Collaborator Server</h5>
