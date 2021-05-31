@@ -114,7 +114,7 @@ jar:ftp://local-domain.com!/
 
 <div class="note tip">
   <h5>NOTE: OpenJDK 8+ Redirects</h5>
-  <p>It should be noted that OpenJDK 8+ does not follow redirects if the protocols do not match. (credit: 0xatul) </p>
+  <p>It should be noted that OpenJDK 8+ does not follow redirects if the protocols do not match. </p>
 </div>
 
 
