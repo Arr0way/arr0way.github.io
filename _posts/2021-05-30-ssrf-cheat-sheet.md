@@ -255,7 +255,7 @@ To overcome this issue, have one of the resolution IP addresses in your control 
 3. attempt to exploit the SSRF location with it
 
 
-## Post Exploitation / Enumeration - Increasing The Severity of SSRF
+## Post Exploitation / Enumeration
 
 In an effort to demonstrate the severity of the SSRF vulnerability enumeration of server side ports could be performed using Burp Intruder. 
 
