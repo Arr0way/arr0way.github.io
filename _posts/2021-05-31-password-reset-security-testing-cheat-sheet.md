@@ -40,7 +40,7 @@ Replace the Host: header with a server you control.
 Host: attackers-domain.com
 ```
 
-##### Double Host Header Password Reset Filter Bypass
+##### Double Host Header
 
 Often when you modify the Host header the application, or WAF fails to the process the request, a technique which can potentially bypass this filter if to simply add a second Host header to the request. 
 
@@ -49,7 +49,7 @@ Host: target.com
 Host: attackers-domain.com
 ```
 
-##### X-Forwarded-Host Header Password Reset 
+##### X-Forwarded-Host Header
 
 Add an attacker controlled domain in the X-forwarded-Host header directive.
 
