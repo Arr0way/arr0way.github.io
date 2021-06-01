@@ -81,11 +81,15 @@ If the app is built on ruby, try adding a .json extension to the end of the pass
 
 ## Email Parameter Manipulation
 
-### Password Change Functions: Intercept & Change the Email
+### Password Change Functions
+
+#### Intercept & Change the Email
 
 1. Interecept the request, and replace the email address to one that you control 
 
-### Password Reset Functons: Add Second Email 
+### Password Reset Functons
+
+#### Add Second Email 
 
 Vulnerable applications can be manipulated to send password reset codes to multiple email addresses.  
 
