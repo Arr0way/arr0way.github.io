@@ -3,7 +3,7 @@ layout: blog_item
 title: "Password Reset Testing Cheat Sheet"
 date:   2021-06-01 03:29:10
 author: Arr0way
-description: 'Password reset function assessment cheat sheet, several techniques for assessing password reset functions on web apps and API's.'
+description: 'Password reset function assessment cheat sheet, several techniques for assessing password reset functions on web apps and API.'
 categories: [cheat-sheet]
 tags:
 - 'Authentication'
@@ -12,7 +12,6 @@ tags:
 
 * list element with functor item
 {:toc}
-
 
 The following document outlines some key techniques used when assessing password reset function on modern web application and API's, a useful resource for bug bounty hunters and penetration testers when performing password reset security testing.  
 
