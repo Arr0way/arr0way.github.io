@@ -17,12 +17,6 @@ The following document outlines some key techniques used when assessing password
 
 <!--more-->
 
-## Check List 
-
-- [ ] Host Header Injection Password Reset Function 
-- [ ] Double Host Header Injection Password Reset Function
-- [ ] X-Forwarded-Host Header Injection Password Reset Function
-- [ ] Email Parameter Manipulation *add attacker controller second email address*
 
 ## Header Poisoning 
 
@@ -105,7 +99,7 @@ Vulnerable applications can be manipulated to send password reset codes to multi
  
 Modify the parameter matching the applications format, example:
 
-``
+```
 email="victim@mail.tld",email="attacker@mail.tld"
 ```
 
@@ -120,6 +114,13 @@ email="victim@mail.tld",email="attacker@mail.tld"
 Vulnerable applications leak the password reset URL via the referal header. 
 
 Assess the target using an intercepting proxy to identify if the referral header leaks the token through the referral header. 
+
+## Check List 
+
+- Host Header Injection Password Reset Function 
+- Double Host Header Injection Password Reset Function
+- X-Forwarded-Host Header Injection Password Reset Function
+- Email Parameter Manipulation *add attacker controller second email address*
 
 
 Enjoy.
