@@ -102,7 +102,7 @@ John the Ripper has a function to convert he key to a hash called john2hash.py a
 2. Use a comprehensive wordlist: john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa.hash-john 
 3. Wait and hope 
 
-<div class="note danger">
+<div class="note warning">
   <h5>Help Avoid Detection</h5>
   <p>Avoid directly connecting from a unknown host to the target SSH server, use an already known host to help prevent detection alerts being issued. </p>
 </div>
