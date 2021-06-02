@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title: "Android Pen Testing Environment Setup"
-date:   2021-06-01 15:29:10
+date:   2021-06-02 15:29:10
 author: Arr0way
 description: 'A step-by-step guide for setting up and configuring an Android Pen Testing Environment using Burp Suite & GenyMotion.'
 categories: [cheat-sheet]
