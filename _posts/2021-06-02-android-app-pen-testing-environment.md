@@ -71,17 +71,18 @@ Add a Burp proxy on the interface with the IP and port used at step 1
 2. ```brew install android-platform-tools``` 
 3. ```adb devices``` 
 
-```
+{% highlight bash %}
+
 List of devices attached
 192.168.XX.XXX:5555	device
 
-```
+{% endhighlight %}
 
 4. adb shell 
 
-```
+{% highlight bash %}
 vbox86p:/ # ls
-```
+{% endhighlight %}
 
 Your id should be root on GenyMotion. 
 
@@ -91,9 +92,9 @@ There are two options for installing APK files, using adb or dragging and droppi
 
 Using ADB: 
 
-```
+{% highlight bash %}
 adb install file.apk
-```
+{% endhighlight %}
 
 Or drag and drop the apk file into the running GenyMotion Android device. 
 
@@ -101,9 +102,9 @@ Or drag and drop the apk file into the running GenyMotion Android device.
 
 Installed Android application location: 
 
-```
+{% highlight bash %}
 cd /data/data
-```
+{% endhighlight %}
 
 ### 8. Open GApps
 
