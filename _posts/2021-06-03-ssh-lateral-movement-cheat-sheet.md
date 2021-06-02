@@ -25,7 +25,10 @@ This article focuses specifically on SSH lateral movement techniques on Linux.
 
 SSH private keys are typically an easy way to progress through the network, and are often found with poor permissions or duplicated in home directories. This article does not cover SSH pivoting in depth, we have a seperate resource for [SSH pivoting](https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/).  
 
-Note: SSH is no longer specific to Linux hosts only, consider enumerating Windows target for private keys.
+<div class="note info">
+  <h5>SSH is no longer specific to Linux hosts only</h5>
+  <p>SSH is no longer specific to Linux hosts only, consider enumerating Windows target for private keys.</p>
+</div>
 
 ### Manually Look for SSH Keys
 
@@ -70,11 +73,13 @@ grep -irv "BEGIN DSA PRIVATE KEY" /*
 
 {% endhighlight %}
 
-Note: Linux systems may hash the known_hosts file entries to prevent against enumeration. 
 
 ### Identify The Host for the Key
 
-Note: Linux systems may hash the known_hosts file entries to prevent against enumeration. 
+<div class="note tip">
+  <h5>Hashed known_hosts</h5>
+  <p>Modern Linux systems may hash the known_hosts file entries to help prevent against enumeration.</p>
+</div>
 
 If you find a key you then need to identify what server the key is for. In an attempt to idenitfy what host the key is for the following locations should be checked: 
 
@@ -97,9 +102,10 @@ John the Ripper has a function to convert he key to a hash called john2hash.py a
 2. Use a comprehensive wordlist: john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa.hash-john 
 3. Wait and hope 
 
-Note: Avoid directly connecting from a unknown host to the target SSH server, use an already known host to help prevent detection alerts being issued.  
-
-python ssh2john.py id\_rsa > id\_rsa.hash
+<div class="note danger">
+  <h5>Help Avoid Detection</h5>
+  <p>Avoid directly connecting from a unknown host to the target SSH server, use an already known host to help prevent detection alerts being issued. </p>
+</div>
 
 ### SSH Passphrase Backdoor
 
@@ -140,7 +146,10 @@ A potentially easier way to think of SSH agent forwarding, is to think of it as 
 
 In order to exploit SSH agent forwarding an active session must be open between the users client (that you wish to hijack) and the compromised intermediary host. You will also require access to the host where the user connect is with a superuser account with the privilages (such as ```su - username```) to access the account running the active SSH session you wish to hijack. 
 
-TIP: if -A fails to connect, perform the following: ```echo "ForwardingAgent yes" >> ~/.ssh/config``` to enable agent forwarding. 
+<div class="note tip">
+  <h5>If -A SSH Connection Fails</h5>
+  <p>If -A fails to connect, perform the following: ```echo "ForwardingAgent yes" >> ~/.ssh/config``` to enable agent forwarding. </p>
+</div>
 
 #### Client Instructions 
 
