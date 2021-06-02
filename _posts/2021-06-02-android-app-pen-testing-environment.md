@@ -37,7 +37,9 @@ If you are using DHCP you may want to statically assign an address, as the IP ra
 3. Network 
 4. Proxy Settings and tick HTTP and add your local interface address and a different port to one that Burp is using
 
-![[img/android-pen-testing-env-01.png]]
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+![Geny Motion Burp Proxy Settings](img/android-pen-testing-env-01.png "Geny Motion Burp Proxy Settings")
 
 ### 2. Android 8.1 Proxy Settings
 
@@ -45,7 +47,7 @@ If you are using DHCP you may want to statically assign an address, as the IP ra
 2. Tap Network & Internet > Wi-Fi > Long Tap on the connected Wi-Fi network and Select Modify Network 
 3. Tap Advanced > Proxy > Manual and enter the same Proxy settings you entered in step 1
 
-![[img/android-pen-testing-env-02.png]]
+![Android Burp Proxy Settings](img/android-pen-testing-env-02.png "Android Burp Proxy Settings")
 
 ### 3. Android Burp Certificate Installation 
 
@@ -56,7 +58,7 @@ If you are using DHCP you may want to statically assign an address, as the IP ra
 5. Click Downloads on the left and select the .cer file 
 6. Install the certificate and call it Burp 
 
-![[img/android-pen-testing-env-01.png]]
+![Android Burp Certificate Install](img/android-pen-testing-env-03.png "Android Burp Certificate Install")
 
 7. You will need to set a pin code, set one 
 
