@@ -27,7 +27,7 @@ DNS tunneling is used to evade egress firewall rules and/or IDS / proxy or other
 ## You Will Need
 
 1. A real world domain, <a href="https://www.namesilo.com/?rid=45f0146bp " rel="nofollow">NameSilo</a> works well and has free WHOIS privacy.
-2. A VPS to run DNSCAT2 - <a href="https://www.linode.com/?r=de68d06f20e245c4952795b3a57180b223ff4d42" rel="nofollow">Linode is cheap and works for this</a> (see instructions below) 
+2. A VPS to run DNSCAT2 - <a href="https://www.linode.com/?r=de68d06f20e245c4952795b3a57180b223ff4d42" rel="nofollow">Linode is cheap and works for this and this link will give you a $100 voucher</a> (see instructions below) 
 
 In order to tunnel data over DNS a real world domain must be used and the domains authoritivate name servers must be set to servers in your control. 
 
