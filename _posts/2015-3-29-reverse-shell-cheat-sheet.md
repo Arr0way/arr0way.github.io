@@ -25,7 +25,7 @@ If you found this resource usefull you should also check out our [penetration te
 
 ## Setup Listening Netcat
 
-Your remote shell will need a listening netcat instance in order to connect back.  
+Your remote shell will need a listening netcat instance in order to connect back, a simple way to do this is using a cloud instance / VPS - Linode is a good choice as they give you a direct public IP so there is no NAT issues to worry about or debug, <a href="https://www.linode.com/?r=de68d06f20e245c4952795b3a57180b223ff4d42" rel="nofollow"> you can use this link to get a $100 Linode voucher.</a> 
 
 <div class="note warning">
   <h5>Set your Netcat listening shell on an allowed port</h5>
