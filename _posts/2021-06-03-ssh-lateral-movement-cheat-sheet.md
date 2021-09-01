@@ -26,8 +26,8 @@ This article focuses specifically on SSH lateral movement techniques on Linux.
 SSH private keys are typically an easy way to progress through the network, and are often found with poor permissions or duplicated in home directories. This article does not cover SSH pivoting in depth, we have a seperate resource for [SSH pivoting](https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/).  
 
 <div class="note info">
-  <h5>SSH is no longer specific to Linux hosts only</h5>
-  <p>SSH is no longer specific to Linux hosts only, consider enumerating Windows target for private keys.</p>
+  <h5>Enumerate Non UNIX Based Hosts for Private Keys</h5>
+  <p>SSH is not specific to UNIX based operatng systems, consider enumerating Windows target for SSH private keys.</p>
 </div>
 
 ### Manually Look for SSH Keys
