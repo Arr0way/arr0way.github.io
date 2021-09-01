@@ -124,7 +124,7 @@ Starting point: You have SSH already backdoored the compromised host by adding y
 
 ### How SSH Agent Works
 
-SSH agent works by allowing the Intermediary machine to pass-through (forward) your SSH key from your client to the next downstream server, allowing the machine in the middle (potentially a bastian host) to use your key without having physical access to your key as they are not stored on the intermediate host but simply forwarded on to the downstream target server. 
+SSH agent works by allowing the Intermediary machine to pass-through (forward) your SSH key from your client to the next downstream server, allowing the machine in the middle (potentially a bastion host) to use your key without having physical access to your key as they are not stored on the intermediate host but simply forwarded on to the downstream target server. 
 
 - Access the machine where the existing victim user session is established
 - Root level access to the machine where the victim session is established
