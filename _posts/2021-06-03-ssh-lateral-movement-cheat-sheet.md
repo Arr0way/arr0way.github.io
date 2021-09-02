@@ -23,11 +23,11 @@ This article focuses specifically on SSH lateral movement techniques on Linux.
 
 ## SSH Lateral Movement 
 
-SSH private keys are typically an easy way to progress through the network, and are often found with poor permissions or duplicated in home directories. This article does not cover SSH pivoting in depth, we have a seperate resource for [SSH pivoting](https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/).  
+SSH private keys are typically an easy way to progress through the network, and are often found with poor permissions or duplicated in home directories. This article does not cover SSH pivoting in depth, we have a separate resource for [SSH pivoting](https://highon.coffee/blog/ssh-meterpreter-pivoting-techniques/).  
 
 <div class="note info">
   <h5>Enumerate Non UNIX Based Hosts for Private Keys</h5>
-  <p>SSH is not specific to UNIX based operatng systems, consider enumerating Windows target for SSH private keys.</p>
+  <p>SSH is not specific to UNIX based operating systems, consider enumerating Windows target for SSH private keys.</p>
 </div>
 
 ### Manually Look for SSH Keys
@@ -130,11 +130,11 @@ SSH agent works by allowing the Intermediary machine to pass-through (forward) y
 - Root level access to the machine where the victim session is established
 - A current victim SSH  connection with agent forwarding enabled 
 
-Your Machine => Intermediary Host (forwards your key) => Downsteam Machine 
+Your Machine => Intermediary Host (forwards your key) => Downstream Machine 
 
 #### The Risk
 
-The risk here is that if you have an open session and the intermedatory machine 
+The risk here is that if you have an open session and the intermediatory machine 
 
 ### How To Hijack SSH Agent Forwarding
 
@@ -144,7 +144,7 @@ SSH agent forwarding allows a user to connect to other machines without entering
 
 A potentially easier way to think of SSH agent forwarding, is to think of it as assigning the SSH key to the active SSH session, while the session is in place it is possible to access the SSH key and connect to other machines that the SSH key has access.     
 
-In order to exploit SSH agent forwarding an active session must be open between the users client (that you wish to hijack) and the compromised intermediary host. You will also require access to the host where the user connect is with a superuser account with the privilages (such as ```su - username```) to access the account running the active SSH session you wish to hijack. 
+In order to exploit SSH agent forwarding an active session must be open between the users client (that you wish to hijack) and the compromised intermediary host. You will also require access to the host where the user connect is with a superuser account with the privileges (such as ```su - username```) to access the account running the active SSH session you wish to hijack. 
 
 <div class="note tip">
   <h5>If -A SSH Connection Fails</h5>
@@ -165,9 +165,9 @@ You may need to create a new key, if so run ```ssh-add```.
 
 ### SSH Hijacking with ControlMaster 
 
-OpenSSH has an function called **ControlMaster** that enables the sharing of multiple sessions over a single network connection. Allowing you to connect to the server once and have all other subsequent ssh sessions use the initial connection. 
+OpenSSH has a function called **ControlMaster** that enables the sharing of multiple sessions over a single network connection. Allowing you to connect to the server once and have all other subsequent SSH sessions use the initial connection. 
 
-In order to exploit SSH ControlMaster you first need shell level access to the target, you will then need sufficient privileges to modify the config of a user to enable the  ControlMaster functionality.
+In order to exploit SSH ControlMaster you first need shell level access to the target; you will then need sufficient privileges to modify the config of a user to enable the  ControlMaster functionality.
 
 1. Gain shell level access to the target machine 
 2. Access the victim users home directory and create / modify the file ``` ~/.ssh/config ``` 
