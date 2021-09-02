@@ -15,7 +15,7 @@ tags:
 
 ## What is a Lateral Movement 
 
-A lateral movement typically occurs after a host has been compromised via a reverse shell, and foothold in the network is obtained. Fully compromising the target machine by performing Linux privilege escalation or Windows privilege escalation could be adventagious due to the increased access to files or operating system functionality leveraged by a root level account.
+A lateral movement typically occurs after a host has been compromised via a reverse shell, and foothold in the network is obtained. Fully compromising the target machine by performing Linux privilege escalation or Windows privilege escalation could be advantageous due to the increased access to files or operating system functionality leveraged by a root level account.
 
 This article focuses specifically on SSH lateral movement techniques on Linux.
 
