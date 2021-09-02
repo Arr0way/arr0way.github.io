@@ -134,7 +134,7 @@ Your Machine => Intermediary Host (forwards your key) => Downstream Machine
 
 #### The Risk
 
-The risk here is that if you have an open session and the intermediatory machine 
+The primary risk of using SSH Agent Forwarding is if the intermediatory machine is compromised, and the attacker has significant permissions they could, potentially use the established session socket to gain access to downstream servers. 
 
 ### How To Hijack SSH Agent Forwarding
 
@@ -144,7 +144,7 @@ SSH agent forwarding allows a user to connect to other machines without entering
 
 A potentially easier way to think of SSH agent forwarding, is to think of it as assigning the SSH key to the active SSH session, while the session is in place it is possible to access the SSH key and connect to other machines that the SSH key has access.     
 
-In order to exploit SSH agent forwarding an active session must be open between the user client (that you wish to hijack) and the compromised intermediary host. You will also require access to the host where the user is connected with superuser privileges (such as su - username) to access the account running the active SSH session you wish to hijack.
+In order to exploit SSH agent forwarding an active session must be open between the user client (that you wish to hijack) and the compromised intermediary host. You will also require access to the host where the user is connected with superuser privileges (such as ```su - username```, or ```sudo```) to access the account running the active SSH session you wish to hijack.
 
 <div class="note tip">
   <h5>If -A SSH Connection Fails</h5>
