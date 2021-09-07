@@ -65,11 +65,11 @@ cat ~/.ssh/id\_dsa
 ### Search For Files Containing SSH Keys
 
 {% highlight bash %} 
-grep -irv "-----BEGIN RSA PRIVATE KEY-----" /home/*
-grep -irv "BEGIN DSA PRIVATE KEY" /home/*
+grep -ir "-----BEGIN RSA PRIVATE KEY-----" /home/*
+grep -ir "BEGIN DSA PRIVATE KEY" /home/*
 
-grep -irv "BEGIN RSA PRIVATE KEY" /*
-grep -irv "BEGIN DSA PRIVATE KEY" /*
+grep -ir "BEGIN RSA PRIVATE KEY" /*
+grep -ir "BEGIN DSA PRIVATE KEY" /*
 
 {% endhighlight %}
 
