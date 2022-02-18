@@ -1320,7 +1320,7 @@ For example if you know you can get away with 2 req/sec without getting blacklis
 
 Assuming you do not want domain names being looked up, use the ```-n``` flag to dissable resolution and speed up the scan. 
 
-#### How to detect if you have been black listed on a portscan? 
+#### Nmap Black List Detection? 
 
 1. It ussally takes and extemely long time to complete 
 2. Droppped probes nmap will increase the timeout, but it's likely you are already black listed 
