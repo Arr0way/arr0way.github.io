@@ -34,6 +34,7 @@ Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 
 * Hardware (MAC) address detection
 * Service version detection
 * Vulnerability / exploit detection, using Nmap scripts (NSE)
+* Nmap IDS / Portscan Detection & Scan Time Optimisation 
 
 
 ### Nmap Examples
@@ -1254,3 +1255,77 @@ Check if Netbios servers are vulnerable to MS08-067
 </section>
 
 The information gathered during the enumeration indicates the target is vulnerable to MS08-067, exploitation will confirm if it's vulnerable to MS08-067.
+
+## Nmap Scan Optimisation 
+
+### Nmap Rate
+
+To speed up your scan increase the rate, be aware that setting a high rate value will result in a less accurate scan. 
+
+```
+--max-rate 
+--min-rate 
+```
+
+
+### Parallelism 
+
+The maximum or minimum amount of parallel tasks.
+
+TIP: If you have an basic IDS / portscan detection blocking your scans you could lower the --min-parallelism in an attempt to reduce the number of concurrent connections 
+
+```
+--min-parallelism
+--max-parallelism
+```
+
+### Host Group Sizes 
+
+The number of hosts scanned at the same time, Note: if you are writing output to a file e.g., -oA you will need to wait for the host group to complete scanning before the nmap output will be written to the file. Therefore if you get a lagging host you will may end up waiting a while for the output file, which brings us on to... host timeout.
+
+```
+--min-hostgroup 
+--max-hostgroup 
+```
+
+### Host Timeout 
+
+Nmap allows you to specify the timeout, which is the length of time it waits before giving up on the target. Be careful setting this super low, as you may end up with inaccurate results. 
+
+The following example would giveup after 50 seconds. 
+
+```
+--host-timeout 50 
+```
+
+### Scan Delay 
+
+An extremely useful option to defeat basic port scan detection (SOHO devices and some IDS) that essentially monitor and block X amount of connects per second (syn flood etc). 
+
+```
+--scan-delay 5s 
+```
+
+For example if you know you can get away with 2 req/sec without getting blacklisted then  you could use: 
+
+```
+--scan-delay 1.2
+``` 
+
+*added 200ms for a buffer* 
+
+### Disable DNS Lookups 
+
+Assuming you do not want domain names being looked up, use the ```-n``` flag to dissable resolution and speed up the scan. 
+
+#### How to detect if you have been black listed on a portscan? 
+
+1. It ussally takes and extemely long time to complete 
+2. Droppped probes nmap will increase the timeout, but it's likely you are already black listed 
+3. To confirm, recheck a port that you know was open before 
+
+As far as I know there is no way of detecting for black listing within nmap natively. 
+
+### Optimising Portscans for Targets 
+
+Once you have identified a target firewall / IDS you can look up the default settings for the portscan black list by reading the manual and use the nmap command switches above to obtain the best performance without getting black listed. 
