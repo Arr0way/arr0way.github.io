@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title:  "Nmap Cheat Sheet"
+title:  "Nmap Cheat Sheet: Commands & Examples (2022)"
 date:   2014-12-13 10:37:10
 author: Arr0way
-description: 'Nmap Cheat Sheet, examples and practical examples'
+description: 'Nmap Cheat Sheet, nmap commands and examples for practical use.'
 categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
