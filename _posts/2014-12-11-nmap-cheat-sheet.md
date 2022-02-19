@@ -334,6 +334,15 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
             <p>List Scan - simply list targets to scan</p>
       </td>
     </tr>
+        <tr>
+      <td>
+        <p><code>-PS</code></p>
+      </td>
+      <td>
+        <p>Specify a specific port nmap uses to verify a host is up e.g., <pre>-PS22</pre> (by default nmap sends to a bunch of common ports, this allows you to be specific)</p>
+      </td>
+    </tr>
+        
 
     <tr>
       <td>
@@ -1330,4 +1339,4 @@ As far as I know there is no way of detecting for black listing within nmap nati
 
 ### Optimising Portscans for Targets 
 
-Once you have identified a target firewall / IDS you can look up the default settings for the portscan black list by reading the manual and use the nmap command switches above to obtain the best performance without getting black listed. 
+Once you have identified a target firewall / IDS you can look up the default settings for the portscan black list by reading the manual and use the nmap command switches above to obtain the best performance without getting black listed.
