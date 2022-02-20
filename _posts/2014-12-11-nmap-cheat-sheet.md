@@ -39,7 +39,7 @@ Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 
 * Nmap IDS / Portscan Detection & Scan Time Optimisation 
 
 
-### Nmap Examples
+### Nmap Command Examples
 
 Basic Nmap scanning examples, often used at the first stage of enumeration.
 
@@ -144,6 +144,30 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
       </tbody>
 </table>
 </div>
+
+#### Nmap Scan all Ports
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tbody>
+      <tr>
+      <td>
+        <p><code>nmap -p- target</code></p>
+      </td>
+      <td>
+            <p>Nmap scan all ports, TCP ports.</p>
+      </td>
+    </tr>
+      </tbody>
+</table>
+</div>
+
 
 #### Nmap output formats
 
@@ -340,7 +364,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-sn</code></p>
       </td>
       <td>
-            <p>Ping Scan - disable port scan</p>
+            <p>Nmap ping scan / sweep - runs a nmap network scan, with port scanning disabled</p>
       </td>
     </tr>
 
