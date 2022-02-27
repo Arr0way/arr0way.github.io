@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title: "Encrypted Notes App Solution (iOS, Android, MacOS, Linux, Windows)"
-date:   2022-01-17 10:29:10
+date:   2022-01-17 01:29:10
 author: Arr0way
 description: 'A platform independent E2E Encrypted Notes App Solution using open-source tools Markdown + Cryptomator.'
 categories: [SecOps]
