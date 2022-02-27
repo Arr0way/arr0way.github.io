@@ -16,9 +16,9 @@ tags:
 
 ## E2E Encrypted Notes App Solution 
 
-People make a lot of notes, and personally I wanted to ensure (with a good degree of certainty) that organizations and/or others could not end up reading my notes. Therefore, I set to work on finding a platform independent E2E encrypted note taking app, to find there basically is not one. Arguably you could use Bitwarden or 1Password secure notes but that is not very practical or scalable (IMO). 
+A setup clunky setup for a platform independent E2E encrypted note taking app solution. 
 
-Note: if you are on iOS/MacOS only you could use Apple Notes and use the encrypted notes functionality, but then you are locked into that ecosytem. 
+Note (*pun not intended*): If you exclusively use iOS/MacOS you could use Apple Notes + the encrypted notes functionality, but then you are locked into that ecosytem. 
 
 ***Caveat:*** Only tested between Windows/MacOS/iOS however, there should be no reason this would not work on any other platform that Cryptomator supports.
 
