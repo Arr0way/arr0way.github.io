@@ -1,0 +1,51 @@
+---
+layout: blog
+title: SecOps
+permalink: /secops/
+author: all
+---
+
+
+<article>
+
+<section class="enum-box">
+  <div class="grid">
+    <div class="unit whole">
+      <div class="grid pane">
+        <div class="unit whole center-on-mobiles">
+          <div class="pane-content">
+            <h1>SecOps Resources<a href="{{ page.url }}" class="permalink" title="Permalink">∞</a></h1>
+            <p>A collection of <b>SecOps</b> related resources, enjoy.</p>
+          </div>
+         </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Post Name</th>
+    </tr>
+  </thead>
+      <tbody>
+        {% for post in site.categories.cheat-sheet %}
+        <tr>
+           <td>
+             <pc><p><code>{{ post.date | date_to_string }}</code></p></pc>
+           </td>
+           <td>
+             <pc><p><b><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></b></p></pc>
+           </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+</table>
+</div>
+
+</article>
