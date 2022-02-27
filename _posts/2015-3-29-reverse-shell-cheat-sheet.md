@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title:  "Reverse Shell Cheat Sheet"
-date:   2020-11-05 05:37:10
+title:  "Reverse Shell Cheat Sheet: PHP, Python, Powershell, Bash, NC, JSP, Java, Perl"
+date:   2022-02-27 02:37:10
 author: Arr0way
-description: 'Reverse Shell Cheat Sheet - 2020 update, a list of reverse shells for connecting back.'
+description: 'Reverse Shell Cheat Sheet (2022), a list of reverse shells for connecting back on Linux/Windows with PHP, Python, Powershell, nc (Netcat), JSP, Java, Bash, PS etc.'
 categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
@@ -16,10 +16,11 @@ tags:
 
 During penetration testing if you're lucky enough to find a remote command execution vulnerability, you'll more often than not want to connect back to your attacking machine to leverage an interactive shell.
 
-Below are a collection of **reverse shells** that use commonly installed programming languages, or commonly installed binaries (nc, telnet, bash, etc). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux.
+Below are a collection of Windows and Linux **reverse shells** that use commonly installed programming languages PHP, Python, Powershell, nc (Netcat), JSP, Java, Bash, PowerShell (PS). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux.
 
 If you found this resource usefull you should also check out our [penetration testing tools](/blog/penetration-testing-tools-cheat-sheet/) cheat sheet which has some additional reverse shells and other commands useful when performing penetration testing. 
 
+25/02/2022 - House keeping
 17/09/2020 - Updated to add the reverse shells submitted via Twitter @JaneScott 
 29/03/2015 - Original post date
 
