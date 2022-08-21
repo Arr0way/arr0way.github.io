@@ -8,7 +8,7 @@ description: "Penetration Testing Services overview."
 <section class="intro">
   <div class="grid">
     <div class="unit whole center-on-mobiles">
-      <p class="first">Penetration Testing &amp;&amp; Services</p>
+      <p class="first">Penetration Testing Services</p>
      </div>
   </div>
 </section>
