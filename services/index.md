@@ -20,21 +20,21 @@ description: "Penetration Testing Services overview."
 	</div>	
   <div class="grid">
     <div class="unit one-third">
-      <h2>Web Application Pentest</h2>
+      <h2>Web Application Pen Testing</h2>
       <p>
       Our web application penetration testing service that uses a methodology based on the OWASP ASVS testing standard, covering all areas of the OWASP Top 10.</em>
       </p>
       <a href="/services/web-app-pen-testing/">Web App Pen Testing&rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>Mobile App Pentest</h2>
+      <h2>Mobile App Pen Testing</h2>
       <p>
       Mobile app pen testing service for iOS and Android applications based on the OWASP testing methodology.
       </p>
       <a href="/services/mobile-app-pen-testing/">Mobile App Pen Testing&rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>API Pen Testing Services</h2>
+      <h2>API Pen Testing</h2>
       <p>
         API Penetration testing service for CRUD, REST, GraphQL and SOAP endpoints.
       </p>
@@ -47,14 +47,14 @@ description: "Penetration Testing Services overview."
 <section class="features">
   <div class="grid">
     <div class="unit one-third">
-      <h2>Cloud Penetration Testing</h2>
+      <h2>Cloud Pen Testing</h2>
       <p>
       Web, API, internal and external infrastructure penetration tests against cloud service providers such as AWS, Azure, and GCP.</em>
       </p>
       <a href="/services/cloud-pen-testing/">Cloud Penetration Testing&rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>External Network Penetration Testing</h2>
+      <h2>External Network Pen Testing</h2>
       <p>
        Penetration testing performed against external network infrastructure.
       </p>
@@ -65,7 +65,7 @@ description: "Penetration Testing Services overview."
       <p>
         Penetration testing performed against internal network infrastructure. 
       </p>
-      <a href="/services/internal-pen-testing/">Pen Testing Tools &rarr;</a>
+      <a href="/services/internal-pen-testing/">Internal Pen Testing &rarr;</a>
     </div>
     <div class="clear"></div>
   </div>
