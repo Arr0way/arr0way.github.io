@@ -15,28 +15,30 @@ description: "Penetration Testing Services overview."
 <section class="features">
 	<div class="grid">
 	<p>HighOnCoffee Penetration Testing Services simulate real-world cyber attacks on different attack surfaces of your organization. Our assessments are designed to identify security issues and vulnerabilities and assess the detection and response capabilities of your teams, processes and technology within your organizations environment.</p>
+		
+	<p>Testing the security posture of your exposed IT environment is a continuous and often difficult task. HighOnCoffee’s team of security professionals understand the latest vulnerabilities and  attack techniques to help make assessing your organizations defenses against cyber security threats easy, and help increase the overall security posture of your company.</p>
 	</div>	
   <div class="grid">
     <div class="unit one-third">
-      <h2>Blog</h2>
+      <h2>Web Application Pentest</h2>
       <p>
-      Guides, HowTo's, Cheat Sheets... <em>All-The-Things !</em>
+      Our web application penetration testing service that uses a methodology based on the OWASP ASVS testing standard, covering all areas of the OWASP Top 10.</em>
       </p>
-      <a href="/blog/">Check the blog&rarr;</a>
+      <a href="/services/web-app-pen-testing/">Web App Pen Testing&rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>Walkthroughs</h2>
+      <h2>Mobile App Pentest</h2>
       <p>
-      Walk through guides / write ups on boot2roots, ctfs etc
+      Mobile app pen testing service for iOS and Android applications based on the OWASP testing methodology.
       </p>
-      <a href="/blog/walkthroughs/">Boot2Root Walkthroughs&rarr;</a>
+      <a href="/services/mobile-app-pen-testing/">Mobile App Pen Testing&rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>Pen Testing Tools</h2>
+      <h2>API Pen Testing Services</h2>
       <p>
-        A collection of penetration testing tools documention...
+        API Penetration testing service for CRUD, REST, GraphQL and SOAP endpoints.
       </p>
-      <a href="/blog/penetration-testing-tools-cheat-sheet/">Pen Testing Tools &rarr;</a>
+      <a href="/services/api-pen-testing/">API Pen Testing&rarr;</a>
     </div>
     <div class="clear"></div>
   </div>
@@ -45,25 +47,25 @@ description: "Penetration Testing Services overview."
 <section class="features">
   <div class="grid">
     <div class="unit one-third">
-      <h2>Blog</h2>
+      <h2>Cloud Penetration Testing</h2>
       <p>
-      Guides, HowTo's, Cheat Sheets... <em>All-The-Things !</em>
+      Web, API, internal and external infrastructure penetration tests against cloud service providers such as AWS, Azure, and GCP.</em>
       </p>
-      <a href="/blog/">Check the blog&rarr;</a>
+      <a href="/services/cloud-pen-testing/">Cloud Penetration Testing&rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>Walkthroughs</h2>
+      <h2>External Network Penetration Testing</h2>
       <p>
-      Walk through guides / write ups on boot2roots, ctfs etc
+       Penetration testing performed against external network infrastructure.
       </p>
-      <a href="/blog/walkthroughs/">Boot2Root Walkthroughs&rarr;</a>
+      <a href="/services/external-pen-testing/">External Penetration Testing&rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>Pen Testing Tools</h2>
+      <h2>Internal Pen Testing</h2>
       <p>
-        A collection of penetration testing tools documention...
+        Penetration testing performed against internal network infrastructure. 
       </p>
-      <a href="/blog/penetration-testing-tools-cheat-sheet/">Pen Testing Tools &rarr;</a>
+      <a href="/services/internal-pen-testing/">Pen Testing Tools &rarr;</a>
     </div>
     <div class="clear"></div>
   </div>
@@ -110,10 +112,10 @@ description: "Penetration Testing Services overview."
     <div class="unit whole">
       <div class="grid pane">
         <div class="unit whole center-on-mobiles">
-          <img src="img/octocat.png" width="300" height="251" alt="Free Jekyll hosting on GitHub Pages">
-          <div class="pane-content">
-            <h2 class="center-on-mobiles"><strong>Free hosting</strong> with GitHub Pages</h2>
-	    <p>HighOn.Coffee uses GitHub Pages if you're running a static site, you can easily deploy using GitHub for free</p>
+            <div class="pane-content">
+            <h2 class="center-on-mobiles"><strong>Modern enetration Testing Services</strong> for Security and Compliance</h2>
+	    <p>HighOnCoffee’s modern approach to penetration testing delivers real-time updates, allowing  teams to respond to issues as they are detected and perform mitigation or remediation of potential risks quickly and effectively. Our team of carefully selected penetration testers have years of experience performing penetration tests of web applications, API’s, mobile applications, and internal / external network infrastructure, including cloud based penetration testing against Google GCP, AWS, and Microsoft Azure.
+</p>
           </div>
         </div>
         <div class="clear"></div>
