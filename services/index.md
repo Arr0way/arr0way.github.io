@@ -13,7 +13,9 @@ description: "Penetration Testing Services overview."
   </div>
 </section>
 <section class="features">
+	<div class="grid">
 	<p>HighOnCoffee Penetration Testing Services simulate real-world cyber attacks on different attack surfaces of your organization. Our assessments are designed to identify security issues and vulnerabilities and assess the detection and response capabilities of your teams, processes and technology within your organizations environment.</p>
+	</div>	
   <div class="grid">
     <div class="unit one-third">
       <h2>Blog</h2>
@@ -39,6 +41,34 @@ description: "Penetration Testing Services overview."
     <div class="clear"></div>
   </div>
 </section>
+
+<section class="features">
+  <div class="grid">
+    <div class="unit one-third">
+      <h2>Blog</h2>
+      <p>
+      Guides, HowTo's, Cheat Sheets... <em>All-The-Things !</em>
+      </p>
+      <a href="/blog/">Check the blog&rarr;</a>
+    </div>
+    <div class="unit one-third">
+      <h2>Walkthroughs</h2>
+      <p>
+      Walk through guides / write ups on boot2roots, ctfs etc
+      </p>
+      <a href="/blog/walkthroughs/">Boot2Root Walkthroughs&rarr;</a>
+    </div>
+    <div class="unit one-third">
+      <h2>Pen Testing Tools</h2>
+      <p>
+        A collection of penetration testing tools documention...
+      </p>
+      <a href="/blog/penetration-testing-tools-cheat-sheet/">Pen Testing Tools &rarr;</a>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+
 <section class="quickstart">
   <div class="grid">
     <div class="unit golden-small center-on-mobiles">
