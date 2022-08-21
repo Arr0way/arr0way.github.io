@@ -18,6 +18,25 @@ description: "Penetration Testing Services overview."
 		
 	<p>Testing the security posture of your exposed IT environment is a continuous and often difficult task. HighOnCoffee’s team of security professionals understand the latest vulnerabilities and  attack techniques to help make assessing your organizations defenses against cyber security threats easy, and help increase the overall security posture of your company.</p>
 	</div>	
+	
+	
+	<section class="free-hosting">
+  <div class="grid">
+    <div class="unit whole">
+      <div class="grid pane">
+        <div class="unit whole center-on-mobiles">
+            <div class="pane-content">
+            <h2 class="center-on-mobiles"><strong>Modern Penetration Testing Services</strong> for Security and Compliance</h2>
+	    <p>HighOnCoffee’s modern approach to penetration testing delivers real-time updates, allowing  teams to respond to issues as they are detected and perform mitigation or remediation of potential risks quickly and effectively. Our team of carefully selected penetration testers have years of experience performing penetration tests of web applications, API’s, mobile applications, and internal / external network infrastructure, including cloud based penetration testing against Google GCP, AWS, and Microsoft Azure.
+</p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>
+	
   <div class="grid">
     <div class="unit one-third">
       <h2>Web Application Pen Testing</h2>
@@ -107,19 +126,4 @@ description: "Penetration Testing Services overview."
     <div class="clear"></div>
   </div>
 </section>
-<section class="free-hosting">
-  <div class="grid">
-    <div class="unit whole">
-      <div class="grid pane">
-        <div class="unit whole center-on-mobiles">
-            <div class="pane-content">
-            <h2 class="center-on-mobiles"><strong>Modern enetration Testing Services</strong> for Security and Compliance</h2>
-	    <p>HighOnCoffee’s modern approach to penetration testing delivers real-time updates, allowing  teams to respond to issues as they are detected and perform mitigation or remediation of potential risks quickly and effectively. Our team of carefully selected penetration testers have years of experience performing penetration tests of web applications, API’s, mobile applications, and internal / external network infrastructure, including cloud based penetration testing against Google GCP, AWS, and Microsoft Azure.
-</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-      </div>
-    </div>
-  </div>
-</section>
+
