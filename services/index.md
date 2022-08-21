@@ -1,18 +1,93 @@
 ---
-layout: docs
-title: highon.coffee - Penetration Testing
+layout: default
+title: highon.coffee - Penetration Testing Services
 overview: true
+description: "Penetration Testing Services overview."
 ---
 
-If you wish to hire me for a penetration testing engagement drop me an email at - im [at] high on dot coffee.
-
-I'm interested in the following work: 
-
-- mobile application pen testing 
-- web application pen testing 
-- external infrastructure pen testing 
-- internal infrastructure pen testing 
-
-You can check out my cheat sheets here: [https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/) which document typical pen testing tool commands used on engagements.
-
-Thanks for stopping by.
+<section class="intro">
+  <div class="grid">
+    <div class="unit whole center-on-mobiles">
+      <p class="first">Penetration Testing &amp;&amp; Services</p>
+      <p class="second">HighOnCoffee Penetration Testing Services simulate real-world cyber attacks on different attack surfaces of your organization. Our assessments are designed to identify security issues and vulnerabilities and assess the detection and response capabilities of your teams, processes and technology within your organizations environment.</p>
+    </div>
+  </div>
+</section>
+<section class="features">
+  <div class="grid">
+    <div class="unit one-third">
+      <h2>Blog</h2>
+      <p>
+      Guides, HowTo's, Cheat Sheets... <em>All-The-Things !</em>
+      </p>
+      <a href="/blog/">Check the blog&rarr;</a>
+    </div>
+    <div class="unit one-third">
+      <h2>Walkthroughs</h2>
+      <p>
+      Walk through guides / write ups on boot2roots, ctfs etc
+      </p>
+      <a href="/blog/walkthroughs/">Boot2Root Walkthroughs&rarr;</a>
+    </div>
+    <div class="unit one-third">
+      <h2>Pen Testing Tools</h2>
+      <p>
+        A collection of penetration testing tools documention...
+      </p>
+      <a href="/blog/penetration-testing-tools-cheat-sheet/">Pen Testing Tools &rarr;</a>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<section class="quickstart">
+  <div class="grid">
+    <div class="unit golden-small center-on-mobiles">
+      <h4><em>&nbsp;HighOn.Coffee?</em></h4>
+    </div>
+    <div class="unit golden-large code">
+      <p class="title">Exploit</p>
+      <div class="shell">
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">id</span>
+        </p>
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">whoami</span>
+        </p>
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">root</span>
+        </p>
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">w00t \o/</span>
+        </p>
+        <p class="line">
+          <span class="output"># => -bash: w00t \o/: command not found</span>
+        </p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<section class="free-hosting">
+  <div class="grid">
+    <div class="unit whole">
+      <div class="grid pane">
+        <div class="unit whole center-on-mobiles">
+          <img src="img/octocat.png" width="300" height="251" alt="Free Jekyll hosting on GitHub Pages">
+          <div class="pane-content">
+            <h2 class="center-on-mobiles"><strong>Free hosting</strong> with GitHub Pages</h2>
+	    <p>HighOn.Coffee uses GitHub Pages if you're running a static site, you can easily deploy using GitHub for free</p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>
