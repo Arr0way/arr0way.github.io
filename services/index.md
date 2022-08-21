@@ -9,11 +9,11 @@ description: "Penetration Testing Services overview."
   <div class="grid">
     <div class="unit whole center-on-mobiles">
       <p class="first">Penetration Testing &amp;&amp; Services</p>
-      <p class="second">HighOnCoffee Penetration Testing Services simulate real-world cyber attacks on different attack surfaces of your organization. Our assessments are designed to identify security issues and vulnerabilities and assess the detection and response capabilities of your teams, processes and technology within your organizations environment.</p>
-    </div>
+     </div>
   </div>
 </section>
 <section class="features">
+	<p>HighOnCoffee Penetration Testing Services simulate real-world cyber attacks on different attack surfaces of your organization. Our assessments are designed to identify security issues and vulnerabilities and assess the detection and response capabilities of your teams, processes and technology within your organizations environment.</p>
   <div class="grid">
     <div class="unit one-third">
       <h2>Blog</h2>
