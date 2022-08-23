@@ -20,13 +20,6 @@ It's worth learning Vi as it's installed on pretty much every Linux base system 
 
 If you're learning Vi, you might want to check out [Vim Adventures](http://vim-adventures.com) - an online adventure game that uses Vi commands.
 
-## Vim Resources
-
-* [Vi Cheat Sheet](https://highon.coffee/blog/vi-cheat-sheet)
-* [Good looking Vim Themes](http://themebow.com)
-* [NullMode's personal Vim Settings](https://github.com/NullMode/vim)
-* [Vim Casts](http://vimcasts.org)
-
 Enjoy the cheat sheet :)
 
 ## Vi Insert mode & Command Mode
