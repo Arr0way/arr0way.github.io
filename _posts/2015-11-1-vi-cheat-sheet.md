@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title:  "Vi Cheat Sheet"
+title:  "Vim Cheat Sheet [2022 Update] + NEOVIM"
 date:   2015-11-1 09:39:10
 author: Arr0way
-description: 'Vim cheat sheet, a collection of Vi / Vim commands and tips in a nicely presented cheat sheet.'
+description: 'Vim cheat sheet, a collection of Vim commands and tips in a nicely presented cheat sheet for VIM / NEOVIM.'
 categories: [cheat-sheet]
 tags:
 - 'Vim'
@@ -14,19 +14,15 @@ tags:
 * list element with functor item
 {:toc}
 
-A collection of Vi commands in a cheat sheet, handy reference document for learning / remembering Vi commands. I refer to Vim / Vi as the same thing in this document, but in most modern Linux distros vi is often a symlink to vim.
+A collection of Vim commands in a cheat sheet, handy reference document for learning / remembering Vi commands. I refer to Vim / Vi as the same thing in this document, but in most modern Linux distros vi is often a symlink to vim. However, you may want to check out Neovim if you're on a mac use ```brew install neovim``` or your package manager of choice on Linux.  
 
-It's worth learning Vi as it's installed on pretty much every Linux base system out there.
+Mac users will need to swap Ctrl for CMD, and deal with the additional annoyance of using their thumbs instead of their pinkie finger. 
 
-If you're learning Vi, you might want to check out [Vim Adventures](http://vim-adventures.com) - an online adventure game that uses Vi commands.
+## Vim Insert mode & Command Mode
 
-Enjoy the cheat sheet :)
+Vim has two basic modes, **insert mode** - used for entering text and **command mode**, used for entering commands. See the tip section below for switching between each mode.
 
-## Vi Insert mode & Command Mode
-
-Vi has two basic modes, **insert mode** - used for entering text and **command mode**, used for entering commands. See the tip section below for switching between each mode.
-
-### Vi Insert Mode
+### Vim Insert Mode
 
 Enter vi insert mode, insert mode is used for inserting text.
 
@@ -34,7 +30,7 @@ Enter vi insert mode, insert mode is used for inserting text.
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -52,13 +48,13 @@ Enter vi insert mode, insert mode is used for inserting text.
 </div>
 
 <div class="note tip">
-  <h5>Vi Command Mode - Vi Insert Mode</h5>
-  <p>Vi has two modes, <b>insert mode</b> for inserting text and <b>command mode</b> a common mistake is attempting to edit in command mode. If you are unsure on what mode Vi is using double tap escape (enters command mode) and then hit "i" if you wish to enter insert mode.</p>
+  <h5>Vim Command Mode - Vim Insert Mode</h5>
+  <p>Vim has two modes, <b>insert mode</b> for inserting text and <b>command mode</b> a common mistake is attempting to edit in command mode. If you are unsure on what mode Vim is using double tap escape (enters command mode) and then hit "i" if you wish to enter insert mode.</p>
 </div>
 
 
 
-### Vi Command Mode
+### Vim Command Mode
 
 <div class="mobile-side-scroller">
 <table>
@@ -81,18 +77,18 @@ Enter vi insert mode, insert mode is used for inserting text.
 </table>
 </div>
 
-## Vi File Navigvation
+## Vim File Navigvation
 
 Basic file navigation, how to move up, down, left and right.
 
 <div class="note tip">
   <h5>Arrow Keys</h5>
-  <p>Modern Vi / Vim editors will allow you to use the arrow keys, but it's worth learning the correct way to navigate vi without using the arrow keys in case you come across Vi command line or a shell that doesn't like arrow keys.</p>
+  <p>Modern Vim / Vim editors will allow you to use the arrow keys, but it's worth learning the correct way to navigate vi without using the arrow keys in case you come across Vim command line or a shell that doesn't like arrow keys.</p>
 </div>
 
 ### Move up, down, left and right in Vim
 
-You'll need to be in command mode for these commands, navigation in vi uses **h** **j** **k** **l**
+You'll need to be in command mode for these commands, navigation in vim uses **h** **j** **k** **l**
 
 <div class="mobile-side-scroller">
 <table>
@@ -142,7 +138,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Page Down
+### Vim Page Down
 
 <div class="mobile-side-scroller">
 <table>
@@ -158,20 +154,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>Ctrl+F </code></p>
       </td>
       <td>
-            <p>Vi move forward a page</p>
+            <p>Vim move forward a page</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Half a Page Down
+### Vim Half a Page Down
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -181,20 +177,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>Ctrl+D </code></p>
       </td>
       <td>
-            <p>Vi move half a page down</p>
+            <p>Vim move half a page down</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Page Up
+### Vim Page Up
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -204,20 +200,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>Ctrl+B </code></p>
       </td>
       <td>
-            <p>Vi move up a page</p>
+            <p>Vim move up a page</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Half a Page Up
+### Vim Half a Page Up
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -227,7 +223,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>Ctrl+U </code></p>
       </td>
       <td>
-            <p>Vi move up half a page</p>
+            <p>Vim move up half a page</p>
       </td>
     </tr>
     </tbody>
@@ -236,13 +232,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 
 ## More Advanced Ways of Entering Insert Mode
 
-### Vi Insert Text at Start of the Line
+### Vim Insert Text at Start of the Line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -259,13 +255,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Insert Text at the end of the Line
+### Vim Insert Text at the end of the Line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -282,13 +278,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Append text to the right of the Cursor
+### Vim Append text to the right of the Cursor
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -311,7 +307,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -328,13 +324,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi replace line
+### Vim replace line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -352,15 +348,15 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </div>
 
 
-## Vi Replace
+## Vim Replace
 
-### Change a Word in Vi
+### Change a Word in Vim
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -383,7 +379,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -400,13 +396,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Replace Character
+### Vim Replace Character
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -423,13 +419,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Replace
+### Vim Replace
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -446,15 +442,15 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-## Vi Delete
+## Vim Delete
 
-### Vi Delete Single Character After the Cursor
+### Vim Delete Single Character After the Cursor
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -464,20 +460,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>x</code></p>
       </td>
       <td>
-            <p>Vi deletes single character after the cursor</p>
+            <p>Vim deletes single character after the cursor</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Delete Character before the Cursor
+### Vim Delete Character before the Cursor
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -487,20 +483,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>X</code></p>
       </td>
       <td>
-            <p>Vi deletes character before the cursor.</p>
+            <p>Vim deletes character before the cursor.</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Delete Word
+### Vim Delete Word
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -510,22 +506,22 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>dw</code></p>
       </td>
       <td>
-            <p>Vi Delete Word, deleted the word under the cursor, from the curosr position onward</p>
+            <p>Vim Delete Word, deleted the word under the cursor, from the curosr position onward</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-## Vi Delete Line commands
+## Vim Delete Line commands
 
-### Vi Delete Line
+### Vim Delete Line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -535,20 +531,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>dd</code></p>
       </td>
       <td>
-            <p>Delete the current line in Vi</p>
+            <p>Delete the current line in Vim</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Delete until end of Line
+### Vim Delete until end of Line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -571,7 +567,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -594,7 +590,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -611,13 +607,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Delete From Cursor To Start of Line
+### Vim Delete From Cursor To Start of Line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -634,15 +630,15 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-## Vi Copy and Paste
+## Vim Copy and Paste
 
-### Vi Copy Line
+### Vim Copy Line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -659,13 +655,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Copy 3 Lines of Text
+### Vim Copy 3 Lines of Text
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -682,7 +678,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Copy Word
+### Vim Copy Word
 
 <div class="mobile-side-scroller">
 <table>
@@ -705,13 +701,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Copy 3 Words
+### Vim Copy 3 Words
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -728,13 +724,13 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-### Vi Paste Commands
+### Vim Paste Commands
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -755,7 +751,7 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -772,15 +768,15 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
 </table>
 </div>
 
-## Vi Search Commands
+## Vim Search Commands
 
-### Vi Search forward
+### Vim Search forward
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -790,20 +786,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>N</code></p>
       </td>
       <td>
-            <p>Vi search forward in file</p>
+            <p>Vim search forward in file</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search Back
+### Vim Search Back
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -813,22 +809,22 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>SHIFT+N</code></p>
       </td>
       <td>
-            <p>Vi search backward in file</p>
+            <p>Vim search backward in file</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-## Vi Search and Replace Commands
+## Vim Search and Replace Commands
 
-### Vi Search and Replace First Instance
+### Vim Search and Replace First Instance
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -838,20 +834,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>:s/find-string/replace-string/</code></p>
       </td>
       <td>
-            <p>Vi search and replace first instance of specified string</p>
+            <p>Vim search and replace first instance of specified string</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search and Replace on a Single Line
+### Vim Search and Replace on a Single Line
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -861,20 +857,20 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>:s/find-string/replace-string/g</code></p>
       </td>
       <td>
-            <p>Vi search and replace all instances of specified string on current line</p>
+            <p>Vim search and replace all instances of specified string on current line</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search and Replace Entire File
+### Vim Search and Replace Entire File
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -884,14 +880,14 @@ You'll need to be in command mode for these commands, navigation in vi uses **h*
         <p><code>:%s/find-string/replace-string/g</code></p>
       </td>
       <td>
-            <p>Vi search and replace all instances of specified string for entire file</p>
+            <p>Vim search and replace all instances of specified string for entire file</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search for part of a Word
+### Vim Search for part of a Word
 
 A fuzzy search allows you to find something that you only know part of, for example if you wanted to find all instances of lines starting with the word “Picard” you would use the following:
 
@@ -899,7 +895,7 @@ A fuzzy search allows you to find something that you only know part of, for exam
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -909,20 +905,20 @@ A fuzzy search allows you to find something that you only know part of, for exam
         <p><code>/^Picard</code></p>
       </td>
       <td>
-            <p>Vi search within file words starting with Picard</p>
+            <p>Vim search within file words starting with Picard</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search for words ending with $string
+### Vim Search for words ending with $string
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -932,20 +928,20 @@ A fuzzy search allows you to find something that you only know part of, for exam
         <p><code>/worf$</code></p>
       </td>
       <td>
-            <p>Vi search within file for word engine with worf</p>
+            <p>Vim search within file for word engine with worf</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search for Metacharacters
+### Vim Search for Metacharacters
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -955,20 +951,20 @@ A fuzzy search allows you to find something that you only know part of, for exam
         <p><code>/\*</code></p>
       </td>
       <td>
-            <p>Vi search within file for metacharacters like, * </p>
+            <p>Vim search within file for metacharacters like, * </p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Exact Match Search Only
+### Vim Exact Match Search Only
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -978,14 +974,14 @@ A fuzzy search allows you to find something that you only know part of, for exam
         <p><code>/star\.</code></p>
       </td>
       <td>
-            <p>Vi exact search only, will return instances of "star only", not starfleet or star-trek</p>
+            <p>Vim exact search only, will return instances of "star only", not starfleet or star-trek</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search for a range of Strings
+### Vim Search for a range of Strings
 
 Helpful for finding version numbers in text files.
 
@@ -993,7 +989,7 @@ Helpful for finding version numbers in text files.
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1003,22 +999,22 @@ Helpful for finding version numbers in text files.
         <p><code>/v2.[1-9]</code></p>
       </td>
       <td>
-            <p>Vi search for a range, this example would return all v2.1-9 instances within the file, e.g. v2.4 v2.7 etc</p>
+            <p>Vim search for a range, this example would return all v2.1-9 instances within the file, e.g. v2.4 v2.7 etc</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Search for Upper and Lowercase
+### Vim Search for Upper and Lowercase
 
-Search for upper and lowercase strings in Vi.
+Search for upper and lowercase strings in Vim.
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1028,22 +1024,22 @@ Search for upper and lowercase strings in Vi.
         <p><code>/ [tT] [hH [eE]</code></p>
       </td>
       <td>
-            <p>Vi search upper or lowercase strings, this example would return any instance of the word 'the'. e.g. The, THE, tHE, tHe </p>
+            <p>Vim search upper or lowercase strings, this example would return any instance of the word 'the'. e.g. The, THE, tHE, tHe </p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-## Advanced Vi commands
+## Advanced Vim commands
 
-### Vi View Options
+### Vim View Options
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1053,7 +1049,7 @@ Search for upper and lowercase strings in Vi.
         <p><code>:set all</code></p>
       </td>
       <td>
-            <p>Lists all Vi options</p>
+            <p>Lists all Vim options</p>
       </td>
     </tr>
     </tbody>
@@ -1061,15 +1057,15 @@ Search for upper and lowercase strings in Vi.
 </div>
 
 
-### Vi Run Shell Commands
+### Vim Run Shell Commands
 
-Run shell commands from  Vi.
+Run shell commands from  Vim.
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1079,14 +1075,14 @@ Run shell commands from  Vi.
         <p><code>:! ls -l</code></p>
       </td>
       <td>
-            <p>Run shell command from Vi, in this example ls -l is executed</p>
+            <p>Run shell command from Vim, in this example ls -l is executed</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Joining Lines
+### Vim Joining Lines
 
 Backspace doesn't always work...
 
@@ -1094,7 +1090,7 @@ Backspace doesn't always work...
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1112,17 +1108,17 @@ Backspace doesn't always work...
 </div>
 
 
-### Vi Split Windows
+### Vim Split Windows
 
 Useful for comparing files, to switch between windows press <code>SHIFT+W</code>
 
-#### Vi Split Window Horizontally
+#### Vim Split Window Horizontally
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1132,20 +1128,20 @@ Useful for comparing files, to switch between windows press <code>SHIFT+W</code>
         <p><code>:split</code></p>
       </td>
       <td>
-            <p>Split window Horizontally in Vi</p>
+            <p>Split window Horizontally in Vim</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-#### Vi Split Window Virtically
+#### Vim Split Window Virtically
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1155,20 +1151,20 @@ Useful for comparing files, to switch between windows press <code>SHIFT+W</code>
         <p><code>:vsplit</code></p>
       </td>
       <td>
-            <p>Split window Virtically in Vi</p>
+            <p>Split window Virtically in Vim</p>
       </td>
     </tr>
     </tbody>
 </table>
 </div>
 
-### Vi Close All Split Windows
+### Vim Close All Split Windows
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1186,15 +1182,15 @@ Useful for comparing files, to switch between windows press <code>SHIFT+W</code>
 </div>
 
 
-## Vi Save commands
+## Vim Save commands
 
-### How to Save in Vi
+### How to Save in Vim
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1211,15 +1207,15 @@ Useful for comparing files, to switch between windows press <code>SHIFT+W</code>
 </table>
 </div>
 
-### Vi Save and Exit
+### Vim Save and Exit
 
-How to save and exit Vi, personally I use <code>:wq</code>
+How to save and exit Vim, personally I use <code>:wq</code>
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1229,7 +1225,7 @@ How to save and exit Vi, personally I use <code>:wq</code>
         <p><code>:wq</code></p>
       </td>
       <td>
-            <p>Save and exit Vi</p>
+            <p>Save and exit Vim</p>
       </td>
     </tr>
 
@@ -1240,7 +1236,7 @@ How to save and exit Vi, personally I use <code>:wq</code>
         <p><code>:x</code></p>
       </td>
       <td>
-            <p>Exit - Vi will prompt and ask if you wish to save</p>
+            <p>Exit - Vim will prompt and ask if you wish to save</p>
       </td>
     </tr>
 
@@ -1250,7 +1246,7 @@ How to save and exit Vi, personally I use <code>:wq</code>
         <p><code>SHIFT+ZZ</code></p>
       </td>
       <td>
-            <p>Another way to Save and Exit Vi</p>
+            <p>Another way to Save and Exit Vim</p>
       </td>
     </tr>
 
@@ -1267,9 +1263,9 @@ How to save and exit Vi, personally I use <code>:wq</code>
 </table>
 </div>
 
-## Misc Vi Commands
+## Misc Vim Commands
 
-### Vi Undo Command
+### Vim Undo Command
 
 <div class="mobile-side-scroller">
 <table>
@@ -1292,15 +1288,15 @@ How to save and exit Vi, personally I use <code>:wq</code>
 </table>
 </div>
 
-### Vi Undo All
+### Vim Undo All
 
-Vi undo all since last write.
+Vim undo all since last write.
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Vi Command</th>
+      <th>Vim Command</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -1317,10 +1313,10 @@ Vi undo all since last write.
 </table>
 </div>
 
-## Vi Show File Name
+## Vim Show File Name
 
 <code>SHIFT+G</code> shows the file name, number of lines and current position.
 
-## Vi Multipliers
+## Vim Multipliers
 
-Almost every command in Vi can leverage multipliers, typically it's a case of prefixing the command with a numnber. Example: <code>10W</code> would move 10 words to the right.
+Almost every command in Vim can leverage multipliers, typically it's a case of prefixing the command with a numnber. Example: <code>10W</code> would move 10 words to the right.
