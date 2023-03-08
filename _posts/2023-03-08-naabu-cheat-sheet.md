@@ -22,7 +22,7 @@ Naabu is a simple port scanner written in Golang by Project Discovery, with a go
 
 ## Naabu vs Nmap 
 
-Why use Naabu over [Nmap](https://highon.coffee/blog/nmap-cheat-sheet/), the primary reason for me personally, is the automatic IP deduplication. Meaning, when performing subdomain or domain enumeration of a target organisation, and you feed Naabu an input file of domain or subdomain it will resolve them and only scan unique IP addresses, so you are not wasting time and resources scanning the same target IP address twice. 
+Why use Naabu over [Nmap](https://highon.coffee/blog/nmap-cheat-sheet/), the primary reason for me personally is the automatic IP deduplication. Meaning, when performing subdomain or domain enumeration of a target organisation, and you feed Naabu an input file of domain or subdomain it will resolve them and only scan unique IP addresses, so you are not wasting time and resources scanning the same target IP address twice. 
 
 ![Naabu Cheat Sheet](/img/naabu-command-cheat-sheet.jpg)
 
@@ -54,7 +54,7 @@ Kali has a package for Naabu (caveat, it may not be the latest version):
 
 ```
 sudo apt install naabu
-``
+```
 
 
 <div class="mobile-side-scroller">
