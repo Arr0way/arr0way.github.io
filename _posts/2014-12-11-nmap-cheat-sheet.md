@@ -42,7 +42,7 @@ Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 
 * Vulnerability / exploit detection, using Nmap scripts (NSE)
 * Nmap IDS / Portscan Detection & Scan Time Optimisation 
 
-## Download Nmap
+## Download & Install Nmap
 
 Nmap can be downloaded from [nmap.org](https://nmap.org/), however commonly Nmap is installed via your Linux distributions package manager: 
 
