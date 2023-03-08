@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title:  "Nmap Cheat Sheet: Commands & Examples (2022)"
+title:  "Nmap Cheat Sheet: Commands & Examples (2023)"
 date:   2022-02-18 10:37:10
 author: Arr0way
-description: 'Nmap Cheat Sheet, nmap commands and examples for practical use.'
+description: 'Nmap Cheat Sheet, what is Namp, what does it do and how to use the tool using practical command examples.'
 categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
@@ -14,6 +14,10 @@ tags:
 * list element with functor item
 {:toc}
 
+The following NMAP cheat sheet aims to explain what Nmap is, what it does, and how to use it by providing NMAP command examples in a cheat sheet style documentation format.
+
+## What is Nmap?
+
 **Nmap** (network mapper), the god of port scanners used for network discovery and the basis for most security enumeration during the initial stages of a [penetration test](/blog/penetration-testing-tools-cheat-sheet/). The tool was written and maintained by Fyodor AKA Gordon Lyon.
 
 [Nmap](http://nmap.org) displays exposed services on a target machine along with other useful information such as the verion and OS detection.
@@ -22,12 +26,12 @@ Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 
 
 
 **Original Post Date:** 13/12/2014 | 
-**Last Updated:** 18/02/2022 
+**Last Updated:** 08/03/2023 
 
 ![Nmap Trinity](/img/nmap-trinity.png)
 
 
-**Nmap in a nutshell**
+## What does Nmap do:
 
 * Host discovery
 * Port discovery / enumeration
@@ -38,10 +42,41 @@ Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 
 * Vulnerability / exploit detection, using Nmap scripts (NSE)
 * Nmap IDS / Portscan Detection & Scan Time Optimisation 
 
+## Download Nmap
 
-### Nmap Command Examples
+Nmap can be downloaded from [nmap.org](https://nmap.org/), however commonly Nmap is installed via your Linux distributions package manager: 
 
-Basic Nmap scanning examples, often used at the first stage of enumeration.
+### Debian / Ubuntu / Kali
+
+How to Install NMAP on Ubuntu, Debian, Kali or other Linux systems using the APT package manager.
+
+```
+apt install nmap
+```
+
+### Nmap RHEL / Fedora
+
+How to Install NMAP on RHEL, Fedora, CentOS, Rocky Linux or other Linux systems using the DNF package manager.
+
+```
+dnf install nmap
+```
+
+### Nmap Windows
+
+Download Nmap for Windows and install: [Nmap for Windows](https://nmap.org/download#windows) 
+
+### Nmap MacOS
+
+How to install nmap on MacOS using Brew.
+
+```
+brew install nmap
+```
+
+## Nmap Commands 
+
+Basic Nmap scanning command examples, often used at the first stage of enumeration.
 
 <div class="mobile-side-scroller">
 <table>
@@ -57,7 +92,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -sP 10.0.0.0/24</code></p>
       </td>
       <td>
-            <p>Ping scans the network, listing machines that respond to ping.</p>
+            <p>Nma scan the network, listing machines that respond to ping.</p>
       </td>
     </tr>
 
@@ -66,7 +101,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -p 1-65535 -sV -sS -T4 target</code></p>
       </td>
       <td>
-            <p>Full TCP port scan using with service version detection - usually my first scan, I find T4 more accurate than T5 and still "pretty quick".</p>
+            <p>A full TCP port scan using with service version detection - T1-T5 is the speed of the scan,  .</p>
       </td>
     </tr>
 
@@ -122,7 +157,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
   <p>T5 uses very aggressive scan timings and could lead to missed ports, T4 is a better compromise if you need fast results.</p>
 </div>
 
-#### Nmap scan from file
+### Nmap scan from file
 
 <div class="mobile-side-scroller">
 <table>
@@ -145,7 +180,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 </table>
 </div>
 
-#### Nmap Scan all Ports
+### Nmap Scan all Ports
 
 <div class="mobile-side-scroller">
 <table>
@@ -161,7 +196,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
         <p><code>nmap -p- target</code></p>
       </td>
       <td>
-            <p>Nmap scan all ports, TCP ports.</p>
+            <p>Nmap scan all ports, a full scan of all TCP ports on a target.</p>
       </td>
     </tr>
       </tbody>
@@ -169,7 +204,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 </div>
 
 
-#### Nmap output formats
+### Nmap output formats
 
 
 <div class="mobile-side-scroller">
@@ -203,7 +238,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 </table>
 </div>
 
-#### Nmap Netbios Examples
+### Nmap Netbios Examples
 
 <div class="mobile-side-scroller">
 <table>
@@ -250,7 +285,7 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
   <p>Becareful when running this command.</p>
 </div>
 
-#### Nmap Nikto Scan
+### Nmap Nikto Scan
 
 <div class="mobile-side-scroller">
 <table>
@@ -282,9 +317,9 @@ Basic Nmap scanning examples, often used at the first stage of enumeration.
 </table>
 </div>
 
-### Nmap Cheatsheet
+## Nmap Cheatsheet
 
-#### Target Specification
+### Target Specification
 
 Nmap allows hostnames, IP addresses, subnets.
 
@@ -339,7 +374,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Host Discovery
+### Host Discovery
 
 <div class="mobile-side-scroller">
 <table>
@@ -416,7 +451,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Scan Techniques
+### Scan Techniques
 
 <div class="mobile-side-scroller">
 <table>
@@ -502,7 +537,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Port Specification and Scan Order
+### Port Specification and Scan Order
 
 <div class="mobile-side-scroller">
 <table>
@@ -570,7 +605,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Service Version Detection
+### Service Version Detection
 
 <div class="mobile-side-scroller">
 <table>
@@ -629,7 +664,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Script Scan
+### Script Scan
 
 <div class="mobile-side-scroller">
 <table>
@@ -707,7 +742,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### OS Detection
+### OS Detection
 
 <div class="mobile-side-scroller">
 <table>
@@ -748,7 +783,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Timing and Performance
+### Timing and Performance
 
 <p>Options which take TIME are in seconds, or append 'ms' (milliseconds),
   's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).</p>
@@ -840,7 +875,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Firewalls IDS Evasion and Spoofing
+### Firewalls IDS Evasion and Spoofing
 
 <div class="mobile-side-scroller">
 <table>
@@ -948,7 +983,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Nmap Output Options
+### Nmap Scan Output File Options
 
 <div class="mobile-side-scroller">
 <table>
@@ -1103,7 +1138,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-#### Misc Nmap Options
+### Misc Nmap Options
 
 <div class="mobile-side-scroller">
 <table>
@@ -1188,7 +1223,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
 </table>
 </div>
 
-## Nmap Enumeration Examples
+## Nmap Enumeration Command Examples
 
 The following are real world examples of Nmap enumeration.
 
@@ -1223,7 +1258,7 @@ Detect all exposed Netbios servers on the subnet.
     </div>
 </section>
 
-Nmap find Netbios name.
+### Nmap find Netbios name.
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -1251,7 +1286,9 @@ Nmap find Netbios name.
     </div>
 </section>
 
-Check if Netbios servers are vulnerable to MS08-067
+### NMAP Netbios MS08-067
+
+How to scan a target and identify if it is vulnerable to MS08-067
 
 <section class="shellbox">
     <div class="unit golden-large code">
@@ -1282,7 +1319,7 @@ Check if Netbios servers are vulnerable to MS08-067
 
 The information gathered during the enumeration indicates the target is vulnerable to MS08-067, exploitation will confirm if it's vulnerable to MS08-067.
 
-## Nmap Scan Optimisation 
+## Nmap Scan Tuning & Optimisation 
 
 ### Nmap Rate
 
@@ -1294,9 +1331,9 @@ To speed up your scan increase the rate, be aware that setting a high rate value
 ```
 
 
-### Parallelism 
+### NMAP Parallelism 
 
-The maximum or minimum amount of parallel tasks.
+The maximum or minimum amount of parallel tasks scanned at the same time (in parallel).
 
 TIP: If you have an basic IDS / portscan detection blocking your scans you could lower the --min-parallelism in an attempt to reduce the number of concurrent connections 
 
@@ -1305,7 +1342,7 @@ TIP: If you have an basic IDS / portscan detection blocking your scans you could
 --max-parallelism
 ```
 
-### Host Group Sizes 
+### NMAP Host Group Sizes 
 
 The number of hosts scanned at the same time, Note: if you are writing output to a file e.g., -oA you will need to wait for the host group to complete scanning before the nmap output will be written to the file. Therefore if you get a lagging host you will may end up waiting a while for the output file, which brings us on to... host timeout.
 
@@ -1314,7 +1351,7 @@ The number of hosts scanned at the same time, Note: if you are writing output to
 --max-hostgroup 
 ```
 
-### Host Timeout 
+### NMAP Host Timeout 
 
 Nmap allows you to specify the timeout, which is the length of time it waits before giving up on the target. Be careful setting this super low, as you may end up with inaccurate results. 
 
@@ -1324,7 +1361,7 @@ The following example would giveup after 50 seconds.
 --host-timeout 50 
 ```
 
-### Scan Delay 
+### NMAP Scan Delay 
 
 An extremely useful option to defeat basic port scan detection (SOHO devices and some IDS) that essentially monitor and block X amount of connects per second (syn flood etc). 
 
@@ -1340,11 +1377,11 @@ For example if you know you can get away with 2 req/sec without getting blacklis
 
 *added 200ms for a buffer* 
 
-### Disable DNS Lookups 
+### NMAP Disable DNS Lookups 
 
 Assuming you do not want domain names being looked up, use the ```-n``` flag to dissable resolution and speed up the scan. 
 
-#### Nmap Black List Detection? 
+#### NMAP Black List Detection? 
 
 1. It ussally takes and extemely long time to complete 
 2. Droppped probes nmap will increase the timeout, but it's likely you are already black listed 
@@ -1352,6 +1389,6 @@ Assuming you do not want domain names being looked up, use the ```-n``` flag to 
 
 As far as I know there is no way of detecting for black listing within nmap natively. 
 
-### Optimising Portscans for Targets 
+### NMAP Optimising Portscans for Targets 
 
 Once you have identified a target firewall / IDS you can look up the default settings for the portscan black list by reading the manual and use the nmap command switches above to obtain the best performance without getting black listed.
