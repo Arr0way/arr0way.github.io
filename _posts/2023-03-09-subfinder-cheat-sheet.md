@@ -34,57 +34,61 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
         </p>
           <span class="output"><br></span>
           <span class="output"><br></span>
-	      <span class="output">Usage:<br></span>
-<span class="output">  ./subfinder [flags]<br></span>
-<span class="output">Flags:<br></span>
-<span class="output">INPUT:<br></span>
-<span class="output">  -d, -domain string[]  domains to find subdomains for<br></span>
-<span class="output">  -dL, -list string     file containing list of domains for subdomain discovery<br></<br>span>
-
-<span class="output">SOURCE:<br></span>
-<span class="output">  -s, -sources string[]           specific sources to use for discovery (-s crtsh,github). Use -ls to display all available sources.<br></span>
-<span class="output">  -recursive                      use only sources that can handle subdomains recursively (e.g. subdomain.domain.tld vs domain.tld)<br></span>
-<span class="output">  -all                            use all sources for enumeration (slow)<br></span>
-<span class="output">  -es, -exclude-sources string[]  sources to exclude from enumeration (-es alienvault,zoomeye)<br></<br>span>
-
-<span class="output">FILTER:<br></span>
-<span class="output">  -m, -match string[]   subdomain or list of subdomain to match (file or comma separated)<br></span>
-<span class="output">  -f, -filter string[]   subdomain or list of subdomain to filter (file or comma separated)<br></<br>span>
-
-<span class="output">RATE-LIMIT:<br></span>
-<span class="output">  -rl, -rate-limit int  maximum number of http requests to send per second<br></span>
-<span class="output">  -t int                number of concurrent goroutines for resolving (-active only) (default 10)<br></<br>span>
-
-<span class="output">OUTPUT:<br></span>
-<span class="output">  -o, -output string       file to write output to<br></span>
-<span class="output">  -oJ, -json               write output in JSONL(ines) format<br></span>
-<span class="output">  -oD, -output-dir string  directory to write output (-dL only)<br></span>
-<span class="output">  -cs, -collect-sources    include all sources in the output (-json only)<br></span>
-<span class="output">  -oI, -ip                 include host IP in output (-active only)<br></<br>span>
-
-<span class="output">CONFIGURATION:<br></span>
-<span class="output">  -config string                flag config file (default "$HOME/.config/subfinder/config.yaml")<br></span>
-<span class="output">  -pc, -provider-config string  provider config file (default "$HOME/.config/subfinder/provider-config.yaml")<br></span>
-<span class="output">  -r string[]                   comma separated list of resolvers to use<br></span>
-<span class="output">  -rL, -rlist string            file containing list of resolvers to use<br></span>
-<span class="output">  -nW, -active                  display active subdomains only<br></span>
-<span class="output">  -proxy string                 http proxy to use with subfinder<br></span>
-<span class="output">  -ei, -exclude-ip              exclude IPs from the list of domains<br></<br>span>
-
-<span class="output">DEBUG:<br></span>
-<span class="output">  -silent             show only subdomains in output<br></span>
-<span class="output">  -version            show version of subfinder<br></span>
-<span class="output">  -v                  show verbose output<br></span>
-<span class="output">  -nc, -no-color      disable color in output<br></span>
-<span class="output">  -ls, -list-sources  list all available sources<br></span>
-<span class="output">OPTIMIZATION:<br></span>
-<span class="output">  -timeout int   seconds to wait before timing out (default 30)<br></span>
-<span class="output">  -max-time int  minutes to wait for enumeration results (default 10)<br></span>
         </p>
       </div>
     </div>
 </section>
 
+{% highlight bash %}
+Usage:
+  ./subfinder [flags]
+
+Flags:
+INPUT:
+  -d, -domain string[]  domains to find subdomains for
+  -dL, -list string     file containing list of domains for subdomain discovery
+
+SOURCE:
+  -s, -sources string[]           specific sources to use for discovery (-s crtsh,github). Use -ls to display all available sources.
+  -recursive                      use only sources that can handle subdomains recursively (e.g. subdomain.domain.tld vs domain.tld)
+  -all                            use all sources for enumeration (slow)
+  -es, -exclude-sources string[]  sources to exclude from enumeration (-es alienvault,zoomeye)
+
+FILTER:
+  -m, -match string[]   subdomain or list of subdomain to match (file or comma separated)
+  -f, -filter string[]   subdomain or list of subdomain to filter (file or comma separated)
+
+RATE-LIMIT:
+  -rl, -rate-limit int  maximum number of http requests to send per second
+  -t int                number of concurrent goroutines for resolving (-active only) (default 10)
+
+OUTPUT:
+  -o, -output string       file to write output to
+  -oJ, -json               write output in JSONL(ines) format
+  -oD, -output-dir string  directory to write output (-dL only)
+  -cs, -collect-sources    include all sources in the output (-json only)
+  -oI, -ip                 include host IP in output (-active only)
+
+CONFIGURATION:
+  -config string                flag config file (default "$HOME/.config/subfinder/config.yaml")
+  -pc, -provider-config string  provider config file (default "$HOME/.config/subfinder/provider-config.yaml")
+  -r string[]                   comma separated list of resolvers to use
+  -rL, -rlist string            file containing list of resolvers to use
+  -nW, -active                  display active subdomains only
+  -proxy string                 http proxy to use with subfinder
+  -ei, -exclude-ip              exclude IPs from the list of domains
+
+DEBUG:
+  -silent             show only subdomains in output
+  -version            show version of subfinder
+  -v                  show verbose output
+  -nc, -no-color      disable color in output
+  -ls, -list-sources  list all available sources
+
+OPTIMIZATION:
+  -timeout int   seconds to wait before timing out (default 30)
+  -max-time int  minutes to wait for enumeration results (default 10)
+{% endhighlight %}
 
 ## Example Subfinder Commands 
 
