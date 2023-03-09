@@ -34,7 +34,6 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
         </p>
           <span class="output"><br></span>
           <span class="output"><br></span>
-        </p>
       </div>
     </div>
 </section>
