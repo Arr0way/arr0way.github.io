@@ -38,32 +38,32 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
           <span class="output">Host is up (0.014s latency).<br></span>
           <span class="output"><br></span>
           <span class="output">Usage:</span>
-<span class="output">  ./subfinder [flags]<span class="output"></span>
+<span class="output">  ./subfinder [flags]</span>
 <span class="output">Flags:</span>
 <span class="output">INPUT:</span>
 <span class="output">  -d, -domain string[]  domains to find subdomains for</span>
-<span class="output">  -dL, -list string     file containing list of domains for subdomain discovery<span class="output"></span>
+<span class="output">  -dL, -list string     file containing list of domains for subdomain discovery</span>
 
 <span class="output">SOURCE:</span>
 <span class="output">  -s, -sources string[]           specific sources to use for discovery (-s crtsh,github). Use -ls to display all available sources.</span>
 <span class="output">  -recursive                      use only sources that can handle subdomains recursively (e.g. subdomain.domain.tld vs domain.tld)</span>
 <span class="output">  -all                            use all sources for enumeration (slow)</span>
-<span class="output">  -es, -exclude-sources string[]  sources to exclude from enumeration (-es alienvault,zoomeye)<span class="output"></span>
+<span class="output">  -es, -exclude-sources string[]  sources to exclude from enumeration (-es alienvault,zoomeye)</span>
 
 <span class="output">FILTER:</span>
 <span class="output">  -m, -match string[]   subdomain or list of subdomain to match (file or comma separated)</span>
-<span class="output">  -f, -filter string[]   subdomain or list of subdomain to filter (file or comma separated)<span class="output"></span>
+<span class="output">  -f, -filter string[]   subdomain or list of subdomain to filter (file or comma separated)</span>
 
 <span class="output">RATE-LIMIT:</span>
 <span class="output">  -rl, -rate-limit int  maximum number of http requests to send per second</span>
-<span class="output">  -t int                number of concurrent goroutines for resolving (-active only) (default 10)<span class="output"></span>
+<span class="output">  -t int                number of concurrent goroutines for resolving (-active only) (default 10)</span>
 
 <span class="output">OUTPUT:</span>
 <span class="output">  -o, -output string       file to write output to</span>
 <span class="output">  -oJ, -json               write output in JSONL(ines) format</span>
 <span class="output">  -oD, -output-dir string  directory to write output (-dL only)</span>
 <span class="output">  -cs, -collect-sources    include all sources in the output (-json only)</span>
-<span class="output">  -oI, -ip                 include host IP in output (-active only)<span class="output"></span>
+<span class="output">  -oI, -ip                 include host IP in output (-active only)</span>
 
 <span class="output">CONFIGURATION:</span>
 <span class="output">  -config string                flag config file (default "$HOME/.config/subfinder/config.yaml")</span>
@@ -72,14 +72,14 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 <span class="output">  -rL, -rlist string            file containing list of resolvers to use</span>
 <span class="output">  -nW, -active                  display active subdomains only</span>
 <span class="output">  -proxy string                 http proxy to use with subfinder</span>
-<span class="output">  -ei, -exclude-ip              exclude IPs from the list of domains<span class="output"></span>
+<span class="output">  -ei, -exclude-ip              exclude IPs from the list of domains</span>
 
 <span class="output">DEBUG:</span>
 <span class="output">  -silent             show only subdomains in output</span>
 <span class="output">  -version            show version of subfinder</span>
 <span class="output">  -v                  show verbose output</span>
 <span class="output">  -nc, -no-color      disable color in output</span>
-<span class="output">  -ls, -list-sources  list all available sources<span class="output"></span>
+<span class="output">  -ls, -list-sources  list all available sources</span>
 <span class="output">OPTIMIZATION:</span>
 <span class="output">  -timeout int   seconds to wait before timing out (default 30)</span>
 <span class="output">  -max-time int  minutes to wait for enumeration results (default 10</span>)
