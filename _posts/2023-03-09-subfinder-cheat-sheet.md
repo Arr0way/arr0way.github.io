@@ -164,7 +164,7 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
       <td><code>-max-time int</code></td>
       <td>minutes to wait for enumeration results (default 10)</td>
     </tr>
-	<tbody>	  
+	</tbody>	  
   </table>
 </div>
 
