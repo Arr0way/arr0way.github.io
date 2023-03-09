@@ -41,10 +41,13 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 
 <div class="mobile-side-scroller">
   <table>
+	<thread>  
     <tr>
       <th>Flag</th>
       <th>Description</th>
     </tr>
+	  </thread>
+	  <tbody>
     <tr>
       <td><code>-d, -domain string[]</code></td>
       <td>domains to find subdomains for</td>
@@ -161,6 +164,7 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
       <td><code>-max-time int</code></td>
       <td>minutes to wait for enumeration results (default 10)</td>
     </tr>
+	<tbody>	  
   </table>
 </div>
 
