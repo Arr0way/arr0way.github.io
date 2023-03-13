@@ -57,112 +57,112 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 	    <td><p>file containing list of domains for subdomain discovery</p></td>
     </tr>
     <tr>
-      <td><code>-s, -sources string[]</code></td>
-      <td>specific sources to use for discovery (-s crtsh,github). Use -ls to display all available sources.</td>
+	    <td><p><code>-s, -sources string[]</code></p></td>
+      <td><p>specific sources to use for discovery (-s crtsh,github). Use -ls to display all available sources.</p></td>
     </tr>
     <tr>
-      <td><code>-recursive</code></td>
-      <td>use only sources that can handle subdomains recursively (e.g. subdomain.domain.tld vs domain.tld)</td>
+      <td><p><code>-recursive</code></p></td>
+      <td><p>use only sources that can handle subdomains recursively (e.g. subdomain.domain.tld vs domain.tld)</p></td>
     </tr>
     <tr>
-      <td><code>-all</code></td>
-      <td>use all sources for enumeration (slow)</td>
+      <td><p><code>-all</code></p></td>
+      <td><p>use all sources for enumeration (slow)</p></td>
     </tr>
     <tr>
-      <td><code>-es, -exclude-sources string[]</code></td>
-      <td>sources to exclude from enumeration (-es alienvault,zoomeye)</td>
+      <td><p><code>-es, -exclude-sources string[]</code></p></td>
+      <td><p>sources to exclude from enumeration (-es alienvault,zoomeye)</p></td>
     </tr>
     <tr>
-      <td><code>-m, -match string[]</code></td>
-      <td>subdomain or list of subdomain to match (file or comma separated)</td>
+      <td><p><code>-m, -match string[]</code></p></td>
+      <td><p>subdomain or list of subdomain to match (file or comma separated)</p></td>
     </tr>
     <tr>
-      <td><code>-f, -filter string[]</code></td>
-      <td>subdomain or list of subdomain to filter (file or comma separated)</td>
+      <td><p><code>-f, -filter string[]</code></p></td>
+      <td><p>subdomain or list of subdomain to filter (file or comma separated)</p></td>
     </tr>
     <tr>
-      <td><code>-rl, -rate-limit int</code></td>
-      <td>maximum number of http requests to send per second</td>
+      <td><p><code>-rl, -rate-limit int</code></p></td>
+      <td><p>maximum number of http requests to send per second</p></td>
     </tr>
     <tr>
-      <td><code>-t int</code></td>
-      <td>number of concurrent goroutines for resolving (-active only) (default 10)</td>
+      <td><p><code>-t int</code></p></td>
+      <td><p>number of concurrent goroutines for resolving (-active only) (default 10)</p></td>
     </tr>
     <tr>
-      <td><code>-o, -output string</code></td>
-      <td>file to write output to</td>
+      <td><p><code>-o, -output string</code></p></td>
+      <td><p>file to write output to</p></td>
     </tr>
     <tr>
-      <td><code>-oJ, -json</code></td>
-      <td>write output in JSONL(ines) format</td>
+      <td><p><code>-oJ, -json</code></p></td>
+      <td><p>write output in JSONL(ines) format</p></td>
     </tr>
     <tr>
-      <td><code>-oD, -output-dir string</code></td>
-      <td>directory to write output (-dL only)</td>
+      <td><p><code>-oD, -output-dir string</code></p></td>
+      <td><p>directory to write output (-dL only)</p></td>
     </tr>
     <tr>
-      <td><code>-cs, -collect-sources</code></td>
-      <td>include all sources in the output (-json only)</td>
+      <td><p><code>-cs, -collect-sources</code></p></td>
+      <td><p>include all sources in the output (-json only)</p></td>
     </tr>
     <tr>
-      <td><code>-oI, -ip</code></td>
-      <td>include host IP in output (-active only)</td>
+      <td><p><code>-oI, -ip</code></p></td>
+      <td><p>include host IP in output (-active only)</p></td>
     </tr>
     <tr>
-      <td><code>-config string</code></td>
-      <td>flag config file (default "$HOME/.config/subfinder/config.yaml")</td>
+      <td><p><code>-config string</code></p></td>
+      <td><p>flag config file (default "$HOME/.config/subfinder/config.yaml")</p></td>
     </tr>
     <tr>
-      <td><code>-pc, -provider-config string</code></td>
-      <td>provider config file (default "$HOME/.config/subfinder/provider-config.yaml")</td>
+      <td><p><code>-pc, -provider-config string</code></p></td>
+      <td><p>provider config file (default "$HOME/.config/subfinder/provider-config.yaml")</p></td>
     </tr>
     <tr>
-      <td><code>-r string[]</code></td>
-      <td>comma separated list of resolvers to use</td>
+      <td><p><code>-r string[]</code></p></td>
+      <td><p>comma separated list of resolvers to use</p></td>
     </tr>
     <tr>
-      <td><code>-rL, -rlist string</code></td>
-      <td>file containing list of resolvers to use</td>
+      <td><p><code>-rL, -rlist string</code></p></td>
+      <td><p>file containing list of resolvers to use</p></td>
     </tr>
     <tr>
-      <td><code>-nW, -active</code></td>
-      <td>display active subdomains only</td>
+      <td><p><code>-nW, -active</code></p></td>
+      <td><p>display active subdomains only</p></td>
     </tr>
     <tr>
-      <td><code>-proxy string</code></td>
-      <td>http proxy to use with subfinder</td>
+      <td><p><code>-proxy string</code></p></td>
+      <td><p>http proxy to use with subfinder</p></td>
     </tr>
     <tr>
-      <td><code>-ei, -exclude-ip</code></td>
-      <td>exclude IPs from the list of domains</td>
+      <td><p><code>-ei, -exclude-ip</code></p></td>
+      <td><p>exclude IPs from the list of domains</p></td>
     </tr>
     <tr>
-      <td><code>-silent</code></td>
-      <td>show only subdomains in output</td>
+      <td><p><code>-silent</code></p></td>
+      <td><p>show only subdomains in output</p></td>
     </tr>
     <tr>
-      <td><code>-version</code></td>
-      <td>show version of subfinder</td>
+      <td><p><code>-version</code></p></td>
+      <td><p>show version of subfinder</p></td>
     </tr>
     <tr>
-      <td><code>-v</code></td>
-      <td>show verbose output</td>
+      <td><p><code>-v</code></p></td>
+      <td><p>show verbose output</p></td>
     </tr>
     <tr>
-      <td><code>-nc, -no-color</code></td>
-      <td>disable color in output</td>
+      <td><p><code>-nc, -no-color</code></p></td>
+      <td><p>disable color in output</p></td>
     </tr>
     <tr>
-      <td><code>-ls, -list-sources</code></td>
-      <td>list all available sources</td>
+      <td><p><code>-ls, -list-sources</code></p></td>
+      <td><p>list all available sources</p></td>
     </tr>
     <tr>
-      <td><code>-timeout int</code></td>
-      <td>seconds to wait before timing out (default 30)</td>
+      <td><p><code>-timeout int</code></p></td>
+      <td><p>seconds to wait before timing out (default 30)</p></td>
     </tr>
     <tr>
-      <td><code>-max-time int</code></td>
-      <td>minutes to wait for enumeration results (default 10)</td>
+      <td><p><code>-max-time int</code></p></td>
+      <td><p>minutes to wait for enumeration results (default 10)</p></td>
     </tr>
 	</tbody>	  
   </table>
