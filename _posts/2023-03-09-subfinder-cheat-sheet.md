@@ -50,11 +50,11 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 	  <tbody>
     <tr>
 	    <td><p><code>-d, -domain string[]</code></p></td>
-      <td>domains to find subdomains for</td>
+	    <td><p>domains to find subdomains for</p></td>
     </tr>
     <tr>
 	    <td><p><code>-dL, -list string</code></p></td>
-      <td>file containing list of domains for subdomain discovery</td>
+	    <td><p>file containing list of domains for subdomain discovery</p></td>
     </tr>
     <tr>
       <td><code>-s, -sources string[]</code></td>
