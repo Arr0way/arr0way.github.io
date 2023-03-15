@@ -287,6 +287,8 @@ Basic Nmap scanning command examples, often used at the first stage of enumerati
 
 ### Nmap Nikto Scan
 
+Nmap + [Nikto](/blog/nikto-cheat-sheet/) scanning for specific discovered HTTP ports.
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
