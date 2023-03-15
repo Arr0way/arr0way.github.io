@@ -217,7 +217,7 @@ perl nikto.pl -h http://www.foo.com
         <td><p>Client certificate file</p></td>
     </tr>
     <tr>
-        <td><code>-root+</code></p></td>
+        <td><p><code>-root+</code></p></td>
         <td><p>Prepend root value to all requests, format is /directory</p></td>
     </tr>
     <tr>
