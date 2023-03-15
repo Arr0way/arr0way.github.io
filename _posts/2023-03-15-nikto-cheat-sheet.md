@@ -14,33 +14,6 @@ tags:
 
 Nikto is an open-source web server scanner that performs comprehensive tests to identify potentially dangerous files/programs, outdated versions of servers, server configuration items, and installed web servers and software. It also supports LibWhisker's anti-IDS methods to avoid detection. While not every check is a security issue, most are, and there are also info-only checks and checks for unknown items.
 
-## Nikto2 Features
-
-- SSL Support (Unix with OpenSSL or maybe Windows with ActiveState's Perl/NetSSL)
-- Full HTTP proxy support
-- Checks for outdated server components
-- Save reports in plain text, XML, HTML, NBE or CSV
-- Template engine to easily customize reports
-- Scan multiple ports on a server, or multiple servers via input file (including nmap output)
-- LibWhisker's IDS encoding techniques
-- Easily updated via command line
-- Identifies installed software via headers, favicons and files
-- Host authentication with Basic and NTLM
-- Subdomain guessing
-- Apache and cgiwrap username enumeration
-- Mutation techniques to "fish" for content on web servers
-- Scan tuning to include or exclude entire classes of vulnerability checks
-- Guess credentials for authorization realms (including many default id/pw combos)
-- Authorization guessing handles any directory, not just the root directory
-- Enhanced false positive reduction via multiple methods: headers, page content, and content hashing
-- Reports "unusual" headers seen
-- Interactive status, pause and changes to verbosity settings
-- Save full request/response for positive tests
-- Replay saved positive requests
-- Maximum execution time per target
-- Auto-pause at a specified time
-- Checks for common "parking" sites
-
 ## Nikto Installation 
 
 {% highlight bash %}
@@ -334,3 +307,30 @@ Using Nikto with a proxy such as Burp or another intercepting proxy.
     </tr>
   </tbody>
 </table>
+
+## Nikto2 Features
+
+- SSL Support (Unix with OpenSSL or maybe Windows with ActiveState's Perl/NetSSL)
+- Full HTTP proxy support
+- Checks for outdated server components
+- Save reports in plain text, XML, HTML, NBE or CSV
+- Template engine to easily customize reports
+- Scan multiple ports on a server, or multiple servers via input file (including nmap output)
+- LibWhisker's IDS encoding techniques
+- Easily updated via command line
+- Identifies installed software via headers, favicons and files
+- Host authentication with Basic and NTLM
+- Subdomain guessing
+- Apache and cgiwrap username enumeration
+- Mutation techniques to "fish" for content on web servers
+- Scan tuning to include or exclude entire classes of vulnerability checks
+- Guess credentials for authorization realms (including many default id/pw combos)
+- Authorization guessing handles any directory, not just the root directory
+- Enhanced false positive reduction via multiple methods: headers, page content, and content hashing
+- Reports "unusual" headers seen
+- Interactive status, pause and changes to verbosity settings
+- Save full request/response for positive tests
+- Replay saved positive requests
+- Maximum execution time per target
+- Auto-pause at a specified time
+- Checks for common "parking" sites
