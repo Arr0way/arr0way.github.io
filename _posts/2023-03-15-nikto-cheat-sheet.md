@@ -137,7 +137,7 @@ perl nikto.pl -h http://www.foo.com
         <td><p>1 Random URI encoding (non-UTF8)</p><p>2 Directory self-reference (/./)</p><p>3 Premature URL ending</p><p>4 Prepend long random string</p><p>5 Fake parameter</p><p>6 TAB as request spacer</p><p>7 Change the case of the URL</p><p>8 Use Windows directory separator (\)</p><p>A Use a carriage return (0x0d) as a request spacer</p><p>B Use binary value 0x0b as a request spacer</p></td>
     </tr>
     <tr>
-        <td><p>code>-Format+</code></p></td>
+        <td><p><code>-Format+</code></p></td>
         <td><p>csv Comma-separated-value</p><p>htm HTML Format</p><p>msf+ Log to Metasploit</p><p>nbe Nessus NBE format</p><p>txt Plain text</p><p>xml XML Format</p><p>(if not specified the format will be taken from the file extension passed to -output)</p></td>
     </tr>
     <tr>
