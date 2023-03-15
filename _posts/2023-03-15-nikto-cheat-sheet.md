@@ -74,10 +74,12 @@ perl nikto.pl -h http://www.foo.com
 ## Nikto Cheat Sheet 
 
 <table>
+  <thead>
   <tr>
     <th>Command</th>
     <th>Description</th>
   </tr>
+  </thead>  
   <tr>
     <td><p><code>nikto -h http://foo.com</code></p></td>
     <td><p>Scans the specified host</p></td>
@@ -108,10 +110,12 @@ perl nikto.pl -h http://www.foo.com
 ## Nikto Command Flags Sheet
 
 <table>
+  <thead>
     <tr>
         <th>Option</th>
         <th>Value</th>
     </tr>
+  </thead>
     <tr>
         <td><p><code>-ask+</code></p></td>
         <td><p><code>yes</code> Ask about each (default)</p><p><code>no</code> Don't ask, don't send</p></td>
@@ -264,10 +268,12 @@ perl nikto.pl -h http://www.foo.com
 ### Basic Scanning
 
 <table>
+  <thead>
   <tr>
     <th>Command</th>
     <th>Description</th>
   </tr>
+  </thead>  
   <tr>
     <td><p><code>nikto -h [target]</code></p></td>
     <td><p>Basic scan, no HTTP options.</p></td>
