@@ -98,7 +98,7 @@ perl nikto.pl -h http://www.foo.com
         <td><p>"none", "all", or values like "/cgi/ /cgi-a/"</p></td>
     </tr>
     <tr>
-        <td><p>code>-config+</code></p></td>
+        <td><p><code>-config+</code></p></td>
         <td><p>Use this config file</p></td>
     </tr>
     <tr>
