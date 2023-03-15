@@ -114,7 +114,7 @@ perl nikto.pl -h http://www.foo.com
     </tr>
     <tr>
         <td><p><code>-ask+</code></p></td>
-        <td><p>yes Ask about each (default)</p><p>no Don't ask, don't send</p><p>auto Don't ask, just send</p></td>
+        <td><p><code>yes</code> Ask about each (default)</p><p><code>no</code> Don't ask, don't send</p></td>
     </tr>
     <tr>
         <td><p><code>-Cgidirs+</code></p></td>
