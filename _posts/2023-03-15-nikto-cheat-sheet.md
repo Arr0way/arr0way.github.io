@@ -43,34 +43,33 @@ Nikto is an open-source web server scanner that performs comprehensive tests to 
 
 ## Nikto Installation 
 
-```
+{% highlight bash %}
 git clone https://github.com/sullo/nikto
-```
+{% endhighlight %}
 
 ### Main script is in program
 
-```
+{% highlight bash %}
 cd nikto/program
-```
+{% endhighlight %}
 
 ### Check out the 2.5.0 branch
 
-```
+{% highlight bash %}
 git checkout nikto-2.5.0
-```
+{% endhighlight %}
 
 ### Run using the shebang interpreter
 
-```
+{% highlight bash %}
 ./nikto.pl -h http://www.foo.com
+{% endhighlight %}
 
-```
 ### Run using perl (if you forget to chmod)
 
-```
+{% highlight bash %}
 perl nikto.pl -h http://www.foo.com
-```
-
+{% endhighlight %}
 
 ## Nikto Cheat Sheet 
 
