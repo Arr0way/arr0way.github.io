@@ -34,8 +34,14 @@ description: "Learn about what penetration testing is, the benefits, testing typ
 
 <section class="features">
 	<div class="grid">
-     <h2>What is Penetration Testing? (in a nutshell)</h2>
-     <p>A professional authorized security test performed against a system or application to assess the security posture of the assessed environment. Identified security issues are “typically” exploited to verify that they are vulnerable and not a false positive. When testing is complete the client receives a report outlining the discovered vulnerabilities, their severity, and with remediation advice to assist with fixing the discovered vulnerabilities. Once the issues have been fixed by the client a retest of discovered issues is often performed to ensure that the clients fix work was successful.</p>
+     <h2>What are the Benefits of Penetration Testing </h2>
+     <p>Assess systems, networks, applications or devices to find vulnerabilities that could have been missed during engineering or development. Pen testing can help an organization with the following: 
+	<ol>
+ 	 <li>Gain an understanding of the current security posture of the assessed environment.</li>
+	  <li>Identify vulnerabilities that may not be identified using automated testing.</li>
+	  <li>Support compliance and data standards such as HIPPA, GDPR, DPA, PCI DSS.</li>
+ 	 <li>Test existing security controls against an attack simulation; to see if they are sufficient.</li>
+	</ol>
 	</div>
 </section>
 
@@ -118,6 +124,26 @@ description: "Learn about what penetration testing is, the benefits, testing typ
     <div class="clear"></div>
   </div>
 </section>
+
+
+
+<section class="features">
+	<div class="grid">
+     <h2>Penetration Testing Phases: Step by Step</h2>
+	<ol>
+	  <li>Scoping: Define the scope, goals, and objectives of the test. Identify the systems and networks to be tested and establish a clear understanding of the testing environment.</li>
+	  <li>Reconnaissance: Gather information about the target, like domain names, IP addresses, and network infrastructure. If the target is an application, you would step through the functionality and observe how the application is intended to be used.</li>
+ 	 <li>Vulnerability Scanning: Use automated tools to discover live hosts, open ports, and services. It's like finding all the doors and windows of a building you want to break into. If an application is the target web application vulnerability scanning tools can be used to help identify any low hanging fruit.</li>
+  	<li>Exploitation: An attempt to exploit vulnerabilities to gain unauthorized access or in the case of an application abuse a function to do things the developer did not intend, just like a real attacker would. This process could involve using known exploits and attack vectors or trying to find new ones.</li>
+  	<li>Escalation: Attempt to escalate privilege of the vulnerability, either by chaining vulnerabilities and/or performing exploiting the host operating system.</li>
+  	<li>Persistence: Aka pivoting, after a single host has been compromised the machine could be used to access other services or hosts using a process called pivoting.</li>
+ 	 <li>Reporting: Fun time is officially over, now it is time for the consultant to document the issues discovered in the above processes and present them in a report that documents the discovered issues, severity, risk, and a recommendation to fix any discovered vulnerabilities.</li>
+	</ol>
+
+	</div>
+</section>
+
+
 <section class="quickstart">
   <div class="grid">
     <div class="unit golden-small center-on-mobiles">
@@ -139,6 +165,10 @@ description: "Learn about what penetration testing is, the benefits, testing typ
     <div class="clear"></div>
   </div>
 </section>
+
+
+
+
 <section class="free-hosting">
   <div class="grid">
     <div class="unit whole">
