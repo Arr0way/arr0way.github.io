@@ -32,6 +32,30 @@ description: "Learn about what penetration testing is, the benefits, testing typ
   </div>
 </section>
 
+
+
+<section class="quickstart">
+  <div class="grid">
+    <div class="unit golden-small center-on-mobiles">
+      <h4><em>&nbsp;WHOAMI</em></h4>
+    </div>
+    <div class="unit golden-large code">
+      <p class="title">Exploit</p>
+      <div class="shell">
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">whomai</span>
+        </p>
+        <p class="line">
+          <span class="output"># => I have been a penetration tester for about 10 years; before switching to offensive security I worked in other areas of “cyber security”. I started this blog around a decade ago.</span>
+        </p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+
 <section class="features">
 	<div class="grid">
      <h2>What are the Benefits of Penetration Testing </h2>
@@ -131,39 +155,134 @@ description: "Learn about what penetration testing is, the benefits, testing typ
 	<div class="grid">
      <h2>Penetration Testing Phases: Step by Step</h2>
 	<ol>
-	  <li>Scoping: Define the scope, goals, and objectives of the test. Identify the systems and networks to be tested and establish a clear understanding of the testing environment.</li>
-	  <li>Reconnaissance: Gather information about the target, like domain names, IP addresses, and network infrastructure. If the target is an application, you would step through the functionality and observe how the application is intended to be used.</li>
- 	 <li>Vulnerability Scanning: Use automated tools to discover live hosts, open ports, and services. It's like finding all the doors and windows of a building you want to break into. If an application is the target web application vulnerability scanning tools can be used to help identify any low hanging fruit.</li>
-  	<li>Exploitation: An attempt to exploit vulnerabilities to gain unauthorized access or in the case of an application abuse a function to do things the developer did not intend, just like a real attacker would. This process could involve using known exploits and attack vectors or trying to find new ones.</li>
-  	<li>Escalation: Attempt to escalate privilege of the vulnerability, either by chaining vulnerabilities and/or performing exploiting the host operating system.</li>
-  	<li>Persistence: Aka pivoting, after a single host has been compromised the machine could be used to access other services or hosts using a process called pivoting.</li>
+	  <li>Scoping: Define the scope, goals, and objectives of the test. Identify the systems and networks to be tested and establish a clear understanding of the testing environment.</li><br>
+	  <li>Reconnaissance: Gather information about the target, like domain names, IP addresses, and network infrastructure. If the target is an application, you would step through the functionality and observe how the application is intended to be used.</li><br>
+ 	 <li>Vulnerability Scanning: Use automated tools to discover live hosts, open ports, and services. It's like finding all the doors and windows of a building you want to break into. If an application is the target web application vulnerability scanning tools can be used to help identify any low hanging fruit.</li><br>
+  	<li>Exploitation: An attempt to exploit vulnerabilities to gain unauthorized access or in the case of an application abuse a function to do things the developer did not intend, just like a real attacker would. This process could involve using known exploits and attack vectors or trying to find new ones.</li><br>
+  	<li>Escalation: Attempt to escalate privilege of the vulnerability, either by chaining vulnerabilities and/or performing exploiting the host operating system.</li><br>
+  	<li>Persistence: Aka pivoting, after a single host has been compromised the machine could be used to access other services or hosts using a process called pivoting.</li><br>
  	 <li>Reporting: Fun time is officially over, now it is time for the consultant to document the issues discovered in the above processes and present them in a report that documents the discovered issues, severity, risk, and a recommendation to fix any discovered vulnerabilities.</li>
 	</ol>
 
 	</div>
 </section>
 
+<section class="features">
+	<div class="grid">
+     <h2>Taking Care</h2>
+		<h3>Stay in Scope</h3>
+		<p>As a penetration tester you are carrying out a controlled simulation; care must be taken to always adhere to the scope and not step outside of the agreed upon assessment scope.</p>
+		<h3>Technical Contact</h3>
+		<p>If issues or questions arise, always ensure you have a direct contact with the organisations technical contact. You may need to clarify an area of the scope or seek additional approval before executing a potentially disruptive exploit. Firewalls and WAF’s might cause issue during testing and require you to contact the client to add your testing IP on their allow list. </p>
+	</div>
+</section>
 
-<section class="quickstart">
-  <div class="grid">
-    <div class="unit golden-small center-on-mobiles">
-      <h4><em>&nbsp;whomai</em></h4>
-    </div>
-    <div class="unit golden-large code">
-      <p class="title">Exploit</p>
-      <div class="shell">
-        <p class="line">
-          <span class="path">~</span>
-          <span class="prompt">$</span>
-          <span class="command">whomai</span>
-        </p>
-        <p class="line">
-          <span class="output"># => I have been a penetration tester for about 10 years; before switching to offensive security I worked in other areas of “cyber security”. I started this blog around a decade ago.</span>
-        </p>
-      </div>
-    </div>
-    <div class="clear"></div>
-  </div>
+<section class="features">
+	<div class="grid">
+     <h2>Penetration Testing Tools</h2>
+		<p>During an assessment multiple tools will be used depending on the phase of the test and type of pen test that is being performed.</p> 
+		<p>An example of an indicative list of some pen test tooling for an infrastructure penetration test: </p>
+		<ol>
+	  	<li>Reconnaissance: Tools such as subfinder, Google dorks, Waybackurls, <a href="/blog/naabu-cheat-sheet/">Nmap</a>, <a href="/blog/nmap-cheat-sheet/">Naabu</a>, Shodan, recon-ng, TheHarvester.</li>
+	  	<li>Vulnerability Scanning: OpenVAS, Nessus, Nuclei.</li>
+  		<li>Exploitation: Exploit-db, Metasploit Framework, OpenVAS, Nessus, Nuclei.</li>
+  		<li>Escalation: Typically privilege escalation is performed manually against appliances or operating systems, e.g., using a <a href="/blog/linux-local-enumeration-script/">Linux local privilege escalation script</a> or by performing this manually.</li>
+  		<li>Pivoting: Again, this phase is performed manually and depends greatly on the target operating system which has been compromised, see our <a href="/ssh-meterpreter-pivoting-techniques/">pivoting cheat sheet</a> for more information.</li>
+		</ol>
+
+	</div>
+</section>
+
+
+<section class="features">
+	<div class="grid">
+     <h2>Penetration Testing FAQ</h2>
+		<h3>How Much Does a Penetration Test Cost? </h3> 
+		<p>The cost of a penetration test can vary widely depending on several factors such as the scope of the test, the complexity of the systems being tested, the size of the organization, and the expertise of the security firm conducting the test. This is another reason why careful, and accurate scoping should be performed. </p>
+		<p>Generally, you can expect to pay anywhere from a few thousand dollars to tens of thousands of dollars for a comprehensive penetration test. Some firms may charge hourly rates, while others may offer fixed-price packages for specific types of tests.</p>
+		<p>It's essential to carefully consider your organization's needs and budget when selecting a penetration testing provider and to ensure that you're getting a thorough and reliable assessment of your security posture.</p>
+		<h3>What is Enumeration? </h3>
+		<p>In the context of penetration testing, enumeration refers to the process of actively gathering information about a target system or network to identify potential vulnerabilities or weak points that could be exploited by attackers.</p>
+		<p>Enumeration typically involves using various techniques such as scanning, probing, and querying to gather information about network services, system configurations, user accounts, and other relevant details. This information can then be used by the penetration tester to assess the security posture of the target environment and identify potential avenues for further exploitation.</p>
+		<h3>How Often Should an Organization Perform a Penetration Test?</h3>
+		<p>Organizations should perform penetration tests regularly to proactively identify and address security vulnerabilities and assess the effectiveness of their security controls. The frequency of testing may vary depending on factors such as regulatory requirements, changes in the IT environment, and the organization's risk profile. Typically, organizations should conduct penetration tests annually or more frequently if there are significant changes to the IT infrastructure, applications, or security policies.</p>
+		<p>Regular penetration testing helps organizations stay ahead of evolving threats, validate the effectiveness of security measures, and ensure compliance with regulatory requirements. It also provides valuable insights into potential weaknesses in the security posture that can be addressed to mitigate the risk of security breaches and data breaches. Ultimately, the goal is to establish a proactive approach to security that helps organizations identify and address vulnerabilities before they can be exploited by malicious actors.</p>
+		<h3>What Systems Should Be Tested? </h3>
+		<p>During a penetration test, it's essential to test a wide range of systems, networks, and applications to identify potential vulnerabilities and assess the overall security posture of an organization. This includes testing both internal and external-facing systems, as well as web applications, databases, and other critical assets.</p>
+		<p><b>Overview:</b></p>
+		<ul>
+  <li><strong>External-facing systems:</strong>
+    <ul>
+      <li>Web servers</li>
+      <li>Email servers</li>
+      <li>DNS servers</li>
+      <li>VPN gateways</li>
+      <li>Remote access services</li>
+    </ul>
+  </li>
+  <li><strong>Internal systems:</strong>
+    <ul>
+      <li>Workstations</li>
+      <li>Servers</li>
+      <li>Printers and other network devices</li>
+      <li>Internal applications and services</li>
+    </ul>
+  </li>
+  <li><strong>Web & Mobile applications:</strong>
+    <ul>
+      <li>Customer portals</li>
+      <li>E-commerce platforms</li>
+      <li>Content management systems</li>
+      <li>Web APIs</li>
+      <li>iOS & Android mobile apps</li>
+    </ul>
+  </li>
+  <li><strong>Databases:</strong>
+    <ul>
+      <li>SQL servers</li>
+      <li>NoSQL databases</li>
+      <li>Data warehouses</li>
+      <li>Data lakes</li>
+    </ul>
+  </li>
+  <li><strong>Wireless networks:</strong>
+    <ul>
+      <li>Wi-Fi access points</li>
+      <li>Wireless controllers</li>
+      <li>Bluetooth devices</li>
+    </ul>
+  </li>
+  <li><strong>Cloud services:</strong>
+    <ul>
+      <li>Infrastructure as a Service (IaaS) platforms</li>
+      <li>Platform as a Service (PaaS) offerings</li>
+      <li>Software as a Service (SaaS) applications</li>
+    </ul>
+  </li>
+  <li><strong>Physical security:</strong>
+    <ul>
+      <li>Access control systems</li>
+      <li>Surveillance cameras</li>
+      <li>Alarm systems</li>
+    </ul>
+  </li>
+  <li><strong>Human factors:</strong>
+    <ul>
+      <li>Social engineering attacks</li>
+      <li>Phishing simulations</li>
+      <li>Security awareness training</li>
+    </ul>
+  </li>
+</ul>
+	<h3>What is Persistence? </h3>
+		<p>In this context, "persistence" refers to the ability of an attacker to maintain access to a compromised system or network over an extended period without being detected. After gaining initial access through a vulnerability or exploit, an attacker may seek to establish persistence by deploying reverse shells, creating hidden user accounts, installing malicious software, or modifying system configurations to maintain access even after the initial breach has been remediated.</p>
+	<h3>What is Recon?</h3>
+		<p>“Recon” is an abbreviation for reconnaissance, which refers to the preliminary phase of information gathering about a target system or network. Reconnaissance involves collecting data about the target environment to understand its structure, components, and potential vulnerabilities.</p>
+		<p>During the reconnaissance phase, penetration testers use various passive techniques such as searching online resources, social engineering, and analyzing publicly available information (OSINT) to gather intelligence about the target organization, its employees, infrastructure, and technology stack. This information helps penetration testers to identify potential entry points and develop a strategy for further assessment.</p>
+	<h3>Conclusion</h3>
+		<p>In conclusion, penetration testing serves as a crucial pillar of proactive cybersecurity strategies, offering organizations a vital means to assess and fortify their digital defenses. By simulating real-world cyber-attacks, penetration testing provides invaluable insights into potential vulnerabilities, helping organizations identify and mitigate risks before they are exploited by malicious actors. From uncovering weaknesses in network infrastructure to evaluating the security of web applications and cloud services, penetration testing empowers organizations to proactively strengthen their security posture and safeguard sensitive data. Embracing penetration testing as a regular practice enables organizations to stay ahead of emerging threats, comply with regulatory requirements, and instill confidence in their ability to protect against cyber threats in an increasingly interconnected digital landscape.</p>
+	
+	</div>
 </section>
 
 
