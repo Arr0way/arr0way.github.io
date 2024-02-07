@@ -2,6 +2,8 @@
 layout: docs
 title: What is Black Box Penetration Testing?
 overview: true
+tags:
+- 'pen-testing'
 ---
 
 
