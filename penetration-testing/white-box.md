@@ -11,6 +11,8 @@ tags:
 <li>It differs from other types of penetration testing by having full knowledge of the target system's architecture and code.</li>
 <li>The key steps in whitebox penetration testing include planning, scanning, vulnerability assessment, exploitation, and post-exploitation.</li></div>
 
+{:toc}
+
 <h2>What Is Whitebox Penetration Testing?</h2>
 <b>Whitebox Penetration Testing</b>, also known as clear box testing, is a method where the tester has extensive knowledge of the internal infrastructure, system information, and source code of the application being tested.
 <p>This type of testing involves simulating an attack from a malicious insider or a hacker who has gained access to the system. By leveraging this in-depth understanding, the tester can identify and exploit vulnerabilities that may not be easily detectable through other methods.</p>
