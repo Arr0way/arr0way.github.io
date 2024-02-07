@@ -16,11 +16,11 @@ tags:
 
 <h2>What Is Grey Box Penetration Testing?</h2>
 <b>Grey Box Penetration Testing</b> is a cybersecurity assessment method that combines elements of both Black-Box and White-Box testing approaches.
-<p>During a Grey Box Penetration Test, the tester has limited knowledge of the internal workings of the target system or application, similar to Black-Box testing, but is provided with some information, like system architecture or design documents, resembling White-Box testing.</p>
-<p>This hybrid nature allows for a more comprehensive evaluation of security controls and vulnerabilities that might not be easily discovered through solely Black-Box or White-Box testing methods.</p>
+<p>During a Grey Box Penetration Test, the tester has limited knowledge of the internal workings of the target system or application, similar to [Black-Box testing](/penetration-testing/black-box/), but is provided with some information, like system architecture or design documents, resembling White-Box testing.</p>
+<p>This hybrid nature allows for a more comprehensive evaluation of security controls and vulnerabilities that might not be easily discovered through solely Black-Box or [White-box testing](/penetration-testing/white-box/) testing methods.</p>
 
 <h2>How Does Grey Box Penetration Testing Work?</h2>
-Grey Box Penetration Testing works by providing pentesters with partial knowledge of the system or network being tested, allowing them to simulate attacks and identify vulnerabilities.
+Grey Box [Penetration Testing](/penetration-testing/) works by providing pentesters with partial knowledge of the system or network being tested, allowing them to simulate attacks and identify vulnerabilities.
 <p>During Grey Box Penetration Testing, the testers have access to internal documents, source code, and network architecture diagrams, giving them insights into the system's workings without full disclosure. This method allows for a more realistic assessment of security controls and potential weak points. By leveraging this information intelligently, testers can better target their assessment efforts, focusing on critical areas that may be vulnerable to exploitation.</p>
 <h2>What Are The Benefits Of Grey Box Penetration Testing?</h2>
 Grey Box Penetration Testing offers several advantages in the realm of cybersecurity, including the identification of vulnerabilities from an attacker's perspective, providing a realistic assessment of security measures, and helping prioritize remediation efforts.
