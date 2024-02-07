@@ -82,6 +82,6 @@ The pros and cons of black box penetration testing:
 
 3. **Costly:** Due to the extended duration and specialized skills required, black box penetration testing can be more expensive than other testing methods.
 
-4. **May Miss Insider Threats:** Black box testing focuses primarily on external threats, potentially overlooking vulnerabilities posed by insider threats or malicious actors with internal access.
+4. **Could Miss Insider Threats:** Black box testing focuses primarily on external threats, potentially overlooking vulnerabilities posed by insider threats or malicious actors with internal access.
 
 In conclusion, while black box penetration testing offers realistic insights into external threats and provides an unbiased assessment, it requires additional time, resources, and expertise, and may not uncover all vulnerabilities. Organizations should weigh these factors carefully when deciding on their testing approach.
