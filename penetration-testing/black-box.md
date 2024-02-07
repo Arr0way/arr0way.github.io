@@ -57,7 +57,7 @@ These tools are widely used by security professionals and penetration testers to
 
 <div class="note">
   <h5>Consider Other Testing Types</h5>
-  <p>Other testing types such as grey or white box may reduce the costs of a penetration test.</p>
+  <p>Other testing types such as grey or <a href="/penetration-testing/white-box/">white box</a> may reduce the costs of a penetration test.</p>
 </div>
 
 ## Pros & Cons of Black Box Penetration Testing
