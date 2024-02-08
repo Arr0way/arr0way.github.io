@@ -10,7 +10,8 @@
     {% assign c = "" %}
   {% endif %}
 
-  {% for p in site.docs %}
+  
+  {% for p in site.tags.pen-testing %}
     {% if p.url == item_url %}
       <li class="{{ c }}"><a href="{{ site.url }}{{ p.url }}">{{ p.title }}</a></li>
     {% endif %}
