@@ -6,10 +6,14 @@ tags:
 - 'pen-testing'
 ---
 
-<p>Mobile app penetration testing is a crucial process that helps identify and address vulnerabilities in mobile applications. In this article, we will explore the importance of mobile app penetration testing, the risks of neglecting it, the steps involved in the process, different types of testing methods, commonly used tools, and the vulnerabilities that are commonly found in mobile apps. By understanding and implementing mobile app penetration testing, organizations can enhance the security of their apps and protect sensitive data from potential threats.</p><p></p><div class='note'><h2>In a Nutshell:</h2><li> Mobile app penetration testing is the process of identifying and assessing vulnerabilities in a mobile application to improve its security.
-<li> It is important to conduct mobile app penetration testing as it helps mitigate the risk of data breaches and protects sensitive information.
-<li> The steps involved in mobile app penetration testing include planning, reconnaissance, vulnerability scanning, exploitation, and post-exploitation. 
-</div> 
+<p>Mobile app penetration testing is a crucial process that helps identify and address vulnerabilities in mobile applications. In this article, we will explore the importance of mobile app penetration testing, the risks of neglecting it, the steps involved in the process, different types of testing methods, commonly used tools, and the vulnerabilities that are commonly found in mobile apps. By understanding and implementing mobile app penetration testing, organizations can enhance the security of their apps and protect sensitive data from potential threats.</p><p></p>
+
+
+<div class='note'><h2>In a Nutshell:</h2>
+<li> Mobile app penetration testing is the process of identifying and assessing vulnerabilities in a mobile application to improve its security.</li>
+<li> It is important to conduct mobile app penetration testing as it helps mitigate the risk of data breaches and protects sensitive information.</li>
+<li> The steps involved in mobile app penetration testing include planning, reconnaissance, vulnerability scanning, exploitation, and post-exploitation.</li>
+</div>
 
 <h2>What is Mobile App Penetration Testing?</h2>
 <p>Mobile App Penetration Testing is a comprehensive security assessment process that evaluates the security vulnerabilities in mobile applications through simulated cyber-attacks and testing methodologies.</p>
