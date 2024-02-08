@@ -1,6 +1,7 @@
 - title: Penetration Testing
-  pen-testing:
-  - '/penetration-testing/'
+  penetration-testing:
+  - title: 'What is Penetration Testing'
+  - url: '/penetration-testing/index.html'
 
 - title: TOOLS
   docs:
