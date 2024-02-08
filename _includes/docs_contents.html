@@ -1,8 +1,31 @@
-<div class="unit one-fifth hide-on-mobiles">
-  <aside>
-    {% for section in site.data.docs %}
-    <h4>{{ section.title }}</h4>
-    {% include docs_ul.html items=section.docs %}
-    {% endfor %}
-  </aside>
+
+<aside>
+<h4>Penetration Testing</h4>
+<ul>
+  <li class="{% if page.title == 'What is Penetration Testing?' %}current{% endif %}">
+    <a href="/penetration-testing/">What is Penetration Testing</a>
+  </li>
+  <li class="{% if page.title == 'What is Web Application Penetration Testing?' %}current{% endif %}">
+    <a href="/penetration-testing/web-app/">What is Web App Pen Testing</a> 
+  </li>
+  <li class="{% if page.title == 'What is Mobile App Penetration Testing?' %}current{% endif %}">
+    <a href="/penetration-testing/mobile-app/">What is Mobile App Pen Testing</a> 
+  </li>
+  <li class="{% if page.title == 'What is Black Box Penetration Testing?' %}current{% endif %}">
+    <a href="/penetration-testing/black-box/">What is Black Box Pen Testing</a> 
+  </li>
+  <li class="{% if page.title == 'What is White Box Penetration Testing?' %}current{% endif %}">
+    <a href="/penetration-testing/white-box/">What is White Box Pen Testing</a> 
+  </li>
+  <li class="{% if page.title == 'What is Grey Box Penetration Testing?' %}current{% endif %}">
+    <a href="/penetration-testing/grey-box/">What is Grey Box Pen Testing</a> 
+  </li>
+  <li class="{% if page.title == 'How Much Does a Penetration Test Cost?' %}current{% endif %}">
+    <a href="/penetration-testing/cost/">Penetration Testing Costs</a> 
+  </li>
+  <li class="{% if page.title == 'Pen Testing vs Vulnerability Assessment, what's the Difference?' %}current{% endif %}">
+    <a href="/penetration-testing/vs-vulnerability-assessment/">Pen Testing vs Vuln Assessment</a> 
+  </li>
+</ul>
+</aside>
 </div>
