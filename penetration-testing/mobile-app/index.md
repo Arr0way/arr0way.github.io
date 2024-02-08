@@ -124,6 +124,10 @@ Any organization or individual that develops or uses a mobile application should
 <h3>What are some common types of vulnerabilities found through mobile app penetration testing?</h3>
 Some common types of vulnerabilities found through mobile app penetration testing include insecure data storage, insecure communication channels, and weak authentication mechanisms.
 
+<h3>How often should mobile app penetration testing be performed?</h3>
+It is recommended to perform mobile app penetration testing regularly, such as after every major update or at least once a year, to ensure the ongoing security of the app.
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -168,11 +172,15 @@ Some common types of vulnerabilities found through mobile app penetration testin
         "@type": "Answer",
         "text": "Some common types of vulnerabilities found through mobile app penetration testing include insecure data storage, insecure communication channels, and weak authentication mechanisms."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should mobile app penetration testing be performed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is recommended to perform mobile app penetration testing regularly, such as after every major update or at least once a year, to ensure the ongoing security of the app."
+      }
     }
   ]
 }
 </script>
-
-
-<h3>How often should mobile app penetration testing be performed?</h3>
-It is recommended to perform mobile app penetration testing regularly, such as after every major update or at least once a year, to ensure the ongoing security of the app.
