@@ -1,6 +1,6 @@
 - title: Penetration Testing
   pen-testing:
-  - 'nmap-commands'
+  - 'penetration-testing'
 
 - title: TOOLS
   docs:
