@@ -134,7 +134,7 @@ The object of the game is to acquire root access via any means possible (except 
 
 ## Web Application Investigation
 
-The web form <code>/index.php</code> was vulnerable to SQL injection, entering the username <code>admin</code> and the password <code>' or '1'=' </code> successfully bypassed auth.  
+The web form <code>/index.php</code> was vulnerable to [SQL injection](/penetration-testing/web-app/sql-injection/), entering the username <code>admin</code> and the password <code>' or '1'=' </code> successfully bypassed auth.  
 
 
 ![SQL Injection Auth Bypass](/img/blog/kioptrix/sql-injection-1-1.png)

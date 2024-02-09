@@ -74,7 +74,7 @@ The object of the game is to acquire root access via any means possible (except 
 
 ## Web Application Investigation
 
-Enumeration of the website discovered it was likely vulnerable to an SQL Injection, entering <code>id='</code> rendered the following MySQL error:
+Enumeration of the website discovered it was likely vulnerable to an [SQL Injection](/penetration-testing/web-app/sql-injection/), entering <code>id='</code> rendered the following MySQL error:
 
 ![SQL Error](/img/blog/kioptrix/sql-error.png)
 

@@ -102,7 +102,7 @@ Enumeration of port 80, discovered <code>login.php</code>:
 
 ## SQL Injection  
 
-The discovered form was vulnerable to a time-based SQL injection, SQLMap was used to expose the following databases:
+The discovered form was vulnerable to a time-based [SQL injection](/penetration-testing/web-app/sql-injection/), SQLMap was used to expose the following databases:
 
 
 {% highlight bash %}

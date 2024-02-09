@@ -193,7 +193,7 @@ Inspection of the Web Application indicated it was vulnerable to SQL injection.
 
 ## SQLMap - SQL Injection
 
-SQLMap confirmed SQL injection was possible.
+SQLMap confirmed [SQL injection](/penetration-testing/web-app/sql-injection/)) was possible.
 
 {% highlight bash %}
 [ root:~]# sqlmap -o -u "http://192.168.221.131/?action=login" --forms --dbs

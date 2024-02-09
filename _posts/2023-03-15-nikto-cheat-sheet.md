@@ -203,7 +203,7 @@ perl nikto.pl -h http://www.foo.com
     </tr>
     <tr>
         <td><p><code>-Tuning+</code></p></td>
-        <td><p>1 Interesting File / Seen in logs</p><p>2 Misconfiguration / Default File</p><p>3 Information Disclosure</p><p>4 Injection (XSS/Script/HTML)</p><p>5 Remote File Retrieval - Inside Web Root</p><p>6 Denial of Service</p><p>7 Remote File Retrieval - Server Wide</p><p>8 Command Execution / Remote Shell</p><p>9 SQL Injection</p><p>0 File Upload</p><p>a Authentication Bypass</p><p>b Software Identification</p><p>c Remote Source Inclusion</p><p>x Reverse Tuning Options (i.e., include all except specified)</p></td>
+        <td><p>1 Interesting File / Seen in logs</p><p>2 Misconfiguration / Default File</p><p>3 Information Disclosure</p><p>4 Injection (XSS/Script/HTML)</p><p>5 Remote File Retrieval - Inside Web Root</p><p>6 Denial of Service</p><p>7 Remote File Retrieval - Server Wide</p><p>8 Command Execution / Remote Shell</p><p>9 [SQL Injection](/penetration-testing/web-app/sql-injection/)</p><p>0 File Upload</p><p>a Authentication Bypass</p><p>b Software Identification</p><p>c Remote Source Inclusion</p><p>x Reverse Tuning Options (i.e., include all except specified)</p></td>
     </tr>
     <tr>
         <td><p><code>-timeout+</code></p></td>

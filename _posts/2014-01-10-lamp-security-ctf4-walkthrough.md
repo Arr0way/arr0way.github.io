@@ -118,7 +118,7 @@ RFI did not appear possible.
 
 ## SQLMap Enumeration
 
-SQLMap was leveraged to enumerate, inject and dump the MySQL databases on the target.
+SQLMap was leveraged to enumerate, and successfully exploit [SQLi](/penetration-testing/web-app/sql-injection/) and dump the MySQL databases on the target.
 
 ### SQLMap
 

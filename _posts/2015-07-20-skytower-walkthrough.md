@@ -94,7 +94,7 @@ The basic test below indicated the web application could be vulnerable to SQL in
 
 ![SQLi Test](/img/blog/skytower/sqli-test.png)
 
-SQL Injection looked possible + DB identified as MySQL:
+[SQL Injection](/penetration-testing/web-app/sql-injection/) looked possible + DB identified as MySQL:
 
 ![MySQL error](/img/blog/skytower/sqli-error.png)
 
