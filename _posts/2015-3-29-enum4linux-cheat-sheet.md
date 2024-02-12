@@ -1,6 +1,6 @@
 ---
 layout: blog_item
-title:  "enum4linux Cheat Sheet"
+title:  "enum4linux Cheat Sheet - Commands & Examples"
 date:   2015-03-29 00:58:10
 author: Arr0way
 description: 'enum4linux description, examples, cheatsheet and practical examples'
@@ -12,10 +12,12 @@ tags:
 - Tools
 ---
 
-**[enum4linux](https://labs.portcullis.co.uk/tools/enum4linux/)** is an alternative to enum.exe on Windows, enum4linux is used to enumerate Windows and Samba hosts. 
+## What is enum4linux
+
+**[enum4linux](https://labs.portcullis.co.uk/tools/enum4linux/)** is an alternative to enum.exe on Windows, enum4linux is used by penetration testers to enumerate Windows and Samba hosts. 
  
 
-**enum4linux in a nutshell**
+enum4linux provides the following functionality: 
 
 * RID cycling (When RestrictAnonymous is set to 1 on Windows 2000)
 * User listing (When RestrictAnonymous is set to 0 on Windows 2000)
@@ -130,3 +132,52 @@ tags:
       </tbody>
 </table>
 </div>
+
+
+## enum4linux Command Examples 
+
+The following are examples of enum4linux usage. 
+
+### enum4linux Command Examples 
+
+The following command performs a complete enum4linux scan: 
+
+{% highlight bash %}
+
+enum4linux -a target-ip
+
+{% endhighlight %}
+
+The following command retrieves a list of usernames: 
+
+{% highlight bash %}
+
+enum4linux -U target-ip
+
+{% endhighlight %}
+
+The following command retrieves the local machine groups: 
+
+{% highlight bash %}
+
+enum4linux -G target-ip
+
+{% endhighlight %}
+
+#### enum4linux Multiple IP's 
+
+The following command scans a subnet using enum4linux: 
+
+{% highlight bash %}
+
+enum4linux -a target-subnet/24
+
+{% endhighlight %}
+
+If you found this enum4linux cheat sheet useful, please share it below. 
+
+## Document Changelog 
+
+- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Author:** Arr0way 
+- **Notes:** Checked syntax for the enum4linux tool was correct for current version. 
