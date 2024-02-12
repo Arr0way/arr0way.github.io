@@ -286,3 +286,9 @@ naabu -list subdomains.txt -verify -ec -rate 9000 -retries 1 -p 0-65535 -warm-up
 {% endhighlight %}
 
 If you found this Naabu cheat sheet useful, please share it below. 
+
+## Document Changelog 
+
+- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Author:** Arr0way 
+- **Notes:** Checked syntax was current for latest version of Naabu. 

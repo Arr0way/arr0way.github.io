@@ -1,14 +1,17 @@
 ---
 layout: blog_item
-title:  "Nikto Cheat Sheet"
+title:  "Nikto Cheat Sheet - Commands & Examples"
 date:   2023-03-15 14:37:10
 author: Arr0way
-description: 'Nikto cheat sheet - Flags and Nikto Example Commands'
+description: 'Nikto cheat sheet - Usage, Flags and Nikto Example Commands'
 categories: [cheat-sheet]
 tags:
 - Web
 - Tools
 ---
+
+* list element with functor item
+{:toc}
 
 ## What is Nikto
 
@@ -18,6 +21,14 @@ Nikto is an open-source web server scanner that performs comprehensive tests to 
 
 {% highlight bash %}
 git clone https://github.com/sullo/nikto
+{% endhighlight %}
+
+### Nikto Update 
+
+cd into your nikto git clone directory: 
+
+{% highlight bash %}
+git pull
 {% endhighlight %}
 
 ### Main script is in program
@@ -44,7 +55,13 @@ git checkout nikto-2.5.0
 perl nikto.pl -h http://www.foo.com
 {% endhighlight %}
 
-## Nikto Cheat Sheet 
+
+* list element with functor item
+{:toc}
+
+## Nikto Scan Cheat Sheet 
+
+The following Nikto command usage for scanning a web application: 
 
 <table>
   <thead>
@@ -59,7 +76,7 @@ perl nikto.pl -h http://www.foo.com
   </tr>
   <tr>
     <td><p><code>nikto -h http://foo.com -Tuning 6</code></p></td>
-    <td><p>Uses a specific scan tuning level</p></td>
+    <td><p>Uses a specific Nikto scan tuning level</p></td>
   </tr>
   <tr>
     <td><p><code>nikto -h http://foo.com -port 8000</code></p></td>
@@ -81,6 +98,8 @@ perl nikto.pl -h http://www.foo.com
 
 
 ## Nikto Command Flags Sheet
+
+The following Nikto commands allow for configuration of a Nikto scan: 
 
 <table>
   <thead>
@@ -238,7 +257,9 @@ perl nikto.pl -h http://www.foo.com
 
 ## Nikto Example Commands
 
-### Basic Scanning
+### Nikto Scanning
+
+The following nikto commands allow you to run basic nikto scans against a web application. 
 
 <table>
   <thead>
@@ -269,7 +290,7 @@ perl nikto.pl -h http://www.foo.com
   </tr>
 </table>
 
-## Nikto Using a Proxy 
+### Nikto Using a Proxy 
 
 Using Nikto with a proxy such as Burp or another intercepting proxy.
 
@@ -334,3 +355,11 @@ Using Nikto with a proxy such as Burp or another intercepting proxy.
 - Maximum execution time per target
 - Auto-pause at a specified time
 - Checks for common "parking" sites
+
+If you found this Nikto cheat sheet useful, please share it below.
+
+## Document Changelog 
+
+- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Author:** Arr0way 
+- **Notes:** Checked syntax was current for latest version of Nikto. 

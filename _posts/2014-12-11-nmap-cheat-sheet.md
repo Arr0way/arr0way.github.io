@@ -1,6 +1,6 @@
 ---
 layout: blog_item
-title:  "Nmap Cheat Sheet: Commands & Examples (2023)"
+title:  "Nmap Cheat Sheet: Commands & Examples (2024)"
 date:   2022-02-18 10:37:10
 author: Arr0way
 description: 'Nmap Cheat Sheet, what is Namp, what does it do and how to use the tool using practical command examples.'
@@ -25,9 +25,6 @@ The following NMAP cheat sheet aims to explain what Nmap is, what it does, and h
 Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 4, Girl With the Dragon Tattoo, and The Bourne Ultimatum.
 
 
-**Original Post Date:** 13/12/2014 | 
-**Last Updated:** 08/03/2023 
-
 ![Nmap Trinity](/img/nmap-trinity.png)
 
 
@@ -50,17 +47,17 @@ Nmap can be downloaded from [nmap.org](https://nmap.org/), however commonly Nmap
 
 How to Install NMAP on Ubuntu, Debian, Kali or other Linux systems using the APT package manager.
 
-```
+{% highlight bash %}
 apt install nmap
-```
+{% endhighlight %}
 
 ### Nmap RHEL / Fedora
 
 How to Install NMAP on RHEL, Fedora, CentOS, Rocky Linux or other Linux systems using the DNF package manager.
 
-```
+{% highlight bash %}
 dnf install nmap
-```
+{% endhighlight %}
 
 ### Nmap Windows
 
@@ -70,9 +67,9 @@ Download Nmap for Windows and install: [Nmap for Windows](https://nmap.org/downl
 
 How to install nmap on MacOS using Brew.
 
-```
+{% highlight bash %}
 brew install nmap
-```
+{% endhighlight %}
 
 ## Nmap Commands 
 
@@ -92,7 +89,7 @@ Basic Nmap scanning command examples, often used at the first stage of enumerati
         <p><code>nmap -sP 10.0.0.0/24</code></p>
       </td>
       <td>
-            <p>Nma scan the network, listing machines that respond to ping.</p>
+            <p>Nmap scan the network, listing machines that respond to ping.</p>
       </td>
     </tr>
 
@@ -1327,10 +1324,10 @@ The information gathered during the enumeration indicates the target is vulnerab
 
 To speed up your scan increase the rate, be aware that setting a high rate value will result in a less accurate scan. 
 
-```
+{% highlight bash %}
 --max-rate 
 --min-rate 
-```
+{% endhighlight %}
 
 
 ### NMAP Parallelism 
@@ -1339,19 +1336,19 @@ The maximum or minimum amount of parallel tasks scanned at the same time (in par
 
 TIP: If you have an basic IDS / portscan detection blocking your scans you could lower the --min-parallelism in an attempt to reduce the number of concurrent connections 
 
-```
+{% highlight bash %}
 --min-parallelism
 --max-parallelism
-```
+{% endhighlight %}
 
 ### NMAP Host Group Sizes 
 
 The number of hosts scanned at the same time, Note: if you are writing output to a file e.g., -oA you will need to wait for the host group to complete scanning before the nmap output will be written to the file. Therefore if you get a lagging host you will may end up waiting a while for the output file, which brings us on to... host timeout.
 
-```
+{% highlight bash %}
 --min-hostgroup 
 --max-hostgroup 
-```
+{% endhighlight %}
 
 ### NMAP Host Timeout 
 
@@ -1359,23 +1356,23 @@ Nmap allows you to specify the timeout, which is the length of time it waits bef
 
 The following example would giveup after 50 seconds. 
 
-```
+{% highlight bash %}
 --host-timeout 50 
-```
+{% endhighlight %}
 
 ### NMAP Scan Delay 
 
 An extremely useful option to defeat basic port scan detection (SOHO devices and some IDS) that essentially monitor and block X amount of connects per second (syn flood etc). 
 
-```
+{% highlight bash %}
 --scan-delay 5s 
-```
+{% endhighlight %}
 
 For example if you know you can get away with 2 req/sec without getting blacklisted then  you could use: 
 
-```
+{% highlight bash %}
 --scan-delay 1.2
-``` 
+{% endhighlight %}
 
 *added 200ms for a buffer* 
 
@@ -1394,3 +1391,13 @@ As far as I know there is no way of detecting for black listing within nmap nati
 ### NMAP Optimising Portscans for Targets 
 
 Once you have identified a target firewall / IDS you can look up the default settings for the portscan black list by reading the manual and use the nmap command switches above to obtain the best performance without getting black listed.
+
+
+If you found this Nmap cheat sheet useful, please share it below. 
+
+## Document Changelog 
+
+- **Original Post Date:** 13/12/2014
+- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Author:** Arr0way 
+- **Notes:** Checked syntax was current for latest version of Nmap.

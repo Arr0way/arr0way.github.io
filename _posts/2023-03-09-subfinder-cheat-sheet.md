@@ -11,7 +11,13 @@ tags:
 - 'Project Discovery'
 ---
 
-Subfinder is a subdomain discovery tool made by Project Discovery, the following cheat sheet provides and overview of the command flags for Subfinder and common commamnd examples for real world usage. 
+* list element with functor item
+{:toc}
+
+## What is Subfinder
+
+Subfinder is a subdomain discovery tool made by Project Discovery, the following cheat sheet provides and overview of the command flags for Subfinder and common commamnd examples for real world usage. Subfinder can be used to obtain a number of subdomains both passively and actively, to identify more attack surface for [penetration testing](/penetration-testing/) or bug bounty recon or assessment. 
+
 
 ## Install Subfinder 
 
@@ -38,6 +44,171 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
     </div>
 </section>
 
+
+## Subfinder API Setup 
+
+Configuring Subfinder to use free or paid API services will likely improve the discovered domains the tool can find. You can list the sources Subfinder uses by running ```subfinder -ls```. In order to setup subfinder api keys you need to create a configuration file at: ```$HOME/.config/subfinder/provider-config.yaml``` and populate with the API keys that you wil need to obtain from the various sources. 
+
+### Subfinder Sources 
+
+Subfinder supports the following data API sources:  
+
+<table>
+  <tr>
+    <th>NAME</th>
+    <th>URL</th>
+  </tr>
+  <tr>
+    <td>BeVigil</td>
+    <td><p><code>https://bevigil.com/osint-api</code></p></td>
+  </tr>
+  <tr>
+    <td>BinaryEdge</td>
+    <td><p><code>https://binaryedge.io</code></p></td>
+  </tr>
+  <tr>
+    <td>BufferOver</td>
+    <td><p><code>https://tls.bufferover.run</code></p></td>
+  </tr>
+  <tr>
+    <td>C99</td>
+    <td><p><code>https://api.c99.nl/</code></p></td>
+  </tr>
+  <tr>
+    <td>Censys</td>
+    <td><p><code>https://censys.io</code></p></td>
+  </tr>
+  <tr>
+    <td>CertSpotter</td>
+    <td><p><code>https://sslmate.com/certspotter/api/</code></p></td>
+  </tr>
+  <tr>
+    <td>Chaos</td>
+    <td><p><code>https://chaos.projectdiscovery.io</code></p></td>
+  </tr>
+  <tr>
+    <td>Chinaz</td>
+    <td><p><code>http://my.chinaz.com/ChinazAPI/DataCenter/MyDataApi</code></p></td>
+  </tr>
+  <tr>
+    <td>DNSDB</td>
+    <td><p><code>https://api.dnsdb.info</code></p></td>
+  </tr>
+  <tr>
+    <td>Fofa</td>
+    <td><p><code>https://fofa.info/static_pages/api_help</code></p></td>
+  </tr>
+  <tr>
+    <td>FullHunt</td>
+    <td><p><code>https://fullhunt.io</code></p></td>
+  </tr>
+  <tr>
+    <td>GitHub</td>
+    <td><p><code>https://github.com</code></p></td>
+  </tr>
+  <tr>
+    <td>Intelx</td>
+    <td><p><code>https://intelx.io</code></p></td>
+  </tr>
+  <tr>
+    <td>PassiveTotal</td>
+    <td><p><code>http://passivetotal.org</code></p></td>
+  </tr>
+  <tr>
+    <td>quake</td>
+    <td><p><code>https://quake.360.cn</code></p></td>
+  </tr>
+  <tr>
+    <td>Robtex</td>
+    <td><p><code>https://www.robtex.com/api/</code></p></td>
+  </tr>
+  <tr>
+    <td>SecurityTrails</td>
+    <td><p><code>http://securitytrails.com</code></p></td>
+  </tr>
+  <tr>
+    <td>Shodan</td>
+    <td><p><code>https://shodan.io</code></p></td>
+  </tr>
+  <tr>
+    <td>ThreatBook</td>
+    <td><p><code>https://x.threatbook.cn/en</code></p></td>
+  </tr>
+  <tr>
+    <td>VirusTotal</td>
+    <td><p><code>https://www.virustotal.com</code></p></td>
+  </tr>
+  <tr>
+    <td>WhoisXML API</td>
+    <td><p><code>https://whoisxmlapi.com/</code></p></td>
+  </tr>
+  <tr>
+    <td>ZoomEye</td>
+    <td><p><code>https://www.zoomeye.org</code></p></td>
+  </tr>
+  <tr>
+    <td>ZoomEye API</td>
+    <td><p><code>https://api.zoomeye.org</code></p></td>
+  </tr>
+  <tr>
+    <td>dnsrepo</td>
+    <td><p><code>https://dnsrepo.noc.org</code></p></td>
+  </tr>
+  <tr>
+    <td>Hunter</td>
+    <td><p><code>https://hunter.qianxin.com/</code></p></td>
+  </tr>
+  <tr>
+    <td>Facebook</td>
+    <td><p><code>https://developers.facebook.com</code></p></td>
+  </tr>
+  <tr>
+    <td>BuiltWith</td>
+    <td><p><code>https://api.builtwith.com/domain-api</code></p></td>
+  </tr>
+</table>
+
+
+## Example Subfinder API Config File
+
+The following is an example of the API config file: 
+
+{% highlight bash %}
+
+binaryedge:
+  - 0bf8919b-aab9-42e4-9574-d3b639324597
+  - ac244e2f-b635-4581-878a-33f4e79a2c13
+censys:
+  - ac244e2f-b635-4581-878a-33f4e79a2c13:dd510d6e-1b6e-4655-83f6-f347b363def9
+certspotter: []
+passivetotal:
+  - sample-email@user.com:sample_password
+redhuntlabs:
+  - ENDPOINT:API_TOKEN
+  - https://reconapi.redhuntlabs.com/community/v1/domains/subdomains:joEPzJJp2AuOCw7teAj63HYrPGnsxuPQ
+securitytrails: []
+shodan:
+  - AAAAClP1bJJSRMEYJazgwhJKrggRwKA
+github:
+  - ghp_lkyJGU3jv1xmwk4SDXavrLDJ4dl2pSJMzj4X
+  - ghp_gkUuhkIYdQPj13ifH4KA3cXRn8JD2lqir2d4
+zoomeyeapi:
+  - 4f73021d-ff95-4f53-937f-83d6db719eec
+quake:
+  - 0cb9030c-0a40-48a3-b8c4-fca28e466ba3
+facebook:
+  - APP_ID:APP_SECRET
+intelx:
+  - HOST:API_KEY
+  - 2.intelx.io:s4324-b98b-41b2-220e8-3320f6a1284d
+
+{% endhighlight %}
+
+Above file source: https://docs.projectdiscovery.io/tools/subfinder/install#post-install-configuration
+
+## Subfinder Usage 
+
+How to use Subfinder to find domains: 
 
 <div class="mobile-side-scroller">
   <table>
@@ -261,3 +432,12 @@ mta-sts.managed.hackerone.com:80
 mta-sts.managed.hackerone.com:443
 <--SNIP-->
 {% endhighlight %}
+
+
+If you found this Subfinder cheat sheet useful, please share it below. 
+
+## Document Changelog 
+
+- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Author:** Arr0way 
+- **Notes:** Checked syntax was current for latest version of Subfinder + added Subfinder API sources table. 
