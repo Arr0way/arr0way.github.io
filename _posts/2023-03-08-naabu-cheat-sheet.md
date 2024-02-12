@@ -14,7 +14,7 @@ tags:
 * list element with functor item
 {:toc}
 
-The following Nabuu cheat sheet aims to explain what Naabu is, what it does, and how to install it and use it by providing Nabuu command examples in a cheat sheet style documentation format.
+The following Naabu cheat sheet aims to explain what Naabu is, what it does, and how to install it and use it by providing Nabuu command examples in a cheat sheet style documentation format.
 
 ## What is Naabu?
 
