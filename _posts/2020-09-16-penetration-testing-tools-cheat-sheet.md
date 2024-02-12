@@ -22,12 +22,6 @@ The focus of this cheat sheet is infrastructure / network penetration testing, w
 
 If I'm missing any pen testing tools here give me a nudge on twitter. 
 
-### Changelog
-
-16/09/2020 - fixed some formatting issues.
-17/02/2017 - Article updated, added loads more content, VPN, DNS tunneling, VLAN hopping etc - check out the TOC below. 
-
-
 * list element with functor item
 {:toc}
 
@@ -3845,7 +3839,7 @@ Likely just use **hash-identifier** for this but here are some example hashes:
 
 ## SQLMap Examples
 
-A mini SQLMap cheat sheet: 
+A mini SQLMap cheat sheet, see our full [SQLMap cheat sheet](/blog/sqlmap-cheat-sheet/) for more commaands: 
 
 <div class="mobile-side-scroller">
 <table>
@@ -3904,3 +3898,14 @@ A mini SQLMap cheat sheet:
   </tbody>
 </table>
 </div>
+
+
+## Document Changelog 
+
+- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Author:** Arr0way 
+- **Notes:** Reviewed content is current for various tools. 
+
+Previous document changes: 
+- 16/09/2020 - fixed some formatting issues.
+- 17/02/2017 - Article updated, added loads more content, VPN, DNS tunneling, VLAN hopping etc - check out the TOC below. 
