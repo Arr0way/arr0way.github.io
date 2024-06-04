@@ -436,8 +436,9 @@ mta-sts.managed.hackerone.com:443
 <--SNIP-->
 {% endhighlight %}
 
+## Conclusion 
 
-If you found this Subfinder cheat sheet useful, please share it below. 
+We hope you found this Subfinder cheat sheet useful, and it helps you get started with this powerful subdomain enumeration tool to find more assets for assessment. 
 
 ## Document Changelog 
 
