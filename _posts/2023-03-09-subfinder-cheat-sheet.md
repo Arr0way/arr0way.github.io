@@ -11,8 +11,11 @@ tags:
 - 'Project Discovery'
 ---
 
+![Subfinder Logo](/img/subfinder-logo.png)
+
 * list element with functor item
 {:toc}
+
 
 ## What is Subfinder
 
