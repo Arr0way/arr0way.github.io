@@ -16,8 +16,7 @@ tags:
 
 ## What is Subfinder
 
-Subfinder is a subdomain discovery tool made by Project Discovery, the following cheat sheet provides and overview of the command flags for Subfinder and common commamnd examples for real world usage. Subfinder can be used to obtain a number of subdomains both passively and actively, to identify more attack surface for [penetration testing](/penetration-testing/) or bug bounty recon or assessment. 
-
+Subfinder is a passive subdomain discovery tool made by Project Discovery. The following subfinder cheat sheet provides an overview of the command flags for Subfinder and common command examples for real world usage. Subfinder can be used to obtain a number of valid subdomains both passively and actively, to identify more attack surface for [penetration testing](/penetration-testing/) or bug bounty recon or assessment. 
 
 ## Install Subfinder 
 
@@ -47,9 +46,13 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 
 ## Subfinder API Setup 
 
-Configuring Subfinder to use free or paid API services will likely improve the discovered domains the tool can find. You can list the sources Subfinder uses by running ```subfinder -ls```. In order to setup subfinder api keys you need to create a configuration file at: ```$HOME/.config/subfinder/provider-config.yaml``` and populate with the API keys that you wil need to obtain from the various sources. 
+Configuring Subfinder to use free or paid API services will likely improve the discovered domains the tool can find. You can list the sources Subfinder uses by running ```subfinder -ls```. 
 
-### Subfinder Sources 
+### Subfinder Config File
+
+In order to setup subfinder API keys you need to create or modify the existing configuration file. The filesystem location for the subfinder config file is at: ```$HOME/.config/subfinder/provider-config.yaml``` the subfinder config file needs to be populated with the API keys that you will need to obtain from the various sources that have (kindly) been listed below. 
+
+### Subfinder API Sources 
 
 Subfinder supports the following data API sources:  
 
@@ -437,6 +440,12 @@ mta-sts.managed.hackerone.com:443
 If you found this Subfinder cheat sheet useful, please share it below. 
 
 ## Document Changelog 
+
+- **Last Updated:** 04/06/2024 (6th of June 2024)
+- **Author:** Arr0way
+- **Notes:** Checked syntax was current for latest version of Subfinder + fixed typos.
+
+---
 
 - **Last Updated:** 12/02/2024 (12th of February 2024)
 - **Author:** Arr0way 
