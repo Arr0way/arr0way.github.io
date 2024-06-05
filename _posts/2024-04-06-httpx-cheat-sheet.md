@@ -757,6 +757,17 @@ dnsx -d roots.txt -w <key,words> | httpx -sc -mc 200
 
 {% endhighlight %}
 
+
+### HTTPX Follow Redirects 
+
+For HTTPX to follow redirects use: 
+
+{% highlight bash %}
+
+httpx -follow-redirects
+
+{% endhighlight %}
+
 ### HTTPX Screenshot 
 
 Take a screenshot of targets that return 200 response: 
