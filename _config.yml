@@ -10,6 +10,8 @@ google_analytics_id:
 production_url: https://highon.coffee
 repository: https://github.com/Arr0way/arr0way.github.io.git
 url: https://highon.coffee
+plugins:
+  - jekyll-sitemap
 
 collections:
   docs:
