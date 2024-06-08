@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title:  "HTTPX Cheat Sheet - Commands & Examples Tutorial"
+title:  "httpx Cheat Sheet - Commands & Examples Tutorial"
 date:   2024-06-04 05:37:10
 author: Arr0way
-description: 'HTTPX cheat sheet - Learn HTTPX with this Tutorial containing Flags, & HTTPX Command Examples.'
+description: 'httpx cheat sheet - Learn the httpx toolkit with this Tutorial containing Flags, & httpx Command Examples.'
 categories: [cheat-sheet]
 tags:
 - Web
@@ -13,16 +13,16 @@ tags:
 
 ![httpx logo](/img/httpx-logo.png)
 
-## What is HTTPX? 
+## What is httpx? 
 
-HTTPX is a fast and multi-purpose HTTP toolkit made by Project Discovery that allows running multiple probes using the retryablehttp library. It is designed to maintain result reliability with an increased number of threads. HTTPX can be used to obtain web server information, such as headers, pages and take screenshots of targets, perfect to validate http/https servers for large scopes on bugbounty programs or performing asset management / penetration testing. 
+httpx is a fast and multi-purpose HTTP toolkit made by Project Discovery that allows running multiple probes using the retryablehttp library. It is designed to maintain result reliability with an increased number of threads. httpx can be used to obtain web server information, such as headers, download pages and take screenshots of targets. httpx is perfect for validating http/https servers for large scopes on bugbounty programs or performing asset management / penetration testing.
 
 * list element with functor item
 {:toc}
 
-## HTTPX Installation 
+## httpx Installation 
 
-How to install HTTPX: 
+How to install httpx: 
 
 {% highlight bash %}
 
@@ -30,9 +30,21 @@ go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 
 {% endhighlight %}
 
-## HTTPX Supported Probes 
+## httpx Project Discovery Tutorial 
 
-The type of data HTTPX can obtain from target web servers: 
+After installation the following simple httpx tutorial will get you up and scanning web servers: 
+
+{% highlight bash %}
+
+cat targets.txt | httpx 
+
+{% endhighlight %}
+
+For more options and real world httpx examples see the bottom of this document. 
+
+## httpx Supported Probes 
+
+The type of data httpx can obtain from target web servers: 
 
 
 | Probes          | Default check | Probes         | Default check |
@@ -54,12 +66,15 @@ The type of data HTTPX can obtain from target web servers:
 | JARM Hash       | false         | ASN            | false         |
 
 
-<div class='note'><h2>TIP: Take Screenshots with HTTPX</h2>
-<p>To take screenshots with HTTPX use <code>-screenshot</code> or <code>-ss</code></p> 
+<div class='note'><h2>TIP: Take Screenshots with httpx</h2>
+<p>To take screenshots with httpx use <code>-screenshot</code> or <code>-ss</code></p> 
 </div>
 
-## HTTPX Input Commands
+## httpx Cheat Sheet
 
+### httpx Input Commands
+
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -82,10 +97,11 @@ The type of data HTTPX can obtain from target web servers:
     </tr>
   </tbody>
 </table>
+</div>
 
+### httpx Probe Commands
 
-## HTTPX Probe Commands
-
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -180,9 +196,11 @@ The type of data HTTPX can obtain from target web servers:
     </tr>
   </tbody>
 </table>
+</div>
 
-## HTTPX Headless Options 
+### httpx Headless Options 
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -209,11 +227,13 @@ The type of data HTTPX can obtain from target web servers:
     </tr>
   </tbody>
 </table>
+</div>
 
-## HTTPX Match in Response 
+### httpx Match in Response 
 
-Allows HTTPX to match something in the server response header / body / http response code or url etc. 
+Allows httpx to match something in the server response header / body / http response code or url etc. 
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -264,11 +284,13 @@ Allows HTTPX to match something in the server response header / body / http resp
     </tr>
   </tbody>
 </table>
+</div>
 
-## HTTPX Extract Regex Strings 
+### httpx Extract Regex Strings 
 
-Allows HTTPX to extract regex strings from the reponse. 
+Allows httpx to extract regex strings from the reponse. 
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -287,11 +309,13 @@ Allows HTTPX to extract regex strings from the reponse.
     </tr>
   </tbody>
 </table>
+</div>
 
-## HTTPX Filters 
+### httpx Filters 
 
 Filter by response code, length, server version, error page, url etc
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -350,12 +374,13 @@ Filter by response code, length, server version, error page, url etc
     </tr>
   </tbody>
 </table>
+</div>
 
+### httpx Rate Limiting 
 
-## HTTPX Rate Limiting 
+Limit the number of requests httpx can make per second / per minute and configure the number of threads. 
 
-Limit the number of requests HTTPX can make per second / per minute and configure the number of threads. 
-
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -378,9 +403,11 @@ Limit the number of requests HTTPX can make per second / per minute and configur
     </tr>
   </tbody>
 </table>
+</div>
 
-## Misc HTTPX Commands 
+### Misc httpx Commands 
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -431,11 +458,13 @@ Limit the number of requests HTTPX can make per second / per minute and configur
     </tr>
   </tbody>
 </table>
+</div>
 
-## HTTPX Update 
+### httpx Update 
 
-How to update HTTPX + how to disable auto update. 
+How to update httpx + how to disable auto update. 
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -454,12 +483,13 @@ How to update HTTPX + how to disable auto update.
     </tr>
   </tbody>
 </table>
+</div>
 
+### httpx File Output 
 
-## HTTPX File Output 
+httpx output file options. 
 
-HTTPX output file options. 
-
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -522,9 +552,11 @@ HTTPX output file options.
     </tr>
   </tbody>
 </table>
+</div>
 
-## HTTPX Config Options 
+### httpx Config Options 
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -631,10 +663,11 @@ HTTPX output file options.
     </tr>
   </tbody>
 </table>
+</div>
 
+### httpx Debug Options 
 
-## HTTPX Debug Options 
-
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -689,11 +722,13 @@ HTTPX output file options.
     </tr>
   </tbody>
 </table>
+</div>
 
-## Optimizations 
+### Optimizations 
 
-Improve the performance of HTTPX tune the settings to the target environment.
+Improve the performance of httpx tune the settings to the target environment.
 
+<div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
@@ -744,10 +779,11 @@ Improve the performance of HTTPX tune the settings to the target environment.
     </tr>
   </tbody>
 </table>
+</div>
 
-## Real World Examples
+## Real World httpx Examples
 
-### DNSX to HTTPX
+### DNSX to httpx
 
 Run domains through dnsx to confirm resolution, then through httpx to confirm a 200 response from the webserver: 
 
@@ -757,10 +793,9 @@ dnsx -d roots.txt -w <key,words> | httpx -sc -mc 200
 
 {% endhighlight %}
 
+### httpx Follow Redirects 
 
-### HTTPX Follow Redirects 
-
-For HTTPX to follow redirects use: 
+For httpx to follow redirects use: 
 
 {% highlight bash %}
 
@@ -768,7 +803,7 @@ httpx -follow-redirects
 
 {% endhighlight %}
 
-### HTTPX Screenshot 
+### httpx Screenshot 
 
 Take a screenshot of targets that return 200 response: 
 
@@ -788,4 +823,4 @@ httpx -t 200 -random-agent -nc -silent -timeout 8 -sc -server -title -o httpx.ou
 
 ## Conclusion 
 
-We hope this HTTPX cheat sheet was useful in covering the usage of this excellent HTTP toolkit by Project Discovery. 
+We hope this httpx cheat sheet was useful in covering the usage of this excellent HTTP toolkit by Project Discovery for performing recon against web servers and applications. 
