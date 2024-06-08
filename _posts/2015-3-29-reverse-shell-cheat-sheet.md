@@ -28,7 +28,7 @@ A reverse shell is code placed on a target server that when executed attemts to 
 <p>The revshells on this page are tested working when they are added to the cheat sheet.</p> 
 </div>
 
-08/06/2024 - Added addition PHP reverse shell one liner + house keeping.
+08/06/2024 - Added addition PHP reverse shell one liner + msfvenom + house keeping.
 25/02/2022 - House keeping
 17/09/2020 - Updated to add the reverse shells submitted via Twitter @JaneScott 
 29/03/2015 - Original post date
