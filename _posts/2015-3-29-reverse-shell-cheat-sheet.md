@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title:  "Reverse Shell Cheat Sheet: PHP, Python, Powershell, Bash, NC, JSP, Java, Perl"
+title:  "Reverse Shell Cheat Sheet: PHP, ASP, Netcat, Bash & Python"
 date:   2022-02-27 02:37:10
 author: Arr0way
-description: 'Reverse Shell Cheat Sheet (2022), a list of reverse shells for connecting back on Linux/Windows with PHP, Python, Powershell, nc (Netcat), JSP, Java, Bash, PS etc.'
+description: 'Reverse Shell Cheat Sheet (Updated: 2024), a list of reverse shells for connecting back on Linux/Windows with PHP, Python, Powershell, nc (Netcat), JSP, Java, Bash, PS etc.'
 categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
