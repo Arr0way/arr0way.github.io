@@ -1,6 +1,6 @@
 ---
 layout: blog_item
-title:  "SQLMap Cheat Sheet - Commands & Examples Tutorial"
+title:  "SQLMap Cheat Sheet: Flags & Commands for SQL Injection"
 date:   2024-02-11 14:37:10
 author: Arr0way
 description: 'SQLMap cheat sheet - Learn SQLMap with this Tutorial containing Flags, & SQLMap Command Examples.'
