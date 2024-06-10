@@ -106,6 +106,8 @@ Installed Android application location:
 cd /data/data
 {% endhighlight %}
 
+For a more in depth guide on how to use ADB see our [ADB commands](/blog/adb-commands-cheat-sheet/) cheat sheet here.
+
 ### 8. Open GApps
 
 If you are assessing an application from the Play Store then you can install open gapps in GenyMotion by clickin on the icon on the right hand menu. 
