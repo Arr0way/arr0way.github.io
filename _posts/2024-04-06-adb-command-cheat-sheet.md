@@ -151,7 +151,7 @@ adb -e install /tmp/package.apk
     <thead>
       <tr>
         <th><code>COMMAND</code></th>
-        <th><p>DESCRIPTION</p></th>
+        <th>DESCRIPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -183,8 +183,8 @@ Note the flag needs to come before the command.
   <table>
     <thead>
       <tr>
-        <th><code>COMMAND</code></th>
-        <th><p>DESCRIPTION</p></th>
+        <th>COMMAND</th>
+        <th>DESCRIPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -210,8 +210,8 @@ Note the flag needs to come before the command.
   <table>
     <thead>
       <tr>
-        <th><code>COMMAND</code></th>
-        <th><p>DESCRIPTION</p></th>
+        <th>COMMAND</th>
+        <th>DESCRIPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -405,8 +405,8 @@ adb shell input text 'payload'
   <table>
     <thead>
       <tr>
-        <th><code>COMMAND</code></th>
-        <th><p>DESCRIPTION</p></th>
+        <th>COMMAND</th>
+        <th>DESCRIPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -468,8 +468,8 @@ adb shell input text 'payload'
   <table>
     <thead>
       <tr>
-        <th><code>COMMAND</code></th>
-        <th><p>DESCRIPTION</p></th>
+        <th>COMMAND</th>
+        <th>DESCRIPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -518,8 +518,8 @@ e.g., adjust battery level, resolution etc
   <table>
     <thead>
       <tr>
-        <th><code>COMMAND</code></th>
-        <th><p>DESCRIPTION</p></th>
+        <th>COMMAND</th>
+        <th>DESCRIPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -553,8 +553,8 @@ e.g., adjust battery level, resolution etc
   <table>
     <thead>
       <tr>
-        <th><code>COMMAND</code></th>
-        <th><p>DESCRIPTION</p></th>
+        <th>COMMAND</th>
+        <th>DESCRIPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -614,12 +614,11 @@ adb backup -f chrome.ab -apk com.android.chromer device
 
 {% endhighlight %}
 
-
 ## Conclusion 
 
-We hope this httpx cheat sheet was useful in covering the usage of this excellent ADB tool for performing mobile app security testing against Android Apps. 
+We hope this ADB cheat sheet was useful in covering the usage of the ADB tool for performing mobile app security testing against Android Apps. 
 
 ## Sources 
 
-https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8 
-https://developer.android.com/tools/adb 
+- [https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8](https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8)
+- [https://developer.android.com/tools/adb](https://developer.android.com/tools/adb) 
