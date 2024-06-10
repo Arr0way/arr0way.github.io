@@ -1,9 +1,9 @@
 ---
 layout: blog_item
-title:  "Nmap Cheat Sheet: Commands & Examples (2024)"
-date:   2022-02-18 10:37:10
+title:  "Nmap Cheat Sheet: Commands, Flags, Switches & Examples (2024)"
+date:   2024-06-09 10:37:10
 author: Arr0way
-description: 'Nmap Cheat Sheet, what is Namp, what does it do and how to use the tool using practical command examples.'
+description: 'Nmap Cheat Sheet, learn Nmap commands, flags & real world exmaples allowing you to leverage the OG portscanner.'
 categories: [cheat-sheet]
 tags:
 - 'Penetration Testing'
@@ -11,10 +11,10 @@ tags:
 - host-enum
 ---
 
-* list element with functor item
-{:toc}
 
 The following NMAP cheat sheet aims to explain what Nmap is, what it does, and how to use it by providing NMAP command examples in a cheat sheet style documentation format.
+
+Orignal Published Date: 11th December 2014
 
 ## What is Nmap?
 
@@ -27,6 +27,8 @@ Nmap has made twelve movie appearances, including The Matrix Reloaded, Die Hard 
 
 ![Nmap Trinity](/img/nmap-trinity.png)
 
+* list element with functor item
+{:toc}
 
 ## What does Nmap do:
 
@@ -98,7 +100,7 @@ Basic Nmap scanning command examples, often used at the first stage of enumerati
         <p><code>nmap -p 1-65535 -sV -sS -T4 target</code></p>
       </td>
       <td>
-            <p>A full TCP port scan using with service version detection - T1-T5 is the speed of the scan,  .</p>
+            <p>A full TCP port scan using with service version detection - <code>T1-T5</code> is the speed of the scan.</p>
       </td>
     </tr>
 
@@ -151,7 +153,7 @@ Basic Nmap scanning command examples, often used at the first stage of enumerati
 
 <div class="note info">
   <h5>Agressive scan timings are faster, but could yeild inaccurate results!</h5>
-  <p>T5 uses very aggressive scan timings and could lead to missed ports, T4 is a better compromise if you need fast results.</p>
+  <p>T5 uses very aggressive scan timings and could lead to missed ports, T3-4 is a better compromise if you need fast results (depending on if local network or remote).</p>
 </div>
 
 ### Nmap scan from file
@@ -203,7 +205,6 @@ Basic Nmap scanning command examples, often used at the first stage of enumerati
 
 ### Nmap output formats
 
-
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -213,6 +214,15 @@ Basic Nmap scanning command examples, often used at the first stage of enumerati
     </tr>
   </thead>
       <tbody>
+
+      <tr>
+      <td>
+        <p><code>nmap -sS -sV -T5 10.0.1.99 -oA output-all-formats</code></p>
+      </td>
+      <td>
+            <p>nmap output to all formats. </p>
+      </td>
+    </tr>
       <tr>
       <td>
         <p><code>nmap -sV -p 139,445 -oG grep-output.txt 10.0.1.0/24</code></p>
@@ -322,8 +332,11 @@ Nmap + [Nikto](/blog/nikto-cheat-sheet/) scanning for specific discovered HTTP p
 
 Nmap allows hostnames, IP addresses, subnets.
 
-Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
+Example:
 
+{% highlight bash %}
+blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
+{% endhighlight %}
 
 <div class="mobile-side-scroller">
 <table>
@@ -348,7 +361,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>-iR</code></p>
       </td>
       <td>
-            <p>num hosts: Choose random targets</p>
+            <p>iterate hosts: Choose random targets from the input file</p>
       </td>
     </tr>
 
@@ -366,7 +379,7 @@ Example blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>--excludefile</code></p>
       </td>
       <td>
-            <p>exclude_file: Exclude list from file</p>
+            <p>exclude_file: nmap exclude hosts list from file</p>
       </td>
     </tr>
       </tbody>
@@ -1362,7 +1375,7 @@ The following example would giveup after 50 seconds.
 
 ### NMAP Scan Delay 
 
-An extremely useful option to defeat basic port scan detection (SOHO devices and some IDS) that essentially monitor and block X amount of connects per second (syn flood etc). 
+An extremely useful option to defeat basic port scan detection (SOHO devices and some IDS) that essentially monitor and block X amount of connects per second (syn flood etc). In short the scan timing can be optimised to allow nmap to bypass firewall detection mechanism. 
 
 {% highlight bash %}
 --scan-delay 5s 
@@ -1395,9 +1408,93 @@ Once you have identified a target firewall / IDS you can look up the default set
 
 If you found this Nmap cheat sheet useful, please share it below. 
 
+## Nmap FAQ 
+
+### What is Nmap Used for? 
+
+Nmap (Network Mapper) is a free and open source tool for discovering and auditing networks. 
+Many system and network administrators use Nmap to perform network inventories, asset management , manage service updating schedules, and monitor host or service availability.
+
+### Is Nmap Illegal?
+
+When used properly, Nmap could help you protect your network from intruders. 
+But used inappropriately (e.g., maliciously, and/or without permission from the target), Nmap could (in rare cases) get you sued, fired, expelled, jailed, or banned by your ISP.
+
+### Is Nmap a Vulnerability Scanner 
+
+Nmap is a port scanner or network mapper, the tool identified if a system exists on the network or IP address you provide. However, NSE Scripts then extend the functionality of Nmap by allowing additional host checkes that provide nmap vulnerability scanning functionality to the tool. 
+
+### Why do hackers use Nmap?
+
+Attackers or hackers may use Nmap to identify targets and the exposed ports on a target in an effort to idenitfy potential attack surface to perform addtional security testing against. 
+
+### Nmap Download
+
+You can download nmap from [https://nmap.org/download](https://nmap.org/download) or a common option would be to install via your Linux distributions package manager or Brew on macos. 
+
+### Nmap Scripts List 
+
+You can find a lot of the current Nmap scripts list at [https://nmap.org/nsedoc/scripts/](https://nmap.org/nsedoc/scripts/) this list is actively updated by the Nmap project. 
+
+
 ## Document Changelog 
 
 - **Original Post Date:** 13/12/2014
-- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Last Updated:** 10/06/2024 (10th of June 2024)
 - **Author:** Arr0way 
-- **Notes:** Checked syntax was current for latest version of Nmap.
+- **Notes:** Checked syntax was current for latest version of Nmap + added additional content.
+
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Nmap Used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nmap (Network Mapper) is a free and open source tool for discovering and auditing networks. Many system and network administrators use Nmap to perform network inventories, asset management, manage service updating schedules, and monitor host or service availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Nmap Illegal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When used properly, Nmap could help you protect your network from intruders. But used inappropriately (e.g., maliciously, and/or without permission from the target), Nmap could (in rare cases) get you sued, fired, expelled, jailed, or banned by your ISP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Nmap a Vulnerability Scanner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nmap is a port scanner or network mapper, the tool identifies if a system exists on the network or IP address you provide. However, NSE Scripts then extend the functionality of Nmap by allowing additional host checks that provide Nmap vulnerability scanning functionality to the tool."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do hackers use Nmap?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Attackers or hackers may use Nmap to identify targets and the exposed ports on a target in an effort to identify potential attack surface to perform additional security testing against."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nmap Download",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can download Nmap from <a href=\"https://nmap.org/download\">https://nmap.org/download</a> or a common option would be to install via your Linux distribution's package manager or Brew on macOS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nmap Scripts List",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can find a lot of the current Nmap scripts list at <a href=\"https://nmap.org/nsedoc/scripts/\">https://nmap.org/nsedoc/scripts/</a> this list is actively updated by the Nmap project."
+      }
+    }
+  ]
+}
