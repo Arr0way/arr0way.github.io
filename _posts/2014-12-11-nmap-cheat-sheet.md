@@ -1444,6 +1444,8 @@ You can find a lot of the current Nmap scripts list at [https://nmap.org/nsedoc/
 - **Author:** Arr0way 
 - **Notes:** Checked syntax was current for latest version of Nmap + added additional content.
 
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -1498,3 +1500,4 @@ You can find a lot of the current Nmap scripts list at [https://nmap.org/nsedoc/
     }
   ]
 }
+</script>
