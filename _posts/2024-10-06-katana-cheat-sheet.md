@@ -33,9 +33,6 @@ go install github.com/projectdiscovery/katana/cmd/katana@latest
 katana -u target-domain.com 
 {% endhighlight %}
 
-### Katana Config File
-
-In order to setup subfinder API keys you need to create or modify the existing configuration file. The filesystem location for the subfinder config file is at: ```$HOME/.config/subfinder/provider-config.yaml``` the subfinder config file needs to be populated with the API keys that you will need to obtain from the various sources that have (kindly) been listed below. 
 
 ## Katana Cheat Sheet 
 
