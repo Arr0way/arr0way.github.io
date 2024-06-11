@@ -1,7 +1,7 @@
 ---
 layout: blog_item
 title:  "Katana Cheat Sheet - Commands, Flags & Examples"
-date:   2024-11-06 14:37:10
+date:   2024-06-10 14:37:10
 author: Arr0way
 description: 'Katana install, examples and Katana commands cheatsheet'
 categories: [cheat-sheet]
