@@ -3,7 +3,7 @@ layout: blog_item
 title:  "Subfinder Cheat Sheet"
 date:   2023-03-09 14:37:10
 author: Arr0way
-description: 'Subdfinder install, examples and Subfinder commands cheatsheet'
+description: 'Subfinder install, examples and Subfinder commands cheatsheet'
 categories: [cheat-sheet]
 tags:
 - Subfinder
