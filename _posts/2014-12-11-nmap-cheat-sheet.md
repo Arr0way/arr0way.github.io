@@ -12,7 +12,7 @@ tags:
 ---
 
 
-The following NMAP cheat sheet aims to explain what Nmap is, what it does, and how to use it by providing NMAP command examples in a cheat sheet style documentation format.
+The following Nmap cheat sheet aims to explain what Nmap is, what it does, and how to use it by providing Nmap command examples in a cheat sheet style documentation format.
 
 Orignal Published Date: 11th December 2014
 
@@ -47,7 +47,7 @@ Nmap can be downloaded from [nmap.org](https://nmap.org/), however commonly Nmap
 
 ### Debian / Ubuntu / Kali
 
-How to Install NMAP on Ubuntu, Debian, Kali or other Linux systems using the APT package manager.
+How to Install Nmap on Ubuntu, Debian, Kali or other Linux systems using the APT package manager.
 
 {% highlight bash %}
 apt install nmap
@@ -55,7 +55,7 @@ apt install nmap
 
 ### Nmap RHEL / Fedora
 
-How to Install NMAP on RHEL, Fedora, CentOS, Rocky Linux or other Linux systems using the DNF package manager.
+How to Install Nmap on RHEL, Fedora, CentOS, Rocky Linux or other Linux systems using the DNF package manager.
 
 {% highlight bash %}
 dnf install nmap
@@ -979,7 +979,7 @@ blah.highon.coffee, nmap.org/24, 192.168.0.1; 10.0.0-255.1-254
         <p><code>--spoof-mac ADDR/PREFIX/VENDOR</code></p>
       </td>
       <td>
-            <p>Spoof NMAP MAC address</p>
+            <p>Spoof Nmap MAC address</p>
       </td>
     </tr>
     <tr>
@@ -1298,7 +1298,7 @@ Detect all exposed Netbios servers on the subnet.
     </div>
 </section>
 
-### NMAP Netbios MS08-067
+### Nmap Netbios MS08-067
 
 How to scan a target and identify if it is vulnerable to MS08-067
 
@@ -1343,7 +1343,7 @@ To speed up your scan increase the rate, be aware that setting a high rate value
 {% endhighlight %}
 
 
-### NMAP Parallelism 
+### Nmap Parallelism 
 
 The maximum or minimum amount of parallel tasks scanned at the same time (in parallel).
 
@@ -1354,7 +1354,7 @@ TIP: If you have an basic IDS / portscan detection blocking your scans you could
 --max-parallelism
 {% endhighlight %}
 
-### NMAP Host Group Sizes 
+### Nmap Host Group Sizes 
 
 The number of hosts scanned at the same time, Note: if you are writing output to a file e.g., -oA you will need to wait for the host group to complete scanning before the nmap output will be written to the file. Therefore if you get a lagging host you will may end up waiting a while for the output file, which brings us on to... host timeout.
 
@@ -1363,7 +1363,7 @@ The number of hosts scanned at the same time, Note: if you are writing output to
 --max-hostgroup 
 {% endhighlight %}
 
-### NMAP Host Timeout 
+### Nmap Host Timeout 
 
 Nmap allows you to specify the timeout, which is the length of time it waits before giving up on the target. Be careful setting this super low, as you may end up with inaccurate results. 
 
@@ -1373,7 +1373,7 @@ The following example would giveup after 50 seconds.
 --host-timeout 50 
 {% endhighlight %}
 
-### NMAP Scan Delay 
+### Nmap Scan Delay 
 
 An extremely useful option to defeat basic port scan detection (SOHO devices and some IDS) that essentially monitor and block X amount of connects per second (syn flood etc). In short the scan timing can be optimised to allow nmap to bypass firewall detection mechanism. 
 
@@ -1389,11 +1389,11 @@ For example if you know you can get away with 2 req/sec without getting blacklis
 
 *added 200ms for a buffer* 
 
-### NMAP Disable DNS Lookups 
+### Nmap Disable DNS Lookups 
 
 Assuming you do not want domain names being looked up, use the ```-n``` flag to dissable resolution and speed up the scan. 
 
-#### NMAP Black List Detection? 
+#### Nmap Black List Detection? 
 
 1. It ussally takes and extemely long time to complete 
 2. Droppped probes nmap will increase the timeout, but it's likely you are already black listed 
@@ -1401,7 +1401,7 @@ Assuming you do not want domain names being looked up, use the ```-n``` flag to 
 
 As far as I know there is no way of detecting for black listing within nmap natively. 
 
-### NMAP Optimising Portscans for Targets 
+### Nmap Optimising Portscans for Targets 
 
 Once you have identified a target firewall / IDS you can look up the default settings for the portscan black list by reading the manual and use the nmap command switches above to obtain the best performance without getting black listed.
 
