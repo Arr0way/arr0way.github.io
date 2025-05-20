@@ -15,13 +15,13 @@ tags:
 
 ## What is SSRF? 
 
-Server Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to exploit vulnerable functionality to access server side or local network services / functionality by affectively traversing the external firewall using vulnerable web functionality. 
+Server Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to exploit vulnerable functionality to access server side or local network services / functionality by affectively traversing the external firewall using vulnerable web functionality, you can gain a larger understanding on what SSRF on [Aptive's](https://www.aptive.co.uk/blog/what-is-server-side-request-forgery-ssrf/) website. 
 
-Another way to think of this would be to imagine the web applications vulnerable function is a web browser, that will allow you to pivot / relay request to the internal interface addresses, loopback or internal network to access services (effectively traversing the WAF or firewall). 
+Another way to understand this is to imagine the vulnerable function within the web application as acting like a web browser, which can be used to pivot or relay requests to internal interface addresses, the loopback address, or the internal network in order to access internal services — effectively bypassing the WAF or firewall.
 
-An example of this could be a web function that allows the adding of a URL or third-party service, this could then be exploited to access internal or local IP address. 
+An example of this might be a web function that allows users to submit a URL or integrate a third-party service. This could potentially be exploited to access internal or local IP addresses.
 
-After identifying SSRF on applications running modern frameworks or a WAF, more work will be required in an effort to defeat the protection / filtering that is in place, and allow for successful SSRF exploitation. 
+When SSRF is identified in applications using modern frameworks or protected by a WAF, additional effort is often needed to bypass the filtering or security mechanisms in place, in order to successfully exploit the vulnerability.
 
 <!--more-->
 
@@ -237,7 +237,7 @@ http://⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ｡⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ:80/
 
 ### What is a DNS rebinding attack?
 
-In certain situations a target function may check a hostname "blindly" against a whitelist/blacklist without verification of the the resolution IP address. Once the hostname has been determined OK by the above function it is then passed to the function which it is intended to protect.
+In some cases, a target function may "blindly" validate a hostname against a allowlist (aka whitelist) or denylist (aka blacklist) without verifying the resolved IP address. Once the hostname is deemed acceptable by this initial check, it is then passed to the underlying function it was meant to protect.
 
 ### How to exploit a vulnerable function
 
