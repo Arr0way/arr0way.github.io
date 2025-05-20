@@ -14,7 +14,7 @@ tags:
 * list element with functor item
 {:toc}
 
-During [penetration testing](/penetration-testing/) if you're lucky enough to find a remote command execution vulnerability, you'll more often than not want to connect back to your attacking machine to leverage an interactive shell.
+During a app security test if you're lucky enough to find a remote command execution vulnerability, you'll more often than not want to connect back to your attacking machine to leverage an interactive shell.
 
 Below are a collection of Windows and Linux **reverse shells** that use commonly installed programming languages PHP, Python, Powershell, nc (Netcat), JSP, Java, Bash, PowerShell (PS). At the bottom of the post are a collection of uploadable reverse shells, present in Kali Linux.
 
