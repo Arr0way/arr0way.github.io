@@ -16,11 +16,11 @@ tags:
 
 ## Introduction 
 
-**Penetration testing tools cheat sheet**, a quick reference high level overview for typical penetration testing engagements. Designed as a quick reference cheat sheet providing a high level overview of the **typical** commands used during a [penetration testing](/penetration-testing/) engagement. For more in depth information I'd recommend the man file for the tool, or a more specific pen testing cheat sheet from the menu on the right.
+**Penetration Testing Tools Cheat Sheet** – a quick-reference, high-level overview for typical penetration testing engagements. This cheat sheet is intended as a concise guide to the common commands used during a penetration test. For more detailed information, I recommend consulting the tool’s manual page (man file), or a more specific penetration testing cheat sheet from the menu on the right.
 
-The focus of this cheat sheet is infrastructure / network penetration testing, web application penetration testing is not covered here apart from a few SQLMap commands at the end and some web server enumeration. For Web Application Penetration Testing, check out the Web Application Hackers Hand Book, it is excellent for both learning and reference.
+The primary focus here is on infrastructure and network penetration testing; [web application](https://www.aptive.co.uk/penetration-testing/) security testing is not covered in detail here, aside from a few [SQLMap commands](/blog/sqlmap-cheat-sheet/) towards the end and some basic web server enumeration. For comprehensive guidance on Web Application Penetration Testing, The Web Application Hacker’s Handbook is an excellent resource for both learning and reference.
 
-If I'm missing any pen testing tools here give me a nudge on twitter. 
+If any pen testing tools are missing here, give me a nudge on twitter @Arr0way
 
 * list element with functor item
 {:toc}
@@ -3902,7 +3902,7 @@ A mini SQLMap cheat sheet, see our full [SQLMap cheat sheet](/blog/sqlmap-cheat-
 
 ## Document Changelog 
 
-- **Last Updated:** 12/02/2024 (12th of February 2024)
+- **Last Updated:** 20/05/2025 (20th of May 2025)
 - **Author:** Arr0way 
 - **Notes:** Reviewed content is current for various tools. 
 
