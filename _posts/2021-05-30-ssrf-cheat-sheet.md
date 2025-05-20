@@ -265,5 +265,5 @@ Happy hunting / pen testing.
 
 **Sources:** 
 
-- (https://owasp.org/www-community/attacks/Server_Side_Request_Forgery)
-- (https://www.aptive.co.uk/blog/what-is-server-side-request-forgery-ssrf/#what-is-server-side-request-forgery-ssrf)
+- [https://owasp.org/www-community/attacks/Server_Side_Request_Forgery](https://owasp.org/www-community/attacks/Server_Side_Request_Forgery)
+- [https://www.aptive.co.uk/blog/what-is-server-side-request-forgery-ssrf/#what-is-server-side-request-forgery-ssrf](https://www.aptive.co.uk/blog/what-is-server-side-request-forgery-ssrf/#what-is-server-side-request-forgery-ssrf)
