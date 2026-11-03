@@ -38,6 +38,10 @@ information. Here’s what to look out for.
 <div class="note warning">
   <h5>Warning: Random Star Trek memes and gifs will be used throughout the site!</h5>
   <p>Resistance is futile.</p>
+  
+  <h3>RIP: Patrick Stewart</h3>
+  <p>July 1940 - October 26th 2026</p>
+  
 </div>
 
 Engage.
